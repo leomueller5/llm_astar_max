@@ -1,0 +1,1859 @@
+{
+  "scope": "Offline smoke measurement; not a GPT-4o mini benchmark",
+  "actual_api_calls": 0,
+  "geometry": "Integer closed-segment intersection substituted for Shapely",
+  "expansion_definition": "Heap pops, including duplicate states and the goal pop",
+  "baseline_definition": "First popped state for each newly activated target",
+  "progress_tolerance": 1e-09,
+  "planner_sha256": "47038ea0c78a657a7afca22e48bc7e77b74f6e4324b4466f0f85c864d6d59525",
+  "original_planner_sha256": "58f0b2c49c3ab0c34c2c9c11cc3e8f4de146fc8c78518af024a9ecaf854691d5",
+  "records": [
+    {
+      "case": "open_direct",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0,
+      "input_query": {
+        "start": [
+          3,
+          3
+        ],
+        "goal": [
+          25,
+          15
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": []
+      },
+      "raw_waypoints": [
+        [
+          3,
+          3
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          25,
+          15
+        ]
+      ],
+      "result": {
+        "operation": 207,
+        "storage": 246,
+        "length": 26.970562748477143,
+        "llm_output": [
+          [
+            3,
+            3
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            25,
+            15
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            9
+          ],
+          "alpha": 0,
+          "expansions": 52,
+          "initial_distance": 12.529964086141668,
+          "best_distance": 1.4142135623730951,
+          "improvements": 13,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 9
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            15
+          ],
+          "alpha": 0,
+          "expansions": 155,
+          "initial_distance": 23.323807579381203,
+          "best_distance": 0.0,
+          "improvements": 30,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 27
+        }
+      ],
+      "max_stagnation": 27,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "open_direct",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0.5,
+      "input_query": {
+        "start": [
+          3,
+          3
+        ],
+        "goal": [
+          25,
+          15
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": []
+      },
+      "raw_waypoints": [
+        [
+          3,
+          3
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          25,
+          15
+        ]
+      ],
+      "result": {
+        "operation": 23,
+        "storage": 96,
+        "length": 26.970562748477143,
+        "llm_output": [
+          [
+            3,
+            3
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            25,
+            15
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            9
+          ],
+          "alpha": 0.5,
+          "expansions": 11,
+          "initial_distance": 12.529964086141668,
+          "best_distance": 1.0,
+          "improvements": 10,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            15
+          ],
+          "alpha": 0.5,
+          "expansions": 12,
+          "initial_distance": 12.083045973594572,
+          "best_distance": 0.0,
+          "improvements": 11,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        }
+      ],
+      "max_stagnation": 0,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "open_direct",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 1,
+      "input_query": {
+        "start": [
+          3,
+          3
+        ],
+        "goal": [
+          25,
+          15
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": []
+      },
+      "raw_waypoints": [
+        [
+          3,
+          3
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          25,
+          15
+        ]
+      ],
+      "result": {
+        "operation": 23,
+        "storage": 96,
+        "length": 26.970562748477143,
+        "llm_output": [
+          [
+            3,
+            3
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            25,
+            15
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            9
+          ],
+          "alpha": 1,
+          "expansions": 11,
+          "initial_distance": 12.529964086141668,
+          "best_distance": 1.0,
+          "improvements": 10,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            15
+          ],
+          "alpha": 1,
+          "expansions": 12,
+          "initial_distance": 12.083045973594572,
+          "best_distance": 0.0,
+          "improvements": 11,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        }
+      ],
+      "max_stagnation": 0,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "open_detour",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0,
+      "input_query": {
+        "start": [
+          3,
+          3
+        ],
+        "goal": [
+          25,
+          3
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": []
+      },
+      "raw_waypoints": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          25,
+          3
+        ]
+      ],
+      "result": {
+        "operation": 23,
+        "storage": 72,
+        "length": 22.0,
+        "llm_output": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            17
+          ],
+          [
+            25,
+            3
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            3,
+            17
+          ],
+          "alpha": 0,
+          "expansions": 23,
+          "initial_distance": 14.0,
+          "best_distance": 14.0,
+          "improvements": 0,
+          "expansions_without_progress": 22,
+          "max_expansions_without_progress": 22
+        }
+      ],
+      "max_stagnation": 22,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "open_detour",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0.5,
+      "input_query": {
+        "start": [
+          3,
+          3
+        ],
+        "goal": [
+          25,
+          3
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": []
+      },
+      "raw_waypoints": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          25,
+          3
+        ]
+      ],
+      "result": {
+        "operation": 299,
+        "storage": 307,
+        "length": 22.0,
+        "llm_output": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            17
+          ],
+          [
+            25,
+            3
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            3,
+            17
+          ],
+          "alpha": 0.5,
+          "expansions": 299,
+          "initial_distance": 14.0,
+          "best_distance": 5.0990195135927845,
+          "improvements": 24,
+          "expansions_without_progress": 14,
+          "max_expansions_without_progress": 22
+        }
+      ],
+      "max_stagnation": 22,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "open_detour",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 1,
+      "input_query": {
+        "start": [
+          3,
+          3
+        ],
+        "goal": [
+          25,
+          3
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": []
+      },
+      "raw_waypoints": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          25,
+          3
+        ]
+      ],
+      "result": {
+        "operation": 243,
+        "storage": 256,
+        "length": 22.82842712474619,
+        "llm_output": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            17
+          ],
+          [
+            25,
+            3
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            3,
+            17
+          ],
+          "alpha": 1,
+          "expansions": 232,
+          "initial_distance": 14.0,
+          "best_distance": 1.4142135623730951,
+          "improvements": 30,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 25
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            3
+          ],
+          "alpha": 1,
+          "expansions": 11,
+          "initial_distance": 10.04987562112089,
+          "best_distance": 0.0,
+          "improvements": 10,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        }
+      ],
+      "max_stagnation": 25,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_bypass",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 179,
+        "storage": 234,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            15
+          ],
+          "alpha": 0,
+          "expansions": 87,
+          "initial_distance": 10.295630140987,
+          "best_distance": 1.4142135623730951,
+          "improvements": 19,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 17
+        },
+        {
+          "target_index": 2,
+          "target": [
+            16,
+            15
+          ],
+          "alpha": 0,
+          "expansions": 29,
+          "initial_distance": 13.038404810405298,
+          "best_distance": 1.0,
+          "improvements": 5,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 19
+        },
+        {
+          "target_index": 3,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 0,
+          "expansions": 63,
+          "initial_distance": 18.439088914585774,
+          "best_distance": 0.0,
+          "improvements": 15,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 10
+        }
+      ],
+      "max_stagnation": 19,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_bypass",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0.5,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 58,
+        "storage": 119,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            15
+          ],
+          "alpha": 0.5,
+          "expansions": 20,
+          "initial_distance": 10.295630140987,
+          "best_distance": 1.0,
+          "improvements": 12,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 6
+        },
+        {
+          "target_index": 2,
+          "target": [
+            16,
+            15
+          ],
+          "alpha": 0.5,
+          "expansions": 9,
+          "initial_distance": 5.385164807134504,
+          "best_distance": 1.0,
+          "improvements": 3,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 2
+        },
+        {
+          "target_index": 3,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 0.5,
+          "expansions": 29,
+          "initial_distance": 12.041594578792296,
+          "best_distance": 0.0,
+          "improvements": 11,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 17
+        }
+      ],
+      "max_stagnation": 17,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_bypass",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 1,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 21,
+        "storage": 85,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            15
+          ],
+          "alpha": 1,
+          "expansions": 9,
+          "initial_distance": 10.295630140987,
+          "best_distance": 1.4142135623730951,
+          "improvements": 8,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 2,
+          "target": [
+            16,
+            15
+          ],
+          "alpha": 1,
+          "expansions": 2,
+          "initial_distance": 2.23606797749979,
+          "best_distance": 1.0,
+          "improvements": 1,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 3,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 1,
+          "expansions": 10,
+          "initial_distance": 9.848857801796104,
+          "best_distance": 0.0,
+          "improvements": 9,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        }
+      ],
+      "max_stagnation": 0,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_wrong_direction",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 175,
+        "storage": 234,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            14,
+            5
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            5
+          ],
+          "alpha": 0,
+          "expansions": 86,
+          "initial_distance": 10.295630140987,
+          "best_distance": 1.4142135623730951,
+          "improvements": 19,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 18
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 0,
+          "expansions": 89,
+          "initial_distance": 20.09975124224178,
+          "best_distance": 0.0,
+          "improvements": 18,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 25
+        }
+      ],
+      "max_stagnation": 25,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_wrong_direction",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0.5,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 74,
+        "storage": 127,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            14,
+            5
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            5
+          ],
+          "alpha": 0.5,
+          "expansions": 20,
+          "initial_distance": 10.295630140987,
+          "best_distance": 1.0,
+          "improvements": 12,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 6
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 0.5,
+          "expansions": 54,
+          "initial_distance": 11.0,
+          "best_distance": 0.0,
+          "improvements": 10,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 43
+        }
+      ],
+      "max_stagnation": 43,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_wrong_direction",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 1,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 66,
+        "storage": 134,
+        "length": 26.970562748477143,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            14,
+            5
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            14,
+            5
+          ],
+          "alpha": 1,
+          "expansions": 9,
+          "initial_distance": 10.295630140987,
+          "best_distance": 1.4142135623730951,
+          "improvements": 8,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 1,
+          "expansions": 57,
+          "initial_distance": 11.40175425099138,
+          "best_distance": 0.0,
+          "improvements": 13,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 39
+        }
+      ],
+      "max_stagnation": 39,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_unreachable_endpoint",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 175,
+        "storage": 234,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            15,
+            14
+          ],
+          "alpha": 0,
+          "expansions": 69,
+          "initial_distance": 10.770329614269007,
+          "best_distance": 1.4142135623730951,
+          "improvements": 14,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 24
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 0,
+          "expansions": 106,
+          "initial_distance": 11.40175425099138,
+          "best_distance": 0.0,
+          "improvements": 16,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 43
+        }
+      ],
+      "max_stagnation": 43,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_unreachable_endpoint",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 0.5,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 74,
+        "storage": 127,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            15,
+            14
+          ],
+          "alpha": 0.5,
+          "expansions": 16,
+          "initial_distance": 10.770329614269007,
+          "best_distance": 1.4142135623730951,
+          "improvements": 11,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 2
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 0.5,
+          "expansions": 58,
+          "initial_distance": 11.045361017187261,
+          "best_distance": 0.0,
+          "improvements": 10,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 47
+        }
+      ],
+      "max_stagnation": 47,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "wall_unreachable_endpoint",
+      "waypoint_source": "hand_authored_fixture",
+      "alpha": 1,
+      "input_query": {
+        "start": [
+          5,
+          10
+        ],
+        "goal": [
+          25,
+          10
+        ],
+        "range_x": [
+          0,
+          31
+        ],
+        "range_y": [
+          0,
+          21
+        ],
+        "horizontal_barriers": [],
+        "vertical_barriers": [
+          [
+            15,
+            0,
+            14
+          ]
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          10
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          25,
+          10
+        ]
+      ],
+      "result": {
+        "operation": 31,
+        "storage": 99,
+        "length": 24.14213562373095,
+        "llm_output": [
+          [
+            5,
+            10
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            25,
+            10
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            15,
+            14
+          ],
+          "alpha": 1,
+          "expansions": 10,
+          "initial_distance": 10.770329614269007,
+          "best_distance": 1.4142135623730951,
+          "improvements": 9,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            10
+          ],
+          "alpha": 1,
+          "expansions": 21,
+          "initial_distance": 11.180339887498949,
+          "best_distance": 0.0,
+          "improvements": 12,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 8
+        }
+      ],
+      "max_stagnation": 8,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "public_prompt_example",
+      "waypoint_source": "repository_prompt_example",
+      "alpha": 0,
+      "input_query": {
+        "range_x": [
+          0,
+          51
+        ],
+        "range_y": [
+          0,
+          31
+        ],
+        "horizontal_barriers": [
+          [
+            10,
+            0,
+            25
+          ],
+          [
+            15,
+            30,
+            50
+          ]
+        ],
+        "vertical_barriers": [
+          [
+            25,
+            10,
+            22
+          ]
+        ],
+        "start": [
+          5,
+          5
+        ],
+        "goal": [
+          20,
+          20
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          5
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          25,
+          23
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      "result": {
+        "operation": 473,
+        "storage": 450,
+        "length": 42.72792206135786,
+        "llm_output": [
+          [
+            5,
+            5
+          ],
+          [
+            26,
+            9
+          ],
+          [
+            25,
+            23
+          ],
+          [
+            20,
+            20
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            26,
+            9
+          ],
+          "alpha": 0,
+          "expansions": 301,
+          "initial_distance": 21.37755832643195,
+          "best_distance": 1.0,
+          "improvements": 20,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 35
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            23
+          ],
+          "alpha": 0,
+          "expansions": 132,
+          "initial_distance": 18.110770276274835,
+          "best_distance": 1.4142135623730951,
+          "improvements": 15,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 22
+        },
+        {
+          "target_index": 3,
+          "target": [
+            20,
+            20
+          ],
+          "alpha": 0,
+          "expansions": 40,
+          "initial_distance": 15.811388300841896,
+          "best_distance": 0.0,
+          "improvements": 10,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 8
+        }
+      ],
+      "max_stagnation": 35,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "public_prompt_example",
+      "waypoint_source": "repository_prompt_example",
+      "alpha": 0.5,
+      "input_query": {
+        "range_x": [
+          0,
+          51
+        ],
+        "range_y": [
+          0,
+          31
+        ],
+        "horizontal_barriers": [
+          [
+            10,
+            0,
+            25
+          ],
+          [
+            15,
+            30,
+            50
+          ]
+        ],
+        "vertical_barriers": [
+          [
+            25,
+            10,
+            22
+          ]
+        ],
+        "start": [
+          5,
+          5
+        ],
+        "goal": [
+          20,
+          20
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          5
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          25,
+          23
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      "result": {
+        "operation": 402,
+        "storage": 388,
+        "length": 42.72792206135786,
+        "llm_output": [
+          [
+            5,
+            5
+          ],
+          [
+            26,
+            9
+          ],
+          [
+            25,
+            23
+          ],
+          [
+            20,
+            20
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            26,
+            9
+          ],
+          "alpha": 0.5,
+          "expansions": 178,
+          "initial_distance": 21.37755832643195,
+          "best_distance": 1.0,
+          "improvements": 20,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 30
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            23
+          ],
+          "alpha": 0.5,
+          "expansions": 112,
+          "initial_distance": 25.80697580112788,
+          "best_distance": 1.4142135623730951,
+          "improvements": 21,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 29
+        },
+        {
+          "target_index": 3,
+          "target": [
+            20,
+            20
+          ],
+          "alpha": 0.5,
+          "expansions": 112,
+          "initial_distance": 23.021728866442675,
+          "best_distance": 0.0,
+          "improvements": 19,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 27
+        }
+      ],
+      "max_stagnation": 30,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    },
+    {
+      "case": "public_prompt_example",
+      "waypoint_source": "repository_prompt_example",
+      "alpha": 1,
+      "input_query": {
+        "range_x": [
+          0,
+          51
+        ],
+        "range_y": [
+          0,
+          31
+        ],
+        "horizontal_barriers": [
+          [
+            10,
+            0,
+            25
+          ],
+          [
+            15,
+            30,
+            50
+          ]
+        ],
+        "vertical_barriers": [
+          [
+            25,
+            10,
+            22
+          ]
+        ],
+        "start": [
+          5,
+          5
+        ],
+        "goal": [
+          20,
+          20
+        ]
+      },
+      "raw_waypoints": [
+        [
+          5,
+          5
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          25,
+          23
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      "result": {
+        "operation": 281,
+        "storage": 298,
+        "length": 42.72792206135786,
+        "llm_output": [
+          [
+            5,
+            5
+          ],
+          [
+            26,
+            9
+          ],
+          [
+            25,
+            23
+          ],
+          [
+            20,
+            20
+          ]
+        ]
+      },
+      "waypoint_progress": [
+        {
+          "target_index": 1,
+          "target": [
+            26,
+            9
+          ],
+          "alpha": 1,
+          "expansions": 21,
+          "initial_distance": 21.37755832643195,
+          "best_distance": 1.0,
+          "improvements": 20,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 0
+        },
+        {
+          "target_index": 2,
+          "target": [
+            25,
+            23
+          ],
+          "alpha": 1,
+          "expansions": 108,
+          "initial_distance": 18.601075237738275,
+          "best_distance": 1.4142135623730951,
+          "improvements": 22,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 26
+        },
+        {
+          "target_index": 3,
+          "target": [
+            20,
+            20
+          ],
+          "alpha": 1,
+          "expansions": 152,
+          "initial_distance": 16.64331697709324,
+          "best_distance": 0.0,
+          "improvements": 17,
+          "expansions_without_progress": 0,
+          "max_expansions_without_progress": 31
+        }
+      ],
+      "max_stagnation": 31,
+      "path_valid": true,
+      "tracking_preserves_search": true
+    }
+  ]
+}

@@ -13,7 +13,10 @@ class LLMAStar:
     GPT_METHOD = "PARSE"
     GPT_LLMASTAR_METHOD = "LLM-A*"
 
-    def __init__(self, llm='gpt', prompt='standard'):
+    def __init__(self, llm='gpt', prompt='standard', alpha=1.0, track_progress=False):
+        self.alpha = alpha
+        self.track_progress = track_progress
+        self.waypoint_progress = []
         self.llm = llm
         if self.llm == 'gpt':
             self.parser = ChatGPT(method=self.GPT_METHOD, sysprompt=sysprompt_parse, example=example_parse)
@@ -112,7 +115,10 @@ class LLMAStar:
         print(query)
         input_data = self._parse_query(query)
         self._initialize_parameters(input_data)
+        self.waypoint_progress = []
         self._initialize_llm_paths()
+        if self.track_progress:
+            self._start_waypoint_measurement()
         
         self.PARENT[self.s_start] = self.s_start
         self.g[self.s_start] = 0
@@ -121,6 +127,8 @@ class LLMAStar:
         while self.OPEN:
             _, s = heapq.heappop(self.OPEN)
             self.CLOSED.append(s)
+            if self.track_progress:
+                self._record_waypoint_progress(s)
 
             if s == self.s_goal:  # stop condition
                 break
@@ -170,6 +178,47 @@ class LLMAStar:
         self.i += 1
         if self.i < len(self.target_list):
             self.s_target = self.target_list[self.i]
+            if self.track_progress:
+                self._start_waypoint_measurement()
+
+    def _start_waypoint_measurement(self):
+        """Start a summary for one active target; never change search priorities."""
+        self.waypoint_progress.append({
+            "target_index": self.i,
+            "target": self.s_target,
+            "alpha": self.alpha,
+            "expansions": 0,
+            "initial_distance": None,
+            "best_distance": None,
+            "improvements": 0,
+            "expansions_without_progress": 0,
+            "max_expansions_without_progress": 0,
+        })
+
+    def _record_waypoint_progress(self, s):
+        """Measure Euclidean progress per heap pop, including baseline duplicates.
+
+        The first pop after a target switch establishes the distance baseline.
+        Strict improvements beyond numerical tolerance reset the stall counter.
+        Summaries use O(number of target activations) storage, not a node trace.
+        """
+        summary = self.waypoint_progress[-1]
+        summary["expansions"] += 1
+        distance = math.hypot(self.s_target[0] - s[0], self.s_target[1] - s[1])
+
+        if summary["initial_distance"] is None:
+            summary["initial_distance"] = distance
+            summary["best_distance"] = distance
+        elif summary["best_distance"] - distance > 1e-9:
+            summary["best_distance"] = distance
+            summary["improvements"] += 1
+            summary["expansions_without_progress"] = 0
+        else:
+            summary["expansions_without_progress"] += 1
+            summary["max_expansions_without_progress"] = max(
+                summary["max_expansions_without_progress"],
+                summary["expansions_without_progress"],
+            )
 
     def get_neighbor(self, s):
         """Find neighbors of state s that are not in obstacles."""
@@ -199,6 +248,12 @@ class LLMAStar:
         return path[::-1]
 
     def heuristic(self, s):
-        """Calculate heuristic value."""
-        return math.hypot(self.s_goal[0] - s[0], self.s_goal[1] - s[1]) + math.hypot(self.s_target[0] - s[0], self.s_target[1] - s[1])
+        """Combine goal distance with waypoint distance weighted by alpha."""
+        goal_distance = math.hypot(
+            self.s_goal[0] - s[0], self.s_goal[1] - s[1]
+        )
+        waypoint_distance = math.hypot(
+            self.s_target[0] - s[0], self.s_target[1] - s[1]
+        )
+        return goal_distance + self.alpha * waypoint_distance
 
