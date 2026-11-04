@@ -1,6 +1,6 @@
 Methode,Prompt,Operation %,Storage %,Länge %,Valid %
 A*,-,100.0,100.0,100.0,100.0
-Weighted A*,-,35.9,58.49,104.12,100.0
+Weighted A*,-,60.9,78.52,100.24,100.0
 LLM-only,standard,,,119.38,6.8
 LLM-only,cot,,,124.2,6.2
 LLM-only,repe,,,117.33,9.9
