@@ -1,6 +1,6 @@
 Method,Base Model,Prompt,Operation Ratio (%) ↓,Storage Ratio (%) ↓,Relative Path Length (%) ↓,Valid Path Ratio (%) ↑
 A*,-,-,100.0,100.0,100.0,100.0
-Dynamic WA*,-,-,35.9,58.49,104.12,100.0
+Dynamic WA*,-,-,60.9,78.52,100.24,100.0
 LLM-only,GPT-4o mini,Few-shot,,,119.38,6.8
 LLM-only,GPT-4o mini,CoT,,,124.2,6.2
 LLM-only,GPT-4o mini,RePE,,,117.33,9.9
