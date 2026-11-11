@@ -58,4 +58,5 @@ Für eine neue, nicht vollständig gepinnte Entwicklungsumgebung genügt alterna
 - PyTorch und Transformers sind installiert. Der bestehende Llama3-Konstruktor
   verwendet jedoch fest `cuda:3`; das ist keine auf diesem Mac lauffähige
   Gerätekonfiguration. Modellgewichte wurden nicht heruntergeladen.
-- Die automatische Anpassung von `alpha` ist noch nicht implementiert.
+- Die automatische Anpassung von `alpha` ist optional über `adaptive_alpha=True`
+  verfügbar. Konfiguration und Vergleich: `experiments/ADAPTIVE_ALPHA.md`.

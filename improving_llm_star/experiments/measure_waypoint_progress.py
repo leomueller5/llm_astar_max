@@ -20,6 +20,7 @@ import json
 import math
 from pathlib import Path
 import runpy
+from time import perf_counter
 from types import SimpleNamespace
 
 
@@ -72,10 +73,11 @@ class OfflinePlot:
         self.path = list(path)
 
 
-def load_planner(root, waypoints):
+def load_planner(root, waypoints=None, *, response=None):
     """Load the repository class with either installed or isolated dependencies."""
     path = root / PLANNER_PATH
-    response = "Generated Path: " + json.dumps(waypoints)
+    if response is None:
+        response = "Generated Path: " + json.dumps(waypoints)
     if BACKEND == "installed":
         name = f"llmastar.pather.llm_a_star._measurement_{root.name.replace('-', '_')}"
         spec = importlib.util.spec_from_file_location(name, path)
@@ -91,7 +93,7 @@ def load_planner(root, waypoints):
     utils = runpy.run_path(str(root / "llmastar/utils/utils.py"))
     prompts = runpy.run_path(str(root / "llmastar/pather/llm_a_star/prompt.py"))
     namespace = {
-        "math": math, "heapq": heapq, "json": json,
+        "math": math, "heapq": heapq, "json": json, "perf_counter": perf_counter,
         "env": SimpleNamespace(Env=env["Env"]),
         "plotting": SimpleNamespace(Plotting=OfflinePlot),
         "ChatGPT": lambda **kwargs: OfflineModel(response),

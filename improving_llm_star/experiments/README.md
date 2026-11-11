@@ -1,5 +1,10 @@
 # Offline waypoint progress measurement
 
+Adaptive weighting and the paired comparison are described in
+[ADAPTIVE_ALPHA.md](ADAPTIVE_ALPHA.md). Run
+`python improving_llm_star/experiments/compare_adaptive_alpha.py` from the
+workspace root after activating `.venv`.
+
 Run from the workspace root with Python's standard library (isolated mode):
 
 ```sh
