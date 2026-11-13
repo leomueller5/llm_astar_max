@@ -36,3 +36,24 @@ def test_disconnected_no_path():
  for method in ['weighted','focal']:
   r=WaypointSearch(SearchConfig(method=method)).search(q,[q['start'],q['goal']])
   assert not r['valid'] and r['length'] is None
+
+from llmastar.research.incumbent import IncumbentSearch
+
+
+def test_incumbent_certifies_real_path_not_llm_segments():
+ q=query();g=GridGraph(q)
+ # Incorrect target on barrier must not create an invalid incumbent.
+ for pts in [[q['start'],[8,8],q['goal']],[q['start'],[7,9],[9,9],q['goal']]]:
+  r=IncumbentSearch().search(q,pts,g)
+  assert r['valid']
+  assert r['length']==pytest.approx(sum(math.dist(a,b) for a,b in zip(r['path'],r['path'][1:])))
+
+
+def test_early_certificate_and_budget():
+ q=query();q['vertical_barriers']=[]
+ r=IncumbentSearch().search(q,[q['start'],q['goal']])
+ assert r['certified_early_return'] and r['operation']==0
+ assert r['length']==10
+ for budget in [0,1,10]:
+  r=IncumbentSearch(visibility_budget=budget).search(q,[q['start'],[7,3],q['goal']])
+  assert r['valid'] and r['visibility_edge_checks']<=budget

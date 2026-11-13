@@ -63,3 +63,31 @@ from the cached waypoint sequence. Use valid route costs as upper bounds, and
 accept immediately only when an admissible start lower bound certifies quality.
 Otherwise retain a fast weighted goal search, pruning only states unable to beat
 the incumbent. Compare with a goal-shortcut-only ablation to identify LLM contribution.
+
+Iteration 2/3 development results: certified-path/weighted-incumbent use achieved
+mean unique expansions 98.66 versus original 146.19 and common-engine WA2 108.47,
+but candidate early acceptance based on the weighted frontier can degrade tails.
+The tight start-certificate setting had little effect because the weighted
+incumbent stop could subsequently accept a looser solution. This is not a
+correctness failure (paths remain valid and the loose weighted bound holds), but
+it defeats the intended quality-control interpretation. Preserve it explicitly
+as `bound_stop=weighted`, and test admissible-anchor stopping instead.
+Goal-shortcut-only was faster than full waypoint DAG preparation; genuine waypoint
+contribution must be shown against this ablation. Only 5/600 extra DAG routes
+were certified at the exact obstacle-free lower bound.
+
+Bounded attractive heuristic bonus was also tested as a different trust strategy:
+f=g+2h-alpha*max(0,h-d_target). It avoids penalizing goal proximity and defaults
+to WA2 when trust vanishes. Geometry+sparsification version did not beat the
+matched WA2 control reliably. Focal weights 1.5 and 2 reduced expansions but
+inflated paths more than original: rejected for the primary efficiency/quality goal.
+
+Validation: frozen-source operations and lengths matched the existing Table 1
+JSON results on all 600 development queries (zero mismatches). This additionally
+checks dataset/cache alignment and shared collision-graph equivalence.
+Research record ratios now use (count+1)/(baseline+1), explicitly labelled, to
+handle zero-expansion certificates without undefined or misleading log ratios.
+Raw means and zero-expansion fractions are reported separately.
+
+Large detailed research JSON files are preserved losslessly as `.json.gz`.
+Expanded JSON/JSONL working copies are ignored, avoiding repository bloat.

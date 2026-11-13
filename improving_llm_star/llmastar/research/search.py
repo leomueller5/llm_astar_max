@@ -114,6 +114,7 @@ class SearchConfig:
     focal_weight: float = 1.1
     focal_guide: str = 'original'  # original, route, goal
     heuristic: str = 'euclidean'
+    bounded_bonus: bool = False
 
 
 class WaypointSearch:
@@ -156,6 +157,8 @@ class WaypointSearch:
         def base(n):return g[n]+h(n)
         def score(n):
             if target==goal:return g[n]+c.goal_weight*h(n)
+            if c.bounded_bonus:
+                return g[n]+c.goal_weight*h(n)-alpha*max(0,h(n)-distance(n,target))
             return g[n]+h(n)+alpha*distance(n,target)
         def guide(n):
             if c.focal_guide=='goal' or target==goal:return h(n)

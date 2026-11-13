@@ -2,3 +2,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Lossless .json.gz research archives are committed; expanded working copies are not.
+improving_llm_star/experiments/results/research/**/results.json
+improving_llm_star/experiments/results/research/**/runs.jsonl

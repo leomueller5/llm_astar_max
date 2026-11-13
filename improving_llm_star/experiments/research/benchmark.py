@@ -4,6 +4,7 @@ from collections import defaultdict
 import contextlib
 from dataclasses import asdict
 import hashlib
+import gzip
 import heapq
 import io
 import json
@@ -22,6 +23,7 @@ os.environ['HF_HUB_OFFLINE']='1';os.environ['TRANSFORMERS_OFFLINE']='1'
 import measure_waypoint_progress as replay
 from llmastar.research.search import GridGraph, SearchConfig, WaypointSearch, MOTIONS
 from llmastar.utils import list_parse
+from llmastar.research.incumbent import IncumbentSearch
 
 SEED=20261113
 
@@ -67,6 +69,17 @@ VARIANTS={
  'focal12':SearchConfig(method='focal',focal_weight=1.2,switch='budget',filter_points=True),
  'focal11_octile':SearchConfig(method='focal',switch='budget',filter_points=True,heuristic='octile'),
  'astar_octile':SearchConfig(alpha=0,goal_weight=1,heuristic='octile'),
+ 'bonus':SearchConfig(bounded_bonus=True,filter_points=True),
+ 'bonus_confidence':SearchConfig(bounded_bonus=True,confidence=True,filter_points=True,switch='budget'),
+ 'bonus_sparse':SearchConfig(bounded_bonus=True,confidence=True,filter_points=True,simplify=True,switch='budget'),
+ 'focal15':SearchConfig(method='focal',focal_weight=1.5,switch='budget',filter_points=True),
+ 'focal2':SearchConfig(method='focal',focal_weight=2.0,switch='budget',filter_points=True),
+ 'incumbent102':{'certificate':1.02},
+ 'incumbent100':{'certificate':1.0},
+ 'incumbent105':{'certificate':1.05},
+ 'incumbent102_wa15':{'certificate':1.02,'goal_weight':1.5},
+ 'direct_only':{'certificate':1.02,'use_waypoints':False},
+ 'incumbent_no_prune':{'certificate':1.02,'prune':False},
  'current_adaptive':'current',
 }
 GOAL_ONLY={'astar','wa11','wa15','wa2','astar_octile','focal11_goal'}
@@ -128,10 +141,12 @@ def summarize(records,bootstrap=500):
         pairs=[(r,baseline[r['case_id']]) for r in valid if r['case_id'] in baseline and baseline[r['case_id']]['valid']]
         ratio=[r['length']/r['optimal_cost'] for r in valid if r['optimal_cost']>0]
         value={'cases':len(rows),'solvable':len(solved),'valid_rate':len(valid)/len(solved) if solved else None,
+               'zero_expansion_fraction':sum(r['unique']==0 for r in rows)/len(rows),
+               'mean_visibility_checks':statistics.mean(r.get('visibility_edge_checks',0) for r in rows),
                'mean_unique':statistics.mean(r['unique'] for r in rows),'mean_operations':statistics.mean(r['operation'] for r in rows),
                'gm_path_ratio':gm(ratio),'p95_path_ratio':sorted(ratio)[min(len(ratio)-1,int(.95*len(ratio)))] if ratio else None,
-               'gm_unique_vs_original':gm([r['unique']/max(1,b['unique']) for r,b in pairs]),
-               'gm_operations_vs_original':gm([r['operation']/max(1,b['operation']) for r,b in pairs]),
+               'gm_unique_vs_original':gm([(r['unique']+1)/(b['unique']+1) for r,b in pairs]),
+               'gm_operations_vs_original':gm([(r['operation']+1)/(b['operation']+1) for r,b in pairs]),
                'gm_time_vs_original':gm([r['total_seconds']/b['total_seconds'] for r,b in pairs]),
                'median_ms':statistics.median(r['total_seconds'] for r in rows)*1000,
                'mean_preprocess_ms':statistics.mean(r.get('preprocess_seconds',0) for r in rows)*1000,
@@ -140,7 +155,7 @@ def summarize(records,bootstrap=500):
                'pair_count':len(pairs)}
         # Whole-map bootstrap of paired log expansion ratios, not individual queries.
         groups=defaultdict(list)
-        for r,b in pairs:groups[r['map_id']].append(math.log(r['unique']/max(1,b['unique'])))
+        for r,b in pairs:groups[r['map_id']].append(math.log((r['unique']+1)/(b['unique']+1)))
         if groups:
             rng=random.Random(SEED);keys=list(groups);values=[]
             for _ in range(bootstrap):
@@ -159,7 +174,9 @@ def finite_json(value):
 
 
 def run(cases,variants,output,record_trace=False):
-    source_hashes={str(p.relative_to(WORKSPACE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'llmastar/research/search.py',WORKSPACE/'llm-astar'/replay.PLANNER_PATH]}
+    output=Path(output);output.mkdir(parents=True,exist_ok=True)
+    journal=(output/'runs.jsonl').open('w')
+    source_hashes={str(p.relative_to(WORKSPACE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'llmastar/research/search.py',ROOT/'llmastar/research/incumbent.py',WORKSPACE/'llm-astar'/replay.PLANNER_PATH]}
     replay.BACKEND='installed'
     Original=replay.load_planner(WORKSPACE/'llm-astar',response='')
     Current=replay.load_planner(ROOT,response='')
@@ -174,6 +191,7 @@ def run(cases,variants,output,record_trace=False):
                 spec=VARIANTS[name]
                 if name=='original':r=legacy_run(Original,case,graph)
                 elif name=='current_adaptive':r=legacy_run(Current,case,graph,True)
+                elif isinstance(spec,dict):r=IncumbentSearch(**spec).search(case['query'],case['points'],graph)
                 else:
                     pts=[case['query']['start'],case['query']['goal']] if name in GOAL_ONLY else case['points']
                     r=WaypointSearch(spec).search(case['query'],pts,graph)
@@ -181,13 +199,18 @@ def run(cases,variants,output,record_trace=False):
                 r.pop('path',None)
                 records.append(dict(r,case_id=case['id'],map_id=map_id,source=case['source'],family=case['family'],variant=name,
                                     split=case['split'],optimal_cost=optimal['length'],parse_fallback=case.get('parse_fallback',False)))
+        for entry in records[-len(group)*len(variants):]:journal.write(json.dumps(finite_json(entry),separators=(',',':'),allow_nan=False)+'\n')
+        journal.flush()
         if mi%10==0:print(f'{mi+1}/{len(by_map)} maps; {len(records)} runs',flush=True)
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
+    journal.close()
     summary=summarize(records)
     payload={'source_hashes':source_hashes,'seed':SEED,'actual_api_calls':0,'case_count':len(cases),'variants':{n:asdict(VARIANTS[n]) if isinstance(VARIANTS[n],SearchConfig) else VARIANTS[n] for n in variants},
+             'ratio_definition':'Expansion/operation ratios use (count+1)/(baseline+1) to handle certified zero-expansion solutions.',
              'scope':'Shared precomputed exact collision graph; graph preprocessing separately reported. Frozen planner code is replayed, not rewritten.',
              'graph_preprocessing':graph_metadata,'summary':summary,'runs':records}
     (output/'results.json').write_text(json.dumps(finite_json(payload),indent=2,allow_nan=False)+'\n')
+    with gzip.open(output/'results.json.gz','wt') as stream:json.dump(finite_json(payload),stream,separators=(',',':'),allow_nan=False)
     (output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     for name,s in summary.items():print(name,json.dumps(s),flush=True)
     return payload
@@ -197,9 +220,17 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--split',choices=['development','validation','test','all'],default='development')
     p.add_argument('--prompts',nargs='+',default=['standard'])
+    p.add_argument('--suite',choices=['cached','synthetic'],default='cached')
+    p.add_argument('--maps-per-family',type=int,default=4)
     p.add_argument('--variants',nargs='+',default=['original','wa2','pop_switch','budget_skip','confidence','focal11','focal11_goal'])
     p.add_argument('--limit',type=int)
     p.add_argument('--output',type=Path,required=True)
-    args=p.parse_args();run(cached_cases(args.split,args.prompts,args.limit),args.variants,args.output)
+    args=p.parse_args()
+    if args.suite=='synthetic':
+        from datasets import generate
+        cases=generate(args.split,args.maps_per_family)
+        if args.limit:cases=cases[:args.limit]
+    else:cases=cached_cases(args.split,args.prompts,args.limit)
+    run(cases,args.variants,args.output)
 
 if __name__=='__main__':main()
