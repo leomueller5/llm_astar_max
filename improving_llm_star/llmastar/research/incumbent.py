@@ -43,10 +43,11 @@ class IncumbentSearch:
                 if p==b:return path
             return None
         lower=obstacle_lower_bound(graph,start,goal) if self.obstacle_certificate else octile(start,goal)
-        incumbent=shortcut(start,goal)
+        valid_endpoints=graph.valid_point(start) and graph.valid_point(goal)
+        incumbent=shortcut(start,goal) if valid_endpoints else None
         candidate_cost=octile(start,goal) if incumbent else math.inf
         candidate_source='direct' if incumbent else None
-        if not incumbent and self.use_waypoints and (not self.certificate_only or math.isfinite(lower)):
+        if valid_endpoints and not incumbent and self.use_waypoints and (not self.certificate_only or math.isfinite(lower)):
             seen={start,goal};points=[start];layers=[[0]]
             for p in waypoints:
                 if not isinstance(p,(list,tuple)) or len(p)!=2 or not all(isinstance(v,(int,float)) and math.isfinite(v) for v in p):continue
@@ -126,7 +127,8 @@ class IncumbentSearch:
                         g[n]=new;parents[n]=s;pending[n]=new
                         if incumbent:heapq.heappush(anchor,(new+octile(n,goal),n,new))
                         heapq.heappush(queue,(new+self.weight*math.dist(n,goal),n,new))
-        valid=bool(path) and path[0]==start and path[-1]==goal and all(math.isfinite(graph.cost(a,b)) for a,b in zip(path,path[1:]))
+        valid=valid_endpoints and bool(path) and path[0]==start and path[-1]==goal and all(math.isfinite(graph.cost(a,b)) for a,b in zip(path,path[1:]))
+        if not valid:path=[]
         length=sum(math.dist(a,b) for a,b in zip(path,path[1:])) if valid else None
         return {'operation':pops+bound_pops,'selection_pops':pops,'bound_heap_pops':bound_pops,'expanded':expanded,'unique':len(closed),'duplicates':duplicates,
                 'stale':stale,'reopens':reopens,'rebuilds':0,'storage':len(g),'length':length,

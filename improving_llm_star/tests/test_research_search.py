@@ -115,3 +115,43 @@ def test_shortcut_is_a_real_octile_shortest_walk():
  for a,b in [((2,2),(12,8)),((12,8),(2,2)),((3,9),(3,2))]:
   path=g.shortcut(a,b)
   assert sum(math.dist(x,y) for x,y in zip(path,path[1:]))==pytest.approx(octile(a,b))
+
+from llmastar.research.search import LazyGridGraph
+
+
+def test_lazy_graph_matches_precomputed_results():
+ q=query();pts=[q['start'],[8,8],q['goal']]
+ config=dict(certificate=1,repair_radius=1,obstacle_certificate=True,certificate_only=True,certificate_pruning=True)
+ a=IncumbentSearch(**config).search(q,pts,GridGraph(q))
+ b=IncumbentSearch(**config).search(q,pts,LazyGridGraph(q))
+ assert a['path']==b['path'] and a['operation']==b['operation']
+
+
+def test_certified_planner_cached_interface_and_input_immutability():
+ import copy
+ from llmastar.pather import CertifiedLLMAStar
+ q=query();original=copy.deepcopy(q)
+ planner=CertifiedLLMAStar(waypoint_response='Generated Path: [[3,5],[8,8],[13,5]]')
+ r=planner.searching(q)
+ assert q==original
+ assert set(r)=={'operation','storage','length','llm_output'}
+ assert planner.search_metrics['path_valid']
+ assert r['length']==pytest.approx(sum(math.dist(a,b) for a,b in zip(planner.path,planner.path[1:])))
+
+
+def test_invalid_endpoint_and_trivial_case():
+ q=query();q['start']=q['goal']=[0,0]
+ r=IncumbentSearch().search(q,[])
+ assert not r['valid'] and r['path']==[] and r['length'] is None
+ q['start']=q['goal']=[2,2]
+ r=IncumbentSearch().search(q,[])
+ assert r['valid'] and r['length']==0
+
+
+def test_certificate_sieve_does_not_lose_a_certifiable_route():
+ q=query();g=GridGraph(q);pts=[q['start'],[8,8],[7,3],[2,7],q['goal']]
+ kw=dict(certificate=1,repair_radius=1,obstacle_certificate=True,certificate_only=True)
+ a=IncumbentSearch(**kw).search(q,pts,g)
+ b=IncumbentSearch(**kw,certificate_pruning=True).search(q,pts,g)
+ assert a['length']==b['length'] and a['unique']==b['unique']
+ assert b['visibility_edge_checks']<=a['visibility_edge_checks']

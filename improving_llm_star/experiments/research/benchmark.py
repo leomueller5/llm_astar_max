@@ -159,6 +159,9 @@ def summarize(records,bootstrap=500):
                'zero_expansion_fraction':sum(r['unique']==0 for r in rows)/len(rows),
                'mean_visibility_checks':statistics.mean(r.get('visibility_edge_checks',0) for r in rows),
                'mean_unique':statistics.mean(r['unique'] for r in rows),'mean_operations':statistics.mean(r['operation'] for r in rows),
+               'mean_unique_ratio_vs_original':sum(r['unique'] for r,b in pairs)/max(1,sum(b['unique'] for r,b in pairs)),
+               'mean_operations_ratio_vs_original':sum(r['operation'] for r,b in pairs)/max(1,sum(b['operation'] for r,b in pairs)),
+               'max_path_ratio':max(ratio) if ratio else None,
                'gm_path_ratio':gm(ratio),'p95_path_ratio':sorted(ratio)[min(len(ratio)-1,int(.95*len(ratio)))] if ratio else None,
                'gm_unique_vs_original':gm([(r['unique']+1)/(b['unique']+1) for r,b in pairs]),
                'gm_operations_vs_original':gm([(r['operation']+1)/(b['operation']+1) for r,b in pairs]),
@@ -177,6 +180,14 @@ def summarize(records,bootstrap=500):
                 sample=[x for k in rng.choices(keys,k=len(keys)) for x in groups[k]]
                 values.append(math.exp(statistics.mean(sample)))
             values.sort();value['unique_ratio_ci95']=[values[int(.025*bootstrap)],values[min(bootstrap-1,int(.975*bootstrap))]]
+        if pairs:
+            cluster=defaultdict(list)
+            for r,b in pairs:cluster[r['map_id']].append((r['unique'],b['unique']))
+            rng=random.Random(SEED);keys=list(cluster);ratios=[]
+            for _ in range(bootstrap):
+                sample=[pair for k in rng.choices(keys,k=len(keys)) for pair in cluster[k]]
+                ratios.append(sum(a for a,b in sample)/max(1,sum(b for a,b in sample)))
+            ratios.sort();value['mean_unique_ratio_ci95']=[ratios[int(.025*bootstrap)],ratios[min(bootstrap-1,int(.975*bootstrap))]]
         out[name]=value
     return out
 
@@ -220,7 +231,8 @@ def run(cases,variants,output,record_trace=False):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     journal.close()
     summary=summarize(records)
-    payload={'source_hashes':source_hashes,'seed':SEED,'actual_api_calls':0,'case_count':len(cases),'variants':{n:asdict(VARIANTS[n]) if isinstance(VARIANTS[n],SearchConfig) else VARIANTS[n] for n in variants},
+    input_hashes={str(p.relative_to(WORKSPACE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [WORKSPACE/'llm-astar/dataset/environment_50_30.json',*sorted((WORKSPACE/'table1_reproduction').glob('antworten_*.json'))]}
+    payload={'input_hashes':input_hashes,'case_manifest_hash':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()).hexdigest(),'source_hashes':source_hashes,'seed':SEED,'actual_api_calls':0,'case_count':len(cases),'variants':{n:asdict(VARIANTS[n]) if isinstance(VARIANTS[n],SearchConfig) else VARIANTS[n] for n in variants},
              'ratio_definition':'Expansion/operation ratios use (count+1)/(baseline+1) to handle certified zero-expansion solutions.',
              'scope':'Shared precomputed exact collision graph; graph preprocessing separately reported. Frozen planner code is replayed, not rewritten.',
              'graph_preprocessing':graph_metadata,'summary':summary,'runs':records}

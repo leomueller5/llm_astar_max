@@ -1,0 +1,94 @@
+{
+  "direct_only": {
+    "cases": 192,
+    "solvable": 168,
+    "valid_rate": 1.0,
+    "zero_expansion_fraction": 0.3541666666666667,
+    "mean_visibility_checks": 16.5,
+    "mean_unique": 163.29166666666666,
+    "mean_operations": 345.3333333333333,
+    "gm_path_ratio": 1.0038840161881748,
+    "p95_path_ratio": 1.032949751649747,
+    "gm_unique_vs_original": 0.2878234225589848,
+    "gm_operations_vs_original": 0.30734860618162974,
+    "gm_time_vs_original": 0.13138231652232416,
+    "median_ms": 0.05716655869036913,
+    "mean_preprocess_ms": 0.006680123381859933,
+    "mean_rebuilds": 0,
+    "correct_no_path": 24,
+    "pair_count": 168,
+    "unique_ratio_ci95": [
+      0.1502455032168865,
+      0.5070722920989187
+    ]
+  },
+  "original": {
+    "cases": 192,
+    "solvable": 168,
+    "valid_rate": 1.0,
+    "zero_expansion_fraction": 0.0,
+    "mean_visibility_checks": 0,
+    "mean_unique": 175.58333333333334,
+    "mean_operations": 276.2291666666667,
+    "gm_path_ratio": 1.0060758192278612,
+    "p95_path_ratio": 1.0756571900077223,
+    "gm_unique_vs_original": 1.0,
+    "gm_operations_vs_original": 1.0,
+    "gm_time_vs_original": 1.0,
+    "median_ms": 0.3065420314669609,
+    "mean_preprocess_ms": 0,
+    "mean_rebuilds": 0.4322916666666667,
+    "correct_no_path": 24,
+    "pair_count": 168,
+    "unique_ratio_ci95": [
+      1.0,
+      1.0
+    ]
+  },
+  "wa2": {
+    "cases": 192,
+    "solvable": 168,
+    "valid_rate": 1.0,
+    "zero_expansion_fraction": 0.0,
+    "mean_visibility_checks": 0,
+    "mean_unique": 170.22916666666666,
+    "mean_operations": 352.3333333333333,
+    "gm_path_ratio": 1.0056420415080527,
+    "p95_path_ratio": 1.037828595003861,
+    "gm_unique_vs_original": 0.9458832816924201,
+    "gm_operations_vs_original": 1.0122068799570154,
+    "gm_time_vs_original": 0.2945748411208075,
+    "median_ms": 0.09433296509087086,
+    "mean_preprocess_ms": 0.00047983606539977097,
+    "mean_rebuilds": 0,
+    "correct_no_path": 24,
+    "pair_count": 168,
+    "unique_ratio_ci95": [
+      0.865993042203537,
+      1.008296206047818
+    ]
+  },
+  "sieved_cert": {
+    "cases": 192,
+    "solvable": 168,
+    "valid_rate": 1.0,
+    "zero_expansion_fraction": 0.3645833333333333,
+    "mean_visibility_checks": 51.802083333333336,
+    "mean_unique": 162.69791666666666,
+    "mean_operations": 344.1614583333333,
+    "gm_path_ratio": 1.003690317853806,
+    "p95_path_ratio": 1.032949751649747,
+    "gm_unique_vs_original": 0.2747113642739604,
+    "gm_operations_vs_original": 0.29191463711561066,
+    "gm_time_vs_original": 0.16864155286395913,
+    "median_ms": 0.12468697968870401,
+    "mean_preprocess_ms": 0.03355573911297446,
+    "mean_rebuilds": 0,
+    "correct_no_path": 24,
+    "pair_count": 168,
+    "unique_ratio_ci95": [
+      0.1473122402235137,
+      0.49119596703199947
+    ]
+  }
+}

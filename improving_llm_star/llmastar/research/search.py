@@ -83,7 +83,9 @@ class GridGraph:
 
     def valid_point(self, p):
         return (len(p)==2 and all(isinstance(v,(int,float)) and math.isfinite(v) and v==int(v) for v in p)
-                and self.inside(p) and bool(self.adj.get(tuple(p))))
+                and self.inside(p)
+                and not any(lo!=hi and p[1]==y and lo<=p[0]<=hi for y,lo,hi in self.horizontal)
+                and not any(lo!=hi and p[0]==x and lo<=p[1]<=hi for x,lo,hi in self.vertical))
 
     def shortcut(self, a, b):
         """Certify an actual shortest lattice walk, not a continuous shortcut."""
@@ -241,3 +243,37 @@ class WaypointSearch:
                 'preprocess_seconds':preprocess,'search_seconds':perf_counter()-started-preprocess,
                 'total_seconds':perf_counter()-started,'processed_waypoints':points,
                 'trace':trace}
+
+
+class _LazyAdjacency(dict):
+    def __init__(self,graph):super().__init__();self.graph=graph
+    def get(self,node,default=None):
+        node=tuple(node)
+        if node not in self:
+            g=self.graph
+            if not g.inside(node):return [] if default is None else default
+            edges=[]
+            for dx,dy in MOTIONS:
+                n=node[0]+dx,node[1]+dy
+                if g.inside(n):
+                    g.edge_checks+=1
+                    if not g.collision(node,n):edges.append((n,math.hypot(dx,dy)))
+            self[node]=edges
+        return self[node]
+
+
+class LazyGridGraph(GridGraph):
+    """Production geometry cache: compute only requested states, not the whole map."""
+    def __init__(self,query):
+        started=perf_counter()
+        self.x0,self.x1=query['range_x'][0],query['range_x'][1]-1
+        self.y0,self.y1=query['range_y'][0],query['range_y'][1]-1
+        self.horizontal=query['horizontal_barriers'];self.vertical=query['vertical_barriers']
+        self.edge_checks=0;self.degenerate=any(a==b for _,a,b in self.horizontal+self.vertical)
+        if self.degenerate:
+            from shapely.geometry import LineString
+            self._line=LineString
+            self._walls=[LineString([(a,y),(b,y)]) for y,a,b in self.horizontal]
+            self._walls += [LineString([(x,a),(x,b)]) for x,a,b in self.vertical]
+        self.adj=_LazyAdjacency(self)
+        self.preprocess_seconds=perf_counter()-started
