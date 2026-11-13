@@ -1,6 +1,6 @@
 """Development-only waypoint lifetime and topology audit."""
 from collections import defaultdict
-import json,math,statistics
+import json,math,statistics,gzip
 from pathlib import Path
 from benchmark import cached_cases,dijkstra,GridGraph,ROOT
 
@@ -19,7 +19,7 @@ def main():
     ratio=(ds[t]+dg[t])/opt if reachable and opt else None
     points.append({'case_id':c['id'],'point':t,'valid':valid,'reachable':reachable,
                    'forced_route_ratio':ratio,'potentially_harmful':not reachable or ratio>1.1})
- data=json.loads((ROOT/'experiments/results/research/iteration1_development/results.json').read_text())
+ with gzip.open(ROOT/'experiments/results/research/iteration1_development/results.json.gz','rt') as stream:data=json.load(stream)
  originals=[r for r in data['runs'] if r['variant']=='original']
  life=[s['active_expansions'] for r in originals for s in r['switches']]
  switches=[s for r in originals for s in r['switches']]

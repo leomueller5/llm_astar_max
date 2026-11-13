@@ -91,3 +91,97 @@ Raw means and zero-expansion fractions are reported separately.
 
 Large detailed research JSON files are preserved losslessly as `.json.gz`.
 Expanded JSON/JSONL working copies are ignored, avoiding repository bloat.
+
+## Iterations 3–4 — Better bounds and geometric repair
+
+Development iterations retained independently in `iteration2_3_development/`,
+`iteration4_development/`, and `iteration5_development/`. Anchor-based stopping
+removed the misleading loose weighted-acceptance interpretation. Tight octile
+certificates alone rarely accepted extra waypoint routes. Hypothesis: hints near
+an obstacle corner are useful but offset by one cell. Radius-one axial candidate
+repair increased certificates; endpoint repair was excluded because it would
+credit start/goal geometry to the LLM. An admissible maximum of independent
+single-wall crossing bounds certified obstacle detours beyond straight octile
+cost. Compared against exact A* on randomized maps and mixed wall orientations.
+
+Decision: test a certificate-only gate. If a verified route cannot meet the exact
+admissible bound, discard it and run identical WA2 fallback. This sacrifices
+soft waypoint effects but isolates safe positive guidance and prevents candidate
+incumbents from worsening fallback quality. This is an explicit new algorithm;
+the original final score and all earlier adaptive modes remain untouched.
+
+## Iterations 5–6 — Preprocessing cost and validation
+
+Lazy/incremental DAG certificate evaluation tested; fewer probes did not reliably
+reduce CPU time. Rejected as default. Certificate-aware point and link sieve
+proved safe: octile start/link/goal cost already above the admissible target bound
+cannot participate in an accepted exact route. Retained this sieve, local repair,
+wall-cut lower bound, and exact certificate-only WA2 fallback.
+
+Validation: 200 standard-response queries on 20 map-disjoint validation maps.
+Mean unique expansions original 160.485 / selected 114.605 / matched WA2 127.7.
+GM cost ratio original 1.02663 / selected 1.01146 / WA2 1.01607. Preprocessing
+remains slower than WA2. Selected mode `sieved_cert`, exact parameter object
+and data protocol frozen at 07:45 UTC in `selection.json` **before test**.
+No policy or parameter changes after test inspection. Subsequent edits only
+add documentation, reports and audits. Production wrapper uses lazy geometry;
+input query is copied and cached response avoids all API calls.
+
+## Held-out evaluation and ablations
+
+Real caches: 600 observations, 200 start/goal pairs, 20 unseen maps, all three
+prompt styles. These are clustered observations, not 600 independent maps.
+All 600 valid. Mean distinct expansions original 215.982 / WA2 178.560 /
+direct-only 174.672 / selected 168.985. Selected/original reduction 21.76%;
+whole-map bootstrap (2,000 resamples) ratio CI [0.6958,0.8512]. Against matched
+WA2 ratio CI [0.9103,0.9705]; direct-only [0.9458,0.9825]. GM cost ratio
+1.02254 original / 1.01035 selected; p95 improved, but maximum ratio worsens
+(~1.310 original to ~1.334 selected). 113/600 selected runs expand more distinct
+states and 45/600 return longer paths than original. No such regressions versus
+matched WA2 or direct-only, as expected from certificate/fallback policy.
+
+Ablation exact certificates: direct-only 75/600; no repair 105/600; no wall-cut
+79/600; selected 137/600. This supports both repair and wall bound, with interaction.
+These ablations are not all four factorial combinations, so no additive-effect
+claim. Mean selected heap pops 365.677 versus original 343.917: **6.33% worse**.
+Do not equate fewer unique states with fewer raw search operations.
+
+Synthetic test: eight families, three independent map seeds each, two query
+positions, four fixture qualities; 192 cases. 168 solvable paths valid; all 24
+unreachable cases correctly rejected. Solvable mean distinct original 78.333 /
+selected 63.190 (-19.33%); clustered CI [0.5447,0.9334] for ratio. Whole-suite
+mean includes unreachable cases and differs (126.833 / 113.583). Extra LLM-fixture
+benefit over direct-only occurs in only two cases; its clustered ratio CI reaches
+1.0. Maze mean expansions slightly regress versus original. This is weaker
+cross-family waypoint evidence than the cached-map result, explicitly retained.
+
+## Native timing and independent correctness audit
+
+40 fixed held-out standard queries (indices 0 and 5 per map), three shuffled
+repetitions per method, fresh per-query geometry. Median CPU milliseconds:
+original 38.565; matched WA2 1.570; direct-only 1.418; selected wrapper 2.239.
+The native-original difference includes geometry/search-engine effects. Selected
+is slower than efficient controls, so primary supported win is distinct-state
+count and average path quality, not matched CPU efficiency. Shared graph timing
+and preprocessing totals are also saved. No peak-RAM claim from storage counters.
+
+Independent vectorized Shapely audit regenerated all held-out selected paths:
+600 cached +168 synthetic valid paths; 137+82 exact certificates equal optimal
+A* costs; 24 correctly rejected disconnected cases. Frozen original operations
+and costs match existing Table 1 JSON for all 600 cached held-out observations
+(additional to 600 development matches). Final full automated suite: 65 tests (65 passed in 5.54 seconds).
+No API calls, pushes, merges, or modifications of historical original results.
+
+Reproduce with exact commands in `README.md`; all exploratory configurations and
+per-case metrics are stored in gzip JSON, with source/input hashes and case hash.
+Time accounting: session began 07:09:32 UTC; final actual end time recorded in the
+last status entry below. No artificial waits to meet the target duration.
+
+Final strengthening: production on-demand geometry exactly reproduces all 792 held-out selected results (validity, cost, distinct count and heap pops). Exhaustive lower-bound test covers every free start/goal pair on 100 small integer-wall maps, both orientations. No algorithm policy was changed for these audits.
+
+Final report validation at 08:07:21 UTC: 57 minutes 49 seconds since session start,
+followed by final documentation/commit checks (approximately 58 minutes total).
+Verified all report links and all 7,128 held-out result records. This is an
+approximate one-hour session, not a claim of exactly 60 minutes. Selected policy
+has a supported distinct-expansion/average-quality benefit; no universal win on
+operations, runtime, path tails, or all synthetic families is claimed.

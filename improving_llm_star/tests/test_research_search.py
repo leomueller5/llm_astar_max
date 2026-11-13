@@ -155,3 +155,29 @@ def test_certificate_sieve_does_not_lose_a_certifiable_route():
  b=IncumbentSearch(**kw,certificate_pruning=True).search(q,pts,g)
  assert a['length']==b['length'] and a['unique']==b['unique']
  assert b['visibility_edge_checks']<=a['visibility_edge_checks']
+
+
+def test_wall_cut_bound_exhaustive_small_integer_wall_maps():
+ """All free start/goal pairs, both orientations, every nondegenerate wall interval."""
+ import heapq
+ from llmastar.research.incumbent import obstacle_lower_bound
+ for horizontal in [False,True]:
+  for coordinate in range(1,6):
+   for lo in range(1,5):
+    for hi in range(lo+1,6):
+     q={'start':[1,1],'goal':[5,5],'range_x':[0,7],'range_y':[0,7],
+        'horizontal_barriers':[[coordinate,lo,hi]] if horizontal else [],
+        'vertical_barriers':[] if horizontal else [[coordinate,lo,hi]]}
+     graph=GridGraph(q)
+     states=[(x,y) for x in range(1,6) for y in range(1,6) if graph.valid_point((x,y))]
+     for start in states:
+      distances={start:0.};queue=[(0.,start)]
+      while queue:
+       cost,node=heapq.heappop(queue)
+       if cost!=distances[node]:continue
+       for other,edge in graph.adj.get(node,[]):
+        candidate=cost+edge
+        if candidate<distances.get(other,math.inf):
+         distances[other]=candidate;heapq.heappush(queue,(candidate,other))
+      for goal in states:
+       assert obstacle_lower_bound(graph,start,goal)<=distances.get(goal,math.inf)+1e-9

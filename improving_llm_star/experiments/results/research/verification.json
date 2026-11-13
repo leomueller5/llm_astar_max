@@ -1,0 +1,14 @@
+{
+  "heldout_cached": {
+    "independently_valid_paths": 600,
+    "exact_optimal_certificates": 137,
+    "correct_no_path": 0,
+    "frozen_Table1_matches": 600
+  },
+  "heldout_synthetic": {
+    "independently_valid_paths": 168,
+    "exact_optimal_certificates": 82,
+    "correct_no_path": 24,
+    "frozen_Table1_matches": 0
+  }
+}

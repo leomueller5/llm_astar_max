@@ -497,3 +497,113 @@ Zwischenzielgewichtung, eine überprüfte Fortschrittsinstrumentierung, eine
 korrigierte optionale Such-Engine und ein kontrollierter Vergleichsaufbau sind
 implementiert. Ein allgemeiner Geschwindigkeits-, Speicher- oder
 Generalisierungsvorteil ist bislang nicht nachgewiesen.
+
+---
+
+## Autonome Forschungsphase am 13.11.2026
+
+Experimenteller Branch: `research/waypoint-guidance`; kein Push, kein Merge in
+`main`, keine bezahlten API-Aufrufe. Die alten Baselines und historischen Resultate
+bleiben erhalten. Nach dem zwischenzeitlichen Repository-Abgleich sind nun 3.000
+gecachte Antworten (Standard/CoT/RePE) vorhanden; frühere Aussagen über fehlende
+Caches beziehen sich auf den damaligen Stand. Das Notebook bezeichnet das Modell
+als GPT-4o mini; die Rohantworten allein belegen Modellversion/Parameter nicht.
+
+### Warum die bisherige Alpha-Regel oft zu spät reagiert
+
+600 Entwicklungsfälle auf 60 ganzen Karten untersucht: Der Originalalgorithmus
+wechselt bereits bei einem **generierten Nachbarn**, noch vor Kollisions- und
+CLOSED-Prüfung. Median der aktiven Waypoint-Lebensdauer: ein Queue-Pop, p90: 15;
+93,45 % der gewechselten Ziele leben weniger als 30 Pops. 298 Zielwechsel haben
+Lebensdauer null; mehrere Ziele können in einer Nachbarschleife wechseln.
+1,15 % der Wechsel wurden durch eine blockierte Kante ausgelöst. Die korrigierte
+adaptive Variante verändert Alpha in 205/600 Fällen tatsächlich. Ihre finale
+`g+h`-Suche und die originale `g+2h`-Suche müssen als weiterer Unterschied getrennt
+betrachtet werden; höhere Expansionen sind nicht allein Alpha zuzuschreiben.
+
+Von 5.118 unterschiedlichen Zwischenpunkten sind 14,91 % ungültig/unerreichbar.
+41,62 % sind ungültig/unerreichbar oder würden bei erzwungenem Durchlaufen einen
+optimalen Umweg >10 % erzeugen. Dieses Offline-Label ist ein Risikomaß und kein
+kausaler Beweis für Schaden durch weiche Heuristiklenkung.
+
+### Mehrere untersuchte Forschungsrichtungen
+
+Geprüft wurden Wechsel erst beim Expandieren, Zielbudgets, geometrische Konfidenz,
+Waypoint-Ausdünnung, bounded Focal Search, eine attraktive statt strafende
+Heuristikkomponente, verifizierte Waypoint-Routen mit verschiedenen Stopregeln,
+lokale Punktreparatur und geometrische Zertifikate. Negative Ergebnisse sind im
+[Experimentprotokoll](improving_llm_star/experiments/research/EXPERIMENT_LOG.md)
+aufgehoben. Einfacher späterer Zielwechsel erhöhte die Expansionen deutlich;
+Focal Search verursachte zusätzliche Heap-Arbeit; Konfidenz/Ausdünnung schlug die
+vergleichbare zielbasierte Weighted-A*-Kontrolle nicht überzeugend.
+
+### Stärkste belegte Variante: Certificate-First Waypoint Search
+
+Neue Klasse `CertifiedLLMAStar`, bestehende Klasse unverändert weiter nutzbar.
+Aus jedem rohen Zwischenpunkt entstehen höchstens fünf freie Kandidaten (Punkt
+und vier axiale Nachbarn). Ein kleiner gerichteter Graph verbindet passende
+Schichten über vollständig kollisionsgeprüfte Gitterpfade. Kandidaten und Kanten
+werden anhand optimistischer Octile-Kosten vorgefiltert. Maximal 4.096 tatsächliche
+Kantenprüfungen einschließlich fehlgeschlagener Versuche. Eine zulässige untere
+Schranke kombiniert Octile-Distanz mit dem **Maximum**, nicht der Summe,
+unabhängiger Einzelwand-Umwegschranken.
+
+Ein Kandidatenpfad wird nur direkt übernommen, wenn seine Kosten die zulässige
+untere Schranke erreichen: Dann ist er optimal bis auf numerische Toleranz.
+Andernfalls wird er verworfen und exakt die gleiche robuste Weighted-A*-Suche
+mit Gewicht 2 wie im Kontrollfall ausgeführt. Damit keine universelle
+Optimalitätsgarantie: akzeptiertes Zertifikat optimal, sonst gewichtete Suche
+mit Faktor-2-Schranke. Kein zusätzliches LLM während der Suche.
+
+### Zurückgehaltene Tests und ehrliche Einordnung
+
+Auswahl nach 600 Entwicklungs- und 200 Validierungsfällen, Parameter vor Test
+festgeschrieben. Reale Testcaches: 20 ungesehene Karten, 200 Start/Ziel-Paare,
+je drei Promptvarianten = 600 Beobachtungen. Ganze Karten bilden die statistischen
+Cluster; Promptvarianten sind keine unabhängigen Modellwiederholungen.
+
+| Messgröße | Original | Neue Variante |
+|---|---:|---:|
+| Mittlere unterschiedliche expandierte Zustände | 215,98 | 168,99 |
+| Mittlere Heap-Pops | 343,92 | 365,68 |
+| Geometrisches Mittel Kosten / Optimum | 1,02254 | 1,01035 |
+| Gültige gefundene Pfade | 600/600 | 600/600 |
+
+21,76 % weniger unterschiedliche Expansionen; 95%-Cluster-Bootstrap-Intervall
+für das Verhältnis etwa [0,696; 0,851]. **6,33 % mehr Heap-Pops**; daher keine
+pauschale Operationsverbesserung behaupten. Gegen identische WA2-Kontrolle nur
+5,36 % weniger unterschiedliche Expansionen, gegen direkte geometrische
+Abkürzung allein 3,25 %: Das ist der sauberer isolierte zusätzliche Waypoint-Effekt.
+137 optimale Frühzertifikate gegenüber 75 ohne Waypoints. Ohne lokale Reparatur
+105, ohne Wand-Schranke 79; beide Komponenten tragen bei, aber nicht unabhängig.
+
+Auf 192 prozeduralen Tests aus acht Kartenfamilien: 168/168 lösbare Fälle gültig,
+24/24 unerreichbare Fälle korrekt abgelehnt. Bei lösbaren Fällen 19,33 % weniger
+unterschiedliche Expansionen als Original. Zusätzlicher Waypoint-Vorteil gegenüber
+direktem Shortcut nur in zwei Fällen; schwächere Evidenz für breiten synthetischen
+Nutzen, kleine Regression in der Maze-Familie. Fixtures sind deterministisch
+synthetisch, keine echten LLM-Antworten; hilfreiche Fixture-Punkte verwenden den
+Referenzpfad ausschließlich bei der Benchmark-Erstellung.
+
+Native Laufzeitmessung mit frischer Geometrie (40 feste Testanfragen, drei
+randomisierte Wiederholungen): Median Original 38,57 ms, identische WA2-Kontrolle
+1,57 ms, direkter Shortcut 1,42 ms, neue Variante 2,24 ms. Der große Gewinn gegenüber
+Original enthält Engine-/Geometrieoptimierungen. Waypoint-Zertifizierung selbst
+kostet gegenüber effizienten Kontrollen zusätzliche CPU-Zeit. Speicherzähler
+sind keine bytegenaue RAM-Messung und erfassen nicht alle Hilfsstrukturen.
+
+113/600 Fälle expandieren mehr und 45/600 haben längere Pfade als das Original;
+das maximale Kostenverhältnis ist trotz besserem Mittel/p95 etwas schlechter.
+Keine solchen Rückschritte gegenüber identischer WA2-/Shortcut-Kontrolle.
+Unabhängige Shapely-Prüfung aller 768 erfolgreichen Testpfade; alle 219 Zertifikate
+optimal; Originalzahlen für alle 600 gecachten Testbeobachtungen identisch zu
+bestehenden Table-1-Aufzeichnungen. 65 automatisierte Tests bestehen.
+
+[Algorithmus, Pseudocode und exakte Befehle](improving_llm_star/experiments/research/README.md),
+[Tabellen und Statistik](improving_llm_star/experiments/results/research/REPORT.md),
+[exportierbare Grafik](improving_llm_star/experiments/results/research/expansions.pdf).
+Für die Abgabe eignet sich der belegte Wechsel von reaktiver Alpha-Steuerung zu
+selektiver zertifizierter Guidance als Forschungsbeitrag. Etablierte Einzelteile
+(Weighted A*, untere Schranken, DAG) nicht als neue Algorithmen ausgeben. Weitere
+ungesehene Karten und RAM-Messungen bleiben sinnvoll; Testkarten nicht nachträglich
+zur Parametertuning-Menge machen.

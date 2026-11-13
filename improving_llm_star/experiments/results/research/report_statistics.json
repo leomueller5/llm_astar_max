@@ -1,0 +1,70 @@
+{
+  "heldout_cached": {
+    "clustered_mean_unique_ratio_ci95": {
+      "original": [
+        0.6957786983464,
+        0.8511833731105808
+      ],
+      "wa2": [
+        0.9102750463160895,
+        0.9705158432002488
+      ],
+      "direct_only": [
+        0.9457506735243694,
+        0.9824641659042391
+      ]
+    },
+    "regressions": {
+      "original": {
+        "more_distinct": 113,
+        "longer_path": 45,
+        "solvable": 600
+      },
+      "wa2": {
+        "more_distinct": 0,
+        "longer_path": 0,
+        "solvable": 600
+      },
+      "direct_only": {
+        "more_distinct": 0,
+        "longer_path": 0,
+        "solvable": 600
+      }
+    },
+    "graph_preprocessing_seconds": 0.3669367926195264
+  },
+  "heldout_synthetic": {
+    "clustered_mean_unique_ratio_ci95": {
+      "original": [
+        0.5447010065127295,
+        0.933449292898737
+      ],
+      "wa2": [
+        0.6688191881918819,
+        0.9394327148645767
+      ],
+      "direct_only": [
+        0.9808333333333333,
+        1.0
+      ]
+    },
+    "regressions": {
+      "original": {
+        "more_distinct": 12,
+        "longer_path": 2,
+        "solvable": 168
+      },
+      "wa2": {
+        "more_distinct": 0,
+        "longer_path": 0,
+        "solvable": 168
+      },
+      "direct_only": {
+        "more_distinct": 0,
+        "longer_path": 0,
+        "solvable": 168
+      }
+    },
+    "graph_preprocessing_seconds": 0.2338142537046224
+  }
+}
