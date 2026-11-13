@@ -1,0 +1,22 @@
+{
+  "selected_at_utc": "2026-11-13 07:45:00",
+  "session_start_utc": "2026-11-13 07:09:32",
+  "method": "sieved_cert",
+  "parameters": {
+    "certificate": 1.0,
+    "goal_weight": 2.0,
+    "repair_radius": 1,
+    "obstacle_certificate": true,
+    "certificate_only": true,
+    "certificate_pruning": true,
+    "visibility_budget": 4096
+  },
+  "selection_data": "600 cached standard-prompt development queries and 200 map-disjoint validation queries",
+  "reason": "Exact certificate ensures accepted candidate quality; deterministic fallback preserves the matched WA2 search otherwise. Validation reduced mean unique expansions and path inflation against original; added preprocessing is slower than matched WA2.",
+  "test_protocol": {
+    "cached": "20 untouched test maps, all 10 start-goal pairs, standard/cot/repe cached responses",
+    "synthetic": "8 map families, 3 independently seeded test maps per family, 2 queries and 4 waypoint-quality conditions per map",
+    "variants": ["original", "alpha05", "current_adaptive", "astar", "wa2", "direct_only", "sieved_cert", "sieved_no_repair", "sieved_no_cut"],
+    "no_tuning_after_test": true
+  }
+}
