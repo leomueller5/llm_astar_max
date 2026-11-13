@@ -86,7 +86,7 @@ def main():
   '', 'Additional graph preparation CPU totals and clustered comparisons are in `report_statistics.json`. No confidence interval treats three prompt styles as independent map samples.']
  (BASE/'REPORT.md').write_text('\n'.join(lines)+'\n');(BASE/'report_statistics.json').write_text(json.dumps(details,indent=2)+'\n')
  with (BASE/'aggregate.csv').open('w') as f:
-  writer=csv.writer(f);writer.writerow(['suite','variant','mean_distinct','mean_heap_pops','gm_cost_ratio','median_ms'])
+  writer=csv.writer(f,lineterminator="\n");writer.writerow(['suite','variant','mean_distinct','mean_heap_pops','gm_cost_ratio','median_ms'])
   for suite in ['heldout_cached','heldout_synthetic']:
    for m,s in json.loads((BASE/suite/'summary.json').read_text()).items():writer.writerow([suite,m,s['mean_unique'],s['mean_operations'],s['gm_path_ratio'],s['median_ms']])
  print(json.dumps(details,indent=2))
