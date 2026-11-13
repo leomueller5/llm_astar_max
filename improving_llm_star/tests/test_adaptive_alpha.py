@@ -12,6 +12,9 @@ def controller(monkeypatch):
     monkeypatch.setattr(measurement, "BACKEND", "installed")
 
     def make(**kwargs):
+        # These tests exercise the controller with hand-built legacy heap pairs.
+        # Production engine behavior is covered by test_search_engine.py.
+        kwargs.setdefault("robust_search", False)
         Planner = measurement.load_planner(ROOT, [[3, 3], [10, 10], [25, 15]])
         planner = Planner(adaptive_alpha=True, **kwargs)
         planner._initialize_parameters({
@@ -19,7 +22,7 @@ def controller(monkeypatch):
             "range_y": [0, 21], "horizontal_barriers": [], "vertical_barriers": [],
         })
         planner.i = 1
-        planner.target_list = [(3, 3), (10, 10), (25, 15)]
+        planner.target_list = [(3, 3), (10, 10), (20, 12), (25, 15)]
         planner.s_target = (10, 10)
         planner.alpha = planner.alpha_max
         planner._start_waypoint_measurement()

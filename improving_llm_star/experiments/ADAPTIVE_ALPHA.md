@@ -1,8 +1,34 @@
 # Adaptive alpha: implementation and experiments
 
 Only the improvement copy is changed. Prompt templates, response parsing,
-waypoint generation, filtering, edge costs, CLOSED policy, and target-switch
-semantics are retained. No replanning/model calls are made inside the loop.
+waypoint generation, filtering, edge costs, and target-switch semantics are
+retained. Adaptive mode uses a corrected search engine by default. Legacy
+constant-alpha calls retain their original CLOSED policy and score. No
+replanning/model calls are made inside the loop.
+
+## Corrections after the 133-versus-74 diagnosis
+
+Results in `results/adaptive_alpha/` are historical and preserved. New
+comparisons go to `results/adaptive_alpha_corrected/`.
+
+| Configuration | Intermediate target | Final target | Engine |
+|---|---|---|---|
+| Original, `alpha=1` | g+h+d | g+2h | Legacy |
+| Constant, `alpha=0.5` | g+h+0.5d | g+1.5h | Legacy |
+| `adaptive_alpha=True` | g+h+alpha*d | g+h | Corrected |
+| Standard A* reference | g+h | g+h | Independent standard implementation |
+
+Normal adaptive mode freezes alpha on entering the final-goal phase and sets
+the effective waypoint coefficient to zero. Goal search never triggers adaptive
+updates. This is an explicit scoring change for the improved variant.
+
+`robust_search=None` selects the corrected engine for adaptive mode and the
+legacy engine otherwise. Set `robust_search=True` on a constant configuration
+to isolate engine fixes. `final_goal_weight=0.0` explicitly enables g+h at the
+goal for a constant-weight control. `intermediate_only=False` exists solely to
+replay the historical adaptive ablation; it restores goal-phase adaptation and
+is never used in the corrected main variant. See
+[SEARCH_CORRECTIONS.md](SEARCH_CORRECTIONS.md).
 
 ## Using the planner
 
@@ -28,20 +54,23 @@ are unchanged. `adaptive_alpha=False` is the default. Adaptive mode enables
 progress measurement even when `track_progress` is false. Both `alpha` and
 progress summaries are reset appropriately when an instance is reused.
 
-Each adaptive search starts with alpha=1.0 and resets it to 1.0 on each target
-switch with the default bounds. If a smaller `alpha_max` is explicitly chosen,
+Each adaptive search starts with alpha=1.0 and resets it to 1.0 on each new
+intermediate target with the default bounds. The final-goal transition freezes
+alpha and disables its waypoint term. If a smaller `alpha_max` is explicitly chosen,
 the initial/reset value is clipped to that configured maximum. The `alpha`
 constructor argument controls constant mode; adaptive mode starts at its maximum.
 
 ## Update rule
 
-The existing summary measures the best Euclidean distance among states popped
-while a target is active. The first pop establishes a distance baseline. Later
+The summary measures the best Euclidean distance among states actually expanded
+while a target is active. Corrected-engine stale/closed pops are rejected before
+measurement. Legitimate improved-cost reopens are real expansions. The first
+accepted sample establishes a distance baseline. Later
 decreases greater than `progress_epsilon` reset the stagnation counter. Small
 decreases accumulate against the previous best accepted distance, so repeated
 small advances can eventually count as meaningful progress.
 
-At every `alpha_update_interval` pops for the current target:
+At every `alpha_update_interval` accepted expansions for an intermediate target:
 
 1. If consecutive pops without progress >= `stagnation_threshold`, subtract
    `alpha_decrease`.
@@ -56,8 +85,8 @@ rebuilds. New-target counters start at zero; a transition occurring during a
 neighbor loop is not immediately followed by an adaptive update for that target.
 
 Defaults are experimental. A completely stagnant target first becomes eligible
-after 31 pops (the initial sample plus 30 non-improving pops); with interval 10,
-the first reduction is at pop 40. Further reductions occur at later intervals
+after 31 accepted expansions (the initial sample plus 30 non-improving samples);
+with interval 10, the first reduction is at expansion 40. Further reductions occur at later intervals
 while stagnation persists. Recovery requires new progress in the latest interval,
 not an old improvement repeatedly counted as evidence.
 
@@ -69,11 +98,14 @@ parameters for held-out evaluation.
 
 ## OPEN correctness
 
-The heap stores numeric `(priority, state)` tuples. Changing a global alpha
+The legacy heap stores `(priority, state)` tuples; the corrected heap adds an
+immutable cost snapshot `(priority, state, saved_g)`. Changing a global alpha
 without updating these tuples leaves priorities stale. On a weight/target
 change, all queued entries are recalculated from current g, target, and alpha,
-then `heapq.heapify` builds the queue in O(|OPEN|). Existing duplicates are kept
-to preserve the baseline's search behavior and counting. Recalculating just a
+then `heapq.heapify` builds the queue in O(|OPEN|). In corrected mode obsolete
+versions, non-improved closed states, and identical live entries are removed.
+Improved closed states waiting to reopen are retained. Legacy mode keeps
+duplicates for reproduction. Recalculating just a
 popped entry would be insufficient when priorities elsewhere have decreased.
 
 ## Logging
@@ -96,9 +128,12 @@ Search seconds include the loop, queue maintenance, reconstruction, and path
 validation; exclude imports, environment initialization, LLM processing, and
 plotting. Logging is enabled equally for all three LLM comparison modes.
 
-Legacy `operation`/expanded counts include duplicate heap pops and the goal pop.
-The unique counter makes that distinction visible. Instrumentation is not a
-claim that CLOSED has been corrected or duplicates eliminated.
+`operation` and `heap_pops` count every heap pop, including rejected entries and
+the goal pop. `expanded_nodes` counts accepted processing;
+`unique_expanded_nodes` counts distinct accepted states. Corrected mode also
+reports `stale_pops`, `closed_pops`, `duplicate_pops`, `reopened_expansions`, and
+`pruned_open_entries`. A useful improved-cost reopen is not a rejected duplicate.
+Legacy duplicates are processed; corrected duplicates are skipped.
 
 On exhausted OPEN, the improvement copy now returns an empty `planner.path`,
 `length=inf` in the legacy result, and `path_valid=False`, `path_cost=None` in
@@ -113,6 +148,8 @@ From the workspace root:
 source .venv/bin/activate
 python -m pytest improving_llm_star/tests -q
 python improving_llm_star/experiments/compare_adaptive_alpha.py --repeats 3 --warmups 1
+# Add controls for scoring changes, engine fixes, and adaptation:
+python improving_llm_star/experiments/compare_adaptive_alpha.py --include-controls --repeats 3 --warmups 1
 ```
 
 Defaults replay the existing six fixed cases, three weighting variants and a
@@ -127,8 +164,9 @@ control uses the same instrumentation as the other two. Outside timed runs its
 operations, storage, length, and exact path are audited against the untouched
 original source. The separately implemented standard A* uses an admissible
 Euclidean heuristic and the same collision predicate and legal grid edges. It
-skips stale entries and does not store infinite-cost states, so its operation and
-storage counters have different semantics from legacy counters. Its path cost
+skips stale entries and does not store infinite-cost states. Raw heap pops are
+now reported for all modes, alongside accepted expansions; storage semantics
+still differ. Its path cost
 is the reference for relative solution quality, not an attribution of search
 bookkeeping gains to alpha.
 
@@ -136,7 +174,7 @@ Every case gets configurable warmups; mode order is shuffled using a recorded
 seed for each repeat. Output contains every timed run and medians, rather than
 only the best run. Short smoke timings are noisy and include instrumentation.
 
-Outputs in `experiments/results/adaptive_alpha/`:
+Outputs in `experiments/results/adaptive_alpha_corrected/`:
 
 - `comparison.json`: raw responses, inputs, configuration, source hash, original
   audits, complete runs, paths, metrics, alpha events, and progress summaries.
@@ -183,14 +221,17 @@ included per case and is preserved in the JSON output. Do not include API keys.
 
 Positive `alpha * distance_to_waypoint` is generally inadmissible. At a goal
 different from the active target it is even positive when true remaining cost
-is zero. When target=goal the heuristic is `(1+alpha)*goal_distance`. Changing
-alpha can introduce further inconsistency. The inherited permanent CLOSED
-policy does not reopen improved states. Neither original nor adaptive LLM-A*
+is zero. Original/constant modes use `(1+alpha)*goal_distance` at the goal;
+corrected adaptive mode uses only goal distance there. Changing alpha can
+introduce further inconsistency. The legacy engine permanently closes states;
+the corrected engine reopens improved states. Neither original nor adaptive LLM-A*
 therefore has a shortest-path or fixed suboptimality guarantee. Queue refreshes
 ensure correct ordering under the chosen score, not an A* optimality guarantee.
+In particular, the global goal can still be selected while an intermediate
+target and its inadmissible heuristic are active.
 
-Keep waypoint quality, target advancement, collision semantics and reopening
-changes out of the alpha experiment. The inherited target switch still occurs
+Keep waypoint quality, target advancement and collision semantics fixed. Use
+engine controls to separate reopening effects from alpha. The inherited target switch still occurs
 on neighbor generation before collision checking, which can mask bad targets.
 No regeneration or new LLM calls have been added.
 

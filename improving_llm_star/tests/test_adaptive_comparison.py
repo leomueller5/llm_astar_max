@@ -69,3 +69,21 @@ def test_unsolvable_cases_remain_in_comparison(comparison, tmp_path):
     summaries = comparison.write_results(tmp_path, [case], {}, records, audits, 1, 0, 42)
     assert all(s["valid_path_ratio"] == 0 for s in summaries)
     assert all(s["relative_path_length_percent"] is None for s in summaries)
+
+
+def test_wrong_direction_controls_preserve_baselines_and_isolate_corrections(comparison):
+    case = comparison.load_cases()[3]
+    records, audits = comparison.compare([case], {}, repeats=1, warmups=0, include_controls=True)
+    modes = {r["mode"]: r for r in records}
+    assert audits[0]["status"] == "matches_frozen_original"
+    assert modes["original"]["operation"] == 66
+    assert modes["constant"]["operation"] == 74
+    assert modes["adaptive_before"]["operation"] == 133
+    corrected = modes["adaptive"]
+    assert corrected["metrics"]["alpha_adjustments"] == 0
+    assert corrected["metrics"]["expanded_nodes"] == corrected["metrics"]["unique_expanded_nodes"]
+    assert corrected["metrics"]["final_goal_weight"] == 0
+    assert corrected["length"] == pytest.approx(modes["astar"]["length"])
+    # Default alpha never changes during the short intermediate phase here.
+    assert corrected["path"] == modes["fixed_waypoints_goal_only"]["path"]
+    assert corrected["operation"] == modes["fixed_waypoints_goal_only"]["operation"]

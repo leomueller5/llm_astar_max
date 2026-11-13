@@ -17,7 +17,8 @@ class LLMAStar:
     def __init__(self, llm='gpt', prompt='standard', alpha=1.0, track_progress=False,
                  adaptive_alpha=False, stagnation_threshold=30, alpha_decrease=0.2,
                  alpha_increase=0.1, alpha_min=0.2, alpha_max=1.0,
-                 alpha_update_interval=10, progress_epsilon=1e-9):
+                 alpha_update_interval=10, progress_epsilon=1e-9,
+                 robust_search=None, intermediate_only=True, final_goal_weight=None):
         for name, value in [("stagnation_threshold", stagnation_threshold),
                             ("alpha_update_interval", alpha_update_interval)]:
             if isinstance(value, bool) or not isinstance(value, int) or value < 1:
@@ -29,9 +30,15 @@ class LLMAStar:
             raise ValueError("Require 0 <= alpha_min <= alpha_max <= 1")
         if alpha_decrease <= 0 or alpha_increase <= 0 or progress_epsilon < 0:
             raise ValueError("Alpha steps must be positive; progress_epsilon must be nonnegative")
+        if final_goal_weight is not None and (not math.isfinite(final_goal_weight) or final_goal_weight < 0):
+            raise ValueError("final_goal_weight must be finite and nonnegative")
         self.alpha = alpha
         self.track_progress = track_progress
         self.adaptive_alpha = adaptive_alpha
+        # Legacy constant-alpha calls remain exact reproduction controls.
+        self.robust_search = adaptive_alpha if robust_search is None else robust_search
+        self.intermediate_only = intermediate_only
+        self.final_goal_weight = final_goal_weight
         self.stagnation_threshold = stagnation_threshold
         self.alpha_decrease = alpha_decrease
         self.alpha_increase = alpha_increase
@@ -44,6 +51,8 @@ class LLMAStar:
         self.alpha_adjustments = 0
         self.open_queue_rebuilds = 0
         self.search_metrics = {}
+        self.heap_pops = self.duplicate_pops = self.stale_pops = self.closed_pops = 0
+        self.reopened_expansions = self.pruned_open_entries = 0
         self.llm = llm
         if self.llm == 'gpt':
             self.parser = ChatGPT(method=self.GPT_METHOD, sysprompt=sysprompt_parse, example=example_parse)
@@ -90,6 +99,7 @@ class LLMAStar:
         self.CLOSED = []
         self.PARENT = dict()
         self.g = dict()
+        self._closed_g = {}
 
     def _initialize_llm_paths(self):
         """Initialize paths using LLM suggestions."""
@@ -147,6 +157,8 @@ class LLMAStar:
         self.alpha_adjustments = 0
         self.open_queue_rebuilds = 0
         self.search_metrics = {}
+        self.heap_pops = self.duplicate_pops = self.stale_pops = self.closed_pops = 0
+        self.reopened_expansions = self.pruned_open_entries = 0
         self.path = []
         if self.adaptive_alpha:
             self.alpha = self.alpha_max
@@ -158,11 +170,27 @@ class LLMAStar:
         
         self.PARENT[self.s_start] = self.s_start
         self.g[self.s_start] = 0
-        heapq.heappush(self.OPEN, (self.f_value(self.s_start), self.s_start))
+        self._push_open(self.s_start)
 
         goal_reached = False
         while self.OPEN:
-            _, s = heapq.heappop(self.OPEN)
+            entry = heapq.heappop(self.OPEN)
+            _, s = entry[:2]
+            self.heap_pops += 1
+            was_expanded = s in self._closed_g
+            if self.robust_search:
+                if entry[2] != self.g[s]:
+                    self.stale_pops += 1
+                    self.duplicate_pops += int(was_expanded)
+                    continue
+                if was_expanded and self.g[s] >= self._closed_g[s]:
+                    self.closed_pops += 1
+                    self.duplicate_pops += 1
+                    continue
+                self.reopened_expansions += int(was_expanded)
+            elif was_expanded:
+                self.duplicate_pops += 1
+            self._closed_g[s] = self.g[s]
             self.CLOSED.append(s)
             if self._progress_enabled:
                 self._record_waypoint_progress(s)
@@ -177,8 +205,14 @@ class LLMAStar:
                     self._update_queue()
                     print(s_n, self.s_target)
                     
-                if s_n in self.CLOSED:
+                if not self.robust_search and s_n in self.CLOSED:
                     continue
+                if self.robust_search and s_n in self._closed_g:
+                    # A closed state needs another relaxation only if a cheaper
+                    # route is possible. Collision can only raise this edge cost.
+                    lower_cost = self.g[s] + math.hypot(s_n[0] - s[0], s_n[1] - s[1])
+                    if lower_cost >= self.g[s_n]:
+                        continue
 
                 new_cost = self.g[s] + self.cost(s, s_n)
                 if s_n not in self.g:
@@ -187,7 +221,7 @@ class LLMAStar:
                 if new_cost < self.g[s_n]:  # conditions for updating Cost
                     self.g[s_n] = new_cost
                     self.PARENT[s_n] = s
-                    heapq.heappush(self.OPEN, (self.f_value(s_n), s_n))
+                    self._push_open(s_n)
 
             if self.adaptive_alpha:
                 self._maybe_update_alpha()
@@ -197,7 +231,7 @@ class LLMAStar:
         path_valid = self._is_valid_path(path)
         visited = self.CLOSED
         result = {
-            "operation": len(self.CLOSED),
+            "operation": self.heap_pops,
             "storage": len(self.g),
             "length": sum(self._euclidean_distance(path[i], path[i+1]) for i in range(len(path)-1)) if path_valid else math.inf,
             "llm_output": self.target_list
@@ -205,6 +239,14 @@ class LLMAStar:
         self.search_metrics = {
             "expanded_nodes": len(self.CLOSED),
             "unique_expanded_nodes": len(set(self.CLOSED)),
+            "heap_pops": self.heap_pops,
+            "duplicate_pops": self.duplicate_pops,
+            "stale_pops": self.stale_pops,
+            "closed_pops": self.closed_pops,
+            "reopened_expansions": self.reopened_expansions,
+            "pruned_open_entries": self.pruned_open_entries,
+            "robust_search": self.robust_search,
+            "final_goal_weight": self._waypoint_weight() if self.s_target == self.s_goal else None,
             "path_cost": result["length"] if path_valid else None,
             "path_valid": path_valid,
             "goal_reached": goal_reached,
@@ -221,10 +263,25 @@ class LLMAStar:
     def _euclidean_distance(p1, p2):
         return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 
+    def _push_open(self, s):
+        entry = (self.f_value(s), s)
+        if self.robust_search:
+            entry += (self.g[s],)  # Immutable g snapshot identifies stale entries.
+        heapq.heappush(self.OPEN, entry)
+
     def _update_queue(self):
         if not self.OPEN:
             return
-        queue = [(self.f_value(s), s) for _, s in self.OPEN]
+        if self.robust_search:
+            live = {}
+            for _, s, saved_g in self.OPEN:
+                if (saved_g == self.g[s]
+                        and (s not in self._closed_g or saved_g < self._closed_g[s])):
+                    live[s] = saved_g
+            queue = [(self.f_value(s), s, saved_g) for s, saved_g in live.items()]
+            self.pruned_open_entries += len(self.OPEN) - len(queue)
+        else:
+            queue = [(self.f_value(s), s) for _, s in self.OPEN]
         heapq.heapify(queue)
         self.OPEN = queue
         self.open_queue_rebuilds += 1
@@ -237,6 +294,9 @@ class LLMAStar:
             if self._progress_enabled:
                 self._start_waypoint_measurement()
             if self.adaptive_alpha:
+                if self.intermediate_only and self.s_target == self.s_goal:
+                    self._log_alpha_event("final_goal")
+                    return
                 # The caller refreshes OPEN once for both target and alpha changes.
                 if not self._set_alpha(self.alpha_max, "target_reset"):
                     self._log_alpha_event("target_reset")
@@ -283,6 +343,8 @@ class LLMAStar:
             )
 
     def _maybe_update_alpha(self):
+        if self.intermediate_only and self.s_target == self.s_goal:
+            return
         summary = self.waypoint_progress[-1]
         if not summary["expansions"] or summary["expansions"] % self.alpha_update_interval:
             return
@@ -317,6 +379,8 @@ class LLMAStar:
             "expansions_without_progress": summary.get("expansions_without_progress", 0),
             "improvements": summary.get("improvements", 0),
             "open_size": len(self.OPEN),
+            "heap_pops": self.heap_pops,
+            "effective_alpha": self._waypoint_weight(),
         })
 
     def _is_valid_path(self, path):
@@ -363,5 +427,14 @@ class LLMAStar:
         waypoint_distance = math.hypot(
             self.s_target[0] - s[0], self.s_target[1] - s[1]
         )
-        return goal_distance + self.alpha * waypoint_distance
+        return goal_distance + self._waypoint_weight() * waypoint_distance
+
+    def _waypoint_weight(self):
+        """Explicit final-goal scoring: legacy 1+alpha versus adaptive g+h."""
+        if self.s_target == self.s_goal:
+            if self.final_goal_weight is not None:
+                return self.final_goal_weight
+            if self.adaptive_alpha and self.intermediate_only:
+                return 0.0
+        return self.alpha
 
