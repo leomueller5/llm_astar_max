@@ -201,3 +201,54 @@ not a new independent holdout. No policy/parameter changes after freeze.
 Final primary timing runs will be sequential. Exploratory runs occasionally
 shared CPU with other instrumentation; robust medians help but do not erase that
 limitation, hence no final speed claims rely solely on those trials.
+
+## Frozen final evaluation — results and protocol deviation
+
+640 fresh cases /80 maps, 11 repeats per variant: all576 solvable cases valid and
+64 unreachable correctly exhausted by new methods. Witness-only mean case-median
+1.6356ms versus matched WA2 1.7073ms (ratio0.9580, clustered95%CI[0.9051,0.9873]).
+Not uniform: maze and large-maze families regress; sparse/open/large-random maps
+improve most. Exact hint stage1.6531ms, only one added certificate. Raw-chain
+frontier1.5383ms; ratio to witness-only0.9405 CI[0.9017,0.9682], but this fixture
+mixture includes oracle-quality hints, not real LLM sampling. One case has worse
+cost than witness-only. Preserve and explain conditional utility.
+
+Opened cached confirmation (600 observations,7 repeats): original-indexed7.8036ms,
+oldCF3.1204ms, lean WA2 0.9223ms, witness-only0.5421ms, exact-LLM0.5662ms.
+Witness-only distinct states100.655, pops209.68, GM cost/optimal1.00496, versus
+original215.982 /343.917 /1.02254. Exact hint stage accepts zero extra routes.
+Raw-chain uses3 and full frontier9 hint routes; neither produces a net cached
+runtime improvement over witness-only. Do not call the large geometric gain an
+LLM-specific result. Confirmation was already opened in Session1.
+
+Native protocol incident: buffered output was misdiagnosed as slow JSON export;
+interrupting parent at05:42:50 also interrupted the active native-original run
+(after progress71/80). It had no saved native results; none are reported. Full
+fresh_core timings were complete and untouched. Preserve interruption note.
+Rerun native with per-trial journals and a uniform two-second cap for EVERY mode;
+35 original-native trials censored, all other modes complete. Original observed
+mean202.415ms is a LOWER BOUND, not a full mean. Public WA2 1.8557ms,
+oldCF12.5600ms, witness-only1.7679ms, exact-LLM1.8127ms on80 fixed map-balanced
+queries,7 repetitions. New algorithms unchanged. Core evaluation remains uncapped.
+Gzip output now uses buffered JSON encoding; this affects export only, outside
+all search timing boundaries. No core rerun or timing-record modification.
+
+Independent vectorized Shapely validation: all4 selected variants on576 fresh
+and600 cached successful cases; costs agree with emitted unit paths; every exact
+certificate equals A* cost; global factor2 checked; every new method agrees on
+reachability. Original-indexed operations and costs match existing Table1 data
+for all600 cached cases. Primary/exact-hint never regress in path cost or unique
+states versus their matched fallback controls. 82 automated tests passed.
+Reports, whole-map CIs, source snapshots, cached/fixture provenance, Python peak
+allocations and plots saved. Numerical claim scope remains distinct across fresh
+fixtures, opened real caches, native censored timing and instrumented profiling.
+
+Final integrity check at 05:54:31 UTC (59 minutes08seconds after session start):
+70,400 fresh-core +42,000 opened-confirmation +3,920 native-interface trial records
+verified. Every final-core source snapshot matches its recorded SHA-256 hash.
+Production algorithm files remain byte-identical to the pre-test freeze87c3310;
+post-freeze edits concern export safeguards, analysis, documentation and reports.
+Original `llm-astar/` and historical `table1_reproduction/` unchanged versus main;
+main still66baa31. Full canonical-source whitespace checks and compilation pass;
+archived frozen source intentionally retains its original whitespace. Approximately
+60 minutes elapsed including final artifact/commit checks; no artificial waits.

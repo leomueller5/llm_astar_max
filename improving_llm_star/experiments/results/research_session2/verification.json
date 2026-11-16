@@ -1,0 +1,49 @@
+{
+  "fresh_core": {
+    "witness_only": {
+      "independent_valid_paths": 576,
+      "optimal_certificates": 316,
+      "correctly_exhausted_unreachable": 64
+    },
+    "witness_cf": {
+      "independent_valid_paths": 576,
+      "optimal_certificates": 317,
+      "correctly_exhausted_unreachable": 64
+    },
+    "witness_chain": {
+      "independent_valid_paths": 576,
+      "optimal_certificates": 317,
+      "correctly_exhausted_unreachable": 64
+    },
+    "witness_frontier": {
+      "independent_valid_paths": 576,
+      "optimal_certificates": 317,
+      "correctly_exhausted_unreachable": 64
+    },
+    "frozen_original_unreachable_exceptions": 64
+  },
+  "opened_cached_confirmation": {
+    "witness_only": {
+      "independent_valid_paths": 600,
+      "optimal_certificates": 408,
+      "correctly_exhausted_unreachable": 0
+    },
+    "witness_cf": {
+      "independent_valid_paths": 600,
+      "optimal_certificates": 408,
+      "correctly_exhausted_unreachable": 0
+    },
+    "witness_chain": {
+      "independent_valid_paths": 600,
+      "optimal_certificates": 408,
+      "correctly_exhausted_unreachable": 0
+    },
+    "witness_frontier": {
+      "independent_valid_paths": 600,
+      "optimal_certificates": 408,
+      "correctly_exhausted_unreachable": 0
+    },
+    "frozen_original_unreachable_exceptions": 0,
+    "frozen_Table1_matches": 600
+  }
+}

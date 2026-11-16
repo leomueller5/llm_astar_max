@@ -1,0 +1,10 @@
+{
+  "record_counts": {
+    "fresh_core": 70400,
+    "opened_cached_confirmation": 42000,
+    "fresh_native": 3920
+  },
+  "final_core_source_snapshots_match_hashes": true,
+  "native_uniform_timeout_seconds": 2.0,
+  "actual_api_calls": 0
+}

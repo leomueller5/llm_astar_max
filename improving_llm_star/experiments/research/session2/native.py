@@ -1,5 +1,5 @@
 """Interface-to-interface timing with cached raw responses, fresh geometry, no rendering."""
-import sys,json,gzip,copy,contextlib,io,argparse,random,statistics,hashlib
+import sys,json,gzip,copy,contextlib,io,argparse,random,statistics,hashlib,signal
 from pathlib import Path
 from time import perf_counter,process_time
 sys.path.insert(0,str(Path(__file__).resolve().parent))
@@ -15,6 +15,12 @@ class PublicWA2(WitnessFirstLLMAStar):
 
 class PublicAStar(PublicWA2):
  def _make_research_planner(self):return IncumbentSearch(use_waypoints=False,visibility_budget=0,goal_weight=1,certificate_only=True)
+
+class SearchTimeout(Exception):pass
+
+def timeout_handler(signum,frame):raise SearchTimeout('uniform 2-second interface limit')
+
+signal.signal(signal.SIGALRM,timeout_handler)
 
 MODES=['original_native','astar_public','wa2_public','old_cf_public','witness_exact_public','witness_only_public','witness_frontier_public']
 
@@ -40,9 +46,11 @@ def main():
   elif mode=='wa2_public':planner=PublicWA2(waypoint_response=c['response'])
   else:planner=WitnessFirstLLMAStar(waypoint_response=c['response'],use_waypoints=mode!='witness_only_public',policy='frontier' if mode=='witness_frontier_public' else 'exact')
   query=copy.deepcopy(c['query']);sink=io.StringIO();started=perf_counter();cpu=process_time();error=None
+  signal.setitimer(signal.ITIMER_REAL,2.0)
   try:
    with contextlib.redirect_stdout(sink):result=planner.searching(query)
-  except (KeyError,IndexError,TypeError,ValueError) as exc:error=type(exc).__name__;result={'operation':len(planner.CLOSED),'length':None}
+  except (KeyError,IndexError,TypeError,ValueError,SearchTimeout) as exc:error=type(exc).__name__;result={'operation':len(planner.CLOSED),'length':None}
+  finally:signal.setitimer(signal.ITIMER_REAL,0)
   seconds=perf_counter()-started;cpu_seconds=process_time()-cpu
   path=planner.plot.path if mode=='original_native' else planner.path
   # Same independent post-timer check for every variant, never timed for just one.
@@ -51,19 +59,23 @@ def main():
   return dict(case_id=c['id'],map_id=c['map_id'],family=c['family'],source=c['source'],variant=mode,seconds=seconds,cpu_seconds=cpu_seconds,valid=valid,error=error,length=result['length'] if valid else None,operation=result['operation'])
  for c in cases[:2]:
   for mode in MODES:trial(mode,c)
+ journal=(a.output/'runs.jsonl').open('w')
  for ci,c in enumerate(cases):
   for repetition in range(a.repeats):
    order=list(MODES);rng.shuffle(order)
-   for mode in order:records.append(dict(trial(mode,c),repeat=repetition))
+   for mode in order:
+    record=dict(trial(mode,c),repeat=repetition);records.append(record);journal.write(json.dumps(finite_json(record),separators=(',',':'))+'\n');journal.flush()
   if ci%5==0:print(ci+1,'/',len(cases),flush=True)
+ journal.close()
  summary={}
  for mode in MODES:
   med=[statistics.median(r['seconds'] for r in records if r['case_id']==c['id'] and r['variant']==mode) for c in cases]
-  summary[mode]={'cases':len(cases),'mean_case_median_ms':statistics.mean(med)*1000,'median_case_median_ms':statistics.median(med)*1000,'max_case_median_ms':max(med)*1000}
+  summary[mode]={'cases':len(cases),'mean_case_median_ms':statistics.mean(med)*1000,'median_case_median_ms':statistics.median(med)*1000,'max_case_median_ms':max(med)*1000,'timeout_trials':sum(r['error']=='SearchTimeout' for r in records if r['variant']==mode),'censored_mean_is_lower_bound':any(r['error']=='SearchTimeout' for r in records if r['variant']==mode)}
  payload={'scope':'Public structured-query API, parsing/copying/geometry/certificates/search/validation included; object construction/imports/rendering/network excluded uniformly. Independent post-timer checking identical for all methods. Cached response only; native original has original collision code.',
   'case_hash':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()).hexdigest(),
   'source_hashes':{str(p.relative_to(WORKSPACE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'llmastar/research/geometry.py',ROOT/'llmastar/research/efficient.py',ROOT/'llmastar/pather/llm_a_star/witness.py',WORKSPACE/'llm-astar'/replay.PLANNER_PATH]},
+  'uniform_per_trial_limit_seconds':2.0,'timeout_interpretation':'Reported observed/censored means are LOWER BOUNDS when any trials timeout; not complete native-original runtime estimates. Limits apply equally to every variant.',
   'sampling':'one query0 fixture rotating by seed modulo4 per fresh map; or fixed query indices0,5 per cached map','actual_api_calls':0,'repeats':a.repeats,'summary':summary,'runs':records}
- with gzip.open(a.output/'results.json.gz','wt') as f:json.dump(finite_json(payload),f,separators=(',',':'),allow_nan=False)
+ with gzip.open(a.output/'results.json.gz','wt') as f:f.write(json.dumps(finite_json(payload),separators=(',',':'),allow_nan=False))
  (a.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()

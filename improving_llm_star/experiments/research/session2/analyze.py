@@ -40,7 +40,7 @@ def aggregate(data,control='scheduled_wa2',bootstrap=2000):
     'gm_paired_time_ratio_ci95':[sorted(v[1] for v in boot)[49],sorted(v[1] for v in boot)[1949]],
     'unique':statistics.mean(r['unique'] for r in rr),'operations':statistics.mean(r['operation'] for r in rr),
     'successes':sum(r['valid'] for r in rr),'exact_certificates':sum(r.get('certified_early_return',False) for r in rr),
-    'llm_accepted':sum(r.get('accepted_source')=='waypoint_dag' for r in rr),
+    'llm_accepted':sum((r.get('accepted_source')=='waypoint_dag') or ('accepted_source' not in r and r.get('certified_early_return',False) and r.get('candidate_source')=='waypoint_dag') for r in rr),
     'incumbent_used':sum(r.get('incumbent_used',False) for r in rr),
     'gm_cost_ratio':math.exp(statistics.mean(math.log(v) for v in opt)) if opt else None,
     'p95_cost_ratio':sorted(opt)[min(len(opt)-1,int(.95*len(opt)))] if opt else None,

@@ -1,6 +1,6 @@
 # LLM-A*: bisherige Erkenntnisse und Entwicklungsstand
 
-Stand: 11. November 2026. Arbeitsnotiz zur späteren Projektdokumentation.
+Stand: 16. November 2026 (historische Abschnitte zeitlich eingeordnet). Arbeitsnotiz zur späteren Projektdokumentation.
 Historische Ergebnisse und der aktuelle Implementierungsstand werden getrennt.
 Die Zahlen stammen aus Codeinspektion und tatsächlich ausgeführten lokalen
 Offline-Tests; sie sind keine erfundenen oder auf unbekannte Karten übertragbaren
@@ -607,3 +607,60 @@ selektiver zertifizierter Guidance als Forschungsbeitrag. Etablierte Einzelteile
 (Weighted A*, untere Schranken, DAG) nicht als neue Algorithmen ausgeben. Weitere
 ungesehene Karten und RAM-Messungen bleiben sinnvoll; Testkarten nicht nachträglich
 zur Parametertuning-Menge machen.
+
+---
+
+## Zweite autonome Forschungsphase am 16.11.2026
+
+Der Forschungsbranch bleibt `research/waypoint-guidance`; kein Push/Merge, keine bezahlten Modellaufrufe. Alte Baselines und historische Resultate bleiben unverändert. Die Auswahl wurde in Commit `87c3310` vor Erzeugung der frischen Testkarten festgeschrieben.
+
+### Tatsächlicher Laufzeitengpass und neue Verfahren
+
+Das Ausgangsprofil auf 120 Entwicklungsfällen zeigt: Nachbarerzeugung und Kollisionsprüfung dominieren. Die untere Schranke kostet etwa 0,1 % der instrumentierten Gesamtzeit; Heap-Primitive zusammen unter 1 %. Kumulative Profilerzeiten überlappen und werden nicht addiert.
+
+Implementiert: Zeilen-/Spaltenindex für ganzzahlige Wände, direkte Einzelkantenabfragen, exakte Prüfung kurzer Gitterrouten als zwei gerade Teilstücke, erreichbarkeitsbasierter DAG, kollineare Waypoint-Kompression und schlankere robuste Fallback-Suche. Nichtganzzahlige Geometrie und degenerierte Wände behalten die tatsächlichen Einzelschritt-Kollisionsregeln. Alle Indizes/Caches werden pro Anfrage frisch bezahlt.
+
+**Entscheidender neuer Ansatz:** Aus der zulässigen Einzelwand-Schranke lassen sich Wandend-Kandidaten ableiten. Ein vollständig geprüfter Weg durch einen solchen Punkt wird nur übernommen, wenn seine Kosten die zulässige untere Schranke erreichen. Sonst läuft Weighted A* mit Gewicht 2. Optional folgt davor ein exakter Waypoint-DAG oder eine separate Variante mit verifizierter Waypoint-Route als oberer Schranke.
+
+**Der stärkste Laufzeitgewinn ist geometrisch, nicht LLM-spezifisch.** `WitnessFirstLLMAStar(use_waypoints=False)` benötigt keinen Modellaufruf. Die Waypoint-Ergänzung muss gegen genau diese Variante verglichen werden, nicht nur gegen das Original.
+
+### Festgelegte Abschlussauswertung
+
+Frisch: 80 neue Karten, 640 Fälle, zehn Familien einschließlich großer Zufalls-/Labyrinthkarten, elf Wiederholungen je Verfahren. 576 Fälle lösbar, 64 absichtlich unerreichbar. Hilfreiche Hinweise sind optimale Referenzpfad-Ecken ausschließlich als synthetische Fixtures; keine echten neuen LLM-Ausgaben. Seed660000 ist von Entwicklung440000 und Validierung550000 sowie allen alten Seeds getrennt.
+
+Zusätzlich: 600 bereits in Sitzung 1 geöffnete Modellcache-Beobachtungen auf 20 Karten, drei Promptvarianten, sieben Wiederholungen. Diese Wiederholung heißt ausdrücklich **geöffnete Bestätigung**, nicht neuer unabhängiger Holdout. Wiederholungen werden pro Fall per Median reduziert; Konfidenzintervalle resampeln ganze Karten.
+
+| Variante | Frische Fälle: mittlere Fallmedian-ms | Geöffnete Modellcaches: mittlere Fallmedian-ms | Cache: unterschiedliche Expansionen | Cache: Kosten / Optimum (geom.) |
+|---|---:|---:|---:|---:|
+| original_indexed | 53.5733 | 7.8036 | 215.98 | 1.02254 |
+| old_cf | 12.1143 | 3.1204 | 168.99 | 1.01035 |
+| scheduled_wa2 | 1.7073 | 0.9223 | 178.56 | 1.01447 |
+| witness_only | 1.6356 | 0.5421 | 100.66 | 1.00496 |
+| witness_cf | 1.6531 | 0.5662 | 100.66 | 1.00496 |
+| witness_chain | 1.5383 | 0.5481 | 100.49 | 1.00520 |
+| witness_frontier | 1.6062 | 0.5643 | 99.77 | 1.00463 |
+
+`original_indexed` bewahrt die originale Suchlogik, verwendet jedoch dieselbe neue Geometrie. Native Originalmessungen stehen separat im Report; diese Kontrollen nicht vermischen. Alle Vorverarbeitungskosten sind in den End-to-End-Kernzeiten enthalten.
+
+Witness-only gegenüber identisch optimierter WA2-Kontrolle auf frischen Fixtures: Zeitverhältnis 0.9580, 95%-Karten-Bootstrap [0.9051; 0.9873].
+Witness-only gegenüber identisch optimierter WA2-Kontrolle auf geöffneten Modellcaches: Zeitverhältnis 0.5878, 95%-Karten-Bootstrap [0.4276; 0.7312].
+
+Zusätzliche exakte LLM-Stufe auf Modellcaches: Zeitverhältnis zu Witness-only 1.0445 [1.0337; 1.0587], 0 tatsächlich übernommene Waypoint-Routen. Die stärkeren geometrischen Gewinne dürfen ihr nicht zugeschrieben werden.
+
+Die Raw-Chain/Frontier-Variante kann sehr gute synthetische Routen nutzen. Das belegt bedingtes Potenzial bei hochwertigen Hinweisen, nicht dieselbe Wirksamkeit realer Modellantworten. Frontier-Routen sind nur Faktor-2-beschränkt und können gegenüber der Kontrolle länger sein. Exakte Zertifikate bleiben optimal; das gesamte Verfahren ist wegen des Weighted-A*-Fallbacks nicht generell optimal.
+
+### Korrektheit, Speicher und Messgrenzen
+
+82 automatisierte Tests bestanden nach den neuen Geometrie-, Bound-, Schnittstellen- und Budgettests. Eine zusätzliche unabhängige Shapely-Prüfung aller ausgewählten Abschlussvarianten sowie Kosten-/Zertifikatprüfung gegen A* ist im Verification-Artefakt gespeichert. Originaloperationen und -kosten werden erneut gegen die vorhandenen Table-1-Daten geprüft.
+
+Python-tracemalloc auf 24 festen Entwicklungsfällen: mittlerer Peak ungefähr 225 kB alte Zertifikatsvariante, 138 kB Witness-only, 188 kB schlanke WA2-Kontrolle. Importierte Bibliotheken und native GEOS-Allokationen fehlen; keine vollständige RAM-/RSS-Aussage. Historische Storage-Zähler erfassen nicht alle Hilfsstrukturen.
+
+Die erste native Testmessung wurde wegen einer falschen Einordnung gepufferter Statusausgabe unterbrochen; daraus werden keine Zahlen berichtet. Der vollständige Kernvergleich blieb erhalten. Wiederholung mit Journal pro Durchlauf und **einheitlichem Zwei-Sekunden-Limit für alle nativen Verfahren**: zensierte Originalzeiten werden nur als untere Laufzeitschranken ausgewiesen. Keine exakten vollständigen Originalmittelwerte daraus ableiten. Verfahrensparameter wurden dabei nicht geändert.
+
+Negative Ergebnisse: einfache Stagnations-/Dichtegates und spätere Zertifizierung brachten keinen überzeugenden Zusatzgewinn; enge Waypoint-Korridore erhöhten Aufwand und teilweise Pfadlängen. Unzertifizierte Incumbents können helfen, kosten auf realen Caches aber häufig mehr als sie sparen. Frühere Source-Hash-/JSON-Probleme sind mit separaten Hinweisen archiviert; finale Läufe sichern Source-Snapshots zu Beginn.
+
+### Empfehlung für die Abgabe
+
+Die Arbeit als evidenzgeleitete Untersuchung selektiver Guidance darstellen: ursprüngliche Adaptive-Alpha-Hypothese, gemessene kurze Waypoint-Lebensdauer, verifizierte Routen, dann schnelle geometrische Zertifikate mit sauberer LLM-Ablation. Nicht behaupten, dass der große Laufzeitgewinn von LLM-Intelligenz stammt. Für den stärksten Laufzeitstand Witness-only; die exakte LLM-Ergänzung und Raw-Chain-Incumbents als unabhängig bewertete Optionen zeigen. Weitere Modelle/Antworten und schwierigere Karten sind nötig, bevor ein echter LLM-Laufzeitvorteil behauptet werden kann.
+
+[Algorithmus, Pseudocode und exakte Befehle](improving_llm_star/experiments/research/session2/README.md), [Tabellen und Konfidenzintervalle](improving_llm_star/experiments/results/research_session2/REPORT.md), [Forschungslog](improving_llm_star/experiments/research/session2/EXPERIMENT_LOG.md), [Grafiken als PDF](improving_llm_star/experiments/results/research_session2/runtime.pdf).

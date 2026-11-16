@@ -126,7 +126,7 @@ def run(cases,modes,repeats,output):
   'case_hash':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()).hexdigest(),
   'source_hashes':source_hashes,'python':sys.version,'platform':platform.platform(),
   'variants':{m:{'graph':VARIANTS[m][0].__name__,'planner':getattr(VARIANTS[m][1],'__name__',VARIANTS[m][1]),'options':VARIANTS[m][2]} for m in modes},'summary':summary,'runs':rows}
- with gzip.open(output/'results.json.gz','wt') as f:json.dump(finite_json(data),f,separators=(',',':'),allow_nan=False)
+ with gzip.open(output/'results.json.gz','wt') as f:f.write(json.dumps(finite_json(data),separators=(',',':'),allow_nan=False))
  (output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
  return data
 
