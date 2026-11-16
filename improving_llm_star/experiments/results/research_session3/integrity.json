@@ -1,0 +1,8 @@
+{
+  "records": {
+    "validation": 86400,
+    "fresh": 26880
+  },
+  "source_hashes_verified": true,
+  "actual_api_calls": 0
+}

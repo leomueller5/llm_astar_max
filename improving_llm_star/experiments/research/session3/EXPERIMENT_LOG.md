@@ -81,3 +81,20 @@ geometric-only potential, and uniform goal weight1.5 to detect mere goal-weight
 weakening. Original final-goal scoring remains untouched. No Session3 use of old
 held-out test split. Fresh procedural geometry is independently seeded and
 anisotropically scaled; oracle fixtures are not real-model evidence.
+
+## Frozen evaluation: negative real-guidance result
+
+Validation600: matched off0.34360ms, primary cut0.34336ms, ratio0.99930 CI[0.96804,1.02534]; no runtime win. Distinct59.885->58.868, pops129.175->126.400, but GM cost1.003617->1.004515. Wrong-query/raw random/geometric controls competitive. Lazy rank0.34117ms also CI includes1.
+
+Visible potential0.43384ms, GMcost1.002764; uniform no-LLM weight1.5 costs0.37081ms with better GMcost1.001354. Reject specific quality-benefit claim. Fresh240 cases show primary3.91819ms vs off3.91988ms, CI includes1;216 valid paths and24 correct no-path cases. Canonical geometry disjointness checked against prior stored suites and cached maps. Oracle hints are not real model evidence.
+
+Public API40 cases7 reps, first2-case warmups excluded: seed_off0.37119ms, seed_cut0.43533ms, Witness0.37430ms. Raw response parsing counts in these timings; zero actual API calls. Independent Shapely and bound/cost audit passed for cut/rank/quality on600 real and216 fresh solvable cases,24 no-paths per candidate.98 tests passed. No production algorithm changes after freeze.
+
+Final artifact checks at07:23:46UTC:33minutes52seconds since session start,
+followed by local commit checks (~34minutes total). No artificial waits.113,280
+frozen evaluation trial records preserved (86,400 real validation,26,880 fresh
+fixtures), with matching source snapshot hashes. Geometry-disjointness assertion
+passed. Production algorithms are unchanged since79b96f3. Main and all original
+baseline/historical result files remain unchanged. Final conclusion: no reliable
+LLM-specific efficiency/quality advantage over the strongest tested geometry and
+uniform-weight controls; retain Witness-First and document the negative study.

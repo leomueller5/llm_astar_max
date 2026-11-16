@@ -1,0 +1,30 @@
+{
+  "validation": {
+    "seed_cut": {
+      "independently_valid_paths": 600,
+      "correct_no_path": 0
+    },
+    "seed_lazy": {
+      "independently_valid_paths": 600,
+      "correct_no_path": 0
+    },
+    "potential_visible": {
+      "independently_valid_paths": 600,
+      "correct_no_path": 0
+    }
+  },
+  "fresh": {
+    "seed_cut": {
+      "independently_valid_paths": 216,
+      "correct_no_path": 24
+    },
+    "seed_lazy": {
+      "independently_valid_paths": 216,
+      "correct_no_path": 24
+    },
+    "potential_visible": {
+      "independently_valid_paths": 216,
+      "correct_no_path": 24
+    }
+  }
+}

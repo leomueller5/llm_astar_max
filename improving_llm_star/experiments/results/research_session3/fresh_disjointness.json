@@ -1,0 +1,7 @@
+{
+  "maps": 30,
+  "cases": 240,
+  "prior_canonical_geometries_checked": 200,
+  "exact_geometry_overlap": 0,
+  "seed_base": 990000
+}

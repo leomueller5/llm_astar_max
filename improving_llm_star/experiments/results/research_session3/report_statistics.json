@@ -1,0 +1,2854 @@
+{
+  "validation": {
+    "original_indexed": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 5.585865970157707,
+      "median_ms": 0.9882920421659946,
+      "p95_ms": 23.537451692391187,
+      "mean_prep_ms": 0.005447924292335907,
+      "mean_search_ms": 5.578161865705624,
+      "unique": 165.70333333333335,
+      "pops": 256.865,
+      "gm_cost_ratio": 1.0269755817725348,
+      "p95_cost_ratio": 1.11699493536816,
+      "max_cost_ratio": 1.4301153131002655,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 37,
+      "more_states": 539,
+      "shorter_paths": 13,
+      "longer_paths": 277,
+      "both_improve": 6,
+      "vs_off_time": {
+        "ratio": 16.25682365550835,
+        "ci95": [
+          10.712233130738234,
+          27.57129265614918
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 16.10101201379273,
+        "ci95": [
+          10.522853792715487,
+          27.49988118129118
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 2.767025688124461,
+        "ci95": [
+          2.0057122123510926,
+          4.616552737457284
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0232744182134006,
+        "ci95": [
+          1.0184750905763953,
+          1.0277523373815882
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.021586987434723,
+        "ci95": [
+          1.0164864181273323,
+          1.0265844376561106
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0255866494632893,
+        "ci95": [
+          1.0207348020526097,
+          1.0304300442140224
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 5.585865970157707,
+          "unique": 165.70333333333335
+        }
+      }
+    },
+    "indexed_astar": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 1.4098830459018548,
+      "median_ms": 0.9820830309763551,
+      "p95_ms": 3.881481743883338,
+      "mean_prep_ms": 0.008769829679901402,
+      "mean_search_ms": 1.3941419718321413,
+      "unique": 275.065,
+      "pops": 350.485,
+      "gm_cost_ratio": 1.0,
+      "p95_cost_ratio": 1.0,
+      "max_cost_ratio": 1.0,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 3,
+      "more_states": 597,
+      "shorter_paths": 42,
+      "longer_paths": 0,
+      "both_improve": 3,
+      "vs_off_time": {
+        "ratio": 4.103252776663083,
+        "ci95": [
+          2.9848747848068062,
+          6.7064138181551725
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 4.063925626104405,
+        "ci95": [
+          2.9158690500108695,
+          6.740334175613103
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 4.593220338983051,
+        "ci95": [
+          3.229318797272147,
+          8.049255803132818
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9963960549551274,
+        "ci95": [
+          0.9934768162819541,
+          0.9987613880829842
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9947529479439899,
+        "ci95": [
+          0.9917696941344276,
+          0.9972470799403169
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 0.9986475507948804,
+        "ci95": [
+          0.9969998053403906,
+          0.9997590840597032
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 1.4098830459018548,
+          "unique": 275.065
+        }
+      }
+    },
+    "scheduled_wa2": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.6826527141189823,
+      "median_ms": 0.3118335735052824,
+      "p95_ms": 2.669367368798701,
+      "mean_prep_ms": 0.005617511536305149,
+      "mean_search_ms": 0.6722709195067486,
+      "unique": 127.7,
+      "pops": 267.38,
+      "gm_cost_ratio": 1.016065236705433,
+      "p95_cost_ratio": 1.1015263050961785,
+      "max_cost_ratio": 1.4301153131002655,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 447,
+      "shorter_paths": 0,
+      "longer_paths": 135,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.9867581590170384,
+        "ci95": [
+          1.4820657108451678,
+          3.1118416531928115
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.9677163057615623,
+        "ci95": [
+          1.4464161973959482,
+          3.1225077828210317
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 2.1324204725724303,
+        "ci95": [
+          1.5727374991945358,
+          3.553459308729267
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0124033934303414,
+        "ci95": [
+          1.0089433203021472,
+          1.0164279826354192
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0107338895161375,
+        "ci95": [
+          1.007033422789731,
+          1.014901748733692
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0146910600837011,
+        "ci95": [
+          1.011323955030042,
+          1.0185468071349844
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.6826527141189823,
+          "unique": 127.7
+        }
+      }
+    },
+    "witness_only": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.33784751702720917,
+      "median_ms": 0.03635464236140251,
+      "p95_ms": 2.424719033297148,
+      "mean_prep_ms": 0.03026912493320803,
+      "mean_search_ms": 0.30136853766938054,
+      "unique": 59.885,
+      "pops": 129.175,
+      "gm_cost_ratio": 1.0036169804436197,
+      "p95_cost_ratio": 1.0224520157397976,
+      "max_cost_ratio": 1.1538172993564173,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 0.9832544382742552,
+        "ci95": [
+          0.9763914837487244,
+          0.9881806090347641
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.973830550096704,
+        "ci95": [
+          0.9437719354149476,
+          1.0237782482111364
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9983509499029364,
+        "ci95": [
+          0.996654467279344,
+          0.9997143112227925
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0022596394561742,
+        "ci95": [
+          1.0007747884957774,
+          1.0041169840017419
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.33784751702720917,
+          "unique": 59.885
+        }
+      }
+    },
+    "witness_cf": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.3571921738330275,
+      "median_ms": 0.03641704097390175,
+      "p95_ms": 2.6166277821175754,
+      "mean_prep_ms": 0.04866156416634718,
+      "mean_search_ms": 0.301444234016041,
+      "unique": 59.695,
+      "pops": 128.985,
+      "gm_cost_ratio": 1.0036169804436197,
+      "p95_cost_ratio": 1.0224520157397976,
+      "max_cost_ratio": 1.1538172993564173,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 3,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.0395541554619983,
+        "ci95": [
+          1.022997445072675,
+          1.0615246254013948
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.0295906691717387,
+        "ci95": [
+          0.9939523558993105,
+          1.0976876422197819
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9968272522334475,
+        "ci95": [
+          0.9893632377948861,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9983509499029364,
+        "ci95": [
+          0.996654467279344,
+          0.9997143112227925
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0022596394561742,
+        "ci95": [
+          1.0007747884957774,
+          1.0041169840017419
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.3571921738330275,
+          "unique": 59.695
+        }
+      }
+    },
+    "guide_off": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.3436013140405218,
+      "median_ms": 0.03729155287146568,
+      "p95_ms": 2.5008395663462553,
+      "mean_prep_ms": 0.03115921630524099,
+      "mean_search_ms": 0.30639007803983986,
+      "unique": 59.885,
+      "pops": 129.175,
+      "gm_cost_ratio": 1.0036169804436197,
+      "p95_cost_ratio": 1.0224520157397976,
+      "max_cost_ratio": 1.1538172993564173,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.990415615927357,
+        "ci95": [
+          0.9605047147211597,
+          1.0399797687130887
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9983509499029364,
+        "ci95": [
+          0.996654467279344,
+          0.9997143112227925
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0022596394561742,
+        "ci95": [
+          1.0007747884957774,
+          1.0041169840017419
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.3436013140405218,
+          "unique": 59.885
+        }
+      }
+    },
+    "seed_cut": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.3433593187946826,
+      "median_ms": 0.037041958421468735,
+      "p95_ms": 2.486836141906678,
+      "mean_prep_ms": 0.036627675484245024,
+      "mean_search_ms": 0.30052444121489924,
+      "unique": 58.86833333333333,
+      "pops": 126.4,
+      "gm_cost_ratio": 1.004514776656873,
+      "p95_cost_ratio": 1.0303300858899107,
+      "max_cost_ratio": 1.24002061464025,
+      "accepted_queries": 58,
+      "examined_candidates": 708,
+      "accepted_seeds_or_targets": 58,
+      "fewer_states": 22,
+      "more_states": 11,
+      "shorter_paths": 2,
+      "longer_paths": 14,
+      "both_improve": 2,
+      "vs_off_time": {
+        "ratio": 0.9992957091956562,
+        "ci95": [
+          0.9680367980147045,
+          1.025337071450758
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9897180753165811,
+        "ci95": [
+          0.96171675054135,
+          1.0305038532236492
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9830230163368678,
+        "ci95": [
+          0.9632155954347683,
+          0.9979604481522992
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0008945606050392,
+        "ci95": [
+          1.0000410473257564,
+          1.0020740359338223
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.999244035332723,
+        "ci95": [
+          0.9977376531211898,
+          1.0006104610402449
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0031562214456524,
+        "ci95": [
+          1.0012255946641682,
+          1.0055269719688151
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.3433593187946826,
+          "unique": 58.86833333333333
+        }
+      }
+    },
+    "seed_lazy": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.34117151595031225,
+      "median_ms": 0.0375829404219985,
+      "p95_ms": 2.4709042510949053,
+      "mean_prep_ms": 0.03608864150010049,
+      "mean_search_ms": 0.2987392355377475,
+      "unique": 58.666666666666664,
+      "pops": 126.03666666666666,
+      "gm_cost_ratio": 1.0046506022388266,
+      "p95_cost_ratio": 1.0303300858899107,
+      "max_cost_ratio": 1.24002061464025,
+      "accepted_queries": 58,
+      "examined_candidates": 708,
+      "accepted_seeds_or_targets": 58,
+      "fewer_states": 23,
+      "more_states": 10,
+      "shorter_paths": 2,
+      "longer_paths": 15,
+      "both_improve": 2,
+      "vs_off_time": {
+        "ratio": 0.9929284377244174,
+        "ci95": [
+          0.9635372220846675,
+          1.0184120142212885
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9834118302206173,
+        "ci95": [
+          0.9549568445400912,
+          1.0237859771543583
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9796554507250007,
+        "ci95": [
+          0.95820260481489,
+          0.9966037605880186
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0010298966790596,
+        "ci95": [
+          1.0001388767042667,
+          1.00221040099998
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9993791482307776,
+        "ci95": [
+          0.9978202354521067,
+          1.000774160147425
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0032918633304058,
+        "ci95": [
+          1.001264175146208,
+          1.0057101373586916
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.34117151595031225,
+          "unique": 58.666666666666664
+        }
+      }
+    },
+    "geometry_lazy": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.3469263898053517,
+      "median_ms": 0.0375829404219985,
+      "p95_ms": 2.436180924996722,
+      "mean_prep_ms": 0.04180707735940814,
+      "mean_search_ms": 0.2987346542067826,
+      "unique": 58.04,
+      "pops": 127.4,
+      "gm_cost_ratio": 1.005274728832777,
+      "p95_cost_ratio": 1.0348768531760384,
+      "max_cost_ratio": 1.1718381169234948,
+      "accepted_queries": 114,
+      "examined_candidates": 2043,
+      "accepted_seeds_or_targets": 114,
+      "fewer_states": 36,
+      "more_states": 6,
+      "shorter_paths": 3,
+      "longer_paths": 15,
+      "both_improve": 3,
+      "vs_off_time": {
+        "ratio": 1.0096771334362178,
+        "ci95": [
+          0.9615571676569487,
+          1.0411193039196298
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9691909493195291,
+        "ci95": [
+          0.9281312187299107,
+          0.9928014309309577
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0016517739550646,
+        "ci95": [
+          1.000285770418847,
+          1.0033567628835018
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0039151458248403,
+        "ci95": [
+          1.0020112934954477,
+          1.0060730531123465
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.3469263898053517,
+          "unique": 58.04
+        }
+      }
+    },
+    "seed_cut_wrong": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.33930264646187425,
+      "median_ms": 0.03741693217307329,
+      "p95_ms": 2.5717952405102538,
+      "mean_prep_ms": 0.03871428896673024,
+      "mean_search_ms": 0.2939583947105954,
+      "unique": 58.305,
+      "pops": 122.04,
+      "gm_cost_ratio": 1.0048665338228318,
+      "p95_cost_ratio": 1.0262821108338007,
+      "max_cost_ratio": 1.297078248187092,
+      "accepted_queries": 18,
+      "examined_candidates": 1371,
+      "accepted_seeds_or_targets": 18,
+      "fewer_states": 15,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 9,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 0.987489373867352,
+        "ci95": [
+          0.9402897810609894,
+          1.021241866482305
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9780248964405537,
+        "ci95": [
+          0.9394049650117766,
+          1.0182591425737209
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9736160975202471,
+        "ci95": [
+          0.9279550178842073,
+          0.9984060352665861
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0012450500575025,
+        "ci95": [
+          1.0,
+          1.0036399271073189
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9995939468105208,
+        "ci95": [
+          0.9972062027049422,
+          1.0023679922315774
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0035075028779117,
+        "ci95": [
+          1.0010029844364412,
+          1.0068964564450813
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.33930264646187425,
+          "unique": 58.305
+        }
+      }
+    },
+    "seed_cut_random": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.3443413829275717,
+      "median_ms": 0.03756233491003513,
+      "p95_ms": 2.563162171281874,
+      "mean_prep_ms": 0.037339673144742846,
+      "mean_search_ms": 0.30045846981617313,
+      "unique": 58.58166666666666,
+      "pops": 129.22666666666666,
+      "gm_cost_ratio": 1.0052557898102497,
+      "p95_cost_ratio": 1.0338627883588396,
+      "max_cost_ratio": 1.1956808531552467,
+      "accepted_queries": 54,
+      "examined_candidates": 988,
+      "accepted_seeds_or_targets": 54,
+      "fewer_states": 24,
+      "more_states": 6,
+      "shorter_paths": 3,
+      "longer_paths": 15,
+      "both_improve": 3,
+      "vs_off_time": {
+        "ratio": 1.002153859303817,
+        "ci95": [
+          0.9655582516298574,
+          1.026191202481235
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.992548831816368,
+        "ci95": [
+          0.9708294921531261,
+          1.0157546385474339
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9782360635662798,
+        "ci95": [
+          0.9451165539632426,
+          0.9972497739110047
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0016329031877336,
+        "ci95": [
+          1.0002636728633423,
+          1.0032421337292727
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9999811603515097,
+        "ci95": [
+          0.9989057969988168,
+          1.0011567511031787
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.003896232416379,
+        "ci95": [
+          1.0018989906081681,
+          1.0061913861818115
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.3443413829275717,
+          "unique": 58.58166666666666
+        }
+      }
+    },
+    "seed_cut_shuffle": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.34214200723605853,
+      "median_ms": 0.03727106377482414,
+      "p95_ms": 2.5660993182100356,
+      "mean_prep_ms": 0.03669789293780923,
+      "mean_search_ms": 0.29900006484240294,
+      "unique": 58.86833333333333,
+      "pops": 126.4,
+      "gm_cost_ratio": 1.004514776656873,
+      "p95_cost_ratio": 1.0303300858899107,
+      "max_cost_ratio": 1.24002061464025,
+      "accepted_queries": 58,
+      "examined_candidates": 708,
+      "accepted_seeds_or_targets": 58,
+      "fewer_states": 22,
+      "more_states": 11,
+      "shorter_paths": 2,
+      "longer_paths": 14,
+      "both_improve": 2,
+      "vs_off_time": {
+        "ratio": 0.995752906799736,
+        "ci95": [
+          0.963366456714119,
+          1.0223381454854918
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9862092284995168,
+        "ci95": [
+          0.9574950669932518,
+          1.0246175536928248
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9830230163368678,
+        "ci95": [
+          0.9632155954347683,
+          0.9979604481522992
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0008945606050392,
+        "ci95": [
+          1.0000410473257564,
+          1.0020740359338223
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.999244035332723,
+        "ci95": [
+          0.9977376531211898,
+          1.0006104610402449
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0031562214456524,
+        "ci95": [
+          1.0012255946641682,
+          1.0055269719688151
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.34214200723605853,
+          "unique": 58.86833333333333
+        }
+      }
+    },
+    "potential_visible": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.43384422470505035,
+      "median_ms": 0.03745791036635637,
+      "p95_ms": 2.7397930156439534,
+      "mean_prep_ms": 0.036106318002566695,
+      "mean_search_ms": 0.3913316507047663,
+      "unique": 78.07,
+      "pops": 135.895,
+      "gm_cost_ratio": 1.0027640921241237,
+      "p95_cost_ratio": 1.015526602198611,
+      "max_cost_ratio": 1.1278783790073856,
+      "accepted_queries": 64,
+      "examined_candidates": 708,
+      "accepted_seeds_or_targets": 64,
+      "fewer_states": 0,
+      "more_states": 63,
+      "shorter_paths": 14,
+      "longer_paths": 2,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.2626384329074074,
+        "ci95": [
+          1.1442268128531268,
+          1.4428178162853016
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.2505368212215429,
+        "ci95": [
+          1.1258229784706701,
+          1.4512131600859541
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.303665358603991,
+        "ci95": [
+          1.1507336629317388,
+          1.538262076744794
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9991501854431368,
+        "ci95": [
+          0.9980581196335248,
+          0.9999422493760977
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9975025367328507,
+        "ci95": [
+          0.9955512036698829,
+          0.9991181524667438
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0014079046248079,
+        "ci95": [
+          1.0002109276550275,
+          1.0028578171727374
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.43384422470505035,
+          "unique": 78.07
+        }
+      }
+    },
+    "potential_geometry": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.5275638556728761,
+      "median_ms": 0.03754149656742811,
+      "p95_ms": 3.2650566427037093,
+      "mean_prep_ms": 0.043157284768919155,
+      "mean_search_ms": 0.47736951150000095,
+      "unique": 97.355,
+      "pops": 136.705,
+      "gm_cost_ratio": 1.0019573068869165,
+      "p95_cost_ratio": 1.0,
+      "max_cost_ratio": 1.1278783790073856,
+      "accepted_queries": 132,
+      "examined_candidates": 2043,
+      "accepted_seeds_or_targets": 132,
+      "fewer_states": 3,
+      "more_states": 129,
+      "shorter_paths": 30,
+      "longer_paths": 3,
+      "both_improve": 3,
+      "vs_off_time": {
+        "ratio": 1.5353953378963479,
+        "ci95": [
+          1.3445471860899751,
+          1.8233129157665602
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.5206795192746039,
+        "ci95": [
+          1.3218766979740046,
+          1.8347790965730664
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.6256992569090758,
+        "ci95": [
+          1.3713495240701608,
+          2.031199867589396
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9983463078155875,
+        "ci95": [
+          0.9967768997992122,
+          0.9994963201448367
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9966999847397812,
+        "ci95": [
+          0.9944706754223623,
+          0.9984939683389211
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0006022105236534,
+        "ci95": [
+          0.9991610109389268,
+          1.002151989794914
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.5275638556728761,
+          "unique": 97.355
+        }
+      }
+    },
+    "potential_random": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.46454991951274377,
+      "median_ms": 0.03722903784364462,
+      "p95_ms": 3.018259839154778,
+      "mean_prep_ms": 0.03741542692296207,
+      "mean_search_ms": 0.4204224864952266,
+      "unique": 82.18666666666667,
+      "pops": 141.35333333333332,
+      "gm_cost_ratio": 1.0030831240532787,
+      "p95_cost_ratio": 1.0194016502511172,
+      "max_cost_ratio": 1.119083589117928,
+      "accepted_queries": 90,
+      "examined_candidates": 988,
+      "accepted_seeds_or_targets": 90,
+      "fewer_states": 0,
+      "more_states": 86,
+      "shorter_paths": 17,
+      "longer_paths": 11,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.3520027442559728,
+        "ci95": [
+          1.2232028518197982,
+          1.5269279639863844
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.3390446306877564,
+        "ci95": [
+          1.20124588005176,
+          1.547383944641536
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.3724082268792965,
+        "ci95": [
+          1.2115601367514675,
+          1.6013209662392693
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9994680675987516,
+        "ci95": [
+          0.998297881607224,
+          1.000343552410906
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.997819894684866,
+        "ci95": [
+          0.9959433103346282,
+          0.9994008786364689
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0017265050794841,
+        "ci95": [
+          1.000654754243456,
+          1.0030214584556025
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.46454991951274377,
+          "unique": 82.18666666666667
+        }
+      }
+    },
+    "uniform15": {
+      "cases": 600,
+      "solvable": 600,
+      "valid": 600,
+      "mean_ms": 0.370813764554138,
+      "median_ms": 0.037563033401966095,
+      "p95_ms": 2.4681538809090853,
+      "mean_prep_ms": 0.031193776133780677,
+      "mean_search_ms": 0.33312242361716926,
+      "unique": 68.985,
+      "pops": 124.355,
+      "gm_cost_ratio": 1.0013542808011124,
+      "p95_cost_ratio": 1.0,
+      "max_cost_ratio": 1.081734029088108,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 9,
+      "more_states": 141,
+      "shorter_paths": 36,
+      "longer_paths": 3,
+      "both_improve": 6,
+      "vs_off_time": {
+        "ratio": 1.0791977486745203,
+        "ci95": [
+          1.0145001533104787,
+          1.1714321292648298
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.0688543029608923,
+        "ci95": [
+          0.9946686082147302,
+          1.1899887515063288
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.1519579193454121,
+        "ci95": [
+          1.0748012455619684,
+          1.265810916737845
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9977454550026574,
+        "ci95": [
+          0.9958998960614996,
+          0.9992258113367274
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9961001227632406,
+        "ci95": [
+          0.9939636062370404,
+          0.9979927436884256
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "families": {
+        "cached_public": {
+          "mean_ms": 0.370813764554138,
+          "unique": 68.985
+        }
+      }
+    }
+  },
+  "fresh": {
+    "original_indexed": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 138.07250000148392,
+      "median_ms": 1.5571455005556345,
+      "p95_ms": 701.7497670371016,
+      "mean_prep_ms": 0.01064669437861691,
+      "mean_search_ms": 138.05728450048872,
+      "unique": 694.6583333333333,
+      "pops": 1113.325,
+      "gm_cost_ratio": 1.0105396355323195,
+      "p95_cost_ratio": 1.0508743649395635,
+      "max_cost_ratio": 1.1058229337190195,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 32,
+      "more_states": 165,
+      "shorter_paths": 10,
+      "longer_paths": 47,
+      "both_improve": 10,
+      "vs_off_time": {
+        "ratio": 35.22361582181086,
+        "ci95": [
+          20.630762690136624,
+          46.82550400579525
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 34.49195964123868,
+        "ci95": [
+          19.864023616439134,
+          45.66054023873973
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0645017111917046,
+        "ci95": [
+          1.0063598507538756,
+          1.2383362625713867
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0033014830614249,
+        "ci95": [
+          1.0010314246960614,
+          1.0058432263411965
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.003661314663842,
+        "ci95": [
+          1.00139979602509,
+          1.0061269427080253
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0079406451847077,
+        "ci95": [
+          1.0036182912976592,
+          1.0132638489777965
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 84.63179681954595,
+          "unique": 482.25
+        },
+        "dead_ends": {
+          "mean_ms": 10.809147546145445,
+          "unique": 306.75
+        },
+        "dense": {
+          "mean_ms": 3.142213497388487,
+          "unique": 157.29166666666666
+        },
+        "disconnected": {
+          "mean_ms": 1049.9937986023724,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 22.35066484233054,
+          "unique": 246.75
+        },
+        "large_maze": {
+          "mean_ms": 176.2008195510134,
+          "unique": 1407.7083333333333
+        },
+        "large_random": {
+          "mean_ms": 0.7246129680424929,
+          "unique": 52.416666666666664
+        },
+        "maze": {
+          "mean_ms": 31.0569757129997,
+          "unique": 548.125
+        },
+        "open": {
+          "mean_ms": 0.498279434395954,
+          "unique": 36.333333333333336
+        },
+        "random_walls": {
+          "mean_ms": 1.3166910406046857,
+          "unique": 94.625
+        }
+      }
+    },
+    "indexed_astar": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 5.8478226138201235,
+      "median_ms": 3.178666695021093,
+      "p95_ms": 17.485793936066326,
+      "mean_prep_ms": 0.014479684371811649,
+      "mean_search_ms": 5.813184545453017,
+      "unique": 1182.8833333333334,
+      "pops": 1562.2166666666667,
+      "gm_cost_ratio": 1.0,
+      "p95_cost_ratio": 1.0,
+      "max_cost_ratio": 1.0,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 216,
+      "shorter_paths": 56,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.491835500487672,
+        "ci95": [
+          1.0790697730660268,
+          2.8372744854148984
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.4608474647945013,
+        "ci95": [
+          1.0611248643728362,
+          2.725462228690256
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.8126628186136793,
+        "ci95": [
+          1.393123344284607,
+          3.1050143858455197
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9928373393616751,
+        "ci95": [
+          0.9878071740311233,
+          0.9969542194346387
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9931934180247624,
+        "ci95": [
+          0.9886457332943219,
+          0.9970510858500926
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 0.9974281163684958,
+        "ci95": [
+          0.9949558705281302,
+          0.9993432607322622
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 5.147204899306719,
+          "unique": 1031.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 7.365607685642317,
+          "unique": 1447.6666666666667
+        },
+        "dense": {
+          "mean_ms": 5.430468726747979,
+          "unique": 1060.6666666666667
+        },
+        "disconnected": {
+          "mean_ms": 17.33064406046954,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 2.3343056285132966,
+          "unique": 442.6666666666667
+        },
+        "large_maze": {
+          "mean_ms": 9.695899410871789,
+          "unique": 2007.1666666666667
+        },
+        "large_random": {
+          "mean_ms": 2.953494753455743,
+          "unique": 576.6666666666666
+        },
+        "maze": {
+          "mean_ms": 3.358939371537417,
+          "unique": 697.5
+        },
+        "open": {
+          "mean_ms": 1.824076413565005,
+          "unique": 360.8333333333333
+        },
+        "random_walls": {
+          "mean_ms": 3.037585188091422,
+          "unique": 589.6666666666666
+        }
+      }
+    },
+    "scheduled_wa2": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 4.019505038741045,
+      "median_ms": 0.6174169247969985,
+      "p95_ms": 16.223046288359846,
+      "mean_prep_ms": 0.01101320085581392,
+      "mean_search_ms": 3.9954638933219635,
+      "unique": 685.15,
+      "pops": 2193.6666666666665,
+      "gm_cost_ratio": 1.008228496993298,
+      "p95_cost_ratio": 1.0401042247159462,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 124,
+      "shorter_paths": 0,
+      "longer_paths": 8,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.025414193825171,
+        "ci95": [
+          0.9994738308784807,
+          1.109263654316929
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.004114545420135,
+        "ci95": [
+          0.9759306101559715,
+          1.0781753389707887
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.049931041528324,
+        "ci95": [
+          1.0209890146435638,
+          1.1414452668328485
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0010068984234466,
+        "ci95": [
+          1.0,
+          1.0029982713634527
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0013659070787424,
+        "ci95": [
+          1.0,
+          1.0034437030140668
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0056354506250649,
+        "ci95": [
+          1.001494150594208,
+          1.0107387652959587
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.305100749557217,
+          "unique": 485.5
+        },
+        "dead_ends": {
+          "mean_ms": 1.80383682406197,
+          "unique": 297.5
+        },
+        "dense": {
+          "mean_ms": 0.9878073178697377,
+          "unique": 171.5
+        },
+        "disconnected": {
+          "mean_ms": 23.08690615852053,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.2760485901186864,
+          "unique": 42.166666666666664
+        },
+        "large_maze": {
+          "mean_ms": 8.057399245444685,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.3283055654416482,
+          "unique": 52.666666666666664
+        },
+        "maze": {
+          "mean_ms": 2.599583337238679,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.2243021638908734,
+          "unique": 36.333333333333336
+        },
+        "random_walls": {
+          "mean_ms": 0.5257604352664202,
+          "unique": 96
+        }
+      }
+    },
+    "witness_only": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.871011118947839,
+      "median_ms": 0.06406253669410944,
+      "p95_ms": 15.833562368061324,
+      "mean_prep_ms": 0.05940763124575218,
+      "mean_search_ms": 3.793092716174821,
+      "unique": 652.5666666666667,
+      "pops": 2150.4,
+      "gm_cost_ratio": 1.0072143344678495,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 0.9875319741028188,
+        "ci95": [
+          0.9847459170237741,
+          0.9920019901484118
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9670192057368415,
+        "ci95": [
+          0.9459911907157371,
+          0.9798960861655673
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0003586475336597,
+        "ci95": [
+          1.0,
+          1.0011624848437328
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0046238964076153,
+        "ci95": [
+          1.0007277324230053,
+          1.0095495481782129
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 1.9808194289604821,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.8370382701201986,
+          "unique": 289.6666666666667
+        },
+        "dense": {
+          "mean_ms": 0.7443854895730814,
+          "unique": 124.83333333333333
+        },
+        "disconnected": {
+          "mean_ms": 23.07420494616963,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.022795119245226186,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.173755185756212,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.0243646209128201,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.7152012335136533,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.013881983856360117,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.12366491137072444,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "witness_cf": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.8974208204308525,
+      "median_ms": 0.06343750283122063,
+      "p95_ms": 15.969466336537089,
+      "mean_prep_ms": 0.08772307191975415,
+      "mean_search_ms": 3.7930749812706686,
+      "unique": 651.4416666666667,
+      "pops": 2148.991666666667,
+      "gm_cost_ratio": 1.007017762669283,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 2,
+      "more_states": 0,
+      "shorter_paths": 2,
+      "longer_paths": 0,
+      "both_improve": 2,
+      "vs_off_time": {
+        "ratio": 0.9942693416379643,
+        "ci95": [
+          0.9898660268323222,
+          1.0047700462801088
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.973616626350501,
+        "ci95": [
+          0.956399781316044,
+          0.9858072109348625
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9982760382081013,
+        "ci95": [
+          0.993228815069773,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9998048361785177,
+        "ci95": [
+          0.9994817218832893,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.000163413717154,
+        "ci95": [
+          0.9996947429635171,
+          1.0008071378393402
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0044278301688399,
+        "ci95": [
+          1.0005825466438811,
+          1.0092186127516367
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.0202516461722553,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.8671336874831468,
+          "unique": 289.6666666666667
+        },
+        "dense": {
+          "mean_ms": 0.791460033118104,
+          "unique": 117.5
+        },
+        "disconnected": {
+          "mean_ms": 23.141650977777317,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.022418438068901498,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.20849989152824,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.02407299083036681,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.7707273548003286,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.013963620100791255,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.11402956442907453,
+          "unique": 11.75
+        }
+      }
+    },
+    "guide_off": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.9198843383928765,
+      "median_ms": 0.0654994510114193,
+      "p95_ms": 16.04920399840914,
+      "mean_prep_ms": 0.06116006892019262,
+      "mean_search_ms": 3.842483860595773,
+      "unique": 652.5666666666667,
+      "pops": 2150.4,
+      "gm_cost_ratio": 1.0072143344678495,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 0,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9792282489034209,
+        "ci95": [
+          0.9547694552009633,
+          0.9939418819940183
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0003586475336597,
+        "ci95": [
+          1.0,
+          1.0011624848437328
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0046238964076153,
+        "ci95": [
+          1.0007277324230053,
+          1.0095495481782129
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 1.9997847557533532,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.8414565129205585,
+          "unique": 289.6666666666667
+        },
+        "dense": {
+          "mean_ms": 0.7628732516119877,
+          "unique": 124.83333333333333
+        },
+        "disconnected": {
+          "mean_ms": 23.42053297131012,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.02327772866313656,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.223303719811762,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.025175249902531505,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.757132053375244,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.014586752513423562,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.13072038806664446,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "seed_cut": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.9181873512764778,
+      "median_ms": 0.06445858161896467,
+      "p95_ms": 16.018935409374468,
+      "mean_prep_ms": 0.07017858636875947,
+      "mean_search_ms": 3.8330001989379525,
+      "unique": 652.2166666666667,
+      "pops": 2149.7458333333334,
+      "gm_cost_ratio": 1.0072143344678495,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 5,
+      "examined_candidates": 534,
+      "accepted_seeds_or_targets": 5,
+      "fewer_states": 2,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 0.9995670823499107,
+        "ci95": [
+          0.9969875710257424,
+          1.0043320777708176
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9788043237110045,
+        "ci95": [
+          0.956199043616897,
+          0.9924449532300427
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9994636563314093,
+        "ci95": [
+          0.9979608738440251,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0003586475336597,
+        "ci95": [
+          1.0,
+          1.0011624848437328
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0046238964076153,
+        "ci95": [
+          1.0007277324230053,
+          1.0095495481782129
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.0162065823872886,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.8484445463400334,
+          "unique": 288
+        },
+        "dense": {
+          "mean_ms": 0.775717111537233,
+          "unique": 123
+        },
+        "disconnected": {
+          "mean_ms": 23.350824718363583,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.023758727669095,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.256149400646487,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.0249027992443492,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.7430328191258013,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.01473264031422635,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.12810416713667414,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "seed_lazy": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.9243602543137968,
+      "median_ms": 0.0635203905403614,
+      "p95_ms": 16.172208823263578,
+      "mean_prep_ms": 0.06962584836098054,
+      "mean_search_ms": 3.8397256983444095,
+      "unique": 652.1625,
+      "pops": 2149.6916666666666,
+      "gm_cost_ratio": 1.0072143344678495,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 5,
+      "examined_candidates": 534,
+      "accepted_seeds_or_targets": 5,
+      "fewer_states": 3,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.0011418489767878,
+        "ci95": [
+          0.9982567566187127,
+          1.0066834549797634
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.980346379677473,
+        "ci95": [
+          0.9594268229425302,
+          0.9947441448760442
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9993806507636512,
+        "ci95": [
+          0.997860064677713,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0003586475336597,
+        "ci95": [
+          1.0,
+          1.0011624848437328
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0046238964076153,
+        "ci95": [
+          1.0007277324230053,
+          1.0095495481782129
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 1.9979218971760324,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.8733211521369715,
+          "unique": 288
+        },
+        "dense": {
+          "mean_ms": 0.7676891982555389,
+          "unique": 123
+        },
+        "disconnected": {
+          "mean_ms": 23.374727558499824,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.023882021196186543,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.270760483962173,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.025300357568388183,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.766789916980391,
+          "unique": 552.625
+        },
+        "open": {
+          "mean_ms": 0.014590206167971095,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.12861975119449198,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "geometry_lazy": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 4.003034371999092,
+      "median_ms": 0.06399990525096655,
+      "p95_ms": 16.526387841440666,
+      "mean_prep_ms": 0.1349003791498641,
+      "mean_search_ms": 3.8517276096778614,
+      "unique": 650.2,
+      "pops": 2138.15,
+      "gm_cost_ratio": 1.0068532290404968,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 44,
+      "examined_candidates": 8716,
+      "accepted_seeds_or_targets": 44,
+      "fewer_states": 8,
+      "more_states": 4,
+      "shorter_paths": 4,
+      "longer_paths": 0,
+      "both_improve": 4,
+      "vs_off_time": {
+        "ratio": 1.021212369148705,
+        "ci95": [
+          1.0060950425393684,
+          1.047373265373903
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9963732951933392,
+        "ci95": [
+          0.9834440099736437,
+          1.0001971012024287
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9996414810482781,
+        "ci95": [
+          0.998838864958155,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0042637197014004,
+        "ci95": [
+          1.0006134525967263,
+          1.008594789394409
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.021215303102508,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.9506753014866263,
+          "unique": 287.5
+        },
+        "dense": {
+          "mean_ms": 0.713036492622147,
+          "unique": 102.66666666666667
+        },
+        "disconnected": {
+          "mean_ms": 23.597291787154973,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.024227444858600695,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.531076406749586,
+          "unique": 1503
+        },
+        "large_random": {
+          "mean_ms": 0.025760460024078686,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 3.0143487868675343,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.014680573561539253,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.13803116356333098,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "seed_cut_wrong": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.962697217745396,
+      "median_ms": 0.06370805203914642,
+      "p95_ms": 16.166910703759573,
+      "mean_prep_ms": 0.08517740934621543,
+      "mean_search_ms": 3.8614654331468046,
+      "unique": 650.4333333333333,
+      "pops": 2173.6666666666665,
+      "gm_cost_ratio": 1.0077761256570326,
+      "p95_cost_ratio": 1.031308475757327,
+      "max_cost_ratio": 1.0891984961294425,
+      "accepted_queries": 24,
+      "examined_candidates": 1892,
+      "accepted_seeds_or_targets": 24,
+      "fewer_states": 12,
+      "more_states": 0,
+      "shorter_paths": 4,
+      "longer_paths": 4,
+      "both_improve": 4,
+      "vs_off_time": {
+        "ratio": 1.0109219751545202,
+        "ci95": [
+          0.9690268235604578,
+          1.0532748959757
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9899233555085483,
+        "ci95": [
+          0.93867801450344,
+          1.0244924158218276
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9967308576390662,
+        "ci95": [
+          0.9893691356690473,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0005577672695454,
+        "ci95": [
+          0.9989622091176419,
+          1.0027581435609731
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0009166148450606,
+        "ci95": [
+          0.999251541478499,
+          1.003199707319819
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0051842427352344,
+        "ci95": [
+          1.0007397034469632,
+          1.0108875896499712
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.013013892186185,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.508590280233572,
+          "unique": 273.6666666666667
+        },
+        "dense": {
+          "mean_ms": 0.8173073486735424,
+          "unique": 124.83333333333333
+        },
+        "disconnected": {
+          "mean_ms": 24.017107624482986,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.02330912199492256,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.274874766357243,
+          "unique": 1497
+        },
+        "large_random": {
+          "mean_ms": 0.02536820829845965,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.801946277031675,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.014362837343166271,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.13109182085221013,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "seed_cut_random": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.770576706544186,
+      "median_ms": 0.06633298471570015,
+      "p95_ms": 16.10227490309619,
+      "mean_prep_ms": 0.07270675851032138,
+      "mean_search_ms": 3.6831890572405728,
+      "unique": 651.4791666666666,
+      "pops": 1929.8916666666667,
+      "gm_cost_ratio": 1.00859005483932,
+      "p95_cost_ratio": 1.037412098623694,
+      "max_cost_ratio": 1.2596173005417268,
+      "accepted_queries": 21,
+      "examined_candidates": 763,
+      "accepted_seeds_or_targets": 21,
+      "fewer_states": 4,
+      "more_states": 5,
+      "shorter_paths": 3,
+      "longer_paths": 4,
+      "both_improve": 3,
+      "vs_off_time": {
+        "ratio": 0.9619101945467337,
+        "ci95": [
+          0.9070727184626456,
+          1.0093405844191912
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9419296354083468,
+        "ci95": [
+          0.8983221054680935,
+          0.9795509099534971
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9983335036011647,
+        "ci95": [
+          0.9926610589862126,
+          1.0007262662794008
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0013658665533165,
+        "ci95": [
+          0.9998016745379477,
+          1.0035383750732432
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0017250039516468,
+        "ci95": [
+          0.9998016745379477,
+          1.0046728075558895
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0059960785863808,
+        "ci95": [
+          1.0012143732306094,
+          1.012311637831947
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.0180832458815225,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.7892100925867755,
+          "unique": 281.5833333333333
+        },
+        "dense": {
+          "mean_ms": 0.763262224306042,
+          "unique": 124.16666666666667
+        },
+        "disconnected": {
+          "mean_ms": 21.852949663298205,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.024036387912929058,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.288154465844855,
+          "unique": 1502.2916666666667
+        },
+        "large_random": {
+          "mean_ms": 0.025442626792937517,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.809668289652715,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.014317784613619247,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.12064228455225627,
+          "unique": 13.583333333333334
+        }
+      }
+    },
+    "seed_cut_shuffle": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.9326484567330526,
+      "median_ms": 0.06437511183321476,
+      "p95_ms": 16.15743135334917,
+      "mean_prep_ms": 0.07010107607735942,
+      "mean_search_ms": 3.84691387686568,
+      "unique": 652.2166666666667,
+      "pops": 2149.7458333333334,
+      "gm_cost_ratio": 1.0072143344678495,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 5,
+      "examined_candidates": 534,
+      "accepted_seeds_or_targets": 5,
+      "fewer_states": 2,
+      "more_states": 0,
+      "shorter_paths": 0,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.0032562487150858,
+        "ci95": [
+          1.0011180597022484,
+          1.0078305342873297
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9824168596306884,
+        "ci95": [
+          0.9593975008703826,
+          0.9967122580994302
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 0.9994636563314093,
+        "ci95": [
+          0.9979608738440251,
+          1.0
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0003586475336597,
+        "ci95": [
+          1.0,
+          1.0011624848437328
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0046238964076153,
+        "ci95": [
+          1.0007277324230053,
+          1.0095495481782129
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.0227742594822,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.8489949191765238,
+          "unique": 288
+        },
+        "dense": {
+          "mean_ms": 0.7773576847588023,
+          "unique": 123
+        },
+        "disconnected": {
+          "mean_ms": 23.444814267956342,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.023626819408188265,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.28093063319102,
+          "unique": 1502.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.024937423101315897,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.759852427213142,
+          "unique": 553.1666666666666
+        },
+        "open": {
+          "mean_ms": 0.014725694200024009,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.12847043884297213,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "potential_visible": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.952249850650939,
+      "median_ms": 0.06358360406011343,
+      "p95_ms": 16.030777175910703,
+      "mean_prep_ms": 0.06963417011623581,
+      "mean_search_ms": 3.8678196404362097,
+      "unique": 659.3375,
+      "pops": 2155.95,
+      "gm_cost_ratio": 1.0071448549970667,
+      "p95_cost_ratio": 1.0365147232596101,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 6,
+      "examined_candidates": 534,
+      "accepted_seeds_or_targets": 6,
+      "fewer_states": 0,
+      "more_states": 6,
+      "shorter_paths": 1,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 1.0082567518487886,
+        "ci95": [
+          1.0001304749280187,
+          1.0341185614261192
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9873134935579402,
+        "ci95": [
+          0.9697512134671011,
+          1.0048641043176219
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0103756959697605,
+        "ci95": [
+          1.0013895881465176,
+          1.0360470165053246
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9999310181870879,
+        "ci95": [
+          0.9997851108006995,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 1.0002896409805906,
+        "ci95": [
+          0.9998380502290886,
+          1.0010878980860607
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0045545956299462,
+        "ci95": [
+          1.000635974205844,
+          1.009460890557669
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.010364599603539,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 1.931190985487774,
+          "unique": 303.2916666666667
+        },
+        "dense": {
+          "mean_ms": 0.937869840223963,
+          "unique": 163.625
+        },
+        "disconnected": {
+          "mean_ms": 23.348020787428442,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.02335073077119887,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.322487905388698,
+          "unique": 1510.0833333333333
+        },
+        "large_random": {
+          "mean_ms": 0.025116275840749342,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.78179335873574,
+          "unique": 560.7083333333334
+        },
+        "open": {
+          "mean_ms": 0.014581620537986359,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.12772240249129632,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "potential_geometry": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.5588082236548266,
+      "median_ms": 0.06495846901088953,
+      "p95_ms": 16.312518727499942,
+      "mean_prep_ms": 0.13507579278666526,
+      "mean_search_ms": 3.407659221556969,
+      "unique": 682.6166666666667,
+      "pops": 1222.8666666666666,
+      "gm_cost_ratio": 1.006120340358537,
+      "p95_cost_ratio": 1.031308475757327,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 44,
+      "examined_candidates": 8716,
+      "accepted_seeds_or_targets": 44,
+      "fewer_states": 0,
+      "more_states": 20,
+      "shorter_paths": 8,
+      "longer_paths": 0,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 0.9078860283703962,
+        "ci95": [
+          0.7591413154650526,
+          1.1741146470395192
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.8890276457650245,
+        "ci95": [
+          0.7515680585423986,
+          1.1362850368710007
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.0460489349747153,
+        "ci95": [
+          1.0036980055951055,
+          1.1754972559532038
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9989138417992328,
+        "ci95": [
+          0.9971025434938784,
+          1.0
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9992720997849326,
+        "ci95": [
+          0.9977317930054179,
+          1.0
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0035327159238454,
+        "ci95": [
+          1.0002087205815937,
+          1.007280401311248
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.1537708137960485,
+          "unique": 452
+        },
+        "dead_ends": {
+          "mean_ms": 2.1548559792184583,
+          "unique": 333
+        },
+        "dense": {
+          "mean_ms": 1.8690261349547654,
+          "unique": 324.8333333333333
+        },
+        "disconnected": {
+          "mean_ms": 17.547821170107152,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.02333849746113022,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.616073008549089,
+          "unique": 1529.8333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.025769317289814353,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 3.049484580211962,
+          "unique": 556.5
+        },
+        "open": {
+          "mean_ms": 0.014826412855957946,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.1331163221038878,
+          "unique": 15.666666666666666
+        }
+      }
+    },
+    "potential_random": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.9030217129038647,
+      "median_ms": 0.06414600647985935,
+      "p95_ms": 16.80407715030013,
+      "mean_prep_ms": 0.07332677099232872,
+      "mean_search_ms": 3.813890423043631,
+      "unique": 718.0458333333333,
+      "pops": 1609.3541666666667,
+      "gm_cost_ratio": 1.006214638878472,
+      "p95_cost_ratio": 1.03160456466973,
+      "max_cost_ratio": 1.0875533524816487,
+      "accepted_queries": 44,
+      "examined_candidates": 763,
+      "accepted_seeds_or_targets": 44,
+      "fewer_states": 0,
+      "more_states": 31,
+      "shorter_paths": 9,
+      "longer_paths": 5,
+      "both_improve": 0,
+      "vs_off_time": {
+        "ratio": 0.9956981828969156,
+        "ci95": [
+          0.817191959962454,
+          1.2939095238060487
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.9750157880744647,
+        "ci95": [
+          0.8095630742045982,
+          1.2526150549482582
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.1003409613321755,
+        "ci95": [
+          1.0261630821584005,
+          1.312610586340302
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.999007464890871,
+        "ci95": [
+          0.9968865350560643,
+          1.000584808935568
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9993657564542617,
+        "ci95": [
+          0.997774677479855,
+          1.0006711368060224
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0036267719189607,
+        "ci95": [
+          1.0009648986649338,
+          1.0069348619656961
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.0237934368196875,
+          "unique": 425.6666666666667
+        },
+        "dead_ends": {
+          "mean_ms": 2.9113575680336603,
+          "unique": 487
+        },
+        "dense": {
+          "mean_ms": 1.8522882795271773,
+          "unique": 335.7916666666667
+        },
+        "disconnected": {
+          "mean_ms": 19.70887673087418,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.023269152734428644,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.500816009473056,
+          "unique": 1533.3333333333333
+        },
+        "large_random": {
+          "mean_ms": 0.025201336635897558,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.791449641032765,
+          "unique": 556.5
+        },
+        "open": {
+          "mean_ms": 0.014616273498783508,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 1.17854870040901,
+          "unique": 227.83333333333334
+        }
+      }
+    },
+    "uniform15": {
+      "cases": 240,
+      "solvable": 216,
+      "valid": 216,
+      "mean_ms": 3.724394829866166,
+      "median_ms": 0.06431248039007187,
+      "p95_ms": 16.577294468879664,
+      "mean_prep_ms": 0.06175052161173274,
+      "mean_search_ms": 3.6459229255948835,
+      "unique": 714.5833333333334,
+      "pops": 1641.5333333333333,
+      "gm_cost_ratio": 1.0025785152727278,
+      "p95_cost_ratio": 1.0230578194647568,
+      "max_cost_ratio": 1.0574682645986535,
+      "accepted_queries": 0,
+      "examined_candidates": 0,
+      "accepted_seeds_or_targets": 0,
+      "fewer_states": 4,
+      "more_states": 88,
+      "shorter_paths": 44,
+      "longer_paths": 4,
+      "both_improve": 4,
+      "vs_off_time": {
+        "ratio": 0.9501287559400644,
+        "ci95": [
+          0.8442092935663169,
+          1.1392274793943657
+        ]
+      },
+      "vs_geometry_time": {
+        "ratio": 0.930392917911975,
+        "ci95": [
+          0.8364646421763101,
+          1.0984078630092147
+        ]
+      },
+      "vs_off_unique": {
+        "ratio": 1.095034990039332,
+        "ci95": [
+          1.0265892567794517,
+          1.237287707369505
+        ]
+      },
+      "cost_vs_off": {
+        "ratio": 0.9953973856045535,
+        "ci95": [
+          0.9905407830789351,
+          0.9992727967876399
+        ]
+      },
+      "cost_vs_geometry": {
+        "ratio": 0.9957543824219118,
+        "ci95": [
+          0.991478451547465,
+          0.9993869234966478
+        ]
+      },
+      "cost_vs_uniform15": {
+        "ratio": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "families": {
+        "corridors": {
+          "mean_ms": 2.0068211888428777,
+          "unique": 435.3333333333333
+        },
+        "dead_ends": {
+          "mean_ms": 3.1694045076922825,
+          "unique": 584.3333333333334
+        },
+        "dense": {
+          "mean_ms": 0.7832291788266351,
+          "unique": 129.16666666666666
+        },
+        "disconnected": {
+          "mean_ms": 19.52753303339705,
+          "unique": 3614.3333333333335
+        },
+        "enclosed": {
+          "mean_ms": 0.023791721711556118,
+          "unique": 0
+        },
+        "large_maze": {
+          "mean_ms": 8.745453310742354,
+          "unique": 1775.5
+        },
+        "large_random": {
+          "mean_ms": 0.025564290505523484,
+          "unique": 0
+        },
+        "maze": {
+          "mean_ms": 2.808630078410109,
+          "unique": 589.6666666666666
+        },
+        "open": {
+          "mean_ms": 0.014362953758488098,
+          "unique": 0
+        },
+        "random_walls": {
+          "mean_ms": 0.13915803477478525,
+          "unique": 17.5
+        }
+      }
+    }
+  }
+}

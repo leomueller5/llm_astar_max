@@ -664,3 +664,56 @@ Negative Ergebnisse: einfache Stagnations-/Dichtegates und spätere Zertifizieru
 Die Arbeit als evidenzgeleitete Untersuchung selektiver Guidance darstellen: ursprüngliche Adaptive-Alpha-Hypothese, gemessene kurze Waypoint-Lebensdauer, verifizierte Routen, dann schnelle geometrische Zertifikate mit sauberer LLM-Ablation. Nicht behaupten, dass der große Laufzeitgewinn von LLM-Intelligenz stammt. Für den stärksten Laufzeitstand Witness-only; die exakte LLM-Ergänzung und Raw-Chain-Incumbents als unabhängig bewertete Optionen zeigen. Weitere Modelle/Antworten und schwierigere Karten sind nötig, bevor ein echter LLM-Laufzeitvorteil behauptet werden kann.
 
 [Algorithmus, Pseudocode und exakte Befehle](improving_llm_star/experiments/research/session2/README.md), [Tabellen und Konfidenzintervalle](improving_llm_star/experiments/results/research_session2/REPORT.md), [Forschungslog](improving_llm_star/experiments/research/session2/EXPERIMENT_LOG.md), [Grafiken als PDF](improving_llm_star/experiments/results/research_session2/runtime.pdf).
+
+---
+
+## Dritte autonome Forschungsphase am 16.11.2026
+
+Ziel: tatsächlichen Beitrag echter LLM-Waypoints gegenüber gleicher Geometrie und gleichem Suchkern nachweisen. Neue Verfahren vor der Validierung in Commit `79b96f3` eingefroren. Keine alten Testkarten für Auswahl verwendet, keine bezahlten API-Aufrufe, kein Push/Merge. Baselines und historische Resultate bleiben erhalten.
+
+### Neue Strategie und geprüfte Alternativen
+
+**Verifizierte Präfix-Seeds:** Ein vollständiger Waypoint-Pfad muss nicht gelingen. Ein tatsächlich kollisionsfreier Gitterpfad vom Start zu einem ausgewählten Zwischenpunkt liefert dessen echten g-Wert in OPEN; der normale Start bleibt verfügbar. Rangfolge nach `octile(s,t)+2*h(t)`, Belegung/Umwegfilter, primär `octile(s,t)+octile(t,g)<=1.1*L` mit zulässiger geometrischer Schranke L. Sortierte Kandidaten werden lazy geprüft; erster gültiger Link liefert denselben Seed wie die vollständige Prüfung. Bei besseren Pfaden wird ein alter Makro-Elternpfad ersetzt, Zustände werden wieder geöffnet.
+
+Der normale Score bleibt exakt `g+2*h_goal`; keine versehentliche Abschwächung der finalen Zielheuristik. Tatsächlich ausgegebene Makros bestehen aus originalen Einzelschritten mit echten Kosten. Damit Faktor-2-Schranke, keine allgemeine Optimalitätsgarantie. Als weitere Richtungen geprüft: mehrere Seeds, Präfixketten, unmittelbare Konfidenzgewichtung, begrenztes sichtbares Waypoint-Potenzial und Tie-Breaking.
+
+### Warum wenig nutzbare Information übrig bleibt
+
+Von 600 Entwicklungsfällen löst Witness bereits 467 ohne Suche. Von den verbleibenden 133 besitzen 99 einen geometrisch brauchbaren Zwischenpunkt. Die alte matched Guidance verbessert dennoch nur bei 15 die Expansionen, bei 22 die Pfadlänge und bei drei beides. Originalziele leben im Median einen Pop; 93,45 % wechseln vor 30 Pops. Ein brauchbarer Punkt ist daher weder ein Beweis für Suchnutzen noch für rentablen Zusatzaufwand.
+
+### Kontrollierte Abschlussauswertung
+
+600 echte gecachte Validierungsbeobachtungen, 20 ganze Karten, Standard/CoT/RePE, neun interleavte Wiederholungen. Dieser historische Validierungssplit wurde schon in früheren Sitzungen verwendet; kein neuer unabhängiger Realmodell-Holdout. Zusätzlich 30 neue kanonisch geometrisch disjunkte Karten, 240 Fälle aus zehn Familien, sieben Wiederholungen. Hilfreiche neue Fixtures sind oracle-basiert und keine echten LLM-Ausgaben. Unabhängige Prüfung auf Überschneidung mit bisherigen gespeicherten Geometrien bestanden.
+
+| Variante | Echte Validierung: mittlere Fallmedian-ms | Unterschiedliche Zustände | Kosten/Optimum (geom.) | Frische Fixtures: ms |
+|---|---:|---:|---:|---:|
+| original_indexed | 5.5859 | 165.70 | 1.02698 | 138.0725 |
+| scheduled_wa2 | 0.6827 | 127.70 | 1.01607 | 4.0195 |
+| witness_only | 0.3378 | 59.88 | 1.00362 | 3.8710 |
+| witness_cf | 0.3572 | 59.70 | 1.00362 | 3.8974 |
+| guide_off | 0.3436 | 59.88 | 1.00362 | 3.9199 |
+| seed_cut | 0.3434 | 58.87 | 1.00451 | 3.9182 |
+| seed_lazy | 0.3412 | 58.67 | 1.00465 | 3.9244 |
+| geometry_lazy | 0.3469 | 58.04 | 1.00527 | 4.0030 |
+| seed_cut_wrong | 0.3393 | 58.30 | 1.00487 | 3.9627 |
+| seed_cut_random | 0.3443 | 58.58 | 1.00526 | 3.7706 |
+| potential_visible | 0.4338 | 78.07 | 1.00276 | 3.9522 |
+| potential_geometry | 0.5276 | 97.36 | 1.00196 | 3.5588 |
+| potential_random | 0.4645 | 82.19 | 1.00308 | 3.9030 |
+| uniform15 | 0.3708 | 68.98 | 1.00135 | 3.7244 |
+
+Primärvariante gegenüber identischem Kern ohne Guidance: Zeitverhältnis 0.9993, 95%-Karten-Bootstrap [0.9680; 1.0253]. Kein abgesicherter Laufzeitgewinn. 22 Fälle mit weniger und 11 mit mehr Zuständen; 2 kürzere und 14 längere Pfade. 58/600 Anfragen übernehmen einen Seed; das bedeutet nicht, dass der Seed im Endpfad verwendet wird.
+
+**LLM-Beitrag nicht nachgewiesen:** Falsche Anfragen derselben Karte, zufällige freie Punkte und geometrische Seed-Kandidaten sind insgesamt konkurrenzfähig. Shuffle verändert bei der absichtlich reihenfolgeunabhängigen Rangfolge weder Kosten noch Zähler. Einzelne weniger expandierte Zustände reichen daher nicht als Beweis für nützlichen semantischen LLM-Inhalt.
+
+Das sichtbare Waypoint-Potenzial verbessert einige Pfade, kostet aber deutlich mehr Laufzeit. Die einfache reine Zielgewichtung 1,5 erzielt auf realer Validierung kürzere Pfade bei weniger Laufzeit als dieser LLM-Qualitätskandidat. Die scheinbare Qualitätsverbesserung ist damit kein überzeugender spezifischer LLM-Vorteil.
+
+Öffentliche Schnittstelle, 40 feste Validierungsanfragen, sieben Wiederholungen, Warmup ausgeschlossen: Seed ohne Guidance rund 0,371 ms, mit echten Hinweisen 0,435 ms, Witness ohne LLM 0,374 ms. Parsing, Kopieren und gesamte Vorverarbeitung zählen hier mit; kein Netzwerk. Ein im Kern kaum messbarer Vorteil verschwindet somit im vollständigen Aufruf.
+
+98 Tests bestehen. Unabhängige Shapely-/Kosten-/Faktor-2-Prüfung für drei Kandidaten auf allen 600 echten und 216 lösbaren frischen Fällen; 24 unerreichbare frische Fälle korrekt gemeldet. Gegen alle A*-Referenzen stimmt die Erreichbarkeit. Ganze Karten werden gebootstrappt; sekundäre Mehrfachvergleiche sind explorativ und nicht adjustiert.
+
+### Empfehlung
+
+Witness-First als stärksten bisherigen Laufzeitstand behalten. Präfix-Seeding als sauber implementierte, aber nicht erfolgreich bestätigte LLM-Erweiterung dokumentieren. Für weitere Arbeit braucht es vor allem hochwertige echte Hinweise auf komplexen, nicht geometrisch trivialen Karten und eine neue unverbrauchte reale Testmenge. Nicht weiter ausschließlich Stagnationstimer oder Schwellen auf denselben öffentlichen Antworten optimieren. Negative Resultate, Zufalls-/Falschantwort-Kontrollen und der Vergleich mit einfacher Zielgewichtung gehören ausdrücklich in die Abgabe.
+
+[Session-3-Algorithmus und Befehle](improving_llm_star/experiments/research/session3/README.md), [Messwerte und Konfidenzintervalle](improving_llm_star/experiments/results/research_session3/REPORT.md), [Forschungslog](improving_llm_star/experiments/research/session3/EXPERIMENT_LOG.md), [Vergleich als PDF](improving_llm_star/experiments/results/research_session3/comparison.pdf).
