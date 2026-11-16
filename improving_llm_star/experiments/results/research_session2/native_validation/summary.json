@@ -1,0 +1,44 @@
+{
+  "original_native": {
+    "cases": 40,
+    "mean_case_median_ms": 41.678035515360534,
+    "median_case_median_ms": 19.30397958494723,
+    "max_case_median_ms": 238.3049160707742
+  },
+  "astar_public": {
+    "cases": 40,
+    "mean_case_median_ms": 1.3900864345487207,
+    "median_case_median_ms": 1.0325211333110929,
+    "max_case_median_ms": 4.795375047251582
+  },
+  "wa2_public": {
+    "cases": 40,
+    "mean_case_median_ms": 0.6457813375163823,
+    "median_case_median_ms": 0.36866660229861736,
+    "max_case_median_ms": 3.0217499006539583
+  },
+  "old_cf_public": {
+    "cases": 40,
+    "mean_case_median_ms": 2.402549091493711,
+    "median_case_median_ms": 1.8709165742620826,
+    "max_case_median_ms": 7.975582964718342
+  },
+  "witness_exact_public": {
+    "cases": 40,
+    "mean_case_median_ms": 0.446621811715886,
+    "median_case_median_ms": 0.13677100650966167,
+    "max_case_median_ms": 3.1372918747365475
+  },
+  "witness_only_public": {
+    "cases": 40,
+    "mean_case_median_ms": 0.40945939836092293,
+    "median_case_median_ms": 0.10066642425954342,
+    "max_case_median_ms": 3.1527909450232983
+  },
+  "witness_frontier_public": {
+    "cases": 40,
+    "mean_case_median_ms": 0.438796920934692,
+    "median_case_median_ms": 0.13995799235999584,
+    "max_case_median_ms": 3.1502500642091036
+  }
+}

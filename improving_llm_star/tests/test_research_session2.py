@@ -137,3 +137,54 @@ def test_lean_fallback_matches_legacy_and_noninteger_cut_bound_disabled():
  r=EfficientCertificateSearch(segment_mode='analytic').search(q,[[8,9]],SegmentGridGraph(q))
  from llmastar.research.search import octile
  assert r['start_lower_bound']==octile(tuple(q['start']),tuple(q['goal']))
+
+
+def test_wall_witnesses_are_verified_optimal_and_not_credited_to_llm():
+ q=dict(range_x=[0,17],range_y=[0,13],horizontal_barriers=[],vertical_barriers=[[8,0,8]],start=[3,5],goal=[13,5])
+ optimum=IncumbentSearch(use_waypoints=False,visibility_budget=0,goal_weight=1).search(q,[],IndexedGridGraph(q))
+ for hints in [[],[[8,8]],[[1,11]]]:
+  r=EfficientCertificateSearch(segment_mode='analytic',witness=True,fallback_engine='lean',reuse_validation=True).search(q,hints,SegmentGridGraph(q))
+  assert r['valid'] and r['length']==optimum['length']
+  assert r['candidate_source']=='wall_witness' and r['certified_early_return'] and r['unique']==0
+
+from llmastar.research.corridor import CorridorSearch
+
+
+def test_corridor_fallback_validity_cost_and_operation_accounting():
+ for q in maps():
+  optimum=IncumbentSearch(use_waypoints=False,visibility_budget=0,goal_weight=1).search(q,[],IndexedGridGraph(q))
+  for hints in [[],[[5,6],[7,8]],[[0,0]]]:
+   r=CorridorSearch(expansion_cap=8,max_cells=256).search(q,hints,SegmentGridGraph(q))
+   assert r['valid']==optimum['valid']
+   assert r['operation']>=r['unique']
+   if r['valid']:assert r['length']<=2*optimum['length']+1e-9
+
+
+def test_public_witness_interface_is_offline_immutable_and_baseline_compatible():
+ import copy
+ from llmastar.pather import WitnessFirstLLMAStar
+ q=dict(range_x=[0,17],range_y=[0,13],horizontal_barriers=[],vertical_barriers=[[8,0,8]],start=[3,5],goal=[13,5]);saved=copy.deepcopy(q)
+ for policy in ['exact','frontier']:
+  p=WitnessFirstLLMAStar(waypoint_response='Generated Path: [[3,5],[8,8],[13,5]]',policy=policy)
+  result=p.searching(q)
+  assert q==saved and set(result)=={'operation','storage','length','llm_output'}
+  assert p.search_metrics['path_valid'] and p.search_metrics['accepted_source']=='wall_witness'
+
+
+def test_no_guidance_public_mode_skips_initial_model_request():
+ from llmastar.pather import WitnessFirstLLMAStar
+ q=dict(range_x=[0,17],range_y=[0,13],horizontal_barriers=[],vertical_barriers=[[8,0,8]],start=[3,5],goal=[13,5])
+ p=WitnessFirstLLMAStar(use_waypoints=False)
+ class ForbiddenModel:
+  def ask(self,**kwargs):raise AssertionError('No guidance mode must not call a model')
+ p.model=ForbiddenModel();r=p.searching(q)
+ assert p.search_metrics['path_valid'] and r['llm_output']==[(3,5),(13,5)]
+
+
+def test_fractional_and_degenerate_segment_fallback_emits_exact_unit_walk():
+ q=dict(range_x=[0,13],range_y=[0,13],horizontal_barriers=[[6,3,3],[8.5,1,5.5]],vertical_barriers=[[4.5,0,3]],start=[1,1],goal=[11,11])
+ g=SegmentGridGraph(q);old=LazyGridGraph(q)
+ for a,b in [((1,1),(11,11)),((2,7),(9,10)),((1,5),(11,5)),((3,6),(10,10))]:
+  route=g.lattice_segment(a,b);reference=old.shortcut(a,b)
+  assert bool(route)==bool(reference)
+  if route:assert expand_lattice_route(route)==reference

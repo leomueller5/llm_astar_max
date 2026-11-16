@@ -1,0 +1,41 @@
+         582385 function calls (581781 primitive calls) in 0.119 seconds
+
+   Ordered by: cumulative time
+   List reduced from 72 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      120    0.000    0.000    0.121    0.001 run.py:67(execute)
+      120    0.001    0.000    0.119    0.001 efficient.py:27(search)
+       28    0.018    0.001    0.107    0.004 scheduled.py:13(search)
+     8632    0.032    0.000    0.075    0.000 geometry.py:11(get)
+    61052    0.016    0.000    0.028    0.000 geometry.py:59(blocked)
+   153044    0.012    0.000    0.012    0.000 {method 'get' of 'dict' objects}
+ 1519/915    0.001    0.000    0.006    0.000 {built-in method builtins.all}
+    64333    0.006    0.000    0.006    0.000 search.py:53(inside)
+    20493    0.003    0.000    0.006    0.000 {built-in method builtins.any}
+    47568    0.004    0.000    0.004    0.000 {built-in method math.hypot}
+    51737    0.004    0.000    0.004    0.000 {method 'append' of 'list' objects}
+      420    0.000    0.000    0.003    0.000 efficient.py:31(segment)
+     1201    0.000    0.000    0.003    0.000 scheduled.py:40(<genexpr>)
+    48741    0.003    0.000    0.003    0.000 geometry.py:67(degenerate_collision)
+      420    0.001    0.000    0.003    0.000 geometry.py:140(lattice_segment)
+       94    0.000    0.000    0.003    0.000 efficient.py:189(wall_witnesses)
+     1173    0.001    0.000    0.003    0.000 geometry.py:87(cost)
+      767    0.000    0.000    0.003    0.000 geometry.py:94(valid_point)
+     1076    0.002    0.000    0.003    0.000 geometry.py:113(clear_piece)
+    14584    0.002    0.000    0.002    0.000 {built-in method _heapq.heappop}
+      120    0.000    0.000    0.002    0.000 geometry.py:105(__init__)
+      120    0.000    0.000    0.002    0.000 geometry.py:35(__init__)
+     1173    0.001    0.000    0.002    0.000 geometry.py:77(collision)
+    18176    0.002    0.000    0.002    0.000 {built-in method _heapq.heappush}
+    22942    0.002    0.000    0.002    0.000 {built-in method math.dist}
+     1914    0.001    0.000    0.002    0.000 search.py:14(octile)
+      724    0.000    0.000    0.001    0.000 geometry.py:38(<genexpr>)
+       94    0.000    0.000    0.001    0.000 incumbent.py:143(obstacle_lower_bound)
+      120    0.000    0.000    0.001    0.000 {built-in method builtins.sum}
+     2301    0.001    0.000    0.001    0.000 geometry.py:96(<genexpr>)
+     7198    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+    10739    0.001    0.000    0.001    0.000 geometry.py:63(<genexpr>)
+     5490    0.001    0.000    0.001    0.000 {built-in method builtins.min}
+       92    0.000    0.000    0.001    0.000 geometry.py:151(expand_lattice_route)
+     2484    0.000    0.000    0.000    0.000 efficient.py:136(<genexpr>)

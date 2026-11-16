@@ -9,7 +9,7 @@ from .search import octile
 class EfficientCertificateSearch:
     def __init__(self,visibility_budget=4096,repair_radius=1,use_waypoints=True,
                  gate='none',certificate_ratio=1.0,uncertified='discard',
-                 lower_bound=True,ordering='forward',segment_mode='unit',segment_budget=256,compress=False,pivot_only=False,chain_only=False,prepare_only=False,fallback_engine='legacy',reuse_validation=False):
+                 lower_bound=True,ordering='forward',segment_mode='unit',segment_budget=256,compress=False,pivot_only=False,chain_only=False,prepare_only=False,fallback_engine='legacy',reuse_validation=False,witness=False):
         if visibility_budget<0 or repair_radius not in [0,1] or certificate_ratio<1:
             raise ValueError('Invalid certificate settings')
         if gate not in ['none','detour','distance','sparse'] or uncertified not in ['discard','accept_bound','prune','frontier'] or ordering not in ['forward','goal_first']:
@@ -22,7 +22,7 @@ class EfficientCertificateSearch:
         self.compress=compress;self.pivot_only=pivot_only
         self.chain_only=chain_only;self.prepare_only=prepare_only
         if fallback_engine not in ['legacy','lean']:raise ValueError('Unknown fallback engine')
-        self.fallback_engine=fallback_engine;self.reuse_validation=reuse_validation
+        self.fallback_engine=fallback_engine;self.reuse_validation=reuse_validation;self.witness=witness
 
     def search(self,query,waypoints,graph=None):
         graph=graph or IndexedGridGraph(query);began=perf_counter()
@@ -56,6 +56,16 @@ class EfficientCertificateSearch:
         if not path and valid_endpoints and self.lower_bound and getattr(graph,'indexed',True):lower=obstacle_lower_bound(graph,start,goal)
         phases['lower_bound_seconds']=perf_counter()-tick
         target=self.ratio*lower
+        tick=perf_counter();witness_attempts=0
+        if self.witness and not path and valid_endpoints and math.isfinite(lower) and getattr(graph,'indexed',False):
+            for point in wall_witnesses(graph,start,goal,lower):
+                witness_attempts+=1
+                first=segment(start,point)
+                if first:
+                    second=segment(point,goal)
+                    if second:
+                        path=first+second[1:];upper=octile(start,point)+octile(point,goal);source='wall_witness';break
+        phases['witness_seconds']=perf_counter()-tick
         if not path and valid_endpoints and self.use_waypoints and math.isfinite(lower):
             if self.gate=='detour' and lower<=octile(start,goal)+1e-10:gate_skipped=True
             elif self.gate=='distance' and octile(start,goal)<20:gate_skipped=True
@@ -129,8 +139,8 @@ class EfficientCertificateSearch:
         r.update(preprocess_seconds=preprocessing,total_seconds=perf_counter()-began,
           visibility_edge_checks=checks,visibility_calls=calls,candidate_source=source,
           candidate_cost=upper if math.isfinite(upper) else None,start_lower_bound=lower,
-          certified_early_return=certified,bounded_early_return=accepted,phase_seconds=phases,candidate_count=candidate_count,
-          attempted_links=link_count,gate_skipped=gate_skipped,segment_tests=getattr(graph,'segment_checks',0),wall_tests=getattr(graph,'wall_tests',0))
+          certified_early_return=certified,bounded_early_return=accepted,accepted_source=source if accepted or r.get('incumbent_used',False) else None,phase_seconds=phases,candidate_count=candidate_count,
+          attempted_links=link_count,gate_skipped=gate_skipped,witness_attempts=witness_attempts,segment_tests=getattr(graph,'segment_checks',0),wall_tests=getattr(graph,'wall_tests',0))
         return r
 
 
@@ -158,7 +168,7 @@ def incumbent_fallback(query,graph,incumbent,weighted_stop=False):
             if new<g.get(other,math.inf)-1e-12:
                 g[other]=new;parent[other]=node;heapq.heappush(queue,(new+2*math.dist(other,goal),other,new))
     length=sum(math.dist(a,b) for a,b in zip(path,path[1:]))
-    return dict(operation=pops,expanded=expanded,unique=len(closed),duplicates=duplicates,stale=stale,reopens=reopens,rebuilds=0,storage=len(g),valid=True,path=path,length=length,switches=[],alpha_events=[],search_seconds=perf_counter()-began)
+    return dict(incumbent_used=path is incumbent,operation=pops,expanded=expanded,unique=len(closed),duplicates=duplicates,stale=stale,reopens=reopens,rebuilds=0,storage=len(g),valid=True,path=path,length=length,switches=[],alpha_events=[],search_seconds=perf_counter()-began)
 
 
 def compress_collinear(points):
@@ -174,3 +184,16 @@ def compress_collinear(points):
             result.pop()
         result.append(p)
     return result
+
+
+def wall_witnesses(graph,start,goal,lower):
+    """Integer crossing candidates; accepted only after exact route verification."""
+    points=set()
+    for swap,walls in [(False,graph.vertical),(True,graph.horizontal)]:
+        a=(start[1],start[0]) if swap else start;b=(goal[1],goal[0]) if swap else goal
+        for coordinate,lo,hi in walls:
+            if lo==hi or not min(a[0],b[0])<coordinate<max(a[0],b[0]):continue
+            for z in [lo-1,hi+1]:
+                p=(z,coordinate) if swap else (coordinate,z)
+                if graph.valid_point(p) and octile(start,p)+octile(p,goal)<=lower+1e-10:points.add(p)
+    return sorted(points,key=lambda p:(octile(start,p)+octile(p,goal),p))

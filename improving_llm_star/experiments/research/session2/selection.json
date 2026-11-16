@@ -1,0 +1,15 @@
+{
+  "frozen_at_utc": "2026-11-16 05:29:27",
+  "session_start_utc": "2026-11-16 04:55:23",
+  "primary_runtime_policy": "witness_only",
+  "primary_parameters": {"segment_mode":"analytic","use_waypoints":false,"fallback_engine":"lean","reuse_validation":true,"witness":true},
+  "llm_exact_ablation": "witness_cf",
+  "llm_frontier_ablations": ["witness_chain","witness_frontier"],
+  "selection_basis": "600 standard development observations, 600 validation observations on 20 map-disjoint maps across 3 cached prompt styles, 160 development and 160 independently seeded validation fixture cases. Witness-only best robust cached runtime; exact LLM adds few certificates and overhead; frontier helps oracle-quality fixtures but can worsen real cached costs.",
+  "primary_claim": "Geometry/certificate improvement. LLM-specific efficiency is not established by selection data. Report no-guidance ablation prominently.",
+  "fresh_protocol": {"seed_base":660000,"maps_per_family":8,"families":10,"pairs_per_map":2,"fixture_qualities":4,"cases":640,"core_repeats":11,"native_repeats":7,"native_sample":"one query0 fixture per map, quality rotates by seed modulo4", "variants":["original_indexed","indexed_astar","scheduled_wa2","old_cf","indexed_cf","lean_cf","witness_only","witness_cf","witness_chain","witness_frontier"]},
+  "confirmation_protocol": "Previously opened session-1 test split: 600 cached observations across standard/cot/repe, 7 repeats, explicitly not fresh held-out evidence; no tuning afterwards.",
+  "timing_protocol": "Primary fresh core and native timing runs sequentially, no concurrent benchmark/profile/analysis workers. Earlier exploratory/validation runs sometimes overlapped and are not final isolated timing claims.",
+  "no_parameter_tuning_after_fresh_evaluation": true,
+  "paid_api_calls":0
+}

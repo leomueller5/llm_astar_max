@@ -9,9 +9,20 @@ from llmastar.research.geometry import IndexedGridGraph,SegmentGridGraph
 from llmastar.research.incumbent import IncumbentSearch
 from llmastar.research.efficient import EfficientCertificateSearch
 from llmastar.research.scheduled import ScheduledCertificateSearch
+from llmastar.research.corridor import CorridorSearch
 
 CERT=dict(certificate=1,repair_radius=1,obstacle_certificate=True,certificate_only=True,certificate_pruning=True)
+ORIGINAL=None
 VARIANTS={
+ 'original_indexed':(IndexedGridGraph,'frozen',{}),
+ 'corridor1':(SegmentGridGraph,CorridorSearch,dict(radius=1)),
+ 'corridor2':(SegmentGridGraph,CorridorSearch,dict(radius=2)),
+ 'corridor_no_incumbent':(SegmentGridGraph,CorridorSearch,dict(radius=1,incumbent=False)),
+ 'witness_frontier':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,fallback_engine='lean',reuse_validation=True,witness=True,uncertified='frontier')),
+ 'witness_chain':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,repair_radius=0,chain_only=True,fallback_engine='lean',reuse_validation=True,witness=True,uncertified='frontier')),
+ 'witness_cf':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,fallback_engine='lean',reuse_validation=True,witness=True)),
+ 'witness_only':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',use_waypoints=False,fallback_engine='lean',reuse_validation=True,witness=True)),
+ 'witness_raw':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,repair_radius=0,fallback_engine='lean',reuse_validation=True,witness=True)),
  'lean_cf':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,fallback_engine='lean',reuse_validation=True)),
  'lean_pivot':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,pivot_only=True,fallback_engine='lean',reuse_validation=True)),
  'lean_raw':(SegmentGridGraph,EfficientCertificateSearch,dict(segment_mode='analytic',compress=True,repair_radius=0,fallback_engine='lean',reuse_validation=True)),
@@ -56,7 +67,9 @@ VARIANTS={
 def execute(mode,case):
  Graph,Planner,kwargs=VARIANTS[mode]
  started=perf_counter();cpu=process_time();graph=Graph(case['query']);geometry=perf_counter()-started
- r=Planner(**kwargs).search(case['query'],case['points'],graph)
+ if Planner=='frozen':
+  r=legacy_run(ORIGINAL,case,graph);r['search_seconds']=r['total_seconds'];r['certified_early_return']=False
+ else:r=Planner(**kwargs).search(case['query'],case['points'],graph)
  r['fresh_seconds']=perf_counter()-started;r['cpu_seconds']=process_time()-cpu;r['geometry_init_seconds']=geometry;r['geometry_checks']=graph.edge_checks
  return r
 
@@ -84,7 +97,10 @@ def run(cases,modes,repeats,output):
  output=Path(output)
  if output.exists():raise FileExistsError('Preserve old results; choose a new output directory')
  output.mkdir(parents=True)
- src=[Path(__file__),ROOT/'llmastar/research/geometry.py',ROOT/'llmastar/research/incumbent.py',ROOT/'llmastar/research/efficient.py',ROOT/'llmastar/research/scheduled.py']
+ global ORIGINAL
+ if 'original_indexed' in modes:
+  replay.BACKEND='installed';ORIGINAL=replay.load_planner(WORKSPACE/'llm-astar',response='')
+ src=[Path(__file__),ROOT/'llmastar/research/geometry.py',ROOT/'llmastar/research/incumbent.py',ROOT/'llmastar/research/efficient.py',ROOT/'llmastar/research/scheduled.py',ROOT/'llmastar/research/corridor.py',WORKSPACE/'llm-astar'/replay.PLANNER_PATH]
  source_hashes={str(p.relative_to(WORKSPACE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in src}
  snapshot=output/'source_snapshot';snapshot.mkdir()
  for p in src:(snapshot/p.name).write_bytes(p.read_bytes())
@@ -109,7 +125,7 @@ def run(cases,modes,repeats,output):
   'timing':'fresh graph+planner+certificate+fallback+path validation; cached raw parsing outside all core timings; default GC, randomized interleaving',
   'case_hash':hashlib.sha256(json.dumps(cases,sort_keys=True).encode()).hexdigest(),
   'source_hashes':source_hashes,'python':sys.version,'platform':platform.platform(),
-  'variants':{m:{'graph':VARIANTS[m][0].__name__,'planner':VARIANTS[m][1].__name__,'options':VARIANTS[m][2]} for m in modes},'summary':summary,'runs':rows}
+  'variants':{m:{'graph':VARIANTS[m][0].__name__,'planner':getattr(VARIANTS[m][1],'__name__',VARIANTS[m][1]),'options':VARIANTS[m][2]} for m in modes},'summary':summary,'runs':rows}
  with gzip.open(output/'results.json.gz','wt') as f:json.dump(finite_json(data),f,separators=(',',':'),allow_nan=False)
  (output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
  return data
@@ -117,11 +133,11 @@ def run(cases,modes,repeats,output):
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--split',default='development',choices=['development','validation','test'])
- p.add_argument('--cases',type=Path);p.add_argument('--stride',type=int,default=1);p.add_argument('--repeats',type=int,default=5)
+ p.add_argument('--cases',type=Path);p.add_argument('--prompts',nargs='+',default=['standard']);p.add_argument('--stride',type=int,default=1);p.add_argument('--repeats',type=int,default=5)
  p.add_argument('--variants',nargs='+',default=list(VARIANTS));p.add_argument('--output',type=Path,required=True)
  a=p.parse_args()
  if a.cases:
   with gzip.open(a.cases,'rt') as f:cases=json.load(f)
- else:cases=cached_cases(a.split)
+ else:cases=cached_cases(a.split,a.prompts)
  run(cases[::a.stride],a.variants,a.repeats,a.output)
 if __name__=='__main__':main()

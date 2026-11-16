@@ -114,8 +114,13 @@ class SegmentGridGraph(IndexedGridGraph):
         if a==b:return self.valid_point(a)
         self.segment_checks+=1
         if not self.indexed:
-            # Noninteger barriers retain the exact legacy segment predicate.
-            return not self.collision(a,b)
+            # Preserve even degenerate/noninteger predicate details at unit resolution.
+            p=a
+            while p!=b:
+                n=(p[0]+(b[0]>p[0])-(b[0]<p[0]),p[1]+(b[1]>p[1])-(b[1]<p[1]))
+                if not math.isfinite(self.cost(p,n)):return False
+                p=n
+            return True
         if not self.inside(a) or not self.inside(b):return False
         x,y=a;u,v=b
         left,right=min(x,u),max(x,u);bottom,top=min(y,v),max(y,v)
@@ -133,8 +138,10 @@ class SegmentGridGraph(IndexedGridGraph):
                 elif lo<=y+(v-y)*(wx-x)/(u-x)<=hi:return False
         for point,walls in self._degenerate.items():
             if left<=point[0]<=right and bottom<=point[1]<=top:
-                segment=self._line([a,b])
-                if any(segment.intersects(w) for w in walls):return False
+                if (u-x)*(point[1]-y)!=(v-y)*(point[0]-x):continue
+                sx=(u>x)-(u<x);sy=(v>y)-(v<y)
+                for neighbor in [(point[0]-sx,point[1]-sy),(point[0]+sx,point[1]+sy)]:
+                    if left<=neighbor[0]<=right and bottom<=neighbor[1]<=top and self.degenerate_collision(point,neighbor):return False
         return True
 
     def lattice_segment(self,a,b):

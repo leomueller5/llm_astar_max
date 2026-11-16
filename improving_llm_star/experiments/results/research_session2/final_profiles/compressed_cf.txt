@@ -1,0 +1,41 @@
+         1246949 function calls (1246345 primitive calls) in 0.246 seconds
+
+   Ordered by: cumulative time
+   List reduced from 75 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      120    0.000    0.000    0.253    0.002 run.py:67(execute)
+      120    0.004    0.000    0.250    0.002 efficient.py:27(search)
+       79    0.042    0.001    0.208    0.003 incumbent.py:24(search)
+    14240    0.053    0.000    0.129    0.000 geometry.py:11(get)
+   109369    0.031    0.000    0.056    0.000 geometry.py:59(blocked)
+4366/3762    0.002    0.000    0.024    0.000 {built-in method builtins.all}
+   270028    0.021    0.000    0.021    0.000 {method 'get' of 'dict' objects}
+     6156    0.003    0.000    0.016    0.000 geometry.py:87(cost)
+    39625    0.006    0.000    0.013    0.000 {built-in method builtins.any}
+   162054    0.012    0.000    0.012    0.000 {built-in method math.dist}
+     6156    0.006    0.000    0.012    0.000 geometry.py:77(collision)
+     3710    0.001    0.000    0.011    0.000 efficient.py:137(<genexpr>)
+     1484    0.000    0.000    0.011    0.000 efficient.py:31(segment)
+     1484    0.002    0.000    0.011    0.000 geometry.py:140(lattice_segment)
+   117787    0.010    0.000    0.010    0.000 search.py:53(inside)
+     3868    0.005    0.000    0.009    0.000 geometry.py:113(clear_piece)
+     2645    0.001    0.000    0.007    0.000 incumbent.py:130(<genexpr>)
+    78174    0.007    0.000    0.007    0.000 {built-in method math.hypot}
+    85841    0.006    0.000    0.006    0.000 {method 'append' of 'list' objects}
+     1797    0.001    0.000    0.006    0.000 geometry.py:94(valid_point)
+    84330    0.005    0.000    0.005    0.000 geometry.py:67(degenerate_collision)
+     6101    0.003    0.000    0.005    0.000 search.py:14(octile)
+    22928    0.004    0.000    0.004    0.000 {built-in method _heapq.heappop}
+    31108    0.003    0.000    0.003    0.000 {built-in method _heapq.heappush}
+       94    0.001    0.000    0.003    0.000 efficient.py:174(compress_collinear)
+    25900    0.002    0.000    0.002    0.000 {built-in method builtins.max}
+      120    0.000    0.000    0.002    0.000 geometry.py:105(__init__)
+      120    0.000    0.000    0.002    0.000 geometry.py:35(__init__)
+    39794    0.002    0.000    0.002    0.000 {built-in method builtins.abs}
+      199    0.000    0.000    0.002    0.000 {built-in method builtins.sum}
+     5391    0.001    0.000    0.002    0.000 geometry.py:96(<genexpr>)
+    14319    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+    15181    0.001    0.000    0.001    0.000 {built-in method builtins.min}
+      724    0.000    0.000    0.001    0.000 geometry.py:38(<genexpr>)
+    20588    0.001    0.000    0.001    0.000 geometry.py:63(<genexpr>)

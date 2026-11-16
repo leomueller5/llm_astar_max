@@ -135,3 +135,69 @@ original predicate. 77 tests pass. Procedural run encountered a JSON serializati
 failure for an infinite disconnected-map bound; preserve failed partial archive
 and note, apply existing finite_json normalization, journal completed cases, and
 rerun under a new directory. No historical results overwritten.
+
+## Iteration 6: map witnesses reveal the key confound
+
+The single-wall lower bound itself identifies adjacent endpoint crossing states.
+Test verified routes through these witnesses before consulting uncertain hints.
+This is NOT an LLM contribution. Witness-only and witness+exact-LLM are controlled
+ablations. On 600 cached development cases, 11 repeats: witness-only 0.3346ms
+versus lean WA2 0.5624ms, 467/600 exact certificates versus old CF 194/600.
+Mean unique 58.70; heap pops 127.24. Exact LLM stage adds ZERO accepted routes or
+expansion savings on these 600 cases; it adds CPU overhead (0.3496ms). Strong
+runtime result, but geometry alone explains it. Do not market as an LLM benefit.
+
+## Iteration 7: alternative corridor search and hybrid incumbents
+
+Attempt A* in a radius-1/2 waypoint tube with capped cells/expansions. Accept only
+with a weight-2 admissible bound; otherwise run global fallback, optionally using
+a valid corridor route as an incumbent. Count ALL pops, repeated expansions and
+preparation. Corridors were slower on 160 development fixtures: 2.71/3.06ms versus
+matched 2.08ms, with more operations and worse costs. Reject as default. Small
+bookkeeping correction after pilot: a returned incumbent goal is not counted as
+expanded unless actually popped; no effect on paths or the negative conclusion.
+
+Hybrid witness+raw chain or DAG frontier incumbent can exploit strong oracle hints
+on procedural maps, but cached development benefit is tiny: witness+chain saves
+0.30 unique states/case and raises mean path length ~0.02, with 0.341ms versus
+witness-only 0.336ms. Full DAG saves 0.75 states/case and costs 0.353ms. Preserve
+as explicit weight-2 optional modes, not optimal-certification claims.
+
+Validation protocol now begins: whole prior validation split, all three cached
+prompt styles (600 observations /20 maps), 11 repeats, plus independently seeded
+procedural validation. No old held-out test map used for tuning. After this one
+selection round, freeze policy and evaluate new seed-660000 test maps once.
+
+## Selection frozen before fresh evaluation
+
+Validation cached: witness-only 0.3379ms versus lean WA2 0.6698ms; 447/600 exact
+certificates, 59.885 unique versus127.7. Exact LLM extension adds 3 certificates
+and saves 0.19 states/case, but costs 0.3552ms. Whole-map bootstrap shows extension
+runtime ratio vs witness-only ~1.051, CI [1.035,1.075]. Frontier DAG accepts 10
+hint routes, saves ~1.21 states/case, runtime1.045x and occasional path inflation.
+Raw-chain frontier accepts5 and runtime1.009x. No cached-guidance runtime win.
+Procedural validation: chain frontier 1.073ms vs witness-only1.152ms, mainly strong
+oracle fixtures; this does not establish real-model usefulness. Keep as secondary.
+
+Public interface validation (40 predetermined real cached queries,9 repeats):
+original41.678ms, oldCF2.403ms, matchedWA2 0.646ms, witness-only0.409ms,
+witness+exact0.447ms. Imports/network/rendering excluded uniformly, all query-copy,
+parsing, geometry and search included. No paid API calls.
+
+Profiling new pipeline: direct/each bound~3-4us; wall-witness stage~15us; optional
+hint candidate/DAG stage~17us on fixed development cases. Python tracemalloc
+mean peaks oldCF225kB, witness-only138kB, matched lean WA2 188kB on24 fixed cases.
+Native-library memory/imports excluded; these are not RSS measurements. Profiling
+is instrumented and separate from primary speed comparisons.
+
+Final safety adjustment before freeze: arbitrary/fractional geometry and
+zero-length barriers preserve actual installed unit-edge predicates even when
+checking macro pieces. Integer-only cut bounds are disabled on fractional maps.
+Fresh evaluation policy in selection.json: primary runtime method witness_only;
+exact and frontier LLM variants retained as ablations. 80 new maps/640 cases,
+seed base660000, ten families including large maps. No test generation/inspection
+before selection. Cached prior test replay is explicitly opened confirmation,
+not a new independent holdout. No policy/parameter changes after freeze.
+Final primary timing runs will be sequential. Exploratory runs occasionally
+shared CPU with other instrumentation; robust medians help but do not erase that
+limitation, hence no final speed claims rely solely on those trials.

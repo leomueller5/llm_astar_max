@@ -1,0 +1,272 @@
+{
+  "chain_frontier": {
+    "cases": 600,
+    "mean_case_median_ms": 0.6425926582111666,
+    "median_case_median_ms": 0.31299947295337915,
+    "mean_raw_ms_including_outliers": 0.7440814128583015,
+    "ratio_of_mean_times": 1.1426690304603067,
+    "gm_paired_time_ratio": 0.8979042577464591,
+    "ratio_of_mean_times_ci95": [
+      1.118133978605193,
+      1.1620447100154696
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.834131681380731,
+      0.9650869195882771
+    ],
+    "unique": 100.37,
+    "operations": 203.80166666666668,
+    "successes": 600,
+    "exact_certificates": 114,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 29,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.6425926582111666
+    }
+  },
+  "lean_cf": {
+    "cases": 600,
+    "mean_case_median_ms": 0.5772613858183225,
+    "median_case_median_ms": 0.3012500237673521,
+    "mean_raw_ms_including_outliers": 0.7084857873181163,
+    "ratio_of_mean_times": 1.0264958673686462,
+    "gm_paired_time_ratio": 0.6946992942397358,
+    "ratio_of_mean_times_ci95": [
+      1.0000718562823376,
+      1.0486125037574148
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.6167671361932331,
+      0.7782021060338685
+    ],
+    "unique": 98.17333333333333,
+    "operations": 200.995,
+    "successes": 600,
+    "exact_certificates": 181,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.5772613858183225
+    }
+  },
+  "lean_direct": {
+    "cases": 600,
+    "mean_case_median_ms": 0.5447659629862756,
+    "median_case_median_ms": 0.25229156017303467,
+    "mean_raw_ms_including_outliers": 0.6894135097338056,
+    "ratio_of_mean_times": 0.9687119620790051,
+    "gm_paired_time_ratio": 0.6731360375615825,
+    "ratio_of_mean_times_ci95": [
+      0.9456394941714249,
+      0.9859186377832498
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.6057567232231033,
+      0.746689782181046
+    ],
+    "unique": 102.72666666666667,
+    "operations": 206.81833333333333,
+    "successes": 600,
+    "exact_certificates": 111,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.5447659629862756
+    }
+  },
+  "lean_raw": {
+    "cases": 600,
+    "mean_case_median_ms": 0.5585112023012091,
+    "median_case_median_ms": 0.27431256603449583,
+    "mean_raw_ms_including_outliers": 0.6963622954561177,
+    "ratio_of_mean_times": 0.9931539769086839,
+    "gm_paired_time_ratio": 0.6857926176946575,
+    "ratio_of_mean_times_ci95": [
+      0.9698033025862526,
+      1.0115779016451392
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.6154554790401726,
+      0.760508428219793
+    ],
+    "unique": 101.59666666666666,
+    "operations": 205.34333333333333,
+    "successes": 600,
+    "exact_certificates": 130,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.5585112023012091
+    }
+  },
+  "scheduled64": {
+    "cases": 600,
+    "mean_case_median_ms": 0.588261578620101,
+    "median_case_median_ms": 0.255499966442585,
+    "mean_raw_ms_including_outliers": 0.720514040440321,
+    "ratio_of_mean_times": 1.0460565944996962,
+    "gm_paired_time_ratio": 0.9028580423765249,
+    "ratio_of_mean_times_ci95": [
+      1.0276614845654848,
+      1.061434204641749
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.8586804327469445,
+      0.9495034136753032
+    ],
+    "unique": 102.17833333333333,
+    "operations": 205.63,
+    "successes": 600,
+    "exact_certificates": 119,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.588261578620101
+    }
+  },
+  "scheduled_wa2": {
+    "cases": 600,
+    "mean_case_median_ms": 0.5623611396489043,
+    "median_case_median_ms": 0.2508745528757572,
+    "mean_raw_ms_including_outliers": 0.6477070844619337,
+    "ratio_of_mean_times": 1.0,
+    "gm_paired_time_ratio": 1.0,
+    "ratio_of_mean_times_ci95": [
+      1.0,
+      1.0
+    ],
+    "gm_paired_time_ratio_ci95": [
+      1.0,
+      1.0
+    ],
+    "unique": 108.46666666666667,
+    "operations": 213.085,
+    "successes": 600,
+    "exact_certificates": 0,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.5623611396489043
+    }
+  },
+  "witness_cf": {
+    "cases": 600,
+    "mean_case_median_ms": 0.3496099717449397,
+    "median_case_median_ms": 0.03787502646446228,
+    "mean_raw_ms_including_outliers": 0.4090269977071633,
+    "ratio_of_mean_times": 0.6216823089220027,
+    "gm_paired_time_ratio": 0.20908983601888687,
+    "ratio_of_mean_times_ci95": [
+      0.5198277582573887,
+      0.7141031642673525
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.18466107759294037,
+      0.23791186339726014
+    ],
+    "unique": 58.7,
+    "operations": 127.24166666666666,
+    "successes": 600,
+    "exact_certificates": 467,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.3496099717449397
+    }
+  },
+  "witness_only": {
+    "cases": 600,
+    "mean_case_median_ms": 0.3346371670098354,
+    "median_case_median_ms": 0.03797898534685373,
+    "mean_raw_ms_including_outliers": 0.4096875591626899,
+    "ratio_of_mean_times": 0.5950574166962488,
+    "gm_paired_time_ratio": 0.20500360760154726,
+    "ratio_of_mean_times_ci95": [
+      0.49768095815199404,
+      0.6858724852832901
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.18181141111076,
+      0.23202888519140605
+    ],
+    "unique": 58.7,
+    "operations": 127.24166666666666,
+    "successes": 600,
+    "exact_certificates": 467,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.3346371670098354
+    }
+  },
+  "witness_raw": {
+    "cases": 600,
+    "mean_case_median_ms": 0.33904419746249914,
+    "median_case_median_ms": 0.03797945100814104,
+    "mean_raw_ms_including_outliers": 0.40305065629636927,
+    "ratio_of_mean_times": 0.6028940720800384,
+    "gm_paired_time_ratio": 0.20629783145603642,
+    "ratio_of_mean_times_ci95": [
+      0.5044073580905483,
+      0.6934007721095231
+    ],
+    "gm_paired_time_ratio_ci95": [
+      0.18286364131158891,
+      0.2340979483759479
+    ],
+    "unique": 58.7,
+    "operations": 127.24166666666666,
+    "successes": 600,
+    "exact_certificates": 467,
+    "llm_accepted": 0,
+    "incumbent_used": 0,
+    "gm_cost_ratio": null,
+    "p95_cost_ratio": null,
+    "max_cost_ratio": null,
+    "longer_than_control": 0,
+    "more_unique_than_control": 0,
+    "family_mean_ms": {
+      "cached_public": 0.33904419746249914
+    }
+  }
+}

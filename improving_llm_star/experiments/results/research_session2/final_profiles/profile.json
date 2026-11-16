@@ -1,0 +1,1315 @@
+{
+  "scope": "Development 120 fixed cases; profiles instrumented and not used for speed claims. Memory: 24 fixed cases, GC collected before each independent tracemalloc run; includes fresh query structures, excludes previously imported libraries and native Shapely allocations; not RSS.",
+  "actual_api_calls": 0,
+  "modes": {
+    "old_cf": {
+      "cases": 120,
+      "mean_phase_ms": {},
+      "mean_total_ms": 2.802064595744014,
+      "mean_geometry_init_ms": 0.006431663253655036,
+      "mean_preprocess_ms": 1.516983995679766,
+      "mean_search_ms": 1.2696947747220595,
+      "profile_primitive_calls": 4812230,
+      "profile_total_calls": 4812230,
+      "profile_total_seconds": 0.8900241509999999,
+      "mean_peak_python_bytes": 224873.83333333334,
+      "max_peak_python_bytes": 1231664,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 359804,
+          "retained_python_bytes": 292140,
+          "live_allocated_blocks": 5889
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 324880,
+          "retained_python_bytes": 260064,
+          "live_allocated_blocks": 5221
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 22640,
+          "retained_python_bytes": 20928,
+          "live_allocated_blocks": 412
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 261672,
+          "retained_python_bytes": 204584,
+          "live_allocated_blocks": 4129
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 567760,
+          "retained_python_bytes": 499152,
+          "live_allocated_blocks": 10225
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 46824,
+          "retained_python_bytes": 45112,
+          "live_allocated_blocks": 910
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 98024,
+          "retained_python_bytes": 74928,
+          "live_allocated_blocks": 1533
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 142240,
+          "retained_python_bytes": 107520,
+          "live_allocated_blocks": 2113
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 114368,
+          "retained_python_bytes": 93896,
+          "live_allocated_blocks": 1943
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 35944,
+          "retained_python_bytes": 34232,
+          "live_allocated_blocks": 682
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1231664,
+          "retained_python_bytes": 1083568,
+          "live_allocated_blocks": 22434
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 237496,
+          "retained_python_bytes": 184192,
+          "live_allocated_blocks": 3687
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 48816,
+          "retained_python_bytes": 47104,
+          "live_allocated_blocks": 952
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 54128,
+          "retained_python_bytes": 43328,
+          "live_allocated_blocks": 901
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 42128,
+          "retained_python_bytes": 40416,
+          "live_allocated_blocks": 814
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 827520,
+          "retained_python_bytes": 717304,
+          "live_allocated_blocks": 14734
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 91584,
+          "retained_python_bytes": 89872,
+          "live_allocated_blocks": 1844
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 200088,
+          "retained_python_bytes": 167320,
+          "live_allocated_blocks": 3433
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 230520,
+          "retained_python_bytes": 191320,
+          "live_allocated_blocks": 3962
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 31008,
+          "retained_python_bytes": 29296,
+          "live_allocated_blocks": 585
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 172240,
+          "retained_python_bytes": 123184,
+          "live_allocated_blocks": 2447
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 13584,
+          "retained_python_bytes": 11872,
+          "live_allocated_blocks": 222
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 117568,
+          "retained_python_bytes": 93568,
+          "live_allocated_blocks": 1925
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 124472,
+          "retained_python_bytes": 99200,
+          "live_allocated_blocks": 2044
+        }
+      ]
+    },
+    "indexed_cf": {
+      "cases": 120,
+      "mean_phase_ms": {},
+      "mean_total_ms": 1.2353382247965783,
+      "mean_geometry_init_ms": 0.005764246452599764,
+      "mean_preprocess_ms": 0.6410450888021539,
+      "mean_search_ms": 0.5795837030746043,
+      "profile_primitive_calls": 2770823,
+      "profile_total_calls": 2771427,
+      "profile_total_seconds": 0.485060527,
+      "mean_peak_python_bytes": 201441.5,
+      "max_peak_python_bytes": 1273776,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 352092,
+          "retained_python_bytes": 284428,
+          "live_allocated_blocks": 5509
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 333248,
+          "retained_python_bytes": 267272,
+          "live_allocated_blocks": 5166
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 7896,
+          "retained_python_bytes": 6184,
+          "live_allocated_blocks": 86
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 248056,
+          "retained_python_bytes": 191080,
+          "live_allocated_blocks": 3625
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 468184,
+          "retained_python_bytes": 399576,
+          "live_allocated_blocks": 7868
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 9808,
+          "retained_python_bytes": 8096,
+          "live_allocated_blocks": 105
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 104568,
+          "retained_python_bytes": 81472,
+          "live_allocated_blocks": 1565
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 81488,
+          "retained_python_bytes": 46768,
+          "live_allocated_blocks": 832
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 128152,
+          "retained_python_bytes": 106376,
+          "live_allocated_blocks": 1999
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 8632,
+          "retained_python_bytes": 6920,
+          "live_allocated_blocks": 86
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1273776,
+          "retained_python_bytes": 1125680,
+          "live_allocated_blocks": 22521
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 193152,
+          "retained_python_bytes": 139960,
+          "live_allocated_blocks": 2578
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 10000,
+          "retained_python_bytes": 8264,
+          "live_allocated_blocks": 107
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 45816,
+          "retained_python_bytes": 35016,
+          "live_allocated_blocks": 677
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 9112,
+          "retained_python_bytes": 7400,
+          "live_allocated_blocks": 95
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 749120,
+          "retained_python_bytes": 632936,
+          "live_allocated_blocks": 12103
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 12312,
+          "retained_python_bytes": 10576,
+          "live_allocated_blocks": 129
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 203952,
+          "retained_python_bytes": 171184,
+          "live_allocated_blocks": 3305
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 203928,
+          "retained_python_bytes": 164728,
+          "live_allocated_blocks": 3179
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 8928,
+          "retained_python_bytes": 7216,
+          "live_allocated_blocks": 90
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 145920,
+          "retained_python_bytes": 96864,
+          "live_allocated_blocks": 1796
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 7200,
+          "retained_python_bytes": 5488,
+          "live_allocated_blocks": 76
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 123912,
+          "retained_python_bytes": 99912,
+          "live_allocated_blocks": 1852
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 105344,
+          "retained_python_bytes": 80072,
+          "live_allocated_blocks": 1524
+        }
+      ]
+    },
+    "compressed_cf": {
+      "cases": 120,
+      "mean_phase_ms": {
+        "candidate_build_seconds": 0.02348718699067831,
+        "dag_verify_seconds": 0.032689921014631786,
+        "direct_seconds": 0.0038680853322148323,
+        "final_validation_seconds": 0.025547916690508522,
+        "lower_bound_seconds": 0.0037208451734234886,
+        "route_reconstruct_seconds": 9.963793369630973e-05,
+        "witness_seconds": 7.153333475192389e-05
+      },
+      "mean_total_ms": 0.6981489559014638,
+      "mean_geometry_init_ms": 0.006557273445650935,
+      "mean_preprocess_ms": 0.06813542762150368,
+      "mean_search_ms": 0.5903007287997752,
+      "profile_primitive_calls": 1246345,
+      "profile_total_calls": 1246949,
+      "profile_total_seconds": 0.24642323000000005,
+      "mean_peak_python_bytes": 178472.5,
+      "max_peak_python_bytes": 1272800,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 286236,
+          "retained_python_bytes": 241180,
+          "live_allocated_blocks": 4736
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 281464,
+          "retained_python_bytes": 233568,
+          "live_allocated_blocks": 4562
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 7888,
+          "retained_python_bytes": 6464,
+          "live_allocated_blocks": 92
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 204960,
+          "retained_python_bytes": 161384,
+          "live_allocated_blocks": 3092
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 444144,
+          "retained_python_bytes": 380064,
+          "live_allocated_blocks": 7520
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 9944,
+          "retained_python_bytes": 8240,
+          "live_allocated_blocks": 110
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 104848,
+          "retained_python_bytes": 81352,
+          "live_allocated_blocks": 1563
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 14168,
+          "retained_python_bytes": 10224,
+          "live_allocated_blocks": 152
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 129064,
+          "retained_python_bytes": 106888,
+          "live_allocated_blocks": 2008
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 8944,
+          "retained_python_bytes": 7296,
+          "live_allocated_blocks": 94
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1272800,
+          "retained_python_bytes": 1124304,
+          "live_allocated_blocks": 22498
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 113480,
+          "retained_python_bytes": 92728,
+          "live_allocated_blocks": 1817
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 9968,
+          "retained_python_bytes": 8256,
+          "live_allocated_blocks": 109
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 45968,
+          "retained_python_bytes": 34896,
+          "live_allocated_blocks": 675
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 9344,
+          "retained_python_bytes": 7664,
+          "live_allocated_blocks": 101
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 637264,
+          "retained_python_bytes": 554080,
+          "live_allocated_blocks": 11022
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 11784,
+          "retained_python_bytes": 9456,
+          "live_allocated_blocks": 110
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 178104,
+          "retained_python_bytes": 155176,
+          "live_allocated_blocks": 3019
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 199488,
+          "retained_python_bytes": 160784,
+          "live_allocated_blocks": 3110
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 9080,
+          "retained_python_bytes": 7456,
+          "live_allocated_blocks": 97
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 72904,
+          "retained_python_bytes": 58544,
+          "live_allocated_blocks": 1111
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 7144,
+          "retained_python_bytes": 5728,
+          "live_allocated_blocks": 83
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 123496,
+          "retained_python_bytes": 99096,
+          "live_allocated_blocks": 1839
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 100856,
+          "retained_python_bytes": 76368,
+          "live_allocated_blocks": 1458
+        }
+      ]
+    },
+    "lean_cf": {
+      "cases": 120,
+      "mean_phase_ms": {
+        "candidate_build_seconds": 0.023520819377154112,
+        "dag_verify_seconds": 0.03632188308984041,
+        "direct_seconds": 0.0037447898648679256,
+        "final_validation_seconds": 0.000853842357173562,
+        "lower_bound_seconds": 0.003676756750792265,
+        "route_reconstruct_seconds": 9.685948801537354e-05,
+        "witness_seconds": 6.768968887627125e-05
+      },
+      "mean_total_ms": 0.60606737776349,
+      "mean_geometry_init_ms": 0.0063291964276383315,
+      "mean_preprocess_ms": 0.07149272132664919,
+      "mean_search_ms": 0.5209951622722049,
+      "profile_primitive_calls": 1038087,
+      "profile_total_calls": 1038691,
+      "profile_total_seconds": 0.21297916800000002,
+      "mean_peak_python_bytes": 175142.5,
+      "max_peak_python_bytes": 1262832,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 280948,
+          "retained_python_bytes": 241284,
+          "live_allocated_blocks": 4735
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 278624,
+          "retained_python_bytes": 233672,
+          "live_allocated_blocks": 4561
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 7472,
+          "retained_python_bytes": 6056,
+          "live_allocated_blocks": 92
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 199672,
+          "retained_python_bytes": 161488,
+          "live_allocated_blocks": 3091
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 438856,
+          "retained_python_bytes": 380168,
+          "live_allocated_blocks": 7519
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 8712,
+          "retained_python_bytes": 7296,
+          "live_allocated_blocks": 110
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 99464,
+          "retained_python_bytes": 81360,
+          "live_allocated_blocks": 1561
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 13416,
+          "retained_python_bytes": 9688,
+          "live_allocated_blocks": 152
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 126160,
+          "retained_python_bytes": 106896,
+          "live_allocated_blocks": 2006
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 7768,
+          "retained_python_bytes": 6352,
+          "live_allocated_blocks": 94
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1262832,
+          "retained_python_bytes": 1124344,
+          "live_allocated_blocks": 22496
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 110648,
+          "retained_python_bytes": 92864,
+          "live_allocated_blocks": 1817
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 8728,
+          "retained_python_bytes": 7312,
+          "live_allocated_blocks": 109
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 43008,
+          "retained_python_bytes": 34904,
+          "live_allocated_blocks": 673
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 8136,
+          "retained_python_bytes": 6720,
+          "live_allocated_blocks": 101
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 631976,
+          "retained_python_bytes": 554184,
+          "live_allocated_blocks": 11021
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 8832,
+          "retained_python_bytes": 7416,
+          "live_allocated_blocks": 110
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 175208,
+          "retained_python_bytes": 155248,
+          "live_allocated_blocks": 3018
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 194232,
+          "retained_python_bytes": 160920,
+          "live_allocated_blocks": 3110
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 7928,
+          "retained_python_bytes": 6512,
+          "live_allocated_blocks": 97
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 70072,
+          "retained_python_bytes": 58680,
+          "live_allocated_blocks": 1111
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 7016,
+          "retained_python_bytes": 5600,
+          "live_allocated_blocks": 83
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 118112,
+          "retained_python_bytes": 99104,
+          "live_allocated_blocks": 1837
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 95600,
+          "retained_python_bytes": 76504,
+          "live_allocated_blocks": 1458
+        }
+      ]
+    },
+    "witness_cf": {
+      "cases": 120,
+      "mean_phase_ms": {
+        "candidate_build_seconds": 0.006945101389040549,
+        "dag_verify_seconds": 0.010087833895037571,
+        "direct_seconds": 0.00354061679293712,
+        "final_validation_seconds": 0.0018868401336173217,
+        "lower_bound_seconds": 0.0034277812422563634,
+        "witness_seconds": 0.014111353084445
+      },
+      "mean_total_ms": 0.37933709875990945,
+      "mean_geometry_init_ms": 0.005919350466380517,
+      "mean_preprocess_ms": 0.04349167769153913,
+      "mean_search_ms": 0.32410315276744467,
+      "profile_primitive_calls": 616778,
+      "profile_total_calls": 617382,
+      "profile_total_seconds": 0.12590289899999998,
+      "mean_peak_python_bytes": 140163.5,
+      "max_peak_python_bytes": 1263216,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 281340,
+          "retained_python_bytes": 241652,
+          "live_allocated_blocks": 4741
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 278816,
+          "retained_python_bytes": 233864,
+          "live_allocated_blocks": 4564
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 7552,
+          "retained_python_bytes": 6136,
+          "live_allocated_blocks": 93
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 200104,
+          "retained_python_bytes": 161920,
+          "live_allocated_blocks": 3098
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 439112,
+          "retained_python_bytes": 380424,
+          "live_allocated_blocks": 7523
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 8792,
+          "retained_python_bytes": 7376,
+          "live_allocated_blocks": 111
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 9992,
+          "retained_python_bytes": 8528,
+          "live_allocated_blocks": 128
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 8184,
+          "retained_python_bytes": 6720,
+          "live_allocated_blocks": 102
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 125528,
+          "retained_python_bytes": 107600,
+          "live_allocated_blocks": 2018
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 7848,
+          "retained_python_bytes": 6432,
+          "live_allocated_blocks": 95
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1263216,
+          "retained_python_bytes": 1124704,
+          "live_allocated_blocks": 22502
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 8536,
+          "retained_python_bytes": 7072,
+          "live_allocated_blocks": 107
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 8808,
+          "retained_python_bytes": 7392,
+          "live_allocated_blocks": 110
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 8424,
+          "retained_python_bytes": 6960,
+          "live_allocated_blocks": 104
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 8216,
+          "retained_python_bytes": 6800,
+          "live_allocated_blocks": 102
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 632720,
+          "retained_python_bytes": 554928,
+          "live_allocated_blocks": 11033
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 8912,
+          "retained_python_bytes": 7496,
+          "live_allocated_blocks": 111
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 8224,
+          "retained_python_bytes": 6760,
+          "live_allocated_blocks": 105
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 8984,
+          "retained_python_bytes": 7520,
+          "live_allocated_blocks": 111
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 8008,
+          "retained_python_bytes": 6592,
+          "live_allocated_blocks": 98
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 7328,
+          "retained_python_bytes": 5864,
+          "live_allocated_blocks": 87
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 7096,
+          "retained_python_bytes": 5680,
+          "live_allocated_blocks": 84
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 10056,
+          "retained_python_bytes": 8592,
+          "live_allocated_blocks": 129
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 8128,
+          "retained_python_bytes": 6664,
+          "live_allocated_blocks": 99
+        }
+      ]
+    },
+    "witness_only": {
+      "cases": 120,
+      "mean_phase_ms": {
+        "direct_seconds": 0.0034148746635764837,
+        "final_validation_seconds": 0.0017868393721679847,
+        "lower_bound_seconds": 0.003569097801422079,
+        "witness_seconds": 0.015000350928554933
+      },
+      "mean_total_ms": 0.35949059917281073,
+      "mean_geometry_init_ms": 0.005825663295884927,
+      "mean_preprocess_ms": 0.02984204717601339,
+      "mean_search_ms": 0.3183392497400443,
+      "profile_primitive_calls": 581781,
+      "profile_total_calls": 582385,
+      "profile_total_seconds": 0.119123938,
+      "mean_peak_python_bytes": 138295.83333333334,
+      "max_peak_python_bytes": 1261704,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 276692,
+          "retained_python_bytes": 239308,
+          "live_allocated_blocks": 4702
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 270784,
+          "retained_python_bytes": 229824,
+          "live_allocated_blocks": 4496
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 7552,
+          "retained_python_bytes": 6136,
+          "live_allocated_blocks": 93
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 188120,
+          "retained_python_bytes": 155360,
+          "live_allocated_blocks": 2987
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 434744,
+          "retained_python_bytes": 378152,
+          "live_allocated_blocks": 7485
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 8792,
+          "retained_python_bytes": 7376,
+          "live_allocated_blocks": 111
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 9992,
+          "retained_python_bytes": 8528,
+          "live_allocated_blocks": 128
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 8184,
+          "retained_python_bytes": 6720,
+          "live_allocated_blocks": 102
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 124080,
+          "retained_python_bytes": 106784,
+          "live_allocated_blocks": 2005
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 7848,
+          "retained_python_bytes": 6432,
+          "live_allocated_blocks": 95
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1261704,
+          "retained_python_bytes": 1123824,
+          "live_allocated_blocks": 22488
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 8536,
+          "retained_python_bytes": 7072,
+          "live_allocated_blocks": 107
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 8808,
+          "retained_python_bytes": 7392,
+          "live_allocated_blocks": 110
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 8424,
+          "retained_python_bytes": 6960,
+          "live_allocated_blocks": 104
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 8216,
+          "retained_python_bytes": 6800,
+          "live_allocated_blocks": 102
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 619888,
+          "retained_python_bytes": 548624,
+          "live_allocated_blocks": 10926
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 8912,
+          "retained_python_bytes": 7496,
+          "live_allocated_blocks": 111
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 8224,
+          "retained_python_bytes": 6760,
+          "live_allocated_blocks": 105
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 8984,
+          "retained_python_bytes": 7520,
+          "live_allocated_blocks": 111
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 8008,
+          "retained_python_bytes": 6592,
+          "live_allocated_blocks": 98
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 7328,
+          "retained_python_bytes": 5864,
+          "live_allocated_blocks": 87
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 7096,
+          "retained_python_bytes": 5680,
+          "live_allocated_blocks": 84
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 10056,
+          "retained_python_bytes": 8592,
+          "live_allocated_blocks": 129
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 8128,
+          "retained_python_bytes": 6664,
+          "live_allocated_blocks": 99
+        }
+      ]
+    },
+    "scheduled_wa2": {
+      "cases": 120,
+      "mean_phase_ms": {},
+      "mean_total_ms": 0.5998142335253457,
+      "mean_geometry_init_ms": 0.006021805650865038,
+      "mean_preprocess_ms": 0.0,
+      "mean_search_ms": 0.5898881490187098,
+      "profile_primitive_calls": 1023684,
+      "profile_total_calls": 1024288,
+      "profile_total_seconds": 0.206639702,
+      "mean_peak_python_bytes": 187937.16666666666,
+      "max_peak_python_bytes": 1259960,
+      "memory": [
+        {
+          "case_id": "cached_0_0_standard",
+          "map_id": "cached_0",
+          "peak_python_bytes": 274884,
+          "retained_python_bytes": 238188,
+          "live_allocated_blocks": 4681
+        },
+        {
+          "case_id": "cached_5_5_standard",
+          "map_id": "cached_5",
+          "peak_python_bytes": 269112,
+          "retained_python_bytes": 228816,
+          "live_allocated_blocks": 4477
+        },
+        {
+          "case_id": "cached_11_0_standard",
+          "map_id": "cached_11",
+          "peak_python_bytes": 33744,
+          "retained_python_bytes": 27680,
+          "live_allocated_blocks": 530
+        },
+        {
+          "case_id": "cached_15_5_standard",
+          "map_id": "cached_15",
+          "peak_python_bytes": 186456,
+          "retained_python_bytes": 154360,
+          "live_allocated_blocks": 2967
+        },
+        {
+          "case_id": "cached_20_0_standard",
+          "map_id": "cached_20",
+          "peak_python_bytes": 433192,
+          "retained_python_bytes": 377264,
+          "live_allocated_blocks": 7467
+        },
+        {
+          "case_id": "cached_24_5_standard",
+          "map_id": "cached_24",
+          "peak_python_bytes": 69072,
+          "retained_python_bytes": 55312,
+          "live_allocated_blocks": 1043
+        },
+        {
+          "case_id": "cached_28_0_standard",
+          "map_id": "cached_28",
+          "peak_python_bytes": 96472,
+          "retained_python_bytes": 79664,
+          "live_allocated_blocks": 1531
+        },
+        {
+          "case_id": "cached_30_5_standard",
+          "map_id": "cached_30",
+          "peak_python_bytes": 33848,
+          "retained_python_bytes": 28024,
+          "live_allocated_blocks": 531
+        },
+        {
+          "case_id": "cached_34_0_standard",
+          "map_id": "cached_34",
+          "peak_python_bytes": 123280,
+          "retained_python_bytes": 105200,
+          "live_allocated_blocks": 1976
+        },
+        {
+          "case_id": "cached_37_5_standard",
+          "map_id": "cached_37",
+          "peak_python_bytes": 56552,
+          "retained_python_bytes": 48848,
+          "live_allocated_blocks": 914
+        },
+        {
+          "case_id": "cached_43_0_standard",
+          "map_id": "cached_43",
+          "peak_python_bytes": 1259960,
+          "retained_python_bytes": 1122768,
+          "live_allocated_blocks": 22467
+        },
+        {
+          "case_id": "cached_47_5_standard",
+          "map_id": "cached_47",
+          "peak_python_bytes": 103288,
+          "retained_python_bytes": 88968,
+          "live_allocated_blocks": 1748
+        },
+        {
+          "case_id": "cached_51_0_standard",
+          "map_id": "cached_51",
+          "peak_python_bytes": 64832,
+          "retained_python_bytes": 51632,
+          "live_allocated_blocks": 960
+        },
+        {
+          "case_id": "cached_53_5_standard",
+          "map_id": "cached_53",
+          "peak_python_bytes": 39008,
+          "retained_python_bytes": 32704,
+          "live_allocated_blocks": 634
+        },
+        {
+          "case_id": "cached_57_0_standard",
+          "map_id": "cached_57",
+          "peak_python_bytes": 58584,
+          "retained_python_bytes": 45480,
+          "live_allocated_blocks": 833
+        },
+        {
+          "case_id": "cached_60_5_standard",
+          "map_id": "cached_60",
+          "peak_python_bytes": 617912,
+          "retained_python_bytes": 547312,
+          "live_allocated_blocks": 10901
+        },
+        {
+          "case_id": "cached_69_0_standard",
+          "map_id": "cached_69",
+          "peak_python_bytes": 85512,
+          "retained_python_bytes": 69088,
+          "live_allocated_blocks": 1331
+        },
+        {
+          "case_id": "cached_73_5_standard",
+          "map_id": "cached_73",
+          "peak_python_bytes": 170912,
+          "retained_python_bytes": 153040,
+          "live_allocated_blocks": 2979
+        },
+        {
+          "case_id": "cached_77_0_standard",
+          "map_id": "cached_77",
+          "peak_python_bytes": 189112,
+          "retained_python_bytes": 158424,
+          "live_allocated_blocks": 3065
+        },
+        {
+          "case_id": "cached_82_5_standard",
+          "map_id": "cached_82",
+          "peak_python_bytes": 55432,
+          "retained_python_bytes": 41984,
+          "live_allocated_blocks": 765
+        },
+        {
+          "case_id": "cached_85_0_standard",
+          "map_id": "cached_85",
+          "peak_python_bytes": 64008,
+          "retained_python_bytes": 55584,
+          "live_allocated_blocks": 1057
+        },
+        {
+          "case_id": "cached_90_5_standard",
+          "map_id": "cached_90",
+          "peak_python_bytes": 19840,
+          "retained_python_bytes": 16616,
+          "live_allocated_blocks": 305
+        },
+        {
+          "case_id": "cached_93_0_standard",
+          "map_id": "cached_93",
+          "peak_python_bytes": 115240,
+          "retained_python_bytes": 97528,
+          "live_allocated_blocks": 1808
+        },
+        {
+          "case_id": "cached_96_5_standard",
+          "map_id": "cached_96",
+          "peak_python_bytes": 90240,
+          "retained_python_bytes": 73768,
+          "live_allocated_blocks": 1410
+        }
+      ]
+    }
+  }
+}
