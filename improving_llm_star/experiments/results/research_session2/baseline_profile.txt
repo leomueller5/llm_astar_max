@@ -1,0 +1,51 @@
+         4811990 function calls in 0.899 seconds
+
+   Ordered by: cumulative time
+   List reduced from 60 to 45 due to restriction <45>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      120    0.001    0.000    0.899    0.007 profile_baseline.py:12(run)
+      120    0.058    0.000    0.897    0.007 incumbent.py:24(search)
+    86012    0.080    0.000    0.690    0.000 search.py:250(get)
+   136619    0.121    0.000    0.576    0.000 search.py:56(collision)
+     9576    0.031    0.000    0.413    0.000 incumbent.py:29(shortcut)
+    71772    0.018    0.000    0.372    0.000 search.py:79(cost)
+    56718    0.051    0.000    0.219    0.000 linestring.py:45(__new__)
+    62292    0.024    0.000    0.167    0.000 {built-in method builtins.any}
+   375578    0.046    0.000    0.141    0.000 search.py:61(<genexpr>)
+    56718    0.015    0.000    0.121    0.000 decorators.py:182(wrapper)
+    56718    0.096    0.000    0.103    0.000 creation.py:143(linestrings)
+   319066    0.052    0.000    0.095    0.000 base.py:882(intersects)
+    53771    0.023    0.000    0.039    0.000 search.py:14(octile)
+   452613    0.038    0.000    0.038    0.000 {built-in method builtins.min}
+   431726    0.035    0.000    0.035    0.000 search.py:53(inside)
+   113436    0.026    0.000    0.031    0.000 linestring.py:68(_coords)
+   319066    0.029    0.000    0.029    0.000 {intersects_scalar}
+   271639    0.023    0.000    0.023    0.000 {built-in method builtins.max}
+   349354    0.020    0.000    0.020    0.000 {built-in method builtins.isinstance}
+   205813    0.015    0.000    0.015    0.000 {method 'append' of 'list' objects}
+   319066    0.013    0.000    0.013    0.000 {is_valid_input_scalar}
+   153332    0.012    0.000    0.012    0.000 {built-in method math.dist}
+   127894    0.011    0.000    0.011    0.000 {built-in method math.hypot}
+       94    0.002    0.000    0.010    0.000 {built-in method builtins.sorted}
+   110375    0.010    0.000    0.010    0.000 {method 'get' of 'dict' objects}
+     2974    0.002    0.000    0.009    0.000 search.py:84(valid_point)
+     9456    0.001    0.000    0.008    0.000 incumbent.py:70(key)
+     4114    0.001    0.000    0.007    0.000 {built-in method builtins.all}
+   119952    0.007    0.000    0.007    0.000 {built-in method builtins.len}
+   159030    0.007    0.000    0.007    0.000 {built-in method builtins.abs}
+    79974    0.004    0.000    0.004    0.000 {built-in method math.isfinite}
+    22928    0.004    0.000    0.004    0.000 {built-in method _heapq.heappop}
+    56756    0.003    0.000    0.003    0.000 {built-in method builtins.hasattr}
+    31108    0.003    0.000    0.003    0.000 {built-in method _heapq.heappush}
+    56718    0.003    0.000    0.003    0.000 creation.py:33(_xyz_to_coords)
+    53771    0.003    0.000    0.003    0.000 {built-in method math.sqrt}
+     8922    0.002    0.000    0.003    0.000 search.py:85(<genexpr>)
+     3710    0.001    0.000    0.002    0.000 incumbent.py:130(<genexpr>)
+      120    0.000    0.000    0.002    0.000 search.py:267(__init__)
+    14319    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+      120    0.000    0.000    0.001    0.000 incumbent.py:143(obstacle_lower_bound)
+      120    0.000    0.000    0.001    0.000 {built-in method builtins.sum}
+    11079    0.001    0.000    0.001    0.000 search.py:87(<genexpr>)
+     3060    0.001    0.000    0.001    0.000 incumbent.py:53(<genexpr>)
+      188    0.000    0.000    0.001    0.000 {method 'update' of 'set' objects}

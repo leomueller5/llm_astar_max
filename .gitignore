@@ -6,3 +6,6 @@ __pycache__/
 # Lossless .json.gz research archives are committed; expanded working copies are not.
 improving_llm_star/experiments/results/research/**/results.json
 improving_llm_star/experiments/results/research/**/runs.jsonl
+
+# Session 2 checkpoints; canonical records are the compressed archives.
+improving_llm_star/experiments/results/research_session2/**/runs.jsonl

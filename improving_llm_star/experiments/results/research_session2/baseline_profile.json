@@ -1,0 +1,53 @@
+{
+  "cases": 120,
+  "repeats": 5,
+  "split": "development",
+  "config": {
+    "certificate": 1,
+    "repair_radius": 1,
+    "obstacle_certificate": true,
+    "certificate_only": true,
+    "certificate_pruning": true
+  },
+  "summary": {
+    "fresh_seconds": {
+      "mean": 0.002840595280673976,
+      "median": 0.0014886249555274844
+    },
+    "geometry_init_seconds": {
+      "mean": 6.109122963001331e-06,
+      "median": 1.500127837061882e-06
+    },
+    "preprocess_seconds": {
+      "mean": 0.0015252749400679023,
+      "median": 0.0009367704624310136
+    },
+    "search_seconds": {
+      "mean": 0.0012997340934816747,
+      "median": 0.00026031199377030134
+    },
+    "visibility_edge_checks": {
+      "mean": 568.1833333333333,
+      "median": 322.5
+    },
+    "geometry_checks": {
+      "mean": 1138.4916666666666,
+      "median": 800.0
+    }
+  },
+  "tracemalloc_peak_bytes": [
+    246260,
+    5192,
+    511544,
+    39800,
+    45584,
+    1095384,
+    44360,
+    40504,
+    90072,
+    192272,
+    72264,
+    67712
+  ],
+  "profile": "         4811990 function calls in 0.899 seconds\n\n   Ordered by: cumulative time\n   List reduced from 60 to 45 due to restriction <45>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n      120    0.001    0.000    0.899    0.007 profile_baseline.py:12(run)\n      120    0.058    0.000    0.897    0.007 incumbent.py:24(search)\n    86012    0.080    0.000    0.690    0.000 search.py:250(get)\n   136619    0.121    0.000    0.576    0.000 search.py:56(collision)\n     9576    0.031    0.000    0.413    0.000 incumbent.py:29(shortcut)\n    71772    0.018    0.000    0.372    0.000 search.py:79(cost)\n    56718    0.051    0.000    0.219    0.000 linestring.py:45(__new__)\n    62292    0.024    0.000    0.167    0.000 {built-in method builtins.any}\n   375578    0.046    0.000    0.141    0.000 search.py:61(<genexpr>)\n    56718    0.015    0.000    0.121    0.000 decorators.py:182(wrapper)\n    56718    0.096    0.000    0.103    0.000 creation.py:143(linestrings)\n   319066    0.052    0.000    0.095    0.000 base.py:882(intersects)\n    53771    0.023    0.000    0.039    0.000 search.py:14(octile)\n   452613    0.038    0.000    0.038    0.000 {built-in method builtins.min}\n   431726    0.035    0.000    0.035    0.000 search.py:53(inside)\n   113436    0.026    0.000    0.031    0.000 linestring.py:68(_coords)\n   319066    0.029    0.000    0.029    0.000 {intersects_scalar}\n   271639    0.023    0.000    0.023    0.000 {built-in method builtins.max}\n   349354    0.020    0.000    0.020    0.000 {built-in method builtins.isinstance}\n   205813    0.015    0.000    0.015    0.000 {method 'append' of 'list' objects}\n   319066    0.013    0.000    0.013    0.000 {is_valid_input_scalar}\n   153332    0.012    0.000    0.012    0.000 {built-in method math.dist}\n   127894    0.011    0.000    0.011    0.000 {built-in method math.hypot}\n       94    0.002    0.000    0.010    0.000 {built-in method builtins.sorted}\n   110375    0.010    0.000    0.010    0.000 {method 'get' of 'dict' objects}\n     2974    0.002    0.000    0.009    0.000 search.py:84(valid_point)\n     9456    0.001    0.000    0.008    0.000 incumbent.py:70(key)\n     4114    0.001    0.000    0.007    0.000 {built-in method builtins.all}\n   119952    0.007    0.000    0.007    0.000 {built-in method builtins.len}\n   159030    0.007    0.000    0.007    0.000 {built-in method builtins.abs}\n    79974    0.004    0.000    0.004    0.000 {built-in method math.isfinite}\n    22928    0.004    0.000    0.004    0.000 {built-in method _heapq.heappop}\n    56756    0.003    0.000    0.003    0.000 {built-in method builtins.hasattr}\n    31108    0.003    0.000    0.003    0.000 {built-in method _heapq.heappush}\n    56718    0.003    0.000    0.003    0.000 creation.py:33(_xyz_to_coords)\n    53771    0.003    0.000    0.003    0.000 {built-in method math.sqrt}\n     8922    0.002    0.000    0.003    0.000 search.py:85(<genexpr>)\n     3710    0.001    0.000    0.002    0.000 incumbent.py:130(<genexpr>)\n      120    0.000    0.000    0.002    0.000 search.py:267(__init__)\n    14319    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}\n      120    0.000    0.000    0.001    0.000 incumbent.py:143(obstacle_lower_bound)\n      120    0.000    0.000    0.001    0.000 {built-in method builtins.sum}\n    11079    0.001    0.000    0.001    0.000 search.py:87(<genexpr>)\n     3060    0.001    0.000    0.001    0.000 incumbent.py:53(<genexpr>)\n      188    0.000    0.000    0.001    0.000 {method 'update' of 'set' objects}\n\n\n"
+}
