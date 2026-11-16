@@ -9,3 +9,6 @@ improving_llm_star/experiments/results/research/**/runs.jsonl
 
 # Session 2 checkpoints; canonical records are the compressed archives.
 improving_llm_star/experiments/results/research_session2/**/runs.jsonl
+
+# Session 3 canonical trial records are compressed; journals remain resumable locally.
+improving_llm_star/experiments/results/research_session3/**/runs.jsonl

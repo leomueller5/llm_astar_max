@@ -1,0 +1,12 @@
+{
+ "frozen_at_utc":"2026-11-16 07:08:38",
+ "start_utc":"2026-11-16 06:49:54",
+ "primary":"seed_cut",
+ "secondary":["seed_lazy","potential_visible"],
+ "rationale":"Development: seeds modestly reduce expansions; strict admissible-bound detour filter limits quality regression; lazy ranked validation preserves eager outputs. Potentials are quality-only candidates. Runtime benefit not established; geometric seeds competitive. All validation results will be reported, not just favorable subsets.",
+ "validation":"20 established validation maps, all standard/cot/repe caches, 600 observations, 9 randomized repeats. This historical validation split was used by prior sessions; no Session3 tuning after this freeze.",
+ "fresh":"30 new procedural maps,10 families,3 maps each,2 queries,4 deterministic fixture qualities,240 cases,7 repeats; seed990000 and anisotropic integer scales prevent reuse of prior geometry. Helpful fixtures are oracle-derived, NOT real LLM output.",
+ "comparisons":["original_indexed","indexed_astar","scheduled_wa2","witness_only","witness_cf","guide_off","seed_cut","seed_lazy","geometry_lazy","seed_cut_wrong","seed_cut_random","seed_cut_shuffle","potential_visible","potential_geometry","potential_random","uniform15"],
+ "primary_claim_rule":"No LLM-specific benefit unless matched disabled and geometric/random controls support it. Cost and runtime tradeoffs reported. CIs exploratory/unadjusted across multiple secondary comparisons.",
+ "no_paid_calls":true,"no_tuning_after_validation":true
+}
