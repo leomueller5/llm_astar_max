@@ -717,3 +717,26 @@ Das sichtbare Waypoint-Potenzial verbessert einige Pfade, kostet aber deutlich m
 Witness-First als stärksten bisherigen Laufzeitstand behalten. Präfix-Seeding als sauber implementierte, aber nicht erfolgreich bestätigte LLM-Erweiterung dokumentieren. Für weitere Arbeit braucht es vor allem hochwertige echte Hinweise auf komplexen, nicht geometrisch trivialen Karten und eine neue unverbrauchte reale Testmenge. Nicht weiter ausschließlich Stagnationstimer oder Schwellen auf denselben öffentlichen Antworten optimieren. Negative Resultate, Zufalls-/Falschantwort-Kontrollen und der Vergleich mit einfacher Zielgewichtung gehören ausdrücklich in die Abgabe.
 
 [Session-3-Algorithmus und Befehle](improving_llm_star/experiments/research/session3/README.md), [Messwerte und Konfidenzintervalle](improving_llm_star/experiments/results/research_session3/REPORT.md), [Forschungslog](improving_llm_star/experiments/research/session3/EXPERIMENT_LOG.md), [Vergleich als PDF](improving_llm_star/experiments/results/research_session3/comparison.pdf).
+
+## Forschungssitzung 4 – Zwischenstand (17.11.2026)
+
+Oracle-Kontrolle auf 120 Entwicklungsanfragen: vollständige, tatsächlich gute
+Koordinatenrouten haben erhebliches Potenzial. Verifizierte Ketten mit optimalen
+Referenzpunkten benötigen im Pilot 0,071 ms gegenüber Witness 0,322 ms; echte
+Cache-Antworten 0,330 ms. Oracle-Erzeugung ist ausdrücklich ausgeschlossen und
+kein gemessener LLM-Erfolg. Eine uneingeschränkte lokale Routennachführung mit
+echten Punkten verschlechtert dagegen die Pfadqualität deutlich. Qualität der
+Hinweise **und** bisherige Integrationsbeschränkungen spielen eine Rolle.
+
+Eine neue Komponenten-/Portalhierarchie mit abgesichertem Korridor-Fallback
+reduziert Suchzustände, kostet bisher mehr reale Zeit. Auf 32 neuen Pilotfällen
+liegen geometrischer und Oracle-Korridor fast gleichauf. Engere Punktportale
+liefern bessere Schranken, rechtfertigen aber ihre Vorverarbeitung nicht.
+Strategische JSON-Schemata, robuste Legacy-Verarbeitung und simulierte,
+ereignisgesteuerte Provider sind implementiert; keine bezahlten API-Aufrufe.
+Aktueller Versuch: günstigere notwendige Wanddurchquerungen als zulässige
+Schranke, kombiniert mit unabhängig verifizierten Routenhinweisen.
+
+Details und fortsetzbarer Stand:
+[Session-4-Log](improving_llm_star/experiments/research/session4/EXPERIMENT_LOG.md),
+[Checkpoint](improving_llm_star/experiments/research/session4/CHECKPOINT.md).

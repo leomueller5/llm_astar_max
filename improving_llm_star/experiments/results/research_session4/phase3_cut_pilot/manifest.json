@@ -1,0 +1,31 @@
+{
+  "sources": {
+    "llmastar/research/incumbent.py": "f44041b8072f9d632195ffcd18213ae64d169e50a1a27245005993cd6ba280b7",
+    "llmastar/research/corridor.py": "6d9a944713a33ae9ac4ff6db7daafb9455c2c3d969249d5a12b3210d1e9becb1",
+    "llmastar/research/efficient.py": "4d29dbdce7976a3e401469326c89548eb4afd2e9dffe684fc304b8399b5b2c3d",
+    "llmastar/research/__init__.py": "aa4a2806aff9cde9c1e0e49f1caf41875ba9b3aec049c93d21adb71fc854849b",
+    "llmastar/research/scheduled.py": "dd559b13ecee5e68ce5f31506ed249d8f5af8e2e1def55b2c8f8a4118c8b24a2",
+    "llmastar/research/geometry.py": "17f4493cc29428ddd33cd7986e72a32027d59839e69ea4794f09ad26aec82b89",
+    "llmastar/research/search.py": "6bfb4da0e65ce1536bf078983fba54ef279cd8972bc1b78acb337d868fa69958",
+    "llmastar/research/guidance.py": "d0d42d527368553805af27c077189d3b25acef2a5afc5d125c225075cf5c42f1",
+    "llmastar/research/strategic/planner.py": "8fe504ea111eb354bf5c0bbff95d67d18b6c056a4aa388685586d5ca359dba06",
+    "llmastar/research/strategic/compiler.py": "0eefe2bfd8125895fdafc41e832288bf2b5bedf41e49cc438d346f19928263cb",
+    "llmastar/research/strategic/cut_search.py": "4b6e98cdd802b54ea9ca566b6eb0aaa08aff0714cdb4bf1b0522339a5c412751",
+    "llmastar/research/strategic/route.py": "6a8d0eed7b66b6b2745f1079b7c8b4d5ed5c5ed0b9fd127ad40e9d22a5a1a5fb",
+    "llmastar/research/strategic/abstraction.py": "1cc9beba2f5def70102120f2b5080998d6acdd124dcc46eb0f52fa7c11dc9d3a",
+    "llmastar/research/strategic/__init__.py": "34296de6a5154d06c69766fdcb9807b1e6a3c29c4fb411a5a233575ac8f85ea3",
+    "llmastar/research/strategic/prompts.py": "0deb7df6193908c6e70dcda583fada85346d0eaa261d9ad70cbb0b50d8defbb4",
+    "llmastar/research/strategic/providers.py": "c3be028d7167feb52f305a9e7540c72d68485c820c023c4e7c0119fa0c43ce42",
+    "llmastar/research/strategic/schema.py": "2df4f56e2cc602ed9e3d2101d80350d4d529cbcbf456ae958697b9ba6980d8e4",
+    "llmastar/research/strategic/cuts.py": "1ca00ec39a37edfe322144fb2716bde40ef00e9675737282c26f555265882a7c",
+    "experiments/research/session4/cut_pilot.py": "f439221e84558f7012c44ca179b34e9dbca8d1dc02fc82a9e80994513fa2dcd3"
+  },
+  "cases_sha256": "e9270c80a83cdbe9199580cb93198089a8cac9f5f91ef2d146803434f9e79839",
+  "args": {
+    "cases": "improving_llm_star/experiments/results/research_session4/pilot_maps.json.gz",
+    "limit": 120,
+    "repeats": 5,
+    "bound": 1.1,
+    "output": "improving_llm_star/experiments/results/research_session4/phase3_cut_pilot"
+  }
+}

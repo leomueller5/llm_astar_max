@@ -1,0 +1,74 @@
+{
+  "flat11": {
+    "mean_query_median_ms": 1.5449647908098996,
+    "map_setup_ms_per_query": 0.008114599040709436,
+    "amortized_ms": 1.553079389850609,
+    "mean_unique": 904.1875,
+    "gm_cost_ratio": 1.0,
+    "valid": 28,
+    "mean_start_bound_ratio": null
+  },
+  "flat2": {
+    "mean_query_median_ms": 2.295674421475269,
+    "map_setup_ms_per_query": 0.005084621079731733,
+    "amortized_ms": 2.3007590425550006,
+    "mean_unique": 812.25,
+    "gm_cost_ratio": 1.0093039174315013,
+    "valid": 28,
+    "mean_start_bound_ratio": null
+  },
+  "witness": {
+    "mean_query_median_ms": 1.6399063242715783,
+    "map_setup_ms_per_query": 0.004888031980954111,
+    "amortized_ms": 1.6447943562525325,
+    "mean_unique": 773.53125,
+    "gm_cost_ratio": 1.0061610214967982,
+    "valid": 28,
+    "mean_start_bound_ratio": null
+  },
+  "portal11": {
+    "mean_query_median_ms": 2.3031483142403886,
+    "map_setup_ms_per_query": 1.7667356951278634,
+    "amortized_ms": 4.069884009368252,
+    "mean_unique": 650.40625,
+    "gm_cost_ratio": 1.0022795829927813,
+    "valid": 28,
+    "mean_start_bound_ratio": 0.2682019708380622
+  },
+  "corridor_geo11": {
+    "mean_query_median_ms": 2.3094504285836592,
+    "map_setup_ms_per_query": 2.6427942430018447,
+    "amortized_ms": 4.952244671585504,
+    "mean_unique": 648.9375,
+    "gm_cost_ratio": 1.003650579919538,
+    "valid": 28,
+    "mean_start_bound_ratio": 0.2682019708380622
+  },
+  "corridor_oracle11": {
+    "mean_query_median_ms": 2.341397077543661,
+    "map_setup_ms_per_query": 1.7374999952153303,
+    "amortized_ms": 4.078897072758991,
+    "mean_unique": 645.65625,
+    "gm_cost_ratio": 1.0015946944759064,
+    "valid": 28,
+    "mean_start_bound_ratio": 0.2682019708380622
+  },
+  "corridor_imperfect11": {
+    "mean_query_median_ms": 2.3531404658569954,
+    "map_setup_ms_per_query": 2.224869778729044,
+    "amortized_ms": 4.578010244586039,
+    "mean_unique": 645.65625,
+    "gm_cost_ratio": 1.0015946944759064,
+    "valid": 28,
+    "mean_start_bound_ratio": 0.2682019708380622
+  },
+  "corridor_random11": {
+    "mean_query_median_ms": 2.448218743666075,
+    "map_setup_ms_per_query": 1.7504101124359295,
+    "amortized_ms": 4.198628856102005,
+    "mean_unique": 653.09375,
+    "gm_cost_ratio": 1.002321692143195,
+    "valid": 28,
+    "mean_start_bound_ratio": 0.2682019708380622
+  }
+}
