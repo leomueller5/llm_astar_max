@@ -170,3 +170,87 @@ shortcuts fail. All local expansion and heap costs are recorded as preprocessing
 search work, not hidden. Three imperfect alternatives exercise a strategy
 portfolio; complete global fallback and independent certificate remain. Current
 large development pilot compares these with the same no-advice cut engine atw2.
+
+## Phase5 result and freeze
+
+At w2 on132 development queries (five repeats): cut geometry20.253ms,
+1973.32states, GMcost1.00839; oracle13.590ms,1204.24states, GM1.0;
+noisy coordinates20.056ms,1880.97states, GM1.02343. Ordered oracle gates15.937ms,
+1441.78states, GM1.00087. Local repair of noisy coordinates18.206ms,
+1748.84global states plus18.90 local expansions (not unique union), GM1.01341.
+Three noisy alternatives with bounded local repair16.831ms,1513.29global states,
+42.65local expansions, GM1.01392. All120 reachable solved,12 disconnected correct.
+This is a synthetic potential result, NOT evidence of a real-model advantage.
+A stronger classical local-repair control is essential before attributing gain.
+
+Freeze commit0c462d6 at13:19UTC. Previous milestone d65c584. The wall-clock target
+has been exceeded; exact active/CPU time was not measured across tool/model turns.
+Do not describe elapsed wall time as measured active research time. Finish fresh
+validation, audits and reporting; no further candidate tuning on fresh maps.
+
+Fresh evaluation predeclared:11 families,2 maps/family,2 queries/map, sizes96/192,
+seed base4330000,44 queries. Same frozen algorithms, w2, seven randomized trials,
+two fixed warmup cases excluded, five-second uniform cap. Classical local repair
+reuses already charged cut gate proposals, keeping the same anchor, graph and
+128-expansion repair budget. This is a stronger no-LLM control, not free advice.
+Report union of provider/global expanded states; local heaps included separately.
+Single noisy guidance is EXACTLY portfolio candidate0; three-candidate benefit
+must be compared against that same single. Oracle generation remains excluded
+and explicitly unavailable information. Actual model requests always zero.
+
+## Frozen evaluation completed
+
+Final fresh:44 queries/22 maps,11 families,96/192,7 repeats,4928 trials across16
+methods. All40 reachable solved and4 unreachable correct by new methods. Cut
+no hints18.152ms vs weighted45.137 and Witness40.287. Single imperfect synthetic
+route with local repair14.458ms; classical local repair19.631ms; oracle11.981ms.
+Paired local/cut ratio0.7965 [0.5160,0.9304], local/classical-local0.7365
+[0.4256,0.9029], cost GM1.01414 vs cut1.00798. Positive INFORMATION potential,
+not real LLM evidence. Portfolio15.815ms is slower than single on fresh maps;
+its development ranking did not persist. Strong regressions by family are kept.
+
+Real validation:600 observations/200 queries/20 maps/three styles,7 repeats,
+50400 trials. Cut0.3215ms, real raw0.3185ms, wrong0.3191ms, local real0.3398ms.
+Raw/cut0.9904 [0.9630,1.0168]; local real/cut1.0568 [1.0249,1.0907]. No real
+LLM-specific win. All600 valid. Existing validation reuse is labelled, not a
+fresh unseen real-model test. Source snapshots and hashes intact after each run.
+
+Secondary fixed-algorithm diagnostics:2156 fresh and29400 cached trials. Fresh
+random/wrong/shuffle local sources are1.2608/1.2527/1.2371× useful synthetic
+source, all CIs above1. No-repair costs1.2204× runtime; no-shortcut changes little
+time but worsens cost GM1.03053 vs1.01414. Real random/wrong sources equal real;
+removing repair is faster. These are post-freeze diagnostic comparisons, with no
+algorithm/parameter changes after fresh output. They cannot establish live-model
+performance or serve as another parameter-selection loop.
+
+Native/matched frozen original:22 predetermined fresh query0/map,3 repeats,
+528 trials,uniform2s cap.36 native and12 matched timeout trials. Censored means
+1203.29/581.67ms are lower bounds, not completed full-query runtime. New cut10.30ms,
+local7.25ms,no timeouts. Raw per-trial successes retained; missing counters are
+not artificial zeros. All original scoring/switching/duplicate logic preserved.
+
+Independent audit:44 shortest-distance references via separate Shapely occupancy
+and Dijkstra,833196 state bounds,4480 actual paths,949396 unit edges. Fresh maps
+hash-disjoint from generated development maps. Separate70 counter/memory trials
+(10 predetermined cases×7 methods); exact local+global heap pops match reported
+pops. Mean tracked peak MiB:weighted2.403,cut1.877,local1.649; max11.845,14.047,
+14.055 respectively. Better mean does not imply lower worst-case/native memory.
+
+Archived-source profiler reproduction: eight large development oracle queries,
+legacy0.839s→zero calls; prefix0.227→0.036s; instrumented total2.934→1.797s.
+No native runtime claim from those instrumented values. Counterexample found and
+retained: even oracle vertices can harm bounded roadmap candidate allocation.
+Full profile text and component rows saved before/after.
+
+All primary+secondary final timing trials total87412, but this is NOT87412
+independent maps or model samples. Actual API/model calls/tokens/cost zero;
+historical token counts unknown. Hypothetical fixed-output delay break-even of
+synthetic local strategy~6.25ms/request vs cut; API latency can overwhelm search
+savings. No idle waits or paid requests were used to meet the target duration.
+
+Final artifacts: results/research_session4/REPORT.md, final_analysis/TABLES.md,
+statistics.json, diagnostics.json, SUPPLEMENT.md, PNG/PDF comparisons and family
+regressions. README contains exact regeneration, benchmark, audit and report
+commands. Tests118 pass. Algorithms frozen since0c462d6; final edits are reports,
+audits and analysis tooling only. Final recommendation: keep classical cut and
+optional single verified local refinement; disclose real-model negative result.

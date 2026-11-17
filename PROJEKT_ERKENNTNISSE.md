@@ -765,3 +765,75 @@ verzögerter Zertifizierung, strukturierte geordnete Hindernisumgehungen und
 budgetierte lokale A*-Verfeinerung. Kein Kandidat darf allein aufgrund einer
 LLM-Behauptung akzeptiert werden. Gültige Routen und zulässige Schranken bleiben
 getrennt; Faktoren größer 1 garantieren höchstens begrenzte Suboptimalität.
+
+### Session 4 – eingefrorenes Endergebnis
+
+Die Kandidaten wurden mit Commit `0c462d6` vor Erzeugung der frischen Karten
+eingefroren. Auf 44 Anfragen aus 22 neuen Karten (11 Familien, Größen 96/192,
+sieben Wiederholungen) ergibt sich:
+
+| Verfahren | Zeit ms | Eindeutige Zustände inkl. lokaler Suche | Pfadkosten/Optimum, geom. Mittel |
+|---|---:|---:|---:|
+| Weighted A*, Faktor 2 | 45,137 | 4614,93 | 1,00854 |
+| Witness ohne LLM | 40,287 | 4486,82 | 1,00854 |
+| Neue Schnittsuche ohne Hinweise | 18,152 | 1814,07 | 1,00798 |
+| Schnittsuche + lokale geometrische Kontrolle | 19,631 | 1827,55 | 1,00798 |
+| Gute unvollkommene **synthetische** Route + lokale Verfeinerung | 14,458 | 1402,36 | 1,01414 |
+| Drei synthetische Alternativen + Verfeinerung | 15,815 | 1353,91 | 1,01177 |
+| Optimale Oracle-Route | 11,981 | 1033,86 | 1,00000 |
+
+Alle 40 erreichbaren Anfragen werden gelöst, alle vier unerreichbaren korrekt
+zurückgewiesen. Der zusätzliche synthetische Hinweisgewinn gegenüber derselben
+Schnittsuche beträgt im Mittel 20,35 % Zeit, bei leicht schlechteren Pfaden.
+Zeitverhältnis 0,7965, exploratives 95%-Karten-Bootstrap [0,5160; 0,9304]. Gegen
+dieselbe lokale Verfeinerung ohne LLM beträgt das Verhältnis 0,7365
+[0,4256; 0,9029]. Zufalls-, Shuffle- und Falschantwort-Kontrollen sind im
+synthetischen Zusatzversuch langsamer; das unterstützt einen Nutzen korrekter
+Routeninformation, **nicht einen nachgewiesenen Nutzen eines realen LLMs**.
+
+Die geometrische Verbesserung ist nicht universell: Baum-/verflochtene Labyrinthe
+und Räume können langsamer werden. Starke Gewinne liegen bei Serpentinen,
+Engpässen und dem Nachweis der Unerreichbarkeit. Der maximale beobachtete
+Pfadfaktor der Schnittsuche ist höher als beim Weighted-Kontrollverfahren,
+obwohl das geometrische Mittel etwas besser ist. Faktor 2 ist eine Schranke,
+kein Optimalitätsversprechen. Die Drei-Routen-Variante gewinnt auf Entwicklung,
+ist auf frischen Karten aber langsamer als die einzelne reparierte Route.
+
+**Reale Cache-Validierung bleibt negativ:** 600 Beobachtungen = 200 verschiedene
+Anfragen × drei Prompt-Stile auf 20 bereits bekannten Validierungskarten.
+Schnittsuche ohne Hinweise 0,3215 ms, mit tatsächlichen Hinweisen 0,3185 ms;
+Verhältnis 0,9904 [0,9630; 1,0168]. Falschantworten 0,3191 ms. Lokale
+Verfeinerung echter Antworten 0,3398 ms, also zusätzliche Zeit. Zufall und
+Falschantwort sind auch bei identischer lokaler Verfeinerung konkurrenzfähig.
+Kein zusätzlicher Laufzeitnutzen echter LLM-Semantik ist damit belegt.
+
+Die tatsächliche Flaschenhalskorrektur: keine teure Wand-/Punktpaar-Auswertung
+nach schon gültigen Routen; optionale Legacy-Inferenz budgetieren; Präfixkosten
+inkrementell berechnen und Teilstrecken gemeinsam speichern. Vorher-/Nachher-
+Profile sind mit archiviertem Quelltext reproduzierbar. Zusätzliche Hierarchie-,
+Roadmap-, Primal-First-, strukturierte Umgehungs- und dynamische Provider-
+Varianten bleiben separat ausführbar. Neue strategische Prompts wurden **nicht**
+mit einem Live-Modell getestet.
+
+118 automatische Tests bestehen. Unabhängige Shapely-/Dijkstra-Prüfung: 44
+Referenzdistanzen, 833.196 zulässige Zustands-Schranken, 4.480 gültige zurückgegebene
+Pfade mit 949.396 Kanten. Zusätzliche Heap-/Speichermessung erfolgt getrennt von
+den Laufzeitmessungen. Mittlerer gemessener Speicher sinkt auf der kleinen
+Speicherstichprobe, das Maximum steigt; keine pauschale Speicherersparnis.
+Original-LLM-A* bleibt unverändert; native und geometrisch angepasste Original-
+Kontrollen haben auf großen Karten teilweise Zeitlimits, die als zensiert
+gekennzeichnet sind. `main` wurde nicht verändert, nichts gepusht/zusammengeführt.
+
+Empfehlung für die Abgabe: zulässige Schnittschranke und verifizierte strategische
+Verfeinerung als Forschungsbeitrag präsentieren; geometrischen Gewinn,
+synthetisches Informationspotenzial und echten negativen LLM-Befund trennen.
+Für einen tatsächlichen LLM-Nachweis braucht es separat autorisierte neue
+strategische Antworten auf neuen Karten. Schon beim synthetischen Gewinn liegt
+das amortisierbare Modell-Latenzbudget nur bei etwa 6,25 ms pro angefragter Antwort;
+volle API-Latenz kann den Suchgewinn deutlich übersteigen. Keine bezahlten Aufrufe.
+
+[Abschlussbericht](improving_llm_star/experiments/results/research_session4/REPORT.md),
+[exakte Befehle und Offline-Schnittstelle](improving_llm_star/experiments/research/session4/README.md),
+[Tabellen und Konfidenzintervalle](improving_llm_star/experiments/results/research_session4/final_analysis/TABLES.md),
+[PDF: Laufzeit/Pfadqualität](improving_llm_star/experiments/results/research_session4/final_analysis/final_fresh_comparison.pdf),
+[PDF: Gewinne und Regressionen pro Kartenfamilie](improving_llm_star/experiments/results/research_session4/final_analysis/families.pdf).

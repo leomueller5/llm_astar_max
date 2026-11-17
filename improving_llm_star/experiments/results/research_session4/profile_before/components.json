@@ -1,0 +1,98 @@
+{
+  "scope": "Instrumented diagnostics, not native runtime. Snapshot option imports archived modules without altering sources. Oracle production excluded and unavailable.",
+  "args": {
+    "cases": "improving_llm_star/experiments/results/research_session4/development_maps_v1.json.gz",
+    "oracle": true,
+    "loops": 1,
+    "family": [
+      "tree_maze",
+      "serpentine"
+    ],
+    "size": 256,
+    "snapshot": "improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot",
+    "legacy": true,
+    "output": "improving_llm_star/experiments/results/research_session4/profile_before"
+  },
+  "runs": [
+    {
+      "unique": 35224,
+      "operation": 49107,
+      "seed_count": 0,
+      "candidate_seconds": 0.07854845910333097,
+      "provider_seconds": 0.0008425000123679638,
+      "cut_preprocess_seconds": 0.011797375045716763,
+      "lazy_heuristic_seconds": 0.01643427717499435,
+      "total_seconds": 0.9973229998722672
+    },
+    {
+      "unique": 28415,
+      "operation": 39284,
+      "seed_count": 0,
+      "candidate_seconds": 0.11320033320225775,
+      "provider_seconds": 0.0011163749732077122,
+      "cut_preprocess_seconds": 0.01217745803296566,
+      "lazy_heuristic_seconds": 0.018057910958305,
+      "total_seconds": 0.9779486660845578
+    },
+    {
+      "unique": 27388,
+      "operation": 38445,
+      "seed_count": 0,
+      "candidate_seconds": 0.04672120907343924,
+      "provider_seconds": 0.0007713749073445797,
+      "cut_preprocess_seconds": 0.012374750105664134,
+      "lazy_heuristic_seconds": 0.016942189075052738,
+      "total_seconds": 0.7640059590339661
+    },
+    {
+      "unique": 4880,
+      "operation": 6936,
+      "seed_count": 1,
+      "candidate_seconds": 0.02486479259096086,
+      "provider_seconds": 0.0002068330068141222,
+      "cut_preprocess_seconds": 0.01233137515373528,
+      "lazy_heuristic_seconds": 0.00821185321547091,
+      "total_seconds": 0.20746908406727016
+    },
+    {
+      "unique": 0,
+      "operation": 0,
+      "seed_count": 55,
+      "candidate_seconds": 0.008552373852580786,
+      "provider_seconds": 0.00014070793986320496,
+      "cut_preprocess_seconds": 0.0003796250093728304,
+      "lazy_heuristic_seconds": 0.0010466703679412603,
+      "total_seconds": 0.012317749904468656
+    },
+    {
+      "unique": 0,
+      "operation": 0,
+      "seed_count": null,
+      "candidate_seconds": null,
+      "provider_seconds": null,
+      "cut_preprocess_seconds": null,
+      "lazy_heuristic_seconds": null,
+      "total_seconds": 8.5500068962574e-05
+    },
+    {
+      "unique": 0,
+      "operation": 0,
+      "seed_count": null,
+      "candidate_seconds": null,
+      "provider_seconds": null,
+      "cut_preprocess_seconds": null,
+      "lazy_heuristic_seconds": null,
+      "total_seconds": 0.00018858397379517555
+    },
+    {
+      "unique": 0,
+      "operation": 0,
+      "seed_count": 24,
+      "candidate_seconds": 0.0025757509283721447,
+      "provider_seconds": 7.404200732707977e-05,
+      "cut_preprocess_seconds": 0.0003761670086532831,
+      "lazy_heuristic_seconds": 0.000555794220417738,
+      "total_seconds": 0.006048667011782527
+    }
+  ]
+}

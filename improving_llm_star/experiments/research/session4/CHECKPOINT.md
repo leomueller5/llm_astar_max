@@ -61,3 +61,51 @@ Remaining: parse robustness edge cases; profile preservation; phased budgeted
 candidate policy; final benchmark with warmups/native original/total work and
 per-map paired CIs; freeze before fresh seeds/sizes; independent geometry/bound
 and memory checks; plots, docs, commits. Target session end11:57 UTC if useful.
+
+13:19UTC: candidates frozen at0c462d6; all118 tests pass. Wall elapsed already
+~4h22; active duration not separately metered. Complete final deliverables now.
+Phase5 shows corrected oracle and local portfolio potential; stronger classical
+local-repair control added before freeze. Fresh44 cases generated only AFTER
+freeze, sizes96/192,11 families,2 maps and2 pairs per family. Final serial run
+currently active (seven repeats,16 modes); DO NOT alter frozen algorithms or
+existing session4 Python files until source-integrity checks complete. New
+postprocessing/audit files may be added; they are not imported by timed code.
+Next: cached validation with matched noLLM/random/wrong controls; uniform-capped
+native/matched original fixed fresh query0 subset; bootstrap/per-family reports,
+independent Shapely/cost/bound/disjointness audits, memory profile and plots.
+No parameter/algorithm refinement based on fresh output. No paid calls/push/main.
+
+## Session complete — 2026-11-17 13:43 UTC
+
+Observed wall window08:57:26–13:43UTC, approximately4h46min. Active CPU/model
+work was not separately metered; do not claim a measured180-minute active run.
+All launched research/timing/audit processes completed. No paid calls or idle
+waits to consume a time budget. No required implementation work left pending.
+
+Best supported large-map classical engine: CutStrategySearch, bound2, no provider.
+Guidance research candidate: same engine + single LocalRouteProvider, total local
+budget128/per-link32. Synthetic/oracle guidance helps; real cache evidence remains
+negative. Portfolio, hierarchy, roadmap and primal variants preserved. No universal
+winner across families; retain Witness as small-map control. All algorithms remain
+unchanged from candidate freeze0c462d6. Foundationd65c584; final commit adds
+post-freeze artifacts, reports and analysis tooling only.
+
+Final tests118/118 pass (6.45s final run); compileall succeeds. Independent audit
+44 reference distances/833196 bounds/4480 paths/949396 edges.70 separate exact
+heap/memory trials match path/counter expectations. Final datasets have no source
+changes during timing, and fresh map hashes are disjoint from generated dev maps.
+Main ref remains66baa31d2fc2b658b501dcd4b34e09d31af66cb4. Original utils/env imports
+are byte-identical between frozen and current packages. No push/merge/main edits.
+
+Start here to review or resume:
+- experiments/results/research_session4/REPORT.md
+- experiments/research/session4/README.md (all commands)
+- final_analysis/TABLES.md, SUPPLEMENT.md, statistics.json, diagnostics.json
+- final_analysis/*.pdf and *.png
+- final_audit/audit.json
+- EXPERIMENT_LOG.md and THEORY.md
+
+Only future research direction: independently authorize new strategic model
+outputs, freeze the prompt/cost budget before collection, reserve an unopened
+map-disjoint test set. Do not continue tuning this opened fresh set or relabel
+synthetic guidance as real LLM evidence. Keep current raw results immutable.

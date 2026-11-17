@@ -1,0 +1,48 @@
+         15482765 function calls (15460181 primitive calls) in 2.934 seconds
+
+   Ordered by: cumulative time
+   List reduced from 115 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        8    0.206    0.026    2.966    0.371 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:61(search)
+      183    0.002    0.000    1.172    0.006 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:118(request)
+    95907    0.432    0.000    1.151    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:11(get)
+        4    0.500    0.125    0.839    0.210 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:15(legacy_bypasses)
+   883399    0.321    0.000    0.554    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:59(blocked)
+       26    0.001    0.000    0.274    0.011 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:94(try_route)
+     1465    0.003    0.000    0.227    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:86(record_prefix)
+   231384    0.044    0.000    0.225    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:81(h)
+  3101901    0.224    0.000    0.224    0.000 {built-in method builtins.min}
+     1485    0.036    0.000    0.188    0.000 {built-in method builtins.sum}
+  2087978    0.185    0.000    0.185    0.000 {method 'get' of 'dict' objects}
+    96206    0.030    0.000    0.159    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:143(value)
+  1079669    0.081    0.000    0.150    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:89(<genexpr>)
+   242736    0.072    0.000    0.135    0.000 {built-in method builtins.any}
+  1760331    0.131    0.000    0.131    0.000 {built-in method builtins.max}
+   192412    0.045    0.000    0.120    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:88(value)
+   895034    0.079    0.000    0.079    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/search.py:53(inside)
+   192412    0.015    0.000    0.074    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:73(vector)
+     2120    0.029    0.000    0.074    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:29(octile_transform)
+        8    0.000    0.000    0.071    0.009 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/efficient.py:27(search)
+  1104319    0.070    0.000    0.070    0.000 {built-in method math.dist}
+       20    0.001    0.000    0.070    0.003 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:43(__init__)
+        7    0.004    0.001    0.063    0.009 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/efficient.py:189(wall_witnesses)
+39791/17207    0.010    0.000    0.061    0.000 {built-in method builtins.all}
+      610    0.056    0.000    0.061    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:61(free_mask)
+    13917    0.008    0.000    0.059    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:94(valid_point)
+   622954    0.051    0.000    0.051    0.000 {built-in method math.hypot}
+        6    0.000    0.000    0.049    0.008 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:117(__init__)
+   661898    0.045    0.000    0.045    0.000 {method 'append' of 'list' objects}
+     4240    0.018    0.000    0.038    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:16(_past_min)
+   538162    0.030    0.000    0.030    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:63(<genexpr>)
+   629436    0.030    0.000    0.030    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:67(degenerate_collision)
+   133772    0.024    0.000    0.024    0.000 {built-in method _heapq.heappop}
+     1891    0.002    0.000    0.021    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:147(lattice_segment)
+       20    0.004    0.000    0.020    0.001 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cuts.py:92(gate_route)
+     6392    0.001    0.000    0.019    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/strategic/cut_search.py:184(<genexpr>)
+     1467    0.018    0.000    0.019    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:158(expand_lattice_route)
+     3837    0.012    0.000    0.018    0.000 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:113(clear_piece)
+        8    0.000    0.000    0.017    0.002 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:105(__init__)
+        8    0.002    0.000    0.017    0.002 /Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase4_development_large/source_snapshot/llmastar/research/geometry.py:35(__init__)
+
+

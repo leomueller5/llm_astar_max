@@ -1,0 +1,1579 @@
+{
+  "final_fresh": {
+    "latency": {
+      "cut_none": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 18.152213041585956,
+          "1": 18.152213041585956,
+          "10": 18.152213041585956,
+          "100": 18.152213041585956,
+          "1000": 18.152213041585956
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "weighted": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 45.13722724831578,
+          "1": 45.13722724831578,
+          "10": 45.13722724831578,
+          "100": 45.13722724831578,
+          "1000": 45.13722724831578
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "local_raw": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 14.457721564791758,
+          "1": 15.04863065570085,
+          "10": 20.366812473882668,
+          "100": 73.54863065570085,
+          "1000": 605.3668124738828
+        },
+        "break_even_delay_ms_vs_cut_none": 6.252216345344025,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_raw": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 17.435049294197764,
+          "1": 18.025958385106854,
+          "10": 23.344140203288674,
+          "100": 76.52595838510686,
+          "1000": 608.3441402032887
+        },
+        "break_even_delay_ms_vs_cut_none": 1.2136617263492484,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_dynamic": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 13.659141047603704,
+          "1": 14.431868320330977,
+          "10": 21.38641377487643,
+          "100": 90.93186832033098,
+          "1000": 786.3864137748765
+        },
+        "break_even_delay_ms_vs_cut_none": 5.814563756918206,
+        "requests_per_observation": 0.7727272727272727,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "astar": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 45.78144503334029,
+          "1": 45.78144503334029,
+          "10": 45.78144503334029,
+          "100": 45.78144503334029,
+          "1000": 45.78144503334029
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_wrong": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 19.419792616231874,
+          "1": 20.010701707140964,
+          "10": 25.328883525322784,
+          "100": 78.51070170714097,
+          "1000": 610.3288835253229
+        },
+        "break_even_delay_ms_vs_cut_none": -2.1451346647854033,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_octile": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 44.62233804356815,
+          "1": 44.62233804356815,
+          "10": 44.62233804356815,
+          "100": 44.62233804356815,
+          "1000": 44.62233804356815
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "witness": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 40.2873523469845,
+          "1": 40.2873523469845,
+          "10": 40.2873523469845,
+          "100": 40.2873523469845,
+          "1000": 40.2873523469845
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_noseed": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 19.14100473831323,
+          "1": 19.14100473831323,
+          "10": 19.14100473831323,
+          "100": 19.14100473831323,
+          "1000": 19.14100473831323
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "witness_raw": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 41.32933912544765,
+          "1": 41.32933912544765,
+          "10": 41.32933912544765,
+          "100": 41.32933912544765,
+          "1000": 41.32933912544765
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "local_none": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 19.63060808008198,
+          "1": 20.22151717099107,
+          "10": 25.53969898917289,
+          "100": 78.72151717099108,
+          "1000": 610.539698989173
+        },
+        "break_even_delay_ms_vs_cut_none": -2.501899295916351,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "local_portfolio": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 15.815280340823598,
+          "1": 16.406189431732688,
+          "10": 21.72437124991451,
+          "100": 74.90618943173268,
+          "1000": 606.7243712499146
+        },
+        "break_even_delay_ms_vs_cut_none": 3.954809185905525,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_random": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 19.836153443479404,
+          "1": 20.427062534388494,
+          "10": 25.745244352570314,
+          "100": 78.9270625343885,
+          "1000": 610.7452443525704
+        },
+        "break_even_delay_ms_vs_cut_none": -2.8497452955119886,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_oracle": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 11.981006574139677,
+          "1": 12.571915665048769,
+          "10": 17.890097483230587,
+          "100": 71.07191566504878,
+          "1000": 602.8900974832306
+        },
+        "break_even_delay_ms_vs_cut_none": 10.443580175678317,
+        "requests_per_observation": 0.5909090909090909,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_nogeometry": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 17.452669568063524,
+          "1": 17.452669568063524,
+          "10": 17.452669568063524,
+          "100": 17.452669568063524,
+          "1000": 17.452669568063524
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      }
+    },
+    "paper_style_metrics": {
+      "cut_none": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.5467987022774725,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.2883912631562467,
+        "mean_cost_ratio_to_opt": 1.0084480304866463,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "weighted": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 1.083499353796851,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.5991374651585392,
+        "mean_cost_ratio_to_opt": 1.0087415116165928,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "local_raw": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.28314777094389093,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.1527124868095961,
+        "mean_cost_ratio_to_opt": 1.0146889531525587,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_raw": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.43040403874385896,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.24032659854098373,
+        "mean_cost_ratio_to_opt": 1.0234083652249646,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_dynamic": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.24260737301563562,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.14877644805255447,
+        "mean_cost_ratio_to_opt": 1.0004904338113056,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "astar": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 1.0,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 1.0,
+        "mean_cost_ratio_to_opt": 1.0,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_wrong": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.5467987022774725,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.2883912631562467,
+        "mean_cost_ratio_to_opt": 1.0084480304866463,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_octile": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.8662745909604878,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.445612756563369,
+        "mean_cost_ratio_to_opt": 1.0129773593703844,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "witness": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.8985705343824766,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.45241767575942266,
+        "mean_cost_ratio_to_opt": 1.0087415116165928,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_noseed": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.5469843634833061,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.29581445676625256,
+        "mean_cost_ratio_to_opt": 1.009325098388871,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "witness_raw": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.8985705343824766,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.45241767575942266,
+        "mean_cost_ratio_to_opt": 1.0087415116165928,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "local_none": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.560577630149468,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.2883912631562467,
+        "mean_cost_ratio_to_opt": 1.0084480304866463,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "local_portfolio": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.24998605470638788,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.12300223047898223,
+        "mean_cost_ratio_to_opt": 1.0119262682544865,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_random": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.5467987022774725,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.2883912631562467,
+        "mean_cost_ratio_to_opt": 1.0084480304866463,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_oracle": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.17311999663702735,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.0845655854632898,
+        "mean_cost_ratio_to_opt": 1.0,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_nogeometry": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.5469843634833061,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.29581445676625256,
+        "mean_cost_ratio_to_opt": 1.009325098388871,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      }
+    },
+    "usage": {
+      "cut_none": {
+        "provider_invocations": 0,
+        "with_any_seed": 12,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "weighted": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "None": 44
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "local_raw": {
+        "provider_invocations": 26,
+        "with_any_seed": 16,
+        "accepted_sources": {
+          "witness": 14,
+          "legacy_locally_verified_waypoints": 13,
+          "grid_search": 13,
+          "None": 4
+        },
+        "warning_observations": 26,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_raw": {
+        "provider_invocations": 26,
+        "with_any_seed": 20,
+        "accepted_sources": {
+          "witness": 14,
+          "legacy_waypoints": 6,
+          "grid_search": 20,
+          "None": 4
+        },
+        "warning_observations": 26,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_dynamic": {
+        "provider_invocations": 34,
+        "with_any_seed": 20,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 10,
+          "oracle_revision_waypoints": 16,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "astar": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "None": 44
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_wrong": {
+        "provider_invocations": 26,
+        "with_any_seed": 12,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 26,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_octile": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "witness": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "direct": 8,
+          "wall_witness": 6,
+          "None": 30
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_noseed": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "witness_raw": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "direct": 8,
+          "wall_witness": 6,
+          "None": 30
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "local_none": {
+        "provider_invocations": 26,
+        "with_any_seed": 12,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "local_portfolio": {
+        "provider_invocations": 26,
+        "with_any_seed": 19,
+        "accepted_sources": {
+          "witness": 14,
+          "imperfect_alternative0_locally_verified_waypoints": 13,
+          "imperfect_alternative1_locally_verified_waypoints": 3,
+          "grid_search": 7,
+          "imperfect_alternative2_locally_verified_waypoints": 3,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_random": {
+        "provider_invocations": 26,
+        "with_any_seed": 12,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_oracle": {
+        "provider_invocations": 26,
+        "with_any_seed": 23,
+        "accepted_sources": {
+          "witness": 14,
+          "oracle_waypoints": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_nogeometry": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "witness": 14,
+          "grid_search": 26,
+          "None": 4
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      }
+    },
+    "worst_absolute_regressions_vs_cut_none": {
+      "weighted": [
+        {
+          "case_id": "s4_4380001_1",
+          "family": "serpentine",
+          "extra_ms": 249.25449886359274,
+          "time_ratio": 32.52542720219867,
+          "cost": 740.0660171779822,
+          "control_cost": 740.0660171779822
+        },
+        {
+          "case_id": "s4_4420001_1",
+          "family": "bottlenecks",
+          "extra_ms": 228.1453749164939,
+          "time_ratio": 35.643807696918834,
+          "cost": 487.73506473629425,
+          "control_cost": 487.73506473629425
+        },
+        {
+          "case_id": "s4_4430001_0",
+          "family": "disconnected",
+          "extra_ms": 222.62141620740294,
+          "time_ratio": 2155.38763361393,
+          "cost": null,
+          "control_cost": null
+        }
+      ],
+      "local_raw": [
+        {
+          "case_id": "s4_4370001_1",
+          "family": "tree_maze",
+          "extra_ms": 3.5724590998142958,
+          "time_ratio": 1.0183179311528219,
+          "cost": 1059.2590180780453,
+          "control_cost": 1059.2590180780453
+        },
+        {
+          "case_id": "s4_4360000_1",
+          "family": "braided_maze",
+          "extra_ms": 0.7772909011691809,
+          "time_ratio": 1.075735968677109,
+          "cost": 161.3380951166243,
+          "control_cost": 161.3380951166243
+        },
+        {
+          "case_id": "s4_4420001_1",
+          "family": "bottlenecks",
+          "extra_ms": 0.62766601331532,
+          "time_ratio": 1.0953108984617668,
+          "cost": 487.73506473629425,
+          "control_cost": 487.73506473629425
+        }
+      ],
+      "cut_raw": [
+        {
+          "case_id": "s4_4400000_1",
+          "family": "nested",
+          "extra_ms": 27.479832991957664,
+          "time_ratio": 2.056698202878651,
+          "cost": 196.84062043356596,
+          "control_cost": 196.84062043356596
+        },
+        {
+          "case_id": "s4_4400001_1",
+          "family": "nested",
+          "extra_ms": 24.024584097787738,
+          "time_ratio": 1.141308061028464,
+          "cost": 700.39696961967,
+          "control_cost": 700.39696961967
+        },
+        {
+          "case_id": "s4_4370001_1",
+          "family": "tree_maze",
+          "extra_ms": 3.810125170275569,
+          "time_ratio": 1.019536573716511,
+          "cost": 1059.2590180780453,
+          "control_cost": 1059.2590180780453
+        }
+      ],
+      "cut_dynamic": [
+        {
+          "case_id": "s4_4370001_1",
+          "family": "tree_maze",
+          "extra_ms": 5.208667134866118,
+          "time_ratio": 1.0267076552337306,
+          "cost": 1059.2590180780453,
+          "control_cost": 1059.2590180780453
+        },
+        {
+          "case_id": "s4_4370001_0",
+          "family": "tree_maze",
+          "extra_ms": 0.266458373516798,
+          "time_ratio": 1.0028340932069248,
+          "cost": 876.732106143464,
+          "control_cost": 876.732106143464
+        },
+        {
+          "case_id": "s4_4380001_0",
+          "family": "serpentine",
+          "extra_ms": 0.189916230738163,
+          "time_ratio": 1.0293692462494517,
+          "cost": 701.3380951166242,
+          "control_cost": 701.3380951166242
+        }
+      ],
+      "astar": [
+        {
+          "case_id": "s4_4380001_1",
+          "family": "serpentine",
+          "extra_ms": 187.19624890945852,
+          "time_ratio": 24.6763699127831,
+          "cost": 740.0660171779822,
+          "control_cost": 740.0660171779822
+        },
+        {
+          "case_id": "s4_4420001_1",
+          "family": "bottlenecks",
+          "extra_ms": 175.39887386374176,
+          "time_ratio": 27.634267114184176,
+          "cost": 487.73506473629425,
+          "control_cost": 487.73506473629425
+        },
+        {
+          "case_id": "s4_4430001_0",
+          "family": "disconnected",
+          "extra_ms": 143.10016599483788,
+          "time_ratio": 1385.831851488004,
+          "cost": null,
+          "control_cost": null
+        }
+      ],
+      "cut_wrong": [
+        {
+          "case_id": "s4_4410000_1",
+          "family": "competing_corridors",
+          "extra_ms": 31.986583722755313,
+          "time_ratio": 3.138188335151689,
+          "cost": 159.6812408671319,
+          "control_cost": 159.6812408671319
+        },
+        {
+          "case_id": "s4_4400001_1",
+          "family": "nested",
+          "extra_ms": 16.841917065903544,
+          "time_ratio": 1.099060971665444,
+          "cost": 700.39696961967,
+          "control_cost": 700.39696961967
+        },
+        {
+          "case_id": "s4_4360001_0",
+          "family": "braided_maze",
+          "extra_ms": 14.077874831855297,
+          "time_ratio": 1.4406243630827982,
+          "cost": 208.095454429505,
+          "control_cost": 208.095454429505
+        }
+      ],
+      "cut_octile": [
+        {
+          "case_id": "s4_4430001_0",
+          "family": "disconnected",
+          "extra_ms": 276.83820691891015,
+          "time_ratio": 2680.0630463976063,
+          "cost": null,
+          "control_cost": null
+        },
+        {
+          "case_id": "s4_4380001_1",
+          "family": "serpentine",
+          "extra_ms": 241.95874901488423,
+          "time_ratio": 31.6026690101117,
+          "cost": 740.0660171779822,
+          "control_cost": 740.0660171779822
+        },
+        {
+          "case_id": "s4_4430001_1",
+          "family": "disconnected",
+          "extra_ms": 187.42591701447964,
+          "time_ratio": 1788.8534871428128,
+          "cost": null,
+          "control_cost": null
+        }
+      ],
+      "witness": [
+        {
+          "case_id": "s4_4380001_1",
+          "family": "serpentine",
+          "extra_ms": 217.99670695327222,
+          "time_ratio": 28.57197702231019,
+          "cost": 740.0660171779822,
+          "control_cost": 740.0660171779822
+        },
+        {
+          "case_id": "s4_4420001_1",
+          "family": "bottlenecks",
+          "extra_ms": 194.5171661209315,
+          "time_ratio": 30.537374138352433,
+          "cost": 487.73506473629425,
+          "control_cost": 487.73506473629425
+        },
+        {
+          "case_id": "s4_4430001_0",
+          "family": "disconnected",
+          "extra_ms": 192.1954161953181,
+          "time_ratio": 1860.944271950538,
+          "cost": null,
+          "control_cost": null
+        }
+      ],
+      "cut_noseed": [
+        {
+          "case_id": "s4_4410001_1",
+          "family": "competing_corridors",
+          "extra_ms": 34.19137489981949,
+          "time_ratio": 1.6419333242934249,
+          "cost": 363.44574285494906,
+          "control_cost": 363.44574285494906
+        },
+        {
+          "case_id": "s4_4400001_1",
+          "family": "nested",
+          "extra_ms": 14.441167237237096,
+          "time_ratio": 1.0849402151136371,
+          "cost": 700.39696961967,
+          "control_cost": 700.39696961967
+        },
+        {
+          "case_id": "s4_4350001_0",
+          "family": "rooms",
+          "extra_ms": 2.2094999440014362,
+          "time_ratio": 1.3938268764983952,
+          "cost": 174.39696961967,
+          "control_cost": 174.39696961967
+        }
+      ],
+      "witness_raw": [
+        {
+          "case_id": "s4_4420001_1",
+          "family": "bottlenecks",
+          "extra_ms": 230.45841604471207,
+          "time_ratio": 35.99504230805388,
+          "cost": 487.73506473629425,
+          "control_cost": 487.73506473629425
+        },
+        {
+          "case_id": "s4_4380001_1",
+          "family": "serpentine",
+          "extra_ms": 221.76729096099734,
+          "time_ratio": 29.048876224480118,
+          "cost": 740.0660171779822,
+          "control_cost": 740.0660171779822
+        },
+        {
+          "case_id": "s4_4430001_0",
+          "family": "disconnected",
+          "extra_ms": 219.8616659734398,
+          "time_ratio": 2128.6805365286514,
+          "cost": null,
+          "control_cost": null
+        }
+      ],
+      "local_none": [
+        {
+          "case_id": "s4_4410001_1",
+          "family": "competing_corridors",
+          "extra_ms": 37.88316692225635,
+          "time_ratio": 1.7112456679036654,
+          "cost": 363.44574285494906,
+          "control_cost": 363.44574285494906
+        },
+        {
+          "case_id": "s4_4410000_1",
+          "family": "competing_corridors",
+          "extra_ms": 32.15983393602073,
+          "time_ratio": 3.1497694901846076,
+          "cost": 159.6812408671319,
+          "control_cost": 159.6812408671319
+        },
+        {
+          "case_id": "s4_4370001_1",
+          "family": "tree_maze",
+          "extra_ms": 1.9177081994712353,
+          "time_ratio": 1.0098331277665131,
+          "cost": 1059.2590180780453,
+          "control_cost": 1059.2590180780453
+        }
+      ],
+      "local_portfolio": [
+        {
+          "case_id": "s4_4410001_0",
+          "family": "competing_corridors",
+          "extra_ms": 38.84704224765301,
+          "time_ratio": 2.274249731165152,
+          "cost": 304.3746750430836,
+          "control_cost": 304.3746750430836
+        },
+        {
+          "case_id": "s4_4400001_1",
+          "family": "nested",
+          "extra_ms": 23.01579318009317,
+          "time_ratio": 1.1353745435955578,
+          "cost": 700.39696961967,
+          "control_cost": 700.39696961967
+        },
+        {
+          "case_id": "s4_4370001_0",
+          "family": "tree_maze",
+          "extra_ms": 3.142791334539652,
+          "time_ratio": 1.0334272233761845,
+          "cost": 876.732106143464,
+          "control_cost": 876.732106143464
+        }
+      ],
+      "cut_random": [
+        {
+          "case_id": "s4_4410001_1",
+          "family": "competing_corridors",
+          "extra_ms": 37.77587483637035,
+          "time_ratio": 1.709231289553424,
+          "cost": 363.44574285494906,
+          "control_cost": 363.44574285494906
+        },
+        {
+          "case_id": "s4_4400000_1",
+          "family": "nested",
+          "extra_ms": 28.79433403722942,
+          "time_ratio": 2.10724548577616,
+          "cost": 196.84062043356596,
+          "control_cost": 196.84062043356596
+        },
+        {
+          "case_id": "s4_4400001_1",
+          "family": "nested",
+          "extra_ms": 21.594501100480556,
+          "time_ratio": 1.127014772325109,
+          "cost": 700.39696961967,
+          "control_cost": 700.39696961967
+        }
+      ],
+      "cut_oracle": [
+        {
+          "case_id": "s4_4370001_1",
+          "family": "tree_maze",
+          "extra_ms": 1.3151250313967466,
+          "time_ratio": 1.0067433577570506,
+          "cost": 1059.2590180780453,
+          "control_cost": 1059.2590180780453
+        },
+        {
+          "case_id": "s4_4370001_0",
+          "family": "tree_maze",
+          "extra_ms": 0.4821252077817917,
+          "time_ratio": 1.0051279596067018,
+          "cost": 876.732106143464,
+          "control_cost": 876.732106143464
+        },
+        {
+          "case_id": "s4_4350000_1",
+          "family": "rooms",
+          "extra_ms": 0.006041955202817917,
+          "time_ratio": 1.0045852001753508,
+          "cost": 70.84062043356595,
+          "control_cost": 70.84062043356595
+        }
+      ],
+      "cut_nogeometry": [
+        {
+          "case_id": "s4_4350001_0",
+          "family": "rooms",
+          "extra_ms": 2.1185840014368296,
+          "time_ratio": 1.3776217882016817,
+          "cost": 174.39696961967,
+          "control_cost": 174.39696961967
+        },
+        {
+          "case_id": "s4_4390001_1",
+          "family": "u_traps",
+          "extra_ms": 1.826416002586484,
+          "time_ratio": 1.498470287107913,
+          "cost": 139.84062043356596,
+          "control_cost": 139.84062043356596
+        },
+        {
+          "case_id": "s4_4380001_0",
+          "family": "serpentine",
+          "extra_ms": 1.6482919454574585,
+          "time_ratio": 1.2548970767215228,
+          "cost": 701.3380951166242,
+          "control_cost": 701.3380951166242
+        }
+      ]
+    }
+  },
+  "final_cached_validation": {
+    "latency": {
+      "cut_raw": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.31845429718183976,
+          "1": 0.5084542971818398,
+          "10": 2.2184542971818395,
+          "100": 19.31845429718184,
+          "1000": 190.31845429718183
+        },
+        "break_even_delay_ms_vs_cut_none": 0.01619735593793162,
+        "requests_per_observation": 0.19,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_octile": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.4375118832103908,
+          "1": 0.4375118832103908,
+          "10": 0.4375118832103908,
+          "100": 0.4375118832103908,
+          "1000": 0.4375118832103908
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_none": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.32153179481004673,
+          "1": 0.32153179481004673,
+          "10": 0.32153179481004673,
+          "100": 0.32153179481004673,
+          "1000": 0.32153179481004673
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "astar": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 1.4157251416084666,
+          "1": 1.4157251416084666,
+          "10": 1.4157251416084666,
+          "100": 1.4157251416084666,
+          "1000": 1.4157251416084666
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "witness": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.3435977761788915,
+          "1": 0.3435977761788915,
+          "10": 0.3435977761788915,
+          "100": 0.3435977761788915,
+          "1000": 0.3435977761788915
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "weighted": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.7734582747798413,
+          "1": 0.7734582747798413,
+          "10": 0.7734582747798413,
+          "100": 0.7734582747798413,
+          "1000": 0.7734582747798413
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_wrong": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.3190947137773037,
+          "1": 0.5090947137773036,
+          "10": 2.2190947137773036,
+          "100": 19.319094713777304,
+          "1000": 190.3190947137773
+        },
+        "break_even_delay_ms_vs_cut_none": 0.012826742277595034,
+        "requests_per_observation": 0.19,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "witness_raw": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.3705138949832569,
+          "1": 0.3705138949832569,
+          "10": 0.3705138949832569,
+          "100": 0.3705138949832569,
+          "1000": 0.3705138949832569
+        },
+        "break_even_delay_ms_vs_cut_none": null,
+        "requests_per_observation": 0,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_random": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.32530632452107966,
+          "1": 0.5153063245210796,
+          "10": 2.2253063245210796,
+          "100": 19.32530632452108,
+          "1000": 190.32530632452108
+        },
+        "break_even_delay_ms_vs_cut_none": -0.019865945847541616,
+        "requests_per_observation": 0.19,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "cut_oracle": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.14823634061031044,
+          "1": 0.33823634061031044,
+          "10": 2.0482363406103103,
+          "100": 19.14823634061031,
+          "1000": 190.1482363406103
+        },
+        "break_even_delay_ms_vs_cut_none": 0.912081337893349,
+        "requests_per_observation": 0.19,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "local_none": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.3556089731864631,
+          "1": 0.5456089731864631,
+          "10": 2.255608973186463,
+          "100": 19.355608973186463,
+          "1000": 190.35560897318646
+        },
+        "break_even_delay_ms_vs_cut_none": -0.1793535704021914,
+        "requests_per_observation": 0.19,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      },
+      "local_raw": {
+        "hypothetical_ms_with_per_request_delay": {
+          "0": 0.3397796597952644,
+          "1": 0.5297796597952644,
+          "10": 2.239779659795264,
+          "100": 19.339779659795266,
+          "1000": 190.33977965979525
+        },
+        "break_even_delay_ms_vs_cut_none": -0.09604139465904027,
+        "requests_per_observation": 0.19,
+        "scope": "Fixed-output what-if arithmetic only, NOT measured model inference; classical local_none requests are interface calls and should receive zero model delay."
+      }
+    },
+    "paper_style_metrics": {
+      "cut_raw": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.048688787459552935,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.07266154424685252,
+        "mean_cost_ratio_to_opt": 1.00493711992196,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_octile": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.1882859853422763,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.16072790091293856,
+        "mean_cost_ratio_to_opt": 1.0046162870356137,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_none": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.05302649247262276,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.07751076961487215,
+        "mean_cost_ratio_to_opt": 1.0051559964459047,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "astar": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 1.0,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 1.0,
+        "mean_cost_ratio_to_opt": 1.0,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "witness": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.1922211448491609,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.16248122838418627,
+        "mean_cost_ratio_to_opt": 1.003763441567292,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "weighted": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.5832951633086448,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.5981124741376779,
+        "mean_cost_ratio_to_opt": 1.0168603102706146,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_wrong": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.04837873882944977,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.07305910118672025,
+        "mean_cost_ratio_to_opt": 1.005010037891898,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "witness_raw": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.19065392702026082,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.1595515859389729,
+        "mean_cost_ratio_to_opt": 1.003763441567292,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_random": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.05053208040670967,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.07471461934732933,
+        "mean_cost_ratio_to_opt": 1.0070629689824966,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "cut_oracle": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.0,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.01021230999214405,
+        "mean_cost_ratio_to_opt": 1.0,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "local_none": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.0877018269430313,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.06795807277488233,
+        "mean_cost_ratio_to_opt": 1.0051559964459047,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      },
+      "local_raw": {
+        "arithmetic_mean_heap_pop_ratio_to_astar": 0.06418976182895679,
+        "arithmetic_mean_global_g_entry_ratio_to_astar": 0.07046042233185595,
+        "mean_cost_ratio_to_opt": 1.0054913826922405,
+        "scope": "Reachable valid cases only. Heap pops include local search. Global g-entry ratio is a state-count proxy, NOT full memory storage; consult tracemalloc."
+      }
+    },
+    "usage": {
+      "cut_raw": {
+        "provider_invocations": 114,
+        "with_any_seed": 116,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 110,
+          "geometric_x": 36,
+          "legacy_waypoints": 4,
+          "geometric_y": 3
+        },
+        "warning_observations": 114,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_octile": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 153
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_none": {
+        "provider_invocations": 0,
+        "with_any_seed": 96,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 114,
+          "geometric_x": 36,
+          "geometric_y": 3
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "astar": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "None": 600
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "witness": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "wall_witness": 348,
+          "direct": 99,
+          "None": 153
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "weighted": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "None": 600
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_wrong": {
+        "provider_invocations": 114,
+        "with_any_seed": 110,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 110,
+          "geometric_x": 36,
+          "legacy_waypoints": 4,
+          "geometric_y": 3
+        },
+        "warning_observations": 114,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "witness_raw": {
+        "provider_invocations": 0,
+        "with_any_seed": 0,
+        "accepted_sources": {
+          "wall_witness": 348,
+          "direct": 99,
+          "None": 150,
+          "waypoint_dag": 3
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_random": {
+        "provider_invocations": 114,
+        "with_any_seed": 104,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 113,
+          "geometric_x": 36,
+          "random_waypoints": 1,
+          "geometric_y": 3
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "cut_oracle": {
+        "provider_invocations": 114,
+        "with_any_seed": 153,
+        "accepted_sources": {
+          "witness": 447,
+          "oracle_waypoints": 114,
+          "geometric_x": 36,
+          "geometric_y": 3
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "local_none": {
+        "provider_invocations": 114,
+        "with_any_seed": 102,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 93,
+          "geometric_x": 36,
+          "axis0_locally_verified_waypoints": 18,
+          "geometric_y": 3,
+          "axis1_locally_verified_waypoints": 3
+        },
+        "warning_observations": 0,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      },
+      "local_raw": {
+        "provider_invocations": 114,
+        "with_any_seed": 99,
+        "accepted_sources": {
+          "witness": 447,
+          "grid_search": 103,
+          "geometric_x": 36,
+          "legacy_locally_verified_waypoints": 11,
+          "geometric_y": 3
+        },
+        "warning_observations": 114,
+        "scope": "A seed being inserted does not prove the returned path used it. Source labels refer to accepted incumbents only."
+      }
+    },
+    "worst_absolute_regressions_vs_cut_none": {
+      "cut_raw": [
+        {
+          "case_id": "cached_17_8_repe",
+          "family": "cached_public",
+          "extra_ms": 0.4861250054091215,
+          "time_ratio": 1.735160720931731,
+          "cost": 54.04163056034262,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_45_3_standard",
+          "family": "cached_public",
+          "extra_ms": 0.25612511672079563,
+          "time_ratio": 1.2242777152093478,
+          "cost": 26.727922061357855,
+          "control_cost": 26.727922061357855
+        },
+        {
+          "case_id": "cached_45_0_repe",
+          "family": "cached_public",
+          "extra_ms": 0.2377498894929886,
+          "time_ratio": 1.250504810634988,
+          "cost": 30.79898987322333,
+          "control_cost": 30.79898987322333
+        }
+      ],
+      "cut_octile": [
+        {
+          "case_id": "cached_17_8_repe",
+          "family": "cached_public",
+          "extra_ms": 3.467374946922064,
+          "time_ratio": 6.243667446348599,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_17_8_cot",
+          "family": "cached_public",
+          "extra_ms": 3.4341251011937857,
+          "time_ratio": 6.124603697147315,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_17_8_standard",
+          "family": "cached_public",
+          "extra_ms": 3.42195900157094,
+          "time_ratio": 6.06800593241993,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        }
+      ],
+      "astar": [
+        {
+          "case_id": "cached_21_1_standard",
+          "family": "cached_public",
+          "extra_ms": 5.894291214644909,
+          "time_ratio": 70.68575085676535,
+          "cost": 60.242640687119284,
+          "control_cost": 60.242640687119284
+        },
+        {
+          "case_id": "cached_21_1_cot",
+          "family": "cached_public",
+          "extra_ms": 5.84883289411664,
+          "time_ratio": 71.68066931338261,
+          "cost": 60.242640687119284,
+          "control_cost": 60.242640687119284
+        },
+        {
+          "case_id": "cached_21_1_repe",
+          "family": "cached_public",
+          "extra_ms": 5.765042034909129,
+          "time_ratio": 70.87925832898246,
+          "cost": 60.242640687119284,
+          "control_cost": 60.242640687119284
+        }
+      ],
+      "witness": [
+        {
+          "case_id": "cached_17_8_standard",
+          "family": "cached_public",
+          "extra_ms": 3.1242917757481337,
+          "time_ratio": 5.627153407400076,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_17_8_repe",
+          "family": "cached_public",
+          "extra_ms": 3.0534169636666775,
+          "time_ratio": 5.6176440037788105,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_17_8_cot",
+          "family": "cached_public",
+          "extra_ms": 3.030833089724183,
+          "time_ratio": 5.522787609466448,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        }
+      ],
+      "weighted": [
+        {
+          "case_id": "cached_21_1_repe",
+          "family": "cached_public",
+          "extra_ms": 7.079374976456165,
+          "time_ratio": 86.81055780546657,
+          "cost": 60.242640687119284,
+          "control_cost": 60.242640687119284
+        },
+        {
+          "case_id": "cached_21_1_standard",
+          "family": "cached_public",
+          "extra_ms": 7.078041089698672,
+          "time_ratio": 84.68073275802745,
+          "cost": 60.242640687119284,
+          "control_cost": 60.242640687119284
+        },
+        {
+          "case_id": "cached_21_1_cot",
+          "family": "cached_public",
+          "extra_ms": 7.043333956971765,
+          "time_ratio": 86.11570894378026,
+          "cost": 60.242640687119284,
+          "control_cost": 60.242640687119284
+        }
+      ],
+      "cut_wrong": [
+        {
+          "case_id": "cached_17_8_cot",
+          "family": "cached_public",
+          "extra_ms": 0.48625003546476364,
+          "time_ratio": 1.7256109361346552,
+          "cost": 54.04163056034262,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_42_6_repe",
+          "family": "cached_public",
+          "extra_ms": 0.2296252641826868,
+          "time_ratio": 1.083402805156357,
+          "cost": 43.384776310850235,
+          "control_cost": 43.384776310850235
+        },
+        {
+          "case_id": "cached_45_0_cot",
+          "family": "cached_public",
+          "extra_ms": 0.19308319315314293,
+          "time_ratio": 1.2044290336035435,
+          "cost": 30.79898987322333,
+          "control_cost": 30.79898987322333
+        }
+      ],
+      "witness_raw": [
+        {
+          "case_id": "cached_17_8_repe",
+          "family": "cached_public",
+          "extra_ms": 3.3116659615188837,
+          "time_ratio": 6.0081907095199485,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_17_8_standard",
+          "family": "cached_public",
+          "extra_ms": 3.2764167990535498,
+          "time_ratio": 5.852454330125169,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        },
+        {
+          "case_id": "cached_17_8_cot",
+          "family": "cached_public",
+          "extra_ms": 3.0822090338915586,
+          "time_ratio": 5.599453818665713,
+          "cost": 51.698484809835,
+          "control_cost": 54.04163056034262
+        }
+      ],
+      "cut_random": [
+        {
+          "case_id": "cached_42_9_standard",
+          "family": "cached_public",
+          "extra_ms": 0.6479588337242603,
+          "time_ratio": 1.3236827340177868,
+          "cost": 55.31370849898476,
+          "control_cost": 55.31370849898476
+        },
+        {
+          "case_id": "cached_42_9_cot",
+          "family": "cached_public",
+          "extra_ms": 0.2962078433483839,
+          "time_ratio": 1.1612709520541398,
+          "cost": 55.31370849898476,
+          "control_cost": 55.31370849898476
+        },
+        {
+          "case_id": "cached_45_3_cot",
+          "family": "cached_public",
+          "extra_ms": 0.24141580797731876,
+          "time_ratio": 1.2084315145238476,
+          "cost": 26.727922061357855,
+          "control_cost": 26.727922061357855
+        }
+      ],
+      "cut_oracle": [
+        {
+          "case_id": "cached_63_8_cot",
+          "family": "cached_public",
+          "extra_ms": 0.017416896298527718,
+          "time_ratio": 1.0503924691198345,
+          "cost": 38.31370849898476,
+          "control_cost": 38.31370849898476
+        },
+        {
+          "case_id": "cached_63_1_cot",
+          "family": "cached_public",
+          "extra_ms": 0.011832918971776962,
+          "time_ratio": 1.0323009963213143,
+          "cost": 49.31370849898476,
+          "control_cost": 49.31370849898476
+        },
+        {
+          "case_id": "cached_62_5_cot",
+          "family": "cached_public",
+          "extra_ms": 0.006332993507385254,
+          "time_ratio": 1.0228010599139763,
+          "cost": 34.87005768508881,
+          "control_cost": 34.87005768508881
+        }
+      ],
+      "local_none": [
+        {
+          "case_id": "cached_36_7_standard",
+          "family": "cached_public",
+          "extra_ms": 0.5102911964058876,
+          "time_ratio": 1.2224298443213146,
+          "cost": 58.526911934581186,
+          "control_cost": 58.526911934581186
+        },
+        {
+          "case_id": "cached_36_7_cot",
+          "family": "cached_public",
+          "extra_ms": 0.418415991589427,
+          "time_ratio": 1.1956700660728894,
+          "cost": 58.526911934581186,
+          "control_cost": 58.526911934581186
+        },
+        {
+          "case_id": "cached_36_7_repe",
+          "family": "cached_public",
+          "extra_ms": 0.41679199784994125,
+          "time_ratio": 1.1957229355838146,
+          "cost": 58.526911934581186,
+          "control_cost": 58.526911934581186
+        }
+      ],
+      "local_raw": [
+        {
+          "case_id": "cached_36_3_cot",
+          "family": "cached_public",
+          "extra_ms": 0.3951669204980135,
+          "time_ratio": 1.1667957185375257,
+          "cost": 54.698484809835,
+          "control_cost": 54.698484809835
+        },
+        {
+          "case_id": "cached_55_3_standard",
+          "family": "cached_public",
+          "extra_ms": 0.3713327459990978,
+          "time_ratio": 1.360575288304322,
+          "cost": 39.62741699796952,
+          "control_cost": 39.62741699796952
+        },
+        {
+          "case_id": "cached_71_5_standard",
+          "family": "cached_public",
+          "extra_ms": 0.33129286020994186,
+          "time_ratio": 1.1401828406726213,
+          "cost": 47.14213562373095,
+          "control_cost": 47.14213562373095
+        }
+      ]
+    }
+  },
+  "instrumented_memory_heap": {
+    "cut_none": {
+      "mean_peak_traced_MiB": 1.8765501022338866,
+      "max_peak_traced_MiB": 14.047045707702637,
+      "mean_heap_push_calls": 3093.2,
+      "mean_heap_pop_calls": 2991.2,
+      "mean_heapify_calls": 0.5,
+      "mean_heapify_items": 1.3
+    },
+    "cut_oracle": {
+      "mean_peak_traced_MiB": 1.4241305351257325,
+      "max_peak_traced_MiB": 13.199764251708984,
+      "mean_heap_push_calls": 2489.1,
+      "mean_heap_pop_calls": 2485,
+      "mean_heapify_calls": 0.1,
+      "mean_heapify_items": 0.1
+    },
+    "local_none": {
+      "mean_peak_traced_MiB": 1.8739072799682617,
+      "max_peak_traced_MiB": 14.046605110168457,
+      "mean_heap_push_calls": 3165.2,
+      "mean_heap_pop_calls": 3029.6,
+      "mean_heapify_calls": 0.5,
+      "mean_heapify_items": 1.3
+    },
+    "local_portfolio": {
+      "mean_peak_traced_MiB": 1.5290363311767579,
+      "max_peak_traced_MiB": 14.069879531860352,
+      "mean_heap_push_calls": 2792.5,
+      "mean_heap_pop_calls": 2692.8,
+      "mean_heapify_calls": 0.1,
+      "mean_heapify_items": 0.1
+    },
+    "local_raw": {
+      "mean_peak_traced_MiB": 1.6489863395690918,
+      "max_peak_traced_MiB": 14.055492401123047,
+      "mean_heap_push_calls": 2840.1,
+      "mean_heap_pop_calls": 2730.2,
+      "mean_heapify_calls": 0.3,
+      "mean_heapify_items": 1.1
+    },
+    "weighted": {
+      "mean_peak_traced_MiB": 2.403380584716797,
+      "max_peak_traced_MiB": 11.845428466796875,
+      "mean_heap_push_calls": 4682.1,
+      "mean_heap_pop_calls": 4439.1,
+      "mean_heapify_calls": 0,
+      "mean_heapify_items": 0
+    },
+    "witness": {
+      "mean_peak_traced_MiB": 2.372479724884033,
+      "max_peak_traced_MiB": 11.979011535644531,
+      "mean_heap_push_calls": 4527.3,
+      "mean_heap_pop_calls": 4393.7,
+      "mean_heapify_calls": 0,
+      "mean_heapify_items": 0
+    }
+  }
+}
