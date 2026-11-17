@@ -740,3 +740,28 @@ Schranke, kombiniert mit unabhängig verifizierten Routenhinweisen.
 Details und fortsetzbarer Stand:
 [Session-4-Log](improving_llm_star/experiments/research/session4/EXPERIMENT_LOG.md),
 [Checkpoint](improving_llm_star/experiments/research/session4/CHECKPOINT.md).
+
+### Session 4: Informationsqualität und neue Architektur
+
+Die Prüfung aller 1.800 Entwicklungsantworten (600 Anfragen, drei Prompt-Stile)
+zeigt eine wichtige Selektionswirkung: Witness löst bereits 467/600 Anfragen;
+bei den verbleibenden 133 ergeben nur 2/4/4 Standard-/CoT-/Repe-Antworten eine
+vollständig geometrisch verifizierte Routenkette. Die Ketten sind nicht
+notwendigerweise optimal. Hindernispunkte betreffen 11,10/14,35/8,73 Prozent
+aller generierten Koordinaten. Rohe Geradenkollisionen sind ein Qualitätsindikator,
+aber kein Beweis, dass zwischen zwei Punkten kein Umweg existiert.
+
+Die neue zulässige Schnittschranke mit vollständigem Weighted-A*-Fallback ist
+auf 132 neuen Entwicklungsanfragen (11 Familien, Größen 64/128/256) deutlich
+stärker: bei Qualitätsfaktor 1,1 rund 20,75 ms gegenüber 43,26 ms Weighted A*
+und 46,15 ms Witness, mit 120/120 gültigen erreichbaren Fällen und 12 korrekt
+unerreichbaren Fällen. Diese Verbesserung ist bisher **klassisch-geometrisch**.
+Oracle-Hinweise reduzieren weitere Expansionen, waren vor Beseitigung gemessener
+quadratischer Interpretations-/Präfixarbeit im Mittel langsamer. Echte Cache-
+Hinweise zeigen weiter keinen gesicherten zusätzlichen Gewinn.
+
+Weitere Implementierungen: lazy validierter Endpoint-Roadmap, Primal-First mit
+verzögerter Zertifizierung, strukturierte geordnete Hindernisumgehungen und
+budgetierte lokale A*-Verfeinerung. Kein Kandidat darf allein aufgrund einer
+LLM-Behauptung akzeptiert werden. Gültige Routen und zulässige Schranken bleiben
+getrennt; Faktoren größer 1 garantieren höchstens begrenzte Suboptimalität.

@@ -121,10 +121,11 @@ class CutPotential:
         walls=query['horizontal_barriers']+query['vertical_barriers']
         if not all(all(type(v) in [int,float] and math.isfinite(v) and int(v)==v for v in wall) and wall[1]<=wall[2] for wall in walls):
             raise ValueError('Cut relaxation supports integer wall maps')
-        if selection not in ['all','longest','uniform','waypoints']:raise ValueError('Unknown cut selection')
+        if selection not in ['all','longest','uniform','waypoints','none']:raise ValueError('Unknown cut selection')
         self.query=query;self.goal=tuple(goal);self.selection=selection
         def select(walls,axis):
             entries={}
+            if selection=='none':return []
             low,high=query['range_x' if axis=='x' else 'range_y'];low+=1;high-=2
             for coordinate,lo,hi in walls:
                 if low<=coordinate<=high and lo!=hi:entries[coordinate]=max(entries.get(coordinate,0),hi-lo)

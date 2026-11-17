@@ -47,3 +47,17 @@ Current best production recommendation remains Witness until broader timings.
 Remaining: quantify cached real hint quality and bounds, optimize measured hot
 spots, genuinely different strategy portfolio/dynamic architecture, larger dev,
 freeze before new validation/fresh tests, CI/perfamily/plots, independent audits.
+
+10:18 UTC checkpoint (earlier approximate10:03 entry was written around10:00).
+Milestone commit d65c584 preserves phase1-3 foundation.132-case development
+large pilot complete; cut geometry w1.1 is current strongest new large-map
+candidate, but cached Witness remains faster. Legacy inference and prefix copying
+were profiled; code now uses bounded opt-in inference and shared segment prefixes.
+19 strategic tests pass (full suite last run115 before latest4 tests). Phase5
+strategic-label/local-repair/portfolio pilot running serially; do not mutate
+loaded production modules while its timing process runs. Read its source snapshot
+for exact provenance. No held-out Session4 maps opened yet.
+Remaining: parse robustness edge cases; profile preservation; phased budgeted
+candidate policy; final benchmark with warmups/native original/total work and
+per-map paired CIs; freeze before fresh seeds/sizes; independent geometry/bound
+and memory checks; plots, docs, commits. Target session end11:57 UTC if useful.

@@ -164,3 +164,97 @@ def test_cut_proof_is_independent_of_bad_bypass_direction():
  exact=_distances(RasterGridGraph(q),tuple(q['goal']))[tuple(q['start'])]
  assert r['valid'] and abs(r['length']-exact)<1e-8
  p=CutPotential(q,tuple(q['goal']));assert p.value(tuple(q['start']))<=exact+1e-8
+
+
+def test_lazy_roadmap_paths_and_budget():
+    from llmastar.research.strategic.roadmap import LazyRoadmap,RoadmapProvider
+    from llmastar.research.strategic.cut_search import CutStrategySearch
+    q={'range_x':[0,20],'range_y':[0,20],'start':[2,8],'goal':[17,8],'vertical_barriers':[[9,2,12]],'horizontal_barriers':[]}
+    from llmastar.research.geometry import SegmentGridGraph
+    g=SegmentGridGraph(q)
+    for points in [[],[(8,14),(10,14)]]:
+        r=LazyRoadmap().propose(q,points,g)
+        assert r['valid'] and r['probes']<=256
+        assert all(math.isfinite(g.cost(a,b)) for a,b in zip(r['path'],r['path'][1:]))
+    r=LazyRoadmap(max_probes=0).propose(q)
+    assert not r['valid'] and r['probes']==0
+    result=CutStrategySearch(bound=1,witness=False).search(q,RoadmapProvider())
+    assert result['valid'] and result['actual_api_calls']==0
+
+
+def test_cached_heuristic_and_zero_cut_control():
+    from llmastar.research.strategic.cut_search import CutStrategySearch
+    q={'range_x':[0,20],'range_y':[0,20],'start':[2,8],'goal':[17,8],'vertical_barriers':[[9,2,12]],'horizontal_barriers':[]}
+    a=CutStrategySearch(cache_heuristic=False,witness=False).search(q)
+    b=CutStrategySearch(cache_heuristic=True,witness=False).search(q)
+    assert a['length']==b['length'] and a['unique']==b['unique'] and a['operation']==b['operation']
+    c=CutStrategySearch(selection='none',witness=False).search(q)
+    assert c['valid'] and c['cut_count']==0
+
+
+def test_primal_first_bounds_adversarial_advice():
+    from llmastar.research.strategic.primal import PrimalFirstSearch
+    from llmastar.research.strategic.providers import StaticProvider
+    from llmastar.research.geometry import SegmentGridGraph
+    from llmastar.research.incumbent import IncumbentSearch
+    q={'range_x':[0,25],'range_y':[0,23],'start':[2,8],'goal':[21,8],'vertical_barriers':[[9,2,16],[15,8,21]],'horizontal_barriers':[[18,1,10]]}
+    optimal=IncumbentSearch(use_waypoints=False,goal_weight=1,visibility_budget=0).search(q,[])['length']
+    for w in [1,1.1,2]:
+        for fallback in ['cut','weighted']:
+            for source in [None,{'strategies':[{'id':'bad','waypoints':[[3,20],[18,2]],'bypasses':[{'obstacle_id':'v0','side':'above'}]}]}]:
+                provider=StaticProvider(source) if source else None
+                r=PrimalFirstSearch(bound=w,fallback=fallback,witness=False,max_probes=40).search(q,provider)
+                assert r['valid'] and r['length']<=w*optimal+1e-8
+                assert r['actual_api_calls']==0 and r['total_heap_pops']>=r['operation']
+                g=SegmentGridGraph(q)
+                assert all(math.isfinite(g.cost(a,b)) for a,b in zip(r['path'],r['path'][1:]))
+
+
+def test_legacy_repeated_truncated_route_and_truncation_warning():
+    from llmastar.research.strategic.schema import parse_guidance
+    r=parse_guidance('Generated Path: [[2,3],[4,5]]\nFinal Generated Path: [[2,3], [4,')
+    assert r.strategies[0].waypoints==((2,3),(4,5))
+    assert 'recovered_earlier_complete_route' in r.warnings
+    assert parse_guidance('Generated Path: [[2,3], [4,').abstain
+    r=parse_guidance({'strategies':[{'waypoints':[[1,2],[3,4]],'id':'limited'}]},max_points=1)
+    assert 'limited_point_budget_truncated' in r.warnings
+
+
+def test_verified_macro_prefix_reconstruction_after_failed_route():
+    from llmastar.research.strategic.cut_search import CutStrategySearch
+    from llmastar.research.strategic.providers import StaticProvider
+    from llmastar.research.geometry import SegmentGridGraph
+    q={'range_x':[0,20],'range_y':[0,20],'start':[2,8],'goal':[17,8],'vertical_barriers':[[9,2,12]],'horizontal_barriers':[]}
+    r=CutStrategySearch(witness=False,geometry_candidates=False,bound=1.1,intervention='initial').search(q,StaticProvider({'strategies':[{'id':'partial','waypoints':[[8,13],[10,13],[8,8]]}]}))
+    assert r['valid'] and r['seed_count']>0
+    g=SegmentGridGraph(q)
+    assert all(math.isfinite(g.cost(a,b)) for a,b in zip(r['path'],r['path'][1:]))
+    assert abs(r['length']-sum(math.dist(a,b) for a,b in zip(r['path'],r['path'][1:])))<1e-8
+
+
+def test_bounded_local_refinement_and_structured_gates():
+    from llmastar.research.strategic.local_routes import LocalRouteProvider,bypass_targets
+    from llmastar.research.strategic.providers import StaticProvider,GuidanceContext
+    from llmastar.research.strategic.schema import parse_guidance
+    from llmastar.research.strategic.cut_search import CutStrategySearch
+    q={'range_x':[0,20],'range_y':[0,20],'start':[2,8],'goal':[17,8],'vertical_barriers':[[9,2,12]],'horizontal_barriers':[]}
+    advice={'strategies':[{'id':'gate','bypasses':[{'obstacle_id':'v0','side':'above'}]}]}
+    s=parse_guidance(advice).strategies[0]
+    assert bypass_targets(q,s)==[(9,13)]
+    provider=LocalRouteProvider(StaticProvider(advice),total_expansions=16)
+    response=provider.propose(GuidanceContext(q))
+    assert response.strategies and provider.local_expanded<=16
+    r=CutStrategySearch(witness=False).search(q,StaticProvider(advice))
+    assert r['valid'] and r['actual_api_calls']==0
+
+
+def test_safe_extreme_advice_and_offline_adapter():
+    from llmastar.research.strategic.schema import parse_guidance
+    from llmastar.research.strategic.api import StrategicLLMAStar
+    r=parse_guidance({'strategies':[{'id':'extreme','confidence':10**5000,'waypoints':[[10**5000,2]],'bypasses':[{'obstacle_id':'v'+'1'*5000,'side':'above'}]}]})
+    assert r.abstain
+    q={'range_x':[0,12],'range_y':[0,12],'start':[2,3],'goal':[9,8],'horizontal_barriers':[],'vertical_barriers':[]}
+    p=StrategicLLMAStar(waypoint_response='Generated Path: [[2,3],[9,8]]')
+    result=p.searching(q)
+    assert result['valid'] and set(['operation','storage','length','llm_output'])<=set(result)
+    assert p.research_result['actual_api_calls']==0

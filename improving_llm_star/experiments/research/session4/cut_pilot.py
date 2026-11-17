@@ -6,13 +6,17 @@ sys.path.insert(0,str(Path(__file__).resolve().parent));from maps import ROOT
 from benchmark import cached_cases,finite_json
 from llmastar.research.strategic.cut_search import CutStrategySearch
 from llmastar.research.strategic.providers import StaticProvider,ScriptedProvider
+from llmastar.research.strategic.roadmap import RoadmapProvider
+from llmastar.research.strategic.primal import PrimalFirstSearch
+from llmastar.research.strategic.local_routes import LocalRouteProvider
+from strategy_controls import source_response
 from llmastar.research.geometry import SegmentGridGraph
 from llmastar.research.incumbent import IncumbentSearch
 from llmastar.research.efficient import EfficientCertificateSearch,compress_collinear
 
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--cases',type=Path);p.add_argument('--limit',type=int,default=120);p.add_argument('--repeats',type=int,default=5);p.add_argument('--bound',type=float,default=1.1);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--cases',type=Path);p.add_argument('--limit',type=int,default=120);p.add_argument('--repeats',type=int,default=5);p.add_argument('--bound',type=float,default=1.1);p.add_argument('--modes',nargs='+');p.add_argument('--output',type=Path,required=True);a=p.parse_args()
  if a.output.exists():raise FileExistsError(a.output)
  a.output.mkdir(parents=True)
  sources=list((ROOT/'llmastar/research').rglob('*.py'))+[Path(__file__)]
@@ -29,7 +33,7 @@ def main():
  (a.output/'manifest.json').write_text(json.dumps({'sources':manifest,'cases_sha256':hashlib.sha256(json.dumps(finite_json(cases),sort_keys=True).encode()).hexdigest(),'args':vars(a)},default=str,indent=2))
  with gzip.open(a.output/'cases.json.gz','wt') as f:json.dump(finite_json(cases),f)
  rng=random.Random(2026111743);rows=[]
- modes=['astar','weighted','witness','cut_anchor','cut_geo','cut_real','cut_oracle','cut_imperfect','cut_random','cut_dynamic','cut_legacy_off']
+ modes=a.modes or ['astar','weighted','witness','cut_anchor','cut_geo','cut_real','cut_oracle','cut_imperfect','cut_random','cut_dynamic','cut_legacy_off']
  for ci,c in enumerate(cases):
   q=c['query'];graph=SegmentGridGraph(q);points=c.get('points',[]);oracle=c['oracle_waypoints']
   local=random.Random(sum(map(ord,c['id'])));random_points=[]
@@ -42,24 +46,35 @@ def main():
    jobs=list(modes);rng.shuffle(jobs)
    for mode in jobs:
     provider=None
-    if mode in ['cut_real','cut_oracle','cut_imperfect','cut_random','cut_legacy_off']:
+    if mode in ['cut_oracle_gates','cut_imperfect_gates','cut_portfolio','local_oracle_gates','local_imperfect_gates','local_portfolio']:
+     source=mode.split('_',1)[1];provider=StaticProvider(source_response(c,source),source,parser_limits={'max_points':100000})
+    elif mode.startswith('local_'):
+     source=mode[6:];provider=StaticProvider(c.get('response',{'strategies':[{'id':source,'waypoints':inputs[source]}]}) if source=='real' else {'strategies':[{'id':source,'waypoints':inputs[source]}]},source,parser_limits={'max_points':100000} if source=='oracle' else None)
+    elif mode.startswith('primal_') and mode.split('_')[1] in ['real','oracle','random','imperfect']:
+     source=mode.split('_')[1];provider=StaticProvider(c.get('response',{'strategies':[{'id':source,'waypoints':inputs[source]}]}) if source=='real' else {'strategies':[{'id':source,'waypoints':inputs[source]}]},source,parser_limits={'max_points':100000} if source=='oracle' else None)
+    elif mode in ['cut_real','cut_oracle','cut_imperfect','cut_random','cut_legacy_off']:
      source=mode[4:] if mode!='cut_legacy_off' else 'real'
-     provider=StaticProvider({'strategies':[{'id':source,'waypoints':inputs[source]}]},'cached_real' if source=='real' else source)
+     provider=StaticProvider(c.get('response',{'strategies':[{'id':source,'waypoints':inputs[source]}]}) if source=='real' else {'strategies':[{'id':source,'waypoints':inputs[source]}]},'cached_real' if source=='real' else source,parser_limits={'max_points':100000} if source=='oracle' else None)
+    elif mode.startswith('roadmap_'):provider=RoadmapProvider(points if mode=='roadmap_real' else oracle if mode=='roadmap_oracle' else [],source=mode)
     elif mode=='cut_dynamic':provider=ScriptedProvider([{'strategies':[{'id':'wrong','waypoints':random_points}]},{'strategies':[{'id':'revised_oracle','waypoints':oracle}]}],source='simulated_oracle_revision')
     began=perf_counter();g=SegmentGridGraph(q)
+    if mode.startswith('local_'):provider=LocalRouteProvider(provider,g)
     if mode in ['astar','weighted']:r=IncumbentSearch(use_waypoints=False,visibility_budget=0,goal_weight=1 if mode=='astar' else a.bound).search(q,[],g)
+    elif mode.startswith('primal_'):r=PrimalFirstSearch(bound=a.bound,advice_graph='nograph' not in mode,cut_certificate='nocut' not in mode,fallback='cut' if 'cutfallback' in mode else 'weighted',intervention='blocked' if 'late' in mode else 'initial').search(q,provider,g)
     elif mode=='witness':r=EfficientCertificateSearch(segment_mode='analytic',use_waypoints=False,witness=True,fallback_engine='lean',reuse_validation=True).search(q,[],g)
-    else:r=CutStrategySearch(bound=a.bound,geometry_candidates=mode!='cut_anchor',intervention='effort' if mode=='cut_dynamic' else 'blocked',interpret_legacy=mode!='cut_legacy_off').search(q,provider,g)
-    elapsed=perf_counter()-began;path=r.pop('path',[])
+    else:r=CutStrategySearch(bound=a.bound,geometry_candidates=mode!='cut_anchor',intervention='effort' if mode=='cut_dynamic' else 'blocked',interpret_legacy=mode=='cut_legacy',selection='none' if mode=='cut_octile' else 'all',cache_heuristic=mode!='cut_uncached',max_segments=20000 if mode=='cut_oracle' else 512).search(q,provider,g)
+    elapsed=perf_counter()-began
+    if hasattr(provider,'local_expanded'):r.update(provider_expanded=provider.local_expanded,provider_unique=len(provider.expanded_states),provider_pops=provider.local_pops,provider_segment_probes=provider.segment_probes,total_heap_pops=r['operation']+provider.local_pops)
+    path=r.pop('path',[])
     assert not r['valid'] or (path[0]==tuple(q['start']) and path[-1]==tuple(q['goal']) and all(math.isfinite(g.cost(x,y)) for x,y in zip(path,path[1:])))
-    if mode.startswith('cut_') and r['valid']:assert r['length']<=a.bound*c['optimal_cost']+1e-7
+    if mode.startswith(('cut_','roadmap_','primal_','local_')) and r['valid']:assert r['length']<=a.bound*c['optimal_cost']+1e-7
     rows.append(dict(r,case_id=c['id'],map_id=c['map_id'],family=c['family'],mode=mode,repeat=repeat,seconds=elapsed,optimal_cost=c['optimal_cost']))
   if ci%10==0:print(ci+1,'/',len(cases),flush=True)
  summary={}
  for mode in modes:
   rr=[r for r in rows if r['mode']==mode];one=[r for r in rr if r['repeat']==0];times=[statistics.median(r['seconds'] for r in rr if r['case_id']==c['id']) for c in cases]
   ratio=[r['length']/r['optimal_cost'] for r in one if r['valid']]
-  summary[mode]={'mean_case_median_ms':statistics.mean(times)*1000,'median_case_ms':statistics.median(times)*1000,'mean_unique':statistics.mean(r['unique'] for r in one),'mean_pops':statistics.mean(r['operation'] for r in one),'gm_cost_ratio':math.exp(statistics.mean(math.log(x) for x in ratio)) if ratio else None,'max_cost_ratio':max(ratio,default=None),'valid':sum(r['valid'] for r in one),'provider_requests':sum(r.get('provider_requests',0) for r in one),'certified':sum(r.get('certificate') in ['cut_start_bound','intervention_start_bound'] for r in one),'mean_start_bound_ratio':statistics.mean(r['start_lower_bound']/r['optimal_cost'] for r in one if r['valid'] and r.get('start_lower_bound') and r['optimal_cost']) if any(r['valid'] and r.get('start_lower_bound') for r in one) else None}
+  summary[mode]={'mean_case_median_ms':statistics.mean(times)*1000,'median_case_ms':statistics.median(times)*1000,'mean_unique':statistics.mean(r['unique'] for r in one),'mean_pops':statistics.mean(r['operation'] for r in one),'mean_total_pops':statistics.mean(r.get('total_heap_pops',r['operation']) for r in one),'mean_provider_expanded':statistics.mean(r.get('provider_expanded',0) for r in one),'gm_cost_ratio':math.exp(statistics.mean(math.log(x) for x in ratio)) if ratio else None,'max_cost_ratio':max(ratio,default=None),'valid':sum(r['valid'] for r in one),'provider_requests':sum(r.get('provider_requests',0) for r in one),'certified':sum(r.get('certificate') in ['cut_start_bound','intervention_start_bound'] for r in one),'mean_start_bound_ratio':statistics.mean(r['start_lower_bound']/r['optimal_cost'] for r in one if r['valid'] and r.get('start_lower_bound') and r['optimal_cost']) if any(r['valid'] and r.get('start_lower_bound') for r in one) else None}
  with gzip.open(a.output/'results.json.gz','wt') as f:json.dump(finite_json({'scope':'Cold query. All graph, witness, cut preprocessing, parsing, candidate checks and lazy transforms included. Advice/oracle production excluded and labelled; zero actual API calls. Witness default weight2 is a contextual baseline, weighted and cut variants share requested bound.','bound':a.bound,'summary':summary,'runs':rows}),f,separators=(',',':'))
  (a.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()

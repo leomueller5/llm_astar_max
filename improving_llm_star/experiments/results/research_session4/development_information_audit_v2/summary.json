@@ -1,0 +1,80 @@
+{
+  "standard/all": {
+    "cases": 600,
+    "parse_abstentions": 52,
+    "parser_differences": 52,
+    "mean_points": 10.27,
+    "point_on_wall_rate": 0.11100292112950341,
+    "point_outside_rate": 0.004381694255111977,
+    "cases_with_crossing_violation": 500,
+    "valid_cleaned_chains": 89,
+    "valid_nonempty_guided_chains": 79,
+    "gm_valid_chain_cost_ratio": 1.1549922678900832,
+    "mean_response_characters": 1575.955
+  },
+  "standard/witness_residual": {
+    "cases": 133,
+    "parse_abstentions": 12,
+    "parser_differences": 12,
+    "mean_points": 9.969924812030076,
+    "point_on_wall_rate": 0.13499245852187028,
+    "point_outside_rate": 0.0007541478129713424,
+    "cases_with_crossing_violation": 120,
+    "valid_cleaned_chains": 2,
+    "valid_nonempty_guided_chains": 2,
+    "gm_valid_chain_cost_ratio": 1.1599840895933557,
+    "mean_response_characters": 1530.345864661654
+  },
+  "cot/all": {
+    "cases": 600,
+    "parse_abstentions": 18,
+    "parser_differences": 18,
+    "mean_points": 7.631666666666667,
+    "point_on_wall_rate": 0.1434811094125355,
+    "point_outside_rate": 0.0032758244158113126,
+    "cases_with_crossing_violation": 538,
+    "valid_cleaned_chains": 108,
+    "valid_nonempty_guided_chains": 104,
+    "gm_valid_chain_cost_ratio": 1.1958079739746614,
+    "mean_response_characters": 1015.285
+  },
+  "cot/witness_residual": {
+    "cases": 133,
+    "parse_abstentions": 5,
+    "parser_differences": 5,
+    "mean_points": 7.533834586466165,
+    "point_on_wall_rate": 0.22654690618762474,
+    "point_outside_rate": 0.0029940119760479044,
+    "cases_with_crossing_violation": 127,
+    "valid_cleaned_chains": 4,
+    "valid_nonempty_guided_chains": 4,
+    "gm_valid_chain_cost_ratio": 1.2063452666568648,
+    "mean_response_characters": 1066.3308270676691
+  },
+  "repe/all": {
+    "cases": 600,
+    "parse_abstentions": 41,
+    "parser_differences": 41,
+    "mean_points": 4.985,
+    "point_on_wall_rate": 0.08726178535606821,
+    "point_outside_rate": 0.0,
+    "cases_with_crossing_violation": 486,
+    "valid_cleaned_chains": 108,
+    "valid_nonempty_guided_chains": 96,
+    "gm_valid_chain_cost_ratio": 1.1629822023465397,
+    "mean_response_characters": 1850.2516666666668
+  },
+  "repe/witness_residual": {
+    "cases": 133,
+    "parse_abstentions": 8,
+    "parser_differences": 8,
+    "mean_points": 5.2481203007518795,
+    "point_on_wall_rate": 0.11318051575931232,
+    "point_outside_rate": 0.0,
+    "cases_with_crossing_violation": 122,
+    "valid_cleaned_chains": 4,
+    "valid_nonempty_guided_chains": 4,
+    "gm_valid_chain_cost_ratio": 1.2665595389397504,
+    "mean_response_characters": 1877.96992481203
+  }
+}

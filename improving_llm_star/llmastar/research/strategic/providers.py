@@ -21,8 +21,9 @@ class ScriptedProvider:
     charged_latency is a simulated budget, never an artificial sleep and never
     reported as measured model latency. There are zero actual API requests.
     """
-    def __init__(self,responses,source='synthetic',charged_latency=0.):
+    def __init__(self,responses,source='synthetic',charged_latency=0.,parser_limits=None):
         if charged_latency<0:raise ValueError('Nonnegative simulated latency required')
+        self.parser_limits=parser_limits or {}
         self.can_revise=True
         self.responses=list(responses);self.source=source;self.charged_latency=charged_latency
         self.calls=0;self.actual_api_calls=0;self.actual_tokens=None;self.actual_cost=0.
@@ -31,12 +32,20 @@ class ScriptedProvider:
     def propose(self,context):
         began=perf_counter();index=self.calls;self.calls+=1
         raw=self.responses[index] if index<len(self.responses) else {'version':1,'abstain':True}
-        guidance=parse_guidance(raw,self.source)
+        guidance=parse_guidance(raw,self.source,**self.parser_limits)
         self.processing_seconds+=perf_counter()-began;self.simulated_latency_seconds+=self.charged_latency
         self.events.append({'event':context.event,'expanded':context.expanded,'candidate_ids':[s.identifier for s in guidance.strategies],'warnings':list(guidance.warnings)})
         return guidance
 
 
 class StaticProvider(ScriptedProvider):
-    def __init__(self,response,source='cached_real',charged_latency=0.):
-        super().__init__([response],source,charged_latency);self.can_revise=False
+    def __init__(self,response,source='cached_real',charged_latency=0.,parser_limits=None):
+        super().__init__([response],source,charged_latency,parser_limits);self.can_revise=False
+
+
+class GeometricRouteProvider(StaticProvider):
+    """Matched classical repair control, reusing already charged cut witnesses."""
+    def __init__(self):super().__init__({},source='classical_cut_routes')
+    def propose(self,context):
+        self.calls+=1;self.events.append(context.event)
+        return parse_guidance({'strategies':[{'id':f'axis{i}','waypoints':route} for i,route in enumerate(context.region_summary.get('geometric_routes',()))]},self.source,max_points=100000)

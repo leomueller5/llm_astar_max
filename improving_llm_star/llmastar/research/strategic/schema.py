@@ -30,7 +30,9 @@ class StrategicGuidance:
 
 def _point(p):
     if not isinstance(p,(list,tuple)) or len(p)!=2:return None
-    if not all(type(x) in [int,float] and math.isfinite(x) and int(x)==x for x in p):return None
+    try:
+        if not all(type(x) in [int,float] and math.isfinite(x) and int(x)==x for x in p):return None
+    except (OverflowError,ValueError):return None
     return tuple(int(x) for x in p)
 
 
@@ -51,10 +53,21 @@ def parse_guidance(raw,source='unspecified',max_characters=100000,max_strategies
             # Preserve the repository's legacy parser only for that format.
             markers=list(re.finditer(r'Generated\s*Path',raw,re.I))
             if not markers:return StrategicGuidance(source=source,abstain=True,warnings=('unrecognized_text',))
-            begin=raw.find('[',markers[-1].end())
-            try:value=json.JSONDecoder().raw_decode(raw[begin:])[0] if begin>=0 else []
-            except (ValueError,TypeError):value=[]
-            if not isinstance(value,list):value=[]
+            value=[]
+            # A response may repeat a complete route and end with a truncated
+            # duplicate. Recover the last COMPLETE marked 2-D array, never a
+            # synthetic coordinate or an unmarked partial route.
+            for marker_index,marker in reversed(list(enumerate(markers))):
+                end=markers[marker_index+1].start() if marker_index+1<len(markers) else len(raw)
+                match=re.search(r'\[\s*\[',raw[marker.end():end])
+                if match is None:continue
+                begin=marker.end()+match.start()
+                try:candidate=json.JSONDecoder().raw_decode(raw[begin:end])[0]
+                except (ValueError,TypeError):continue
+                if isinstance(candidate,list):
+                    value=candidate
+                    if marker_index!=len(markers)-1:warnings.append('recovered_earlier_complete_route')
+                    break
             warnings.append('legacy_response')
     else:value=raw
     if isinstance(value,list):value={'version':1,'strategies':[{'id':'legacy','waypoints':value}]}
@@ -70,11 +83,12 @@ def parse_guidance(raw,source='unspecified',max_characters=100000,max_strategies
         if not isinstance(identifier,str) or not identifier or len(identifier)>64 or identifier in seen:
             warnings.append(f'candidate_{i}_bad_id');continue
         confidence=entry.get('confidence')
-        if confidence is not None and (type(confidence) not in [int,float] or not math.isfinite(confidence) or not 0<=confidence<=1):
+        if confidence is not None and (type(confidence) not in [int,float] or not 0<=confidence<=1 or not math.isfinite(confidence)):
             warnings.append(f'{identifier}_bad_confidence');confidence=None
         points=[]
         rawpoints=entry.get('waypoints',[])
         if not isinstance(rawpoints,list):warnings.append(f'{identifier}_bad_waypoints');rawpoints=[]
+        if len(rawpoints)>max_points:warnings.append(f'{identifier}_point_budget_truncated')
         for p in rawpoints[:max_points]:
             point=_point(p)
             if point is None:warnings.append(f'{identifier}_invalid_point')
@@ -82,11 +96,13 @@ def parse_guidance(raw,source='unspecified',max_characters=100000,max_strategies
         regions=entry.get('regions',[])
         if not isinstance(regions,list) or any(not isinstance(r,str) or not 0<len(r)<=64 for r in regions[:max_regions]):
             warnings.append(f'{identifier}_bad_regions');regions=[]
+        if len(regions)>max_regions:warnings.append(f'{identifier}_region_budget_truncated')
         bypasses=[]
         rawbypasses=entry.get('bypasses',[])
         if not isinstance(rawbypasses,list):rawbypasses=[];warnings.append(f'{identifier}_bad_bypasses')
+        if len(rawbypasses)>max_points:warnings.append(f'{identifier}_bypass_budget_truncated')
         for b in rawbypasses[:max_points]:
-            if isinstance(b,dict) and isinstance(b.get('obstacle_id'),str) and re.fullmatch(r'[hv][0-9]+',b['obstacle_id']) and b.get('side') in ['left','right','above','below']:
+            if isinstance(b,dict) and isinstance(b.get('obstacle_id'),str) and len(b['obstacle_id'])<=64 and re.fullmatch(r'[hv][0-9]+',b['obstacle_id']) and b.get('side') in ['left','right','above','below']:
                 bypasses.append(Bypass(b['obstacle_id'],b['side']))
             else:warnings.append(f'{identifier}_invalid_bypass')
         if points or regions or bypasses:

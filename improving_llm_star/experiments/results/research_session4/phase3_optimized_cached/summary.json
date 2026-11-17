@@ -1,0 +1,110 @@
+{
+  "witness": {
+    "mean_case_median_ms": 0.32165829713145894,
+    "median_case_ms": 0.034104567021131516,
+    "mean_unique": 54.733333333333334,
+    "mean_pops": 121.53333333333333,
+    "gm_cost_ratio": 1.0063111282824964,
+    "max_cost_ratio": 1.2897027217702832,
+    "valid": 120,
+    "provider_requests": 0,
+    "certified": 0,
+    "mean_start_bound_ratio": 0.9798462130539045
+  },
+  "cut_octile": {
+    "mean_case_median_ms": 0.5682093459957589,
+    "median_case_ms": 0.03524997737258673,
+    "mean_unique": 86.71666666666667,
+    "mean_pops": 152.95,
+    "gm_cost_ratio": 1.0006282074624469,
+    "max_cost_ratio": 1.0280287365509837,
+    "valid": 120,
+    "provider_requests": 0,
+    "certified": 0,
+    "mean_start_bound_ratio": 0.9313925368313234
+  },
+  "cut_uncached": {
+    "mean_case_median_ms": 0.3672013874165714,
+    "median_case_ms": 0.034937518648803234,
+    "mean_unique": 27.483333333333334,
+    "mean_pops": 47.3,
+    "gm_cost_ratio": 1.0008485851609903,
+    "max_cost_ratio": 1.0383783619438638,
+    "valid": 120,
+    "provider_requests": 0,
+    "certified": 5,
+    "mean_start_bound_ratio": 0.9850102535783699
+  },
+  "cut_geo": {
+    "mean_case_median_ms": 0.358513465228801,
+    "median_case_ms": 0.035020988434553146,
+    "mean_unique": 27.483333333333334,
+    "mean_pops": 47.3,
+    "gm_cost_ratio": 1.0008485851609903,
+    "max_cost_ratio": 1.0383783619438638,
+    "valid": 120,
+    "provider_requests": 0,
+    "certified": 5,
+    "mean_start_bound_ratio": 0.9850102535783699
+  },
+  "cut_real": {
+    "mean_case_median_ms": 0.3866285318508744,
+    "median_case_ms": 0.0355415977537632,
+    "mean_unique": 27.483333333333334,
+    "mean_pops": 46.99166666666667,
+    "gm_cost_ratio": 1.0008485851609903,
+    "max_cost_ratio": 1.0383783619438638,
+    "valid": 120,
+    "provider_requests": 23,
+    "certified": 5,
+    "mean_start_bound_ratio": 0.9850102535783699
+  },
+  "cut_oracle": {
+    "mean_case_median_ms": 0.21386739681474864,
+    "median_case_ms": 0.035479431971907616,
+    "mean_unique": 8.325,
+    "mean_pops": 14.841666666666667,
+    "gm_cost_ratio": 1.0,
+    "max_cost_ratio": 1.0,
+    "valid": 120,
+    "provider_requests": 23,
+    "certified": 21,
+    "mean_start_bound_ratio": 0.9850102535783699
+  },
+  "roadmap_geo": {
+    "mean_case_median_ms": 0.27621289482340217,
+    "median_case_ms": 0.03522902261465788,
+    "mean_unique": 8.325,
+    "mean_pops": 14.825,
+    "gm_cost_ratio": 1.0,
+    "max_cost_ratio": 1.0,
+    "valid": 120,
+    "provider_requests": 23,
+    "certified": 21,
+    "mean_start_bound_ratio": 0.9850102535783699
+  },
+  "roadmap_real": {
+    "mean_case_median_ms": 0.31202769799468416,
+    "median_case_ms": 0.03547896631062031,
+    "mean_unique": 10.4,
+    "mean_pops": 19.325,
+    "gm_cost_ratio": 1.0,
+    "max_cost_ratio": 1.0,
+    "valid": 120,
+    "provider_requests": 23,
+    "certified": 20,
+    "mean_start_bound_ratio": 0.9850102535783699
+  },
+  "roadmap_oracle": {
+    "mean_case_median_ms": 0.3547667001839727,
+    "median_case_ms": 0.035520526580512524,
+    "mean_unique": 12.833333333333334,
+    "mean_pops": 23.616666666666667,
+    "gm_cost_ratio": 1.00023038587213,
+    "max_cost_ratio": 1.0280287365509837,
+    "valid": 120,
+    "provider_requests": 23,
+    "certified": 19,
+    "mean_start_bound_ratio": 0.9850102535783699
+  }
+}

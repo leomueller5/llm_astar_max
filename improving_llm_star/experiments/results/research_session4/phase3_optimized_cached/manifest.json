@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "llmastar/research/incumbent.py": "f44041b8072f9d632195ffcd18213ae64d169e50a1a27245005993cd6ba280b7",
+    "llmastar/research/corridor.py": "6d9a944713a33ae9ac4ff6db7daafb9455c2c3d969249d5a12b3210d1e9becb1",
+    "llmastar/research/efficient.py": "4d29dbdce7976a3e401469326c89548eb4afd2e9dffe684fc304b8399b5b2c3d",
+    "llmastar/research/__init__.py": "aa4a2806aff9cde9c1e0e49f1caf41875ba9b3aec049c93d21adb71fc854849b",
+    "llmastar/research/scheduled.py": "dd559b13ecee5e68ce5f31506ed249d8f5af8e2e1def55b2c8f8a4118c8b24a2",
+    "llmastar/research/geometry.py": "17f4493cc29428ddd33cd7986e72a32027d59839e69ea4794f09ad26aec82b89",
+    "llmastar/research/search.py": "6bfb4da0e65ce1536bf078983fba54ef279cd8972bc1b78acb337d868fa69958",
+    "llmastar/research/guidance.py": "d0d42d527368553805af27c077189d3b25acef2a5afc5d125c225075cf5c42f1",
+    "llmastar/research/strategic/planner.py": "8fe504ea111eb354bf5c0bbff95d67d18b6c056a4aa388685586d5ca359dba06",
+    "llmastar/research/strategic/compiler.py": "0eefe2bfd8125895fdafc41e832288bf2b5bedf41e49cc438d346f19928263cb",
+    "llmastar/research/strategic/roadmap.py": "bd93a412c43eeabfaea8234077f0876f55fd841453821fc5d104d8dab373c76f",
+    "llmastar/research/strategic/cut_search.py": "8d64b17824c9f675274c8f6b4b4e973378928d88e8468af03ce651641346eff5",
+    "llmastar/research/strategic/route.py": "6a8d0eed7b66b6b2745f1079b7c8b4d5ed5c5ed0b9fd127ad40e9d22a5a1a5fb",
+    "llmastar/research/strategic/abstraction.py": "1cc9beba2f5def70102120f2b5080998d6acdd124dcc46eb0f52fa7c11dc9d3a",
+    "llmastar/research/strategic/__init__.py": "34296de6a5154d06c69766fdcb9807b1e6a3c29c4fb411a5a233575ac8f85ea3",
+    "llmastar/research/strategic/prompts.py": "0deb7df6193908c6e70dcda583fada85346d0eaa261d9ad70cbb0b50d8defbb4",
+    "llmastar/research/strategic/providers.py": "c655eceb3faaa11456b423d99a73f87038fccc838e66e1a011a23bb757b09763",
+    "llmastar/research/strategic/schema.py": "30a620a082c0ac3fcf791d76cb697f7b35ddc834fa18667341a08b6370ba488f",
+    "llmastar/research/strategic/cuts.py": "283c104e7f9d80a76dfa7423d0df0334123c8dd0e2e7b020108968707f6b7748",
+    "experiments/research/session4/cut_pilot.py": "37bac6217aed104d894242f009a309148f59093cbe51a412792168c869da73ef"
+  },
+  "cases_sha256": "447110f608b9248d8b4d56fad17bd3fba61f6ed65a8e956b9853357123a01ba0",
+  "args": {
+    "cases": null,
+    "limit": 120,
+    "repeats": 7,
+    "bound": 1.1,
+    "modes": [
+      "witness",
+      "cut_octile",
+      "cut_uncached",
+      "cut_geo",
+      "cut_real",
+      "cut_oracle",
+      "roadmap_geo",
+      "roadmap_real",
+      "roadmap_oracle"
+    ],
+    "output": "improving_llm_star/experiments/results/research_session4/phase3_optimized_cached"
+  }
+}
