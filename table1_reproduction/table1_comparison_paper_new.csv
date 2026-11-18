@@ -1,0 +1,23 @@
+Method,Prompt,Metric,Paper (GPT-3.5),Ours (GPT-4o mini),Difference
+Dynamic WA*,-,OR,60.91,60.9,-0.01
+Dynamic WA*,-,SR,78.53,78.52,-0.01
+Dynamic WA*,-,RL,100.24,100.24,0.0
+Dynamic WA*,-,VPR,100.0,100.0,0.0
+LLM-only,Few-Shot,RL,119.38,119.38,0.0
+LLM-only,Few-Shot,VPR,12.8,6.8,-6.0
+LLM-only,CoT,RL,151.73,124.2,-27.53
+LLM-only,CoT,VPR,15.2,6.2,-9.0
+LLM-only,RePE,RL,183.87,117.33,-66.54
+LLM-only,RePE,VPR,7.8,9.9,2.1
+LLM-A*,Few-Shot,OR,57.39,46.09,-11.3
+LLM-A*,Few-Shot,SR,74.96,65.4,-9.56
+LLM-A*,Few-Shot,RL,102.44,102.74,0.3
+LLM-A*,Few-Shot,VPR,100.0,100.0,0.0
+LLM-A*,CoT,OR,69.5,47.61,-21.89
+LLM-A*,CoT,SR,83.65,66.24,-17.41
+LLM-A*,CoT,RL,102.54,102.61,0.07
+LLM-A*,CoT,VPR,100.0,100.0,0.0
+LLM-A*,RePE,OR,85.47,50.13,-35.34
+LLM-A*,RePE,SR,96.53,68.31,-28.22
+LLM-A*,RePE,RL,102.41,102.3,-0.11
+LLM-A*,RePE,VPR,100.0,100.0,0.0
