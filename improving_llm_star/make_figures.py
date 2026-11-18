@@ -8,7 +8,6 @@ Creates all figures of the report from the result files of the notebook `LLM_ASt
   fig1_example_paths.png      maps with expanded cells, paths and waypoints: A* vs. LLM-A* vs. LLM-A*-WW
   fig6_failure_cases.png      the same for the worst failure case of each type (two examples)
   fig4_per_sample_or.png      per-sample operation ratio of LLM-A* vs. LLM-A*-WW
-  fig5_pseudocode.png         pseudocode of LLM-A*-WW and of the line-of-sight validation
 
 Run the notebook first, then (from the repository root):
 
@@ -204,104 +203,6 @@ def figure_per_sample(rows):
 
 
 # ===================================================================================================
-# Figure 5: pseudocode
-# ===================================================================================================
-# Each line: (line number or "", indentation level, text, comment, differs from LLM-A*?)
-# Text uses matplotlib "mathtext": $...$ is typeset like LaTeX math.
-ALGORITHM_MAIN = [
-    ("", 0, r"$\mathbf{Input}$: start $s_0$, goal $s_g$, map $M$, LLM, switch radius $r$", "", False),
-    ("", 0, r"$\mathbf{Output}$: path from $s_0$ to $s_g$", "", False),
-    ("", 0, r"$\mathbf{Priority}$: $f(s) = g(s) + h(s) + \alpha_t\,\Vert s - t\Vert + (1-\alpha_t)\,h(s)$",
-     r"$h$: Euclidean distance to $s_g$", True),
-    ("1", 0, r"$W \leftarrow$ LLM(prompt($s_0, s_g, M$))", "waypoints, same prompt as LLM-A*", False),
-    ("2", 0, r"$W \leftarrow \{\, w \in W$ : $w$ is free and inside $M \,\}$", "", False),
-    ("3", 0, r"$(T, \alpha) \leftarrow$ LOSVALIDATE$(s_0, W, s_g)$", "Algorithm 2", True),
-    ("4", 0, r"$i \leftarrow 1$;   $t \leftarrow T[1]$", "current target", False),
-    ("5", 0, r"$g(s_0) \leftarrow 0$;   OPEN $\leftarrow \{s_0\}$;   CLOSED $\leftarrow \emptyset$", "", False),
-    ("6", 0, r"$\mathbf{while}$ OPEN $\neq \emptyset$ $\mathbf{do}$", "", False),
-    ("7", 1, r"$s \leftarrow$ state in OPEN with the smallest $f(s)$;   move $s$ to CLOSED", "", False),
-    ("8", 1, r"$\mathbf{if}$ $s = s_g$ $\mathbf{then}$ $\mathbf{return}$ path via parent pointers", "", False),
-    ("9", 1, r"$\mathbf{for\ each}$ neighbour $n$ of $s$ $\mathbf{do}$", "", False),
-    ("10", 2, r"$\mathbf{if}$ $t \neq s_g$ $\mathbf{and}$ ( $n = t$ $\mathbf{or}$ $\Vert s - t\Vert \leq r$ ) $\mathbf{then}$",
-     "target reached (early switch)", True),
-    ("11", 3, r"$i \leftarrow i + 1$;   $t \leftarrow T[i]$;   recompute $f$ for all states in OPEN", "", False),
-    ("12", 2, r"$\mathbf{if}$ $n \in$ CLOSED $\mathbf{then}$ $\mathbf{continue}$", "", False),
-    ("13", 2, r"$\mathbf{if}$ $g(s) + c(s, n) < g(n)$ $\mathbf{then}$", r"$c = \infty$ if a barrier is hit", False),
-    ("14", 3, r"$g(n) \leftarrow g(s) + c(s, n)$;   parent$(n) \leftarrow s$;   insert $n$ into OPEN", "", False),
-    ("15", 0, r"$\mathbf{return}$ failure", "", False),
-]
-
-ALGORITHM_LOS = [
-    ("", 0, r"$\mathbf{Input}$: start $s_0$, LLM waypoints $w_1, \ldots, w_k$, goal $s_g$", "", False),
-    ("", 0, r"$\mathbf{Output}$: target list $T$ and weights $\alpha$", "", False),
-    ("1", 0, r"$Q \leftarrow [\,s_0, w_1, \ldots, w_k, s_g\,]$;   $T \leftarrow [\,s_0\,]$;   $i \leftarrow 0$", "", True),
-    ("2", 0, r"$\mathbf{while}$ $i < |Q| - 1$ $\mathbf{do}$", "", True),
-    ("3", 1, r"$j \leftarrow$ largest index $> i$ such that segment $Q[i]\,Q[j]$ hits no barrier",
-     "farthest visible point", True),
-    ("4", 1, r"$\mathbf{if}$ no such $j$ exists $\mathbf{or}$ $j = |Q| - 1$ $\mathbf{then}$ $\mathbf{break}$",
-     "chain broken / goal visible", True),
-    ("5", 1, r"append $Q[j]$ to $T$;   $i \leftarrow j$", "skipped points are detours", True),
-    ("6", 0, r"append $s_g$ to $T$", "", True),
-    ("7", 0, r"$\mathbf{return}$ $T$ with $\alpha_t = 1$ for all $t \in T$",
-     r"removed waypoints: $\alpha = 0$", True),
-]
-
-C_HIGHLIGHT = "#e3eefb"     # light blue band behind lines that differ from LLM-A*
-
-
-def draw_algorithm(ax, top, title, lines, width):
-    """Draw one algorithm box starting at y = top (in inches, y grows downwards). Returns the bottom."""
-    line_h, indent = 0.27, 0.30
-    x_num, x_text, x_comment = 0.12, 0.50, width - 2.55
-    y = top
-    ax.plot([0, width], [y, y], color=C_TEXT, lw=1.2)                       # top rule
-    ax.text(0.05, y + 0.20, title, fontsize=10.5, va="center", color=C_TEXT)
-    y += 0.40
-    ax.plot([0, width], [y, y], color=C_TEXT, lw=0.6)                       # rule below the title
-    y += 0.10
-    for number, level, text, comment, new in lines:
-        yc = y + line_h / 2
-        if new:
-            ax.add_patch(plt.Rectangle((0, y), width, line_h, color=C_HIGHLIGHT, lw=0, zorder=0))
-        if number:
-            ax.text(x_num + 0.18, yc, number, fontsize=8, ha="right", va="center", color=C_MUTED)
-        x = x_text + level * indent if number else 0.05
-        for lv in range(level):                                             # indentation guides
-            ax.plot([x_text + lv * indent + 0.06] * 2, [y, y + line_h], color=C_GRID, lw=0.8, zorder=1)
-        ax.text(x, yc, text, fontsize=9.5, va="center", color=C_TEXT, zorder=2)
-        if comment:
-            ax.text(x_comment, yc, r"$\triangleright$ " + comment, fontsize=8.5, va="center",
-                    color=C_MUTED, style="italic", zorder=2)
-        y += line_h
-    y += 0.08
-    ax.plot([0, width], [y, y], color=C_TEXT, lw=1.2)                       # bottom rule
-    return y
-
-
-def figure_pseudocode():
-    width = 9.0
-    n_lines = len(ALGORITHM_MAIN) + len(ALGORITHM_LOS)
-    height = n_lines * 0.27 + 2 * 0.62 + 0.45 + 0.35
-    fig = plt.figure(figsize=(width, height))
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(-0.05, width + 0.05)
-    ax.set_ylim(height, 0)                                                  # y axis points down
-    ax.axis("off")
-    with plt.rc_context({"mathtext.fontset": "dejavuserif", "font.family": "DejaVu Serif"}):
-        bottom = draw_algorithm(ax, 0.05, r"$\mathbf{Algorithm\ 1}$  LLM-A*-WW (LLM-A* with weighted waypoints)",
-                                ALGORITHM_MAIN, width)
-        bottom = draw_algorithm(ax, bottom + 0.45,
-                                r"$\mathbf{Algorithm\ 2}$  LOSVALIDATE: line-of-sight validation of the waypoints",
-                                ALGORITHM_LOS, width)
-        ax.add_patch(plt.Rectangle((0, bottom + 0.12), 0.25, 0.16, color=C_HIGHLIGHT, lw=0))
-        ax.text(0.33, bottom + 0.20, "differs from LLM-A* (in LLM-A*: all waypoints are kept, "
-                r"$\alpha_t = 1$, and the target switches only when $n = t$)",
-                fontsize=8.5, va="center", color=C_MUTED)
-        fig.savefig(FIGURES / "fig5_pseudocode.png")
-    plt.close(fig)
-
-
-# ===================================================================================================
 # Main
 # ===================================================================================================
 def main():
@@ -318,8 +219,6 @@ def main():
     print(f"fig6_failure_cases.png   (samples {', '.join(failures)})")
     figure_per_sample(rows)
     print("fig4_per_sample_or.png")
-    figure_pseudocode()
-    print("fig5_pseudocode.png")
     print(f"Saved to {FIGURES}")
 
 
