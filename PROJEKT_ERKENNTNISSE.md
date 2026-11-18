@@ -927,3 +927,38 @@ Größenordnungen; kein End-to-End-Laufzeitgewinn.
 [Session-5-Abschlussbericht](improving_llm_star/experiments/results/research_session5/REPORT.md),
 [Reproduktion und Fortsetzung](improving_llm_star/experiments/research/session5/README.md),
 [PDF: tatsächliche Korrektur-Tradeoffs](improving_llm_star/experiments/results/research_session5/analysis/repair_tradeoffs.pdf).
+
+
+## Forschungssitzung 6 — Synchronisation und erste Hypothesen (18.11.2026)
+
+Team-Beiträge von `origin/dev` und `origin/main` wurden auf dem Forschungsbranch
+zusammengeführt (da51b28, 8bc8a66). Die ersetzten Table-1-Dateien liegen zusätzlich
+unter `table1_reproduction/archive_before_table1_new/`; beide WA-Notebooks bleiben
+erhalten. `main` selbst wurde nicht verändert. Neue Daten: 100 Karten mit 101×61
+Koordinatenbereichen, je zehn Aufgaben, 10–17 Wänden. Vor Entwicklung wurde eine
+kartendisjunkte 60/20/20-Aufteilung festgelegt (`research_session6/team_split.json`).
+
+Die tatsächlich vorhandene Aufgabenbeschreibung bestätigt: versteckte Karten,
+GPT-4o mini als primäres Modell, faire A*/LLM-A*-Vergleiche, Ablationen und ehrlich
+dokumentierte Fehlschläge sind relevant. Bericht gemäß ACL-Vorlage; die fremde
+lexikalische Beispielgliederung im Report-Guideline-PDF ist kein zusätzlicher
+Pathfinding-Forschungsauftrag.
+
+API-Verbindung und exakter Snapshot `gpt-4o-mini-2024-07-18` funktionieren wieder.
+Alte unbekannte Transportkosten bleiben vollständig reserviert. Neue Versuche
+nutzen höchstens zwei separat reservierte Übertragungen mit Backoff; drei
+fehlgeschlagene logische Anfragen öffnen eine Abbruchsicherung. Die bisherigen
+Budget- und Ergebnisdateien werden nicht überschrieben. Start: $0.0287154 bekannte
+Kosten plus $0.1585152 offene Reservierungen.
+
+Neue Hypothesen: (1) Auswahl/Reparatur mehrerer geometrischer Routen statt eines
+einzelnen sichtbaren Endpunkts; (2) verifizierte Makrokanten zu LLM-Zielen, sowohl
+als direkte Original-Erweiterung als auch mit identischem robustem A*-Anker.
+Die robuste Variante erhält alle Gitterkanten, echte Kantenkosten und Reopenings;
+bei zulässigem h gilt die übliche Weighted-A*-Schranke w. Die direkte Erweiterung
+behält die ursprüngliche Heuristik und damit deren fehlende Optimalitätsgarantie.
+Noch keine positive Wirksamkeitsaussage: Entwicklungsexperimente laufen.
+
+Publikation bisher gesperrt: Git-Anmeldung ist `leomueller5`, die konfigurierte
+Commit-E-Mail ist jedoch nicht als verifizierte Konto-E-Mail bestätigt. Es wurden
+weder Identität noch Authentifizierung verändert.
