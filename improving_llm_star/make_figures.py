@@ -6,6 +6,7 @@ Creates all figures of the report from the result files of the notebook `LLM_ASt
 (folder improving_llm_star/results/); no search is run here:
 
   fig1_example_paths.png      maps with expanded cells, paths and waypoints: A* vs. LLM-A* vs. LLM-A*-WW
+  fig6_failure_cases.png      the same for the worst failure case of each type (two examples)
   fig4_per_sample_or.png      per-sample operation ratio of LLM-A* vs. LLM-A*-WW
   fig5_pseudocode.png         pseudocode of LLM-A*-WW and of the line-of-sight validation
 
@@ -17,6 +18,7 @@ The figures are written to improving_llm_star/figures/ (PNG, 300 dpi).
 """
 
 import json
+import math
 from pathlib import Path
 
 import matplotlib
@@ -111,6 +113,16 @@ def figure_example_paths(examples):
         draw_map(row_axes[1], ex, "LLM-A*", C_LLM, label("LLM-A*"))
         draw_map(row_axes[2], ex, "LLM-A*-WW", C_WW, label("LLM-A*-WW"))
 
+    add_map_legend(fig)
+    fig.suptitle("Example searches (Few-Shot prompt, same LLM answer for LLM-A* and LLM-A*-WW)",
+                 x=0.01, ha="left", fontsize=11, color=C_TEXT)
+    fig.tight_layout()
+    fig.savefig(FIGURES / "fig1_example_paths.png")
+    plt.close(fig)
+    return list(examples)
+
+
+def add_map_legend(fig):
     legend = [
         Patch(facecolor=C_OBST, label="barrier"),
         Patch(facecolor=matplotlib.colors.to_rgba(C_MUTED, 0.3), label="expanded cells"),
@@ -123,12 +135,33 @@ def figure_example_paths(examples):
     ]
     fig.legend(handles=legend, loc="lower center", ncol=7, frameon=False,
                bbox_to_anchor=(0.5, -0.03))
-    fig.suptitle("Example searches (Few-Shot prompt, same LLM answer for LLM-A* and LLM-A*-WW)",
-                 x=0.01, ha="left", fontsize=11, color=C_TEXT)
+
+
+def path_length(path):
+    return sum(math.dist(a, b) for a, b in zip(path, path[1:]))
+
+
+def figure_failure_cases(failures):
+    """Worst case of each failure type (chosen in the notebook, section 7)."""
+    fig, axes = plt.subplots(len(failures), 3, figsize=(12, 3.25 * len(failures)))
+    for k, (row_axes, (sample_id, ex)) in enumerate(zip(axes, failures.items())):
+        n_astar, len_astar = ex["A*"]["operation"], path_length(ex["A*"]["path"])
+
+        def label(name):
+            n, length = ex[name]["operation"], path_length(ex[name]["path"])
+            return f"{name}: {n} expanded ({100 * n / n_astar:.0f} %), path {100 * length / len_astar:.0f} %"
+
+        draw_map(row_axes[0], ex, "A*", C_ASTAR,
+                 f"({chr(97 + k)}) {ex['kind']}\nMap {sample_id}  |  A*: {n_astar} expanded")
+        draw_map(row_axes[1], ex, "LLM-A*", C_LLM, "\n" + label("LLM-A*"))
+        draw_map(row_axes[2], ex, "LLM-A*-WW", C_WW, "\n" + label("LLM-A*-WW"))
+    add_map_legend(fig)
+    fig.suptitle("Failure cases of LLM-A*-WW (Few-Shot prompt; worst sample of each type, "
+                 "percentages relative to A*)", x=0.01, ha="left", fontsize=11, color=C_TEXT)
     fig.tight_layout()
-    fig.savefig(FIGURES / "fig1_example_paths.png")
+    fig.savefig(FIGURES / "fig6_failure_cases.png")
     plt.close(fig)
-    return list(examples)
+    return list(failures)
 
 
 # ===================================================================================================
@@ -280,6 +313,9 @@ def main():
 
     examples = figure_example_paths(example_data)
     print(f"fig1_example_paths.png   (samples {', '.join(examples)})")
+    with open(RESULTS / "failure_searches.json", encoding="utf-8") as f:
+        failures = figure_failure_cases(json.load(f))
+    print(f"fig6_failure_cases.png   (samples {', '.join(failures)})")
     figure_per_sample(rows)
     print("fig4_per_sample_or.png")
     figure_pseudocode()
