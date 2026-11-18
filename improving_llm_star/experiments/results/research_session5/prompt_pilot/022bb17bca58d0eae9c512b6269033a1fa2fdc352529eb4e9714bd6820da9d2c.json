@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5570000_0",
+  "map_id": "s5_5570000",
+  "family": "u_traps",
+  "prompt": "endpoints_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElTpcEYwdDleRlvQEPP8wmTFH65Px",
+    "object": "chat.completion",
+    "created": 1794984796,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"h0:R\",\"v1:T\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 337,
+      "completion_tokens": 12,
+      "total_tokens": 349,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_40057a9dcc"
+  },
+  "request_id": "022bb17bca58d0eae9c512b6269033a1fa2fdc352529eb4e9714bd6820da9d2c",
+  "cache_hit": false,
+  "prompt_seconds": 9.533297270536423e-05
+}

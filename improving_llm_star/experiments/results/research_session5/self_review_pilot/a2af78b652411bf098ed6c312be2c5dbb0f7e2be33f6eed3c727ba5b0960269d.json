@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5590000_0",
+  "map_id": "s5_5590000",
+  "family": "competing_corridors",
+  "prompt": "endpoints_v1",
+  "feedback": "self",
+  "response": {
+    "id": "chatcmpl-ElTybeD8TilnlCC8fUtRpHTdIRz0K",
+    "object": "chat.completion",
+    "created": 1794985353,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"h0:R\",\"v1:B\",\"v1:T\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 783,
+      "completion_tokens": 16,
+      "total_tokens": 799,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_40057a9dcc"
+  },
+  "request_id": "a2af78b652411bf098ed6c312be2c5dbb0f7e2be33f6eed3c727ba5b0960269d",
+  "cache_hit": false,
+  "prompt_seconds": 0.00016033300198614597
+}

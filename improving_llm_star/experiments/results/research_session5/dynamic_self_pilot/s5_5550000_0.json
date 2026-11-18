@@ -1,0 +1,150 @@
+{
+  "path": [
+    [
+      27,
+      25
+    ],
+    [
+      27,
+      24
+    ],
+    [
+      27,
+      23
+    ],
+    [
+      27,
+      22
+    ],
+    [
+      27,
+      21
+    ],
+    [
+      27,
+      20
+    ],
+    [
+      27,
+      19
+    ],
+    [
+      28,
+      18
+    ],
+    [
+      29,
+      17
+    ],
+    [
+      28,
+      16
+    ],
+    [
+      27,
+      16
+    ],
+    [
+      26,
+      15
+    ],
+    [
+      26,
+      14
+    ],
+    [
+      25,
+      13
+    ],
+    [
+      24,
+      13
+    ],
+    [
+      23,
+      13
+    ],
+    [
+      22,
+      13
+    ],
+    [
+      21,
+      13
+    ],
+    [
+      20,
+      13
+    ],
+    [
+      19,
+      13
+    ],
+    [
+      18,
+      13
+    ],
+    [
+      17,
+      13
+    ],
+    [
+      16,
+      13
+    ],
+    [
+      15,
+      13
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      13,
+      13
+    ],
+    [
+      12,
+      13
+    ]
+  ],
+  "case_id": "s5_5550000_0",
+  "map_id": "s5_5550000",
+  "family": "tree_maze",
+  "prompt": "original",
+  "valid": true,
+  "length": 28.071067811865476,
+  "operation": 278,
+  "unique": 176,
+  "seconds": 0.015897916862741113,
+  "correction_block_seconds": 0.012733082985505462,
+  "search_without_correction_seconds": 0.003164833877235651,
+  "attempts": 1,
+  "accepted": 0,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        19,
+        19
+      ],
+      "accepted": false,
+      "old_evidence": [
+        2,
+        1.0,
+        55.32590180780452
+      ],
+      "new_evidence": null,
+      "changed_queue": false
+    }
+  ],
+  "requests": [
+    {
+      "error": "Request failed safely: URLError"
+    }
+  ],
+  "error": null,
+  "optimal_cost": 27.48528137423857,
+  "initial_request_id": "fa60f71a5b6450ff2afad7cdd78ae0bb11af927788fb88450aa7479b27744905"
+}

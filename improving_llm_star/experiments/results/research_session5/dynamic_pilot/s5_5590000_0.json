@@ -1,0 +1,115 @@
+{
+  "case_id": "s5_5590000_0",
+  "map_id": "s5_5590000",
+  "family": "competing_corridors",
+  "prompt": "original",
+  "valid": true,
+  "length": 22.071067811865476,
+  "operation": 133,
+  "unique": 114,
+  "seconds": 2.5674552500713617,
+  "correction_block_seconds": 2.563908082898706,
+  "search_without_correction_seconds": 0.0035471671726554632,
+  "attempts": 1,
+  "accepted": 1,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        9,
+        15
+      ],
+      "accepted": true,
+      "old_evidence": [
+        4,
+        0.2608695652173913,
+        23.0
+      ],
+      "new_evidence": [
+        2,
+        0.16,
+        25.0
+      ],
+      "changed_queue": true
+    }
+  ],
+  "requests": [
+    {
+      "request_id": "c17421ddc48ab383bc0ad1bbc27c729680e23a021baa02553afda7e86bfb84a6",
+      "response": {
+        "id": "chatcmpl-ElU9sctpqzMs3DdtjsBVVlOMuPFxS",
+        "object": "chat.completion",
+        "created": 1794986052,
+        "model": "gpt-4o-mini-2024-07-18",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Generated Path: [[17, 10], [16, 10], [15, 10], [14, 10], [14, 9], [13, 9], [12, 9], [11, 9], [10, 9], [9, 9], [8, 9], [7, 9], [6, 9], [5, 9], [5, 10], [5, 11], [5, 12], [5, 13], [5, 14], [5, 15], [5, 16], [5, 17], [5, 18], [5, 19], [5, 20], [5, 21]]",
+              "refusal": null,
+              "annotations": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1797,
+          "completion_tokens": 159,
+          "total_tokens": 1956,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "service_tier": "default",
+        "system_fingerprint": "fp_15014e7912"
+      },
+      "context": {
+        "geometry": {
+          "type": "invalid_target",
+          "targets": [
+            [
+              13,
+              11
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              9,
+              16
+            ]
+          ],
+          "fact": "These coordinates are outside the allowed grid or on closed walls."
+        },
+        "observed_search": {
+          "event": "contradicted_guidance_still_searching",
+          "expanded": 16,
+          "current_node": [
+            9,
+            15
+          ],
+          "current_g": 11.242640687119286,
+          "active_target": [
+            9,
+            15
+          ],
+          "open_entries": 26
+        }
+      },
+      "cache_hit": false
+    }
+  ],
+  "error": null,
+  "optimal_cost": 20.899494936611667,
+  "initial_request_id": "0b7a2b9299091a40b17a2d0f5d7302b31f6ee434892cf374a6ff2a06db612763"
+}

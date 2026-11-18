@@ -1,0 +1,156 @@
+{
+  "endpoints_v1/targeted/cut_none": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 1.3771667662594054,
+    "mean_unique": 132.66666666666666,
+    "mean_expanded": 161.44444444444446,
+    "mean_pops": 251.55555555555554,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0091394425950992,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "original/targeted/cut_none": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 1.5331613540183753,
+    "mean_unique": 149.25,
+    "mean_expanded": 181.625,
+    "mean_pops": 283,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.010287730492,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "endpoints_v1/targeted/cut_real": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 1.5175833573771849,
+    "mean_unique": 143.33333333333334,
+    "mean_expanded": 161.44444444444446,
+    "mean_pops": 262.55555555555554,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0091394425950992,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "original/targeted/cut_real": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 1.6326719196513295,
+    "mean_unique": 156.25,
+    "mean_expanded": 181.625,
+    "mean_pops": 295.375,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.010287730492,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "endpoints_v1/targeted/lineage_bounded": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 2.331393693263332,
+    "mean_unique": 283.1111111111111,
+    "mean_expanded": 364.22222222222223,
+    "mean_pops": 528,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0166080412668264,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "original/targeted/lineage_bounded": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.2128333512227982,
+    "mean_unique": 293.25,
+    "mean_expanded": 363.5,
+    "mean_pops": 526.75,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0150132370385012,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "endpoints_v1/targeted/lineage_full": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 2.2108242070923247,
+    "mean_unique": 228.55555555555554,
+    "mean_expanded": 328.44444444444446,
+    "mean_pops": 495.6666666666667,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0201242854455137,
+    "max_cost_ratio": 1.1024694743852124
+  },
+  "original/targeted/lineage_full": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.742828248301521,
+    "mean_unique": 286.75,
+    "mean_expanded": 400,
+    "mean_pops": 589.875,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.011360828408197,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "endpoints_v1/targeted/neighbor": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 3.1085876592745385,
+    "mean_unique": 413.6666666666667,
+    "mean_expanded": 528.1111111111111,
+    "mean_pops": 745.5555555555555,
+    "mean_rebuilds": 1.6666666666666667,
+    "gm_cost_ratio": 1.0095789968928084,
+    "max_cost_ratio": 1.0602815094716591
+  },
+  "original/targeted/neighbor": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.0182447624392807,
+    "mean_unique": 262.875,
+    "mean_expanded": 340.5,
+    "mean_pops": 508.75,
+    "mean_rebuilds": 5.125,
+    "gm_cost_ratio": 1.0174147105037088,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "endpoints_v1/targeted/none": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 1.900310240065058,
+    "mean_unique": 228.66666666666666,
+    "mean_expanded": 330.6666666666667,
+    "mean_pops": 504,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0180987707689129,
+    "max_cost_ratio": 1.082924081042317
+  },
+  "original/targeted/none": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.04109403421171,
+    "mean_unique": 253.625,
+    "mean_expanded": 368.375,
+    "mean_pops": 563.375,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.020384028504099,
+    "max_cost_ratio": 1.082924081042317
+  },
+  "endpoints_v1/targeted/original": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 17.821402858114904,
+    "mean_unique": 411.55555555555554,
+    "mean_expanded": 595.7777777777778,
+    "mean_pops": 595.7777777777778,
+    "mean_rebuilds": 1.6666666666666667,
+    "gm_cost_ratio": 1.0095789968928084,
+    "max_cost_ratio": 1.0602815094716591
+  },
+  "original/targeted/original": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 12.177359341876581,
+    "mean_unique": 264.375,
+    "mean_expanded": 400.125,
+    "mean_pops": 400.125,
+    "mean_rebuilds": 4.125,
+    "gm_cost_ratio": 1.0220476743597886,
+    "max_cost_ratio": 1.062557547570703
+  }
+}

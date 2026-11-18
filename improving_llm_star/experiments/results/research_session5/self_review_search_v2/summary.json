@@ -1,0 +1,156 @@
+{
+  "endpoints_v1/self/cut_none": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 1.3876110056622162,
+    "mean_unique": 132.66666666666666,
+    "mean_expanded": 161.44444444444446,
+    "mean_pops": 251.55555555555554,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0091394425950992,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "original/self/cut_none": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 1.5693491150159389,
+    "mean_unique": 149.25,
+    "mean_expanded": 181.625,
+    "mean_pops": 283,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.010287730492,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "endpoints_v1/self/cut_real": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 1.4947222597483132,
+    "mean_unique": 142.77777777777777,
+    "mean_expanded": 161.44444444444446,
+    "mean_pops": 263.1111111111111,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0091394425950992,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "original/self/cut_real": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 1.7053229676093906,
+    "mean_unique": 154.5,
+    "mean_expanded": 181.625,
+    "mean_pops": 295,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.010287730492,
+    "max_cost_ratio": 1.0616920445745688
+  },
+  "endpoints_v1/self/lineage_bounded": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 2.303944331490331,
+    "mean_unique": 278.1111111111111,
+    "mean_expanded": 354.22222222222223,
+    "mean_pops": 507.44444444444446,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0222376283319057,
+    "max_cost_ratio": 1.0929844590437385
+  },
+  "original/self/lineage_bounded": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.5209112209267914,
+    "mean_unique": 310.5,
+    "mean_expanded": 372.5,
+    "mean_pops": 527.25,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0167987926254394,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "endpoints_v1/self/lineage_full": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 2.3161479427168765,
+    "mean_unique": 232,
+    "mean_expanded": 300.77777777777777,
+    "mean_pops": 460.3333333333333,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0170704519136,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "original/self/lineage_full": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 3.302447992609814,
+    "mean_unique": 307.75,
+    "mean_expanded": 400,
+    "mean_pops": 573.25,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.011360828408197,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "endpoints_v1/self/neighbor": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 3.8894164738141828,
+    "mean_unique": 549.4444444444445,
+    "mean_expanded": 603.7777777777778,
+    "mean_pops": 818.1111111111111,
+    "mean_rebuilds": 1,
+    "gm_cost_ratio": 1.0144027881850317,
+    "max_cost_ratio": 1.0602815094716591
+  },
+  "original/self/neighbor": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.342453139135614,
+    "mean_unique": 312.625,
+    "mean_expanded": 372.75,
+    "mean_pops": 525,
+    "mean_rebuilds": 8.125,
+    "gm_cost_ratio": 1.0174147105037088,
+    "max_cost_ratio": 1.062557547570703
+  },
+  "endpoints_v1/self/none": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 1.9035417224384015,
+    "mean_unique": 228.66666666666666,
+    "mean_expanded": 330.6666666666667,
+    "mean_pops": 504,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.0180987707689129,
+    "max_cost_ratio": 1.082924081042317
+  },
+  "original/self/none": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 2.1562029724009335,
+    "mean_unique": 253.625,
+    "mean_expanded": 368.375,
+    "mean_pops": 563.375,
+    "mean_rebuilds": 0,
+    "gm_cost_ratio": 1.020384028504099,
+    "max_cost_ratio": 1.082924081042317
+  },
+  "endpoints_v1/self/original": {
+    "observations": 9,
+    "valid": 9,
+    "mean_ms": 26.192629813320107,
+    "mean_unique": 552,
+    "mean_expanded": 767.3333333333334,
+    "mean_pops": 767.3333333333334,
+    "mean_rebuilds": 1,
+    "gm_cost_ratio": 1.021184559149339,
+    "max_cost_ratio": 1.0602815094716591
+  },
+  "original/self/original": {
+    "observations": 8,
+    "valid": 8,
+    "mean_ms": 13.620468438602984,
+    "mean_unique": 314.375,
+    "mean_expanded": 451.125,
+    "mean_pops": 451.125,
+    "mean_rebuilds": 7.875,
+    "gm_cost_ratio": 1.0220476743597886,
+    "max_cost_ratio": 1.062557547570703
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_6650000_0",
+  "map_id": "s5_6650000",
+  "family": "tree_maze",
+  "prompt": "candidate_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElUAiCezBtRb9BusuUNA4DjBfCzhn",
+    "object": "chat.completion",
+    "created": 1794986104,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"v0:T\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 649,
+      "completion_tokens": 8,
+      "total_tokens": 657,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_fc3bf93e48"
+  },
+  "request_id": "ba601049b4051d80691f36c1b25bd55563e5eea270b8b08f656a10cd90bdb4b0",
+  "cache_hit": false,
+  "prompt_seconds": 0.0005577499978244305
+}

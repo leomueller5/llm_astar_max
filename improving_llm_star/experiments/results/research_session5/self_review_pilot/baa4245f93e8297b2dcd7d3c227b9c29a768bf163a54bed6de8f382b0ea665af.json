@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5540000_0",
+  "map_id": "s5_5540000",
+  "family": "braided_maze",
+  "prompt": "endpoints_v1",
+  "feedback": "self",
+  "response": {
+    "id": "chatcmpl-ElTyQ6cu6NEYi8blQyh4vhVvIrxdx",
+    "object": "chat.completion",
+    "created": 1794985342,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"h1:R\",\"v1:B\",\"v5:T\",\"v9:T\",\"v11:T\",\"v14:T\",\"v18:T\",\"v21:T\",\"v28:T\",\"v30:T\",\"v34:T\",\"v38:T\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1449,
+      "completion_tokens": 52,
+      "total_tokens": 1501,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_40057a9dcc"
+  },
+  "request_id": "baa4245f93e8297b2dcd7d3c227b9c29a768bf163a54bed6de8f382b0ea665af",
+  "cache_hit": false,
+  "prompt_seconds": 0.0004052079748362303
+}

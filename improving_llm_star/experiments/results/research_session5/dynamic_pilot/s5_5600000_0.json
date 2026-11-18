@@ -1,0 +1,20 @@
+{
+  "case_id": "s5_5600000_0",
+  "map_id": "s5_5600000",
+  "family": "bottlenecks",
+  "prompt": "original",
+  "valid": true,
+  "length": 30.242640687119284,
+  "operation": 31,
+  "unique": 31,
+  "seconds": 0.0007490830030292273,
+  "correction_block_seconds": 0.0,
+  "search_without_correction_seconds": 0.0007490830030292273,
+  "attempts": 0,
+  "accepted": 0,
+  "events": [],
+  "requests": [],
+  "error": null,
+  "optimal_cost": 29.65685424949238,
+  "initial_request_id": "9796c3a426c0e6f49300ff72a560ac2b456ece5d9c367ebb2b9288396f9f1966"
+}

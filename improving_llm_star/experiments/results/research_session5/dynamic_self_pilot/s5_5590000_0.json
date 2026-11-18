@@ -1,0 +1,126 @@
+{
+  "path": [
+    [
+      17,
+      10
+    ],
+    [
+      16,
+      10
+    ],
+    [
+      15,
+      10
+    ],
+    [
+      14,
+      11
+    ],
+    [
+      14,
+      12
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      12,
+      14
+    ],
+    [
+      11,
+      14
+    ],
+    [
+      10,
+      15
+    ],
+    [
+      9,
+      15
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      7,
+      15
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      4,
+      16
+    ],
+    [
+      5,
+      17
+    ],
+    [
+      5,
+      18
+    ],
+    [
+      5,
+      19
+    ],
+    [
+      5,
+      20
+    ],
+    [
+      5,
+      21
+    ]
+  ],
+  "case_id": "s5_5590000_0",
+  "map_id": "s5_5590000",
+  "family": "competing_corridors",
+  "prompt": "original",
+  "valid": true,
+  "length": 22.071067811865476,
+  "operation": 54,
+  "unique": 45,
+  "seconds": 0.01154329115524888,
+  "correction_block_seconds": 0.010787874925881624,
+  "search_without_correction_seconds": 0.0007554162293672562,
+  "attempts": 1,
+  "accepted": 0,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        9,
+        15
+      ],
+      "accepted": false,
+      "old_evidence": [
+        4,
+        0.2608695652173913,
+        23.0
+      ],
+      "new_evidence": null,
+      "changed_queue": false
+    }
+  ],
+  "requests": [
+    {
+      "error": "Request failed safely: URLError"
+    }
+  ],
+  "error": null,
+  "optimal_cost": 20.899494936611667,
+  "initial_request_id": "0b7a2b9299091a40b17a2d0f5d7302b31f6ee434892cf374a6ff2a06db612763"
+}

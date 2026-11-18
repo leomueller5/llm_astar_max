@@ -1,0 +1,115 @@
+{
+  "case_id": "s5_5530000_0",
+  "map_id": "s5_5530000",
+  "family": "rooms",
+  "prompt": "original",
+  "valid": true,
+  "length": 18.899494936611667,
+  "operation": 40,
+  "unique": 34,
+  "seconds": 3.340756499907002,
+  "correction_block_seconds": 3.339125500060618,
+  "search_without_correction_seconds": 0.0016309998463839293,
+  "attempts": 1,
+  "accepted": 1,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        22,
+        18
+      ],
+      "accepted": true,
+      "old_evidence": [
+        4,
+        0.2857142857142857,
+        41.0
+      ],
+      "new_evidence": [
+        1,
+        0.13333333333333333,
+        18.31370849898476
+      ],
+      "changed_queue": true
+    }
+  ],
+  "requests": [
+    {
+      "request_id": "d8652f4eeb070aea7eefe174a02ef7856383255a3da62934f211370c875c492f",
+      "response": {
+        "id": "chatcmpl-ElU9iHcqHgbcuYHVQuVyKGF1k8cD7",
+        "object": "chat.completion",
+        "created": 1794986042,
+        "model": "gpt-4o-mini-2024-07-18",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n[[26, 16], [25, 17], [24, 18], [23, 19], [22, 20], [21, 21], [20, 22], [19, 23], [18, 24], [17, 24], [16, 24], [15, 24], [14, 24], [13, 24], [12, 24], [11, 24]]\n```",
+              "refusal": null,
+              "annotations": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1529,
+          "completion_tokens": 100,
+          "total_tokens": 1629,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "service_tier": "default",
+        "system_fingerprint": "fp_15014e7912"
+      },
+      "context": {
+        "geometry": {
+          "type": "invalid_target",
+          "targets": [
+            [
+              20,
+              16
+            ],
+            [
+              20,
+              15
+            ],
+            [
+              18,
+              13
+            ]
+          ],
+          "fact": "These coordinates are outside the allowed grid or on closed walls."
+        },
+        "observed_search": {
+          "event": "contradicted_guidance_still_searching",
+          "expanded": 16,
+          "current_node": [
+            22,
+            18
+          ],
+          "current_g": 4.82842712474619,
+          "active_target": [
+            19,
+            15
+          ],
+          "open_entries": 25
+        }
+      },
+      "cache_hit": false
+    }
+  ],
+  "error": null,
+  "optimal_cost": 18.899494936611667,
+  "initial_request_id": "acec5a362c0a09a1074e7a55617783dad008d01111f39c7e13ae5d67f6d448e7"
+}

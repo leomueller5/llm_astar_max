@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5540000_0",
+  "map_id": "s5_5540000",
+  "family": "braided_maze",
+  "prompt": "candidate_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElU0qGplamk2KKRRnFESBdRTzFmux",
+    "object": "chat.completion",
+    "created": 1794985492,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"h1:R\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1051,
+      "completion_tokens": 8,
+      "total_tokens": 1059,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_fc3bf93e48"
+  },
+  "request_id": "49b5d4e906a8c668255fe095e186399a79ec8ec5f606ec6098309bdb73939528",
+  "cache_hit": false,
+  "prompt_seconds": 0.000977042131125927
+}

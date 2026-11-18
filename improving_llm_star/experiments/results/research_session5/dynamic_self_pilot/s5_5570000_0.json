@@ -1,0 +1,146 @@
+{
+  "path": [
+    [
+      1,
+      18
+    ],
+    [
+      2,
+      17
+    ],
+    [
+      3,
+      17
+    ],
+    [
+      4,
+      17
+    ],
+    [
+      5,
+      18
+    ],
+    [
+      6,
+      17
+    ],
+    [
+      7,
+      17
+    ],
+    [
+      8,
+      17
+    ],
+    [
+      9,
+      17
+    ],
+    [
+      10,
+      17
+    ],
+    [
+      11,
+      17
+    ],
+    [
+      12,
+      18
+    ],
+    [
+      13,
+      17
+    ],
+    [
+      14,
+      16
+    ],
+    [
+      15,
+      15
+    ],
+    [
+      16,
+      14
+    ],
+    [
+      16,
+      13
+    ],
+    [
+      17,
+      12
+    ],
+    [
+      18,
+      11
+    ],
+    [
+      19,
+      10
+    ],
+    [
+      20,
+      9
+    ],
+    [
+      21,
+      8
+    ],
+    [
+      22,
+      7
+    ],
+    [
+      23,
+      6
+    ],
+    [
+      24,
+      7
+    ],
+    [
+      24,
+      8
+    ]
+  ],
+  "case_id": "s5_5570000_0",
+  "map_id": "s5_5570000",
+  "family": "u_traps",
+  "prompt": "original",
+  "valid": true,
+  "length": 31.627416997969522,
+  "operation": 184,
+  "unique": 133,
+  "seconds": 0.01224883389659226,
+  "correction_block_seconds": 0.010007125092670321,
+  "search_without_correction_seconds": 0.002241708803921938,
+  "attempts": 1,
+  "accepted": 0,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        11,
+        13
+      ],
+      "accepted": false,
+      "old_evidence": [
+        12,
+        0.45454545454545453,
+        33.0
+      ],
+      "new_evidence": null,
+      "changed_queue": false
+    }
+  ],
+  "requests": [
+    {
+      "error": "Request failed safely: URLError"
+    }
+  ],
+  "error": null,
+  "optimal_cost": 29.970562748477143,
+  "initial_request_id": "fd1d767e94fe985e9016ecbed334a2b608f85819934416186db81d3040f6f493"
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5560000_0",
+  "map_id": "s5_5560000",
+  "family": "serpentine",
+  "prompt": "candidate_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElU0rnhc9TH7kQ9vEAx0gCzT8r8oD",
+    "object": "chat.completion",
+    "created": 1794985493,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"h2:R\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 313,
+      "completion_tokens": 8,
+      "total_tokens": 321,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_fc3bf93e48"
+  },
+  "request_id": "66a3dc9b4bd84374b5c27fe0b43e4d6787b31bf90ba6cbb5de37b05059d42e13",
+  "cache_hit": false,
+  "prompt_seconds": 0.0001704581081867218
+}

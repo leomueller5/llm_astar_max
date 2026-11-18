@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5600000_0",
+  "map_id": "s5_5600000",
+  "family": "bottlenecks",
+  "prompt": "candidate_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElU0szr1KpYH7zC3do6okE3WWYf4t",
+    "object": "chat.completion",
+    "created": 1794985494,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"v0:T\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 334,
+      "completion_tokens": 8,
+      "total_tokens": 342,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_fc3bf93e48"
+  },
+  "request_id": "b8c566bb73c1806f3d883aef204bf5536e0625fa2d49089a2794cd5c1fe8d761",
+  "cache_hit": false,
+  "prompt_seconds": 0.0001296249683946371
+}

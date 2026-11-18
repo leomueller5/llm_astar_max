@@ -1,0 +1,8 @@
+{
+  "authenticated": true,
+  "requested_model": "gpt-4o-mini-2024-07-18",
+  "exact_snapshot_available": true,
+  "historical_o4_available": false,
+  "verified_utc": "2026-11-18T06:47:51.732386+00:00",
+  "paid_requests": 0
+}

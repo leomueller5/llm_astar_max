@@ -1,0 +1,111 @@
+{
+  "case_id": "s5_5550000_0",
+  "map_id": "s5_5550000",
+  "family": "tree_maze",
+  "prompt": "original",
+  "valid": true,
+  "length": 28.899494936611667,
+  "operation": 198,
+  "unique": 136,
+  "seconds": 1.387310374993831,
+  "correction_block_seconds": 1.382785707945004,
+  "search_without_correction_seconds": 0.004524667048826814,
+  "attempts": 1,
+  "accepted": 1,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        19,
+        19
+      ],
+      "accepted": true,
+      "old_evidence": [
+        2,
+        1.0,
+        55.32590180780452
+      ],
+      "new_evidence": [
+        0,
+        0.3333333333333333,
+        22.31370849898476
+      ],
+      "changed_queue": true
+    }
+  ],
+  "requests": [
+    {
+      "request_id": "1aba5e18fe54936d48bfa9b98c084ecbe009732c04efbc87492acb3e0e73bb67",
+      "response": {
+        "id": "chatcmpl-ElU9ly8PD5aWDBGJznOnna7x6KojO",
+        "object": "chat.completion",
+        "created": 1794986045,
+        "model": "gpt-4o-mini-2024-07-18",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n[[27, 25], [26, 20], [20, 15], [12, 13]]\n```",
+              "refusal": null,
+              "annotations": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2021,
+          "completion_tokens": 28,
+          "total_tokens": 2049,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "service_tier": "default",
+        "system_fingerprint": "fp_15014e7912"
+      },
+      "context": {
+        "geometry": {
+          "type": "invalid_target",
+          "targets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "fact": "These coordinates are outside the allowed grid or on closed walls."
+        },
+        "observed_search": {
+          "event": "contradicted_guidance_still_searching",
+          "expanded": 16,
+          "current_node": [
+            19,
+            19
+          ],
+          "current_g": 12.485281374238571,
+          "active_target": [
+            12,
+            13
+          ],
+          "open_entries": 25
+        }
+      },
+      "cache_hit": false
+    }
+  ],
+  "error": null,
+  "optimal_cost": 27.48528137423857,
+  "initial_request_id": "fa60f71a5b6450ff2afad7cdd78ae0bb11af927788fb88450aa7479b27744905"
+}

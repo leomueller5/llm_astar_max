@@ -1,0 +1,110 @@
+{
+  "path": [
+    [
+      26,
+      16
+    ],
+    [
+      25,
+      17
+    ],
+    [
+      24,
+      18
+    ],
+    [
+      23,
+      19
+    ],
+    [
+      22,
+      20
+    ],
+    [
+      21,
+      21
+    ],
+    [
+      21,
+      22
+    ],
+    [
+      20,
+      23
+    ],
+    [
+      19,
+      23
+    ],
+    [
+      18,
+      23
+    ],
+    [
+      17,
+      23
+    ],
+    [
+      16,
+      23
+    ],
+    [
+      15,
+      23
+    ],
+    [
+      14,
+      23
+    ],
+    [
+      13,
+      23
+    ],
+    [
+      12,
+      23
+    ],
+    [
+      11,
+      24
+    ]
+  ],
+  "case_id": "s5_5530000_0",
+  "map_id": "s5_5530000",
+  "family": "rooms",
+  "prompt": "original",
+  "valid": true,
+  "length": 18.899494936611667,
+  "operation": 205,
+  "unique": 141,
+  "seconds": 61.5762632091064,
+  "correction_block_seconds": 61.57167174993083,
+  "search_without_correction_seconds": 0.004591459175571799,
+  "attempts": 1,
+  "accepted": 0,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        22,
+        18
+      ],
+      "accepted": false,
+      "old_evidence": [
+        4,
+        0.2857142857142857,
+        41.0
+      ],
+      "new_evidence": null,
+      "changed_queue": false
+    }
+  ],
+  "requests": [
+    {
+      "error": "Request failed safely: TimeoutError"
+    }
+  ],
+  "error": null,
+  "optimal_cost": 18.899494936611667,
+  "initial_request_id": "acec5a362c0a09a1074e7a55617783dad008d01111f39c7e13ae5d67f6d448e7"
+}

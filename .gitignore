@@ -12,3 +12,6 @@ improving_llm_star/experiments/results/research_session2/**/runs.jsonl
 
 # Session 3 canonical trial records are compressed; journals remain resumable locally.
 improving_llm_star/experiments/results/research_session3/**/runs.jsonl
+
+# Session5 local live ledger; portable cached response/cost export is committed.
+improving_llm_star/experiments/results/research_session5/*.sqlite3*

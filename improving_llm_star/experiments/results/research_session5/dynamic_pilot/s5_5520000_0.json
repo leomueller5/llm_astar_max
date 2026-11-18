@@ -1,0 +1,111 @@
+{
+  "case_id": "s5_5520000_0",
+  "map_id": "s5_5520000",
+  "family": "random_walls",
+  "prompt": "original",
+  "valid": true,
+  "length": 39.798989873223334,
+  "operation": 92,
+  "unique": 78,
+  "seconds": 7.082147833891213,
+  "correction_block_seconds": 7.080173333873972,
+  "search_without_correction_seconds": 0.0019745000172406435,
+  "attempts": 1,
+  "accepted": 0,
+  "events": [
+    {
+      "expanded": 16,
+      "node": [
+        31,
+        29
+      ],
+      "accepted": false,
+      "old_evidence": [
+        2,
+        1.0,
+        76.42640687119285
+      ],
+      "new_evidence": [
+        22,
+        0.2857142857142857,
+        84.0
+      ],
+      "changed_queue": false
+    }
+  ],
+  "requests": [
+    {
+      "request_id": "01cf95caefff0bd6ac28aec0c71f77bb2a573c322c28b9ef8a9cc8be16094c31",
+      "response": {
+        "id": "chatcmpl-ElU9akpCmnmRAy5hMyqbeMOQm3tOd",
+        "object": "chat.completion",
+        "created": 1794986034,
+        "model": "gpt-4o-mini-2024-07-18",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n[[25, 31], [25, 30], [25, 29], [25, 28], [25, 27], [25, 26], [25, 25], [24, 25], [23, 25], [22, 25], [21, 25], [20, 25], [19, 25], [18, 25], [17, 25], [16, 25], [15, 25], [14, 25], [13, 25], [12, 25], [11, 25], [10, 25], [9, 25], [8, 25], [7, 25], [6, 25], [5, 25], [4, 25], [3, 25], [2, 25], [1, 25], [0, 25], [0, 24], [0, 23], [0, 22], [0, 21], [0, 20], [0, 19], [0, 18], [0, 17], [0, 16], [0, 15], [0, 14], [0, 13], [0, 12], [0, 11], [0, 10], [0, 9], [0, 8], [0, 7], [0, 6], [0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5], [9, 5], [10, 5], [11, 5], [12, 5], [13, 5], [14, 5], [15, 5], [16, 5], [17, 5], [18, 5], [19, 5], [20, 5], [21, 5], [22, 5], [23, 5], [24, 5], [25, 5], [26, 5], [27, 5], [28, 5], [29, 5], [30, 5], [31, 5], [32, 5], [33, 5]]\n```",
+              "refusal": null,
+              "annotations": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1760,
+          "completion_tokens": 514,
+          "total_tokens": 2274,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "service_tier": "default",
+        "system_fingerprint": "fp_15014e7912"
+      },
+      "context": {
+        "geometry": {
+          "type": "invalid_target",
+          "targets": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "fact": "These coordinates are outside the allowed grid or on closed walls."
+        },
+        "observed_search": {
+          "event": "contradicted_guidance_still_searching",
+          "expanded": 16,
+          "current_node": [
+            31,
+            29
+          ],
+          "current_g": 6.82842712474619,
+          "active_target": [
+            33,
+            5
+          ],
+          "open_entries": 20
+        }
+      },
+      "cache_hit": false
+    }
+  ],
+  "error": null,
+  "optimal_cost": 37.45584412271571,
+  "initial_request_id": "ba5eeb08926578a7da8d7d1f24f2ccb14804c12a460b945fa32b671fabc18d93"
+}

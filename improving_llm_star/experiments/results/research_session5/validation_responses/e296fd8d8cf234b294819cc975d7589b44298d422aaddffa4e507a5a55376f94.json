@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_6630000_0",
+  "map_id": "s5_6630000",
+  "family": "rooms",
+  "prompt": "candidate_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElUAe2VUeVu8pp56qXE3XoMzhb6Mh",
+    "object": "chat.completion",
+    "created": 1794986100,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[\"v1:B\"]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 355,
+      "completion_tokens": 8,
+      "total_tokens": 363,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_fc3bf93e48"
+  },
+  "request_id": "e296fd8d8cf234b294819cc975d7589b44298d422aaddffa4e507a5a55376f94",
+  "cache_hit": false,
+  "prompt_seconds": 0.00023466604761779308
+}

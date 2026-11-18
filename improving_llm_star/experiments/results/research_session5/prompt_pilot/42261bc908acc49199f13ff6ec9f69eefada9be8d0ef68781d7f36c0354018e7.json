@@ -1,0 +1,46 @@
+{
+  "case_id": "s5_5510000_0",
+  "map_id": "s5_5510000",
+  "family": "open",
+  "prompt": "endpoints_v1",
+  "feedback": "none",
+  "response": {
+    "id": "chatcmpl-ElTpCBVnyjNMx7nRwnvDx9zfDqsh7",
+    "object": "chat.completion",
+    "created": 1794984770,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"targets\":[]}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 205,
+      "completion_tokens": 4,
+      "total_tokens": 209,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": "fp_40057a9dcc"
+  },
+  "request_id": "42261bc908acc49199f13ff6ec9f69eefada9be8d0ef68781d7f36c0354018e7",
+  "cache_hit": false,
+  "prompt_seconds": 1.950003206729889e-05
+}

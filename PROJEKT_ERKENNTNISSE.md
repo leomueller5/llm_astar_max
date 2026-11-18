@@ -837,3 +837,22 @@ volle API-Latenz kann den Suchgewinn deutlich übersteigen. Keine bezahlten Aufr
 [Tabellen und Konfidenzintervalle](improving_llm_star/experiments/results/research_session4/final_analysis/TABLES.md),
 [PDF: Laufzeit/Pfadqualität](improving_llm_star/experiments/results/research_session4/final_analysis/final_fresh_comparison.pdf),
 [PDF: Gewinne und Regressionen pro Kartenfamilie](improving_llm_star/experiments/results/research_session4/final_analysis/families.pdf).
+
+## Forschungssitzung 5 – laufender Stand (18.11.2026)
+
+Live-Aufrufe sind jetzt bis maximal 3 USD autorisiert. Nach Modellklarstellung
+wird ausschließlich `gpt-4o-mini-2024-07-18` verwendet. Das Reproduktionsnotebook
+nennt den Alias `gpt-4o-mini`; die alten Cache-Dateien enthalten keinen sicheren
+Snapshot-Nachweis. Neue Versuche haben für Original und Verbesserungen identische
+Modellparameter. API-Schlüssel werden nur im Prozess geladen, nie protokolliert.
+Persistente Kostenreservierungen vor jedem Aufruf verhindern Budgetüberschreitung.
+
+Erster neuer Pilot: 40 echte Antworten auf zehn Entwicklungskarten mit Original-,
+kompaktem Koordinaten-, Endpoint-ID- und ASCII-Prompt. IDs verhindern ungültige
+Koordinaten, führen aber häufig zu irrelevanten Umgehungen. Die neue Idee,
+Wegpunktfortschritt pro tatsächlichem Elternpfad statt global zu führen, ist
+korrekt implementiert, erhöht bisher aber die Sucharbeit. Kein positiver Befund
+wird aus bloßem Verwerfen schlechter Hinweise abgeleitet. Nächste Tests: gezieltes
+externes Fehlerfeedback gegen gleich teure Selbstprüfung; Auswahl eines einzelnen
+bereits geometrisch erreichbaren Kandidaten. Original und alte Ergebnisse bleiben
+unverändert. Details im neuen Session-5-Log und Checkpoint.
