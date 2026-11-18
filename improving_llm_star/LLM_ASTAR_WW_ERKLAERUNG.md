@@ -124,7 +124,10 @@ Das Notebook führt diese Schritte aus (Sections 2–5):
    - `example_searches.json`: Suchdaten (erweiterte Zellen, Pfad, Wegpunkte) der zwei Beispielkarten
      aus Section 6, Grundlage für Abbildung 1
 6. **Abbildungen**: `python improving_llm_star/make_figures.py` liest nur diese Dateien und schreibt
-   `fig1`–`fig5` nach `improving_llm_star/figures/`.
+   nach `improving_llm_star/figures/`:
+   - `fig1_example_paths.png`: Beispielkarten A\* / LLM-A\* / LLM-A\*-WW
+   - `fig4_per_sample_or.png`: Operation Ratio pro Sample, LLM-A\* gegen LLM-A\*-WW
+   - `fig5_pseudocode.png`: Pseudocode von LLM-A\*-WW und der Line-of-Sight-Prüfung
 
 ### Metriken
 
@@ -205,7 +208,7 @@ Einstellungen in der ersten Zelle:
 
 | Variable | Bedeutung |
 |---|---|
-| `RUN_ABLATION` | Ablationsvarianten mitrechnen (für Abbildung 3 nötig; dauert etwa doppelt so lange) |
+| `RUN_ABLATION` | Ablationsvarianten mitrechnen (dauert etwa doppelt so lange) |
 | `LIMIT` | z.B. `50` für einen schnellen Test, `None` = alle 1000 Samples |
 | `QUERY_LLM` | `True`: GPT-4o mini neu fragen (braucht `OPENAI_API_KEY`) |
 

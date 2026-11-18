@@ -6,12 +6,10 @@ Creates all figures of the report from the result files of the notebook `LLM_ASt
 (folder improving_llm_star/results/); no search is run here:
 
   fig1_example_paths.png      maps with expanded cells, paths and waypoints: A* vs. LLM-A* vs. LLM-A*-WW
-  fig2_main_results.png       OR, SR and "worse than A*" per prompt type with 95 % confidence intervals
-  fig3_ablation.png           operation ratio of the ablation variants
   fig4_per_sample_or.png      per-sample operation ratio of LLM-A* vs. LLM-A*-WW
   fig5_pseudocode.png         pseudocode of LLM-A*-WW and of the line-of-sight validation
 
-Run the notebook (with RUN_ABLATION = True) first, then (from the repository root):
+Run the notebook first, then (from the repository root):
 
     python improving_llm_star/make_figures.py
 
@@ -25,7 +23,6 @@ import matplotlib
 matplotlib.use("Agg")                               # render to files, no window
 import matplotlib.pyplot as plt                     # noqa: E402
 import numpy as np                                  # noqa: E402
-import pandas as pd                                 # noqa: E402
 from matplotlib.lines import Line2D                 # noqa: E402
 from matplotlib.patches import Patch                # noqa: E402
 
@@ -39,7 +36,6 @@ FIGURES = HERE / "figures"
 C_WW = "#2a78d6"            # LLM-A*-WW (blue)
 C_LLM = "#eb6834"           # LLM-A* (orange)
 C_ASTAR = "#6b6a65"         # A* and other baselines (neutral grey)
-C_ABL = "#9fc2ec"           # ablation variants (light blue: "part of WW")
 C_OBST = "#2b2b2b"          # barriers
 C_TEXT = "#0b0b0b"
 C_MUTED = "#52514e"
@@ -52,16 +48,6 @@ plt.rcParams.update({
     "savefig.dpi": 300, "savefig.bbox": "tight", "figure.facecolor": "white",
 })
 
-PROMPT_ORDER = ["Few-Shot", "CoT", "RePE"]
-
-
-# ===================================================================================================
-# Helpers
-# ===================================================================================================
-def stat(df, method, prompt, metric):
-    """One (mean, ci_low, ci_high) triple from ww_with_statistics.csv."""
-    row = df[(df.Method == method) & (df.Prompt == prompt) & (df.Metric == metric)].iloc[0]
-    return row["mean"], row["ci_low"], row["ci_high"]
 
 
 # ===================================================================================================
@@ -143,105 +129,6 @@ def figure_example_paths(examples):
     fig.savefig(FIGURES / "fig1_example_paths.png")
     plt.close(fig)
     return list(examples)
-
-
-# ===================================================================================================
-# Figure 2: main results
-# ===================================================================================================
-def grouped_bars(ax, df, metric, ylabel, ref_lines):
-    """Bars for LLM-A* and LLM-A*-WW per prompt with 95 % CI, plus labelled baseline lines."""
-    x = np.arange(len(PROMPT_ORDER))
-    width = 0.36
-    for offset, method, colour in [(-width / 2 - 0.01, "LLM-A*", C_LLM),
-                                   (width / 2 + 0.01, "LLM-A*-WW", C_WW)]:
-        vals = [stat(df, method, p, metric) for p in PROMPT_ORDER]
-        means = np.array([v[0] for v in vals])
-        err = np.array([[v[0] - v[1] for v in vals], [v[2] - v[0] for v in vals]])
-        ax.bar(x + offset, means, width, color=colour, label=method, zorder=2)
-        ax.errorbar(x + offset, means, yerr=err, fmt="none", ecolor=C_TEXT, elinewidth=1, capsize=3,
-                    zorder=3)
-        # Value label just above the upper end of the confidence interval.
-        for xi, m, top in zip(x + offset, means, means + err[1]):
-            ax.text(xi, top, f"{m:.1f}", ha="center", va="bottom", color=C_TEXT, fontsize=7.5,
-                    zorder=4)
-
-    # Reference lines (baselines), labelled directly at the right end.
-    for value, text in ref_lines:
-        ax.axhline(value, color=C_ASTAR, lw=1, ls="--", zorder=1)
-        ax.text(len(PROMPT_ORDER) - 0.5, value, f" {text}", va="center", ha="left", fontsize=8,
-                color=C_MUTED)
-
-    ax.set_xticks(x, PROMPT_ORDER)
-    ax.set_ylabel(ylabel)
-    ax.set_xlim(-0.5, len(PROMPT_ORDER) - 0.5)
-    ax.grid(axis="y", color=C_GRID, lw=0.8, zorder=0)
-    ax.set_axisbelow(True)
-
-
-def figure_main_results(df):
-    fig, axes = plt.subplots(1, 3, figsize=(13, 3.8))
-    dyn = "Dynamic WA*"
-    stat_wa = "Static WA* (w=2)"
-    grouped_bars(axes[0], df, "OR", "Operation ratio (% of A*)",
-                 [(100, "A* = 100"),
-                  (stat(df, dyn, "-", "OR")[0], f"Dynamic WA* = {stat(df, dyn, '-', 'OR')[0]:.1f}"),
-                  (stat(df, stat_wa, "-", "OR")[0], f"WA* (w=2) = {stat(df, stat_wa, '-', 'OR')[0]:.1f}")])
-    axes[0].set_title("Expanded cells (lower is better)", loc="left")
-
-    grouped_bars(axes[1], df, "SR", "Storage ratio (% of A*)",
-                 [(100, "A* = 100"),
-                  (stat(df, dyn, "-", "SR")[0], f"Dynamic WA* = {stat(df, dyn, '-', 'SR')[0]:.1f}"),
-                  (stat(df, stat_wa, "-", "SR")[0], f"WA* (w=2) = {stat(df, stat_wa, '-', 'SR')[0]:.1f}")])
-    axes[1].set_title("Stored cells (lower is better)", loc="left")
-
-    metric = "Worse than A* (OR > 100 %)"
-    grouped_bars(axes[2], df, metric, "Samples worse than A* (%)",
-                 [(stat(df, stat_wa, "-", metric)[0],
-                   f"WA* (w=2) = {stat(df, stat_wa, '-', metric)[0]:.1f}")])
-    axes[2].set_title("Searches that expand more cells than A*", loc="left")
-
-    for ax in axes[:2]:
-        ax.set_ylim(0, 108)
-    axes[2].set_ylim(0, 25)
-    handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, frameon=False, loc="upper center", ncol=2,
-               bbox_to_anchor=(0.5, 1.07))
-    fig.text(0.01, -0.03, "Bars: geometric mean over 1000 samples (50x30 maps), error bars: 95 % CI. "
-             "Right panel: share with 95 % Wilson interval.", fontsize=8, color=C_MUTED)
-    fig.tight_layout(w_pad=6)
-    fig.savefig(FIGURES / "fig2_main_results.png")
-    plt.close(fig)
-
-
-# ===================================================================================================
-# Figure 3: ablation
-# ===================================================================================================
-def figure_ablation(df):
-    variants = [("LLM-A*", "LLM-A* (baseline)", C_LLM),
-                ("WW: weights only (partial)", "partial weights only", C_ABL),
-                ("WW: switching only", "early switching only", C_ABL),
-                ("WW: line-of-sight weights only", "line-of-sight weights only", C_ABL),
-                ("LLM-A*-WW", "LLM-A*-WW (full)", C_WW)]
-    fig, axes = plt.subplots(1, 3, figsize=(12, 2.9), sharey=True)
-    y = np.arange(len(variants))[::-1]
-    for ax, prompt in zip(axes, PROMPT_ORDER):
-        for yi, (method, _label, colour) in zip(y, variants):
-            m, lo, hi = stat(df, method, prompt, "OR")
-            ax.barh(yi, m, height=0.62, color=colour, zorder=2)
-            ax.errorbar(m, yi, xerr=[[m - lo], [hi - m]], fmt="none", ecolor=C_TEXT, elinewidth=1,
-                        capsize=3, zorder=3)
-            ax.text(hi + 1, yi, f"{m:.1f}", va="center", fontsize=8, color=C_TEXT)
-        ax.set_title(prompt, loc="left")
-        ax.set_xlim(0, 62)
-        ax.set_xlabel("Operation ratio (% of A*)")
-        ax.grid(axis="x", color=C_GRID, lw=0.8, zorder=0)
-        ax.set_axisbelow(True)
-    axes[0].set_yticks(y, [v[1] for v in variants])
-    fig.suptitle("Ablation: which part of LLM-A*-WW reduces the expanded cells? "
-                 "(mean, 95 % CI, lower is better)", x=0.01, ha="left", fontsize=10)
-    fig.tight_layout()
-    fig.savefig(FIGURES / "fig3_ablation.png")
-    plt.close(fig)
 
 
 # ===================================================================================================
@@ -386,7 +273,6 @@ def figure_pseudocode():
 # ===================================================================================================
 def main():
     FIGURES.mkdir(exist_ok=True)
-    stats_df = pd.read_csv(RESULTS / "ww_with_statistics.csv")
     with open(RESULTS / "per_sample_results_ww.json", encoding="utf-8") as f:
         rows = json.load(f)
     with open(RESULTS / "example_searches.json", encoding="utf-8") as f:
@@ -394,10 +280,6 @@ def main():
 
     examples = figure_example_paths(example_data)
     print(f"fig1_example_paths.png   (samples {', '.join(examples)})")
-    figure_main_results(stats_df)
-    print("fig2_main_results.png")
-    figure_ablation(stats_df)
-    print("fig3_ablation.png")
     figure_per_sample(rows)
     print("fig4_per_sample_or.png")
     figure_pseudocode()
