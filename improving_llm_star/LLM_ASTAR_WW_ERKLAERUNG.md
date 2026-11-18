@@ -1,8 +1,10 @@
 # LLM-A*-WW – Erklärung des Ablaufs
 
 Dieses Dokument erklärt das Notebook [`LLM_AStar_WW.ipynb`](LLM_AStar_WW.ipynb), die überarbeitete
-Fassung unseres ersten Colab-Notebooks `Improve.ipynb`. Das Notebook enthält den Algorithmus, das
-komplette Experiment und die Auswertung. Die Abbildungen für den Report erzeugt
+Fassung unseres ersten Colab-Notebooks `Improve.ipynb`. Der Algorithmus steht in
+[`llm_astar_ww/llmastar/pather/llm_a_star_ww/llm_a_star_ww.py`](llm_astar_ww/llmastar/pather/llm_a_star_ww/llm_a_star_ww.py) und hat
+dieselbe Ein- und Ausgabe wie `LLMAStar`; das Notebook importiert ihn und enthält das komplette
+Experiment und die Auswertung. Die Abbildungen für den Report erzeugt
 [`make_figures.py`](make_figures.py) aus den Ergebnisdateien des Notebooks.
 
 ---
@@ -74,7 +76,7 @@ Damit man sieht, welcher Teil wie viel bringt, gibt es drei abgeschwächte Varia
 
 ## 3. Ablauf der Suche (eine Karte)
 
-`LLMAStarWW.searching()` (Notebook, Section 3) macht Folgendes:
+`LLMAStarWW.searching()` (`llm_a_star_ww.py`) macht Folgendes:
 
 1. **Karte einlesen**: Start, Ziel, Wände und Kartengröße (`_initialize_parameters`, aus LLM-A\*
    übernommen).
@@ -108,7 +110,9 @@ Das Notebook führt diese Schritte aus (Sections 2–5):
    - LLM-A\* und LLM-A\*-WW, jeweils mit den Prompts Few-Shot, CoT und RePE
    - optional (`RUN_ABLATION = True`) die drei Ablationsvarianten
 
-   LLM-A\* und A\* kommen unverändert aus dem Originalcode im Ordner `llm-astar/`.
+   A\*, LLM-A\* und LLM-A\*-WW kommen aus dem eigenen Paket `improving_llm_star/llm_astar_ww/llmastar/`:
+   eine unveränderte Kopie des Originalcodes aus `llm-astar/`, ergänzt um LLM-A\*-WW, eine
+   `chatgpt.py` für GPT-4o mini und einen optionalen LLaMA-Import.
 
    LLM-A\* und LLM-A\*-WW bekommen **dieselbe** LLM-Antwort; Unterschiede kommen also nur aus der Suche.
 4. **Statistik** (Section 5): Für jedes Sample wird das Verhältnis Methode / A\* gebildet.
@@ -174,8 +178,8 @@ Line-of-Sight-Gewichtung.
 | `Improve.ipynb` (erste Fassung) | `LLM_AStar_WW.ipynb` |
 |---|---|
 | Läuft nur in Colab mit Google Drive | Läuft lokal und in Colab (Drive oder Klonen mit dem Colab-Secret `GITHUB_TOKEN`) |
-| Schreibt `llm_a_star_ww.py`, `__init__.py` und `chatgpt.py` per `%%writefile` in eine Kopie des `llmastar`-Pakets und startet ein Skript | Alles steht direkt im Notebook; der Originalcode in `llm-astar/` wird nicht verändert |
-| Patch von `chatgpt.py` auf openai ≥ 1.0 | Nicht nötig: Standard sind gespeicherte Antworten; `QUERY_LLM = True` benutzt den OpenAI-Client direkt |
+| Schreibt `llm_a_star_ww.py`, `__init__.py` und `chatgpt.py` per `%%writefile` in eine Kopie des `llmastar`-Pakets und startet ein Skript | Die Klasse liegt fest im eigenen Paket (`llm_astar_ww/llmastar/pather/llm_a_star_ww/`); das Notebook importiert sie. Der Originalcode in `llm-astar/` wird nicht verändert |
+| Patch von `chatgpt.py` auf openai ≥ 1.0 | Ebenfalls fest im eigenen Paket (`llm_astar_ww/llmastar/model/chatgpt.py`), damit LLM-A\*-WW auf neuen Karten GPT-4o mini direkt fragen kann |
 | Gewichte im Attribut `self.alpha` | Eigenes Attribut `self.waypoint_weights`, damit es nicht mit `alpha` in veränderten LLM-A\*-Versionen kollidiert |
 | Absturz, falls kein Pfad gefunden wird; der Fehler wurde abgefangen und still ohne Wegpunkte neu gerechnet | Pfadlänge = unendlich (zählt dann als ungültiger Pfad) |
 | Bei `switch_radius = 0` wurde zusätzlich umgeschaltet, wenn die erweiterte Zelle selbst auf dem Wegpunkt lag | Korrigiert: Radius 0 bedeutet jetzt exakt die Umschaltregel von LLM-A\* |
