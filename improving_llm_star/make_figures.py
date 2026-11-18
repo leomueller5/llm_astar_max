@@ -7,7 +7,6 @@ Creates all figures of the report from the result files of the notebook `LLM_ASt
 
   fig1_example_paths.png      maps with expanded cells, paths and waypoints: A* vs. LLM-A* vs. LLM-A*-WW
   fig6_failure_cases.png      the same for the worst failure case of each type (two examples)
-  fig4_per_sample_or.png      per-sample operation ratio of LLM-A* vs. LLM-A*-WW
 
 Run the notebook first, then (from the repository root):
 
@@ -164,51 +163,10 @@ def figure_failure_cases(failures):
 
 
 # ===================================================================================================
-# Figure 4: per-sample comparison
-# ===================================================================================================
-def figure_per_sample(rows):
-    fig, axes = plt.subplots(1, 3, figsize=(12, 4), sharex=True, sharey=True)
-    for ax, (pt, name) in zip(axes, [("standard", "Few-Shot"), ("cot", "CoT"), ("repe", "RePE")]):
-        a = np.array([r["A*"][0] for r in rows], dtype=float)
-        llm = 100 * np.array([r[f"LLM-A*|{pt}"][0] for r in rows]) / a
-        ww = 100 * np.array([r[f"LLM-A*-WW|{pt}"][0] for r in rows]) / a
-        ax.scatter(llm, ww, s=9, color=C_WW, alpha=0.35, lw=0, zorder=2)
-        lims = (3, 1500)
-        ax.plot(lims, lims, color=C_MUTED, lw=1, ls="--", zorder=1)
-        ax.axvline(100, color=C_GRID, lw=1, zorder=0)
-        ax.axhline(100, color=C_GRID, lw=1, zorder=0)
-        ax.set_xscale("log")
-        ax.set_yscale("log")
-        ax.set_xlim(lims)
-        ax.set_ylim(lims)
-        ticks = [5, 10, 25, 50, 100, 200, 500, 1000]
-        ax.set_xticks(ticks, [str(t) for t in ticks])
-        ax.set_yticks(ticks, [str(t) for t in ticks])
-        ax.minorticks_off()
-        better = np.mean(ww < llm) * 100
-        worse = np.mean(ww > llm) * 100
-        ax.set_title(name, loc="left")
-        ax.text(0.03, 0.97, f"WW better: {better:.1f} %\nWW worse: {worse:.1f} %\nequal: "
-                f"{100 - better - worse:.1f} %", transform=ax.transAxes, va="top", fontsize=8,
-                color=C_TEXT)
-        ax.text(lims[1] * 0.9, lims[1] * 0.75, "equal", ha="right", va="top", fontsize=8,
-                color=C_MUTED, rotation=45)
-        ax.set_xlabel("LLM-A*: operation ratio (% of A*)")
-    axes[0].set_ylabel("LLM-A*-WW: operation ratio (% of A*)")
-    fig.suptitle("Per-sample comparison (1000 samples): points below the diagonal = LLM-A*-WW "
-                 "expands fewer cells", x=0.01, ha="left", fontsize=10)
-    fig.tight_layout()
-    fig.savefig(FIGURES / "fig4_per_sample_or.png")
-    plt.close(fig)
-
-
-# ===================================================================================================
 # Main
 # ===================================================================================================
 def main():
     FIGURES.mkdir(exist_ok=True)
-    with open(RESULTS / "per_sample_results_ww.json", encoding="utf-8") as f:
-        rows = json.load(f)
     with open(RESULTS / "example_searches.json", encoding="utf-8") as f:
         example_data = json.load(f)
 
@@ -217,8 +175,6 @@ def main():
     with open(RESULTS / "failure_searches.json", encoding="utf-8") as f:
         failures = figure_failure_cases(json.load(f))
     print(f"fig6_failure_cases.png   (samples {', '.join(failures)})")
-    figure_per_sample(rows)
-    print("fig4_per_sample_or.png")
     print(f"Saved to {FIGURES}")
 
 

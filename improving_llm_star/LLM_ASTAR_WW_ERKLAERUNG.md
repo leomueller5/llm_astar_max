@@ -130,7 +130,6 @@ Das Notebook führt diese Schritte aus (Sections 2–5):
 6. **Abbildungen**: `python improving_llm_star/make_figures.py` liest nur diese Dateien und schreibt
    nach `improving_llm_star/figures/`:
    - `fig1_example_paths.png`: Beispielkarten A\* / LLM-A\* / LLM-A\*-WW
-   - `fig4_per_sample_or.png`: Operation Ratio pro Sample, LLM-A\* gegen LLM-A\*-WW
    - `fig6_failure_cases.png`: Fehlschläge von LLM-A\*-WW (schlechtester Fall bei untersuchten Zellen
      und bei der Weglänge), Suchdaten aus `failure_searches.json` (Notebook, Section 7)
 
