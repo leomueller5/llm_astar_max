@@ -26,7 +26,7 @@ def repaired_class(Original):
     class Repaired(Original):
         def searching(self,query,filepath='temp.png'):
             try:return super().searching(query,filepath)
-            except KeyError:
+            except (KeyError,IndexError):
                 if self.s_goal in getattr(self,'PARENT',{}):raise
                 from llmastar.research.incumbent import IncumbentSearch
                 graph=SegmentGridGraph(self.repair_query);original_adj=graph.adj;self.fallback_expanded_nodes=set()

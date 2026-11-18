@@ -1,0 +1,570 @@
+{
+  "scope": "Fresh-map algorithmic correctness on random synthetic targets ONLY, not held-out LLM evaluation. No model responses or optimal paths supplied as advice. Reference costs used only after search. Exact geometry disjoint from Session5 dev/validation and Session4 dev/fresh.",
+  "cases": 20,
+  "maps": 10,
+  "checked_paths": 80,
+  "shapely_edges": 6312,
+  "paid_api_calls": 0,
+  "runs": [
+    {
+      "case_id": "s5_7710000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 30
+    },
+    {
+      "case_id": "s5_7710000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 214
+    },
+    {
+      "case_id": "s5_7710000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 30
+    },
+    {
+      "case_id": "s5_7710000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 214
+    },
+    {
+      "case_id": "s5_7710000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 43
+    },
+    {
+      "case_id": "s5_7710000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0397259454650007,
+      "unique": 344
+    },
+    {
+      "case_id": "s5_7710000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 43
+    },
+    {
+      "case_id": "s5_7710000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0397259454650007,
+      "unique": 344
+    },
+    {
+      "case_id": "s5_7720000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 36
+    },
+    {
+      "case_id": "s5_7720000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 36
+    },
+    {
+      "case_id": "s5_7720000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 36
+    },
+    {
+      "case_id": "s5_7720000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 36
+    },
+    {
+      "case_id": "s5_7720000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.165108970133499,
+      "unique": 42
+    },
+    {
+      "case_id": "s5_7720000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.165108970133499,
+      "unique": 42
+    },
+    {
+      "case_id": "s5_7720000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.165108970133499,
+      "unique": 42
+    },
+    {
+      "case_id": "s5_7720000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.165108970133499,
+      "unique": 42
+    },
+    {
+      "case_id": "s5_7730000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0880525520563669,
+      "unique": 235
+    },
+    {
+      "case_id": "s5_7730000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 500
+    },
+    {
+      "case_id": "s5_7730000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0528315312338201,
+      "unique": 426
+    },
+    {
+      "case_id": "s5_7730000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 500
+    },
+    {
+      "case_id": "s5_7730000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0675366737728573,
+      "unique": 43
+    },
+    {
+      "case_id": "s5_7730000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0675366737728573,
+      "unique": 130
+    },
+    {
+      "case_id": "s5_7730000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0675366737728573,
+      "unique": 43
+    },
+    {
+      "case_id": "s5_7730000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0675366737728573,
+      "unique": 130
+    },
+    {
+      "case_id": "s5_7740000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0167508438980557,
+      "unique": 819
+    },
+    {
+      "case_id": "s5_7740000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0167508438980557,
+      "unique": 1047
+    },
+    {
+      "case_id": "s5_7740000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0167508438980557,
+      "unique": 819
+    },
+    {
+      "case_id": "s5_7740000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0167508438980557,
+      "unique": 1047
+    },
+    {
+      "case_id": "s5_7740000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0465514635797137,
+      "unique": 558
+    },
+    {
+      "case_id": "s5_7740000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 650
+    },
+    {
+      "case_id": "s5_7740000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0465514635797137,
+      "unique": 558
+    },
+    {
+      "case_id": "s5_7740000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 650
+    },
+    {
+      "case_id": "s5_7750000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1110
+    },
+    {
+      "case_id": "s5_7750000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1149
+    },
+    {
+      "case_id": "s5_7750000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1110
+    },
+    {
+      "case_id": "s5_7750000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1149
+    },
+    {
+      "case_id": "s5_7750000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1624
+    },
+    {
+      "case_id": "s5_7750000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1713
+    },
+    {
+      "case_id": "s5_7750000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1624
+    },
+    {
+      "case_id": "s5_7750000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1713
+    },
+    {
+      "case_id": "s5_7760000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2602
+    },
+    {
+      "case_id": "s5_7760000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2621
+    },
+    {
+      "case_id": "s5_7760000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2602
+    },
+    {
+      "case_id": "s5_7760000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2621
+    },
+    {
+      "case_id": "s5_7760000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2466
+    },
+    {
+      "case_id": "s5_7760000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2466
+    },
+    {
+      "case_id": "s5_7760000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2466
+    },
+    {
+      "case_id": "s5_7760000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 2466
+    },
+    {
+      "case_id": "s5_7770000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 24
+    },
+    {
+      "case_id": "s5_7770000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 90
+    },
+    {
+      "case_id": "s5_7770000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 24
+    },
+    {
+      "case_id": "s5_7770000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 90
+    },
+    {
+      "case_id": "s5_7770000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 22
+    },
+    {
+      "case_id": "s5_7770000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 22
+    },
+    {
+      "case_id": "s5_7770000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 22
+    },
+    {
+      "case_id": "s5_7770000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 22
+    },
+    {
+      "case_id": "s5_7780000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 57
+    },
+    {
+      "case_id": "s5_7780000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 110
+    },
+    {
+      "case_id": "s5_7780000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 57
+    },
+    {
+      "case_id": "s5_7780000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 15
+    },
+    {
+      "case_id": "s5_7780000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 905
+    },
+    {
+      "case_id": "s5_7780000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1277
+    },
+    {
+      "case_id": "s5_7780000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 905
+    },
+    {
+      "case_id": "s5_7780000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1277
+    },
+    {
+      "case_id": "s5_7790000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 882
+    },
+    {
+      "case_id": "s5_7790000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 882
+    },
+    {
+      "case_id": "s5_7790000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 882
+    },
+    {
+      "case_id": "s5_7790000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 882
+    },
+    {
+      "case_id": "s5_7790000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 848
+    },
+    {
+      "case_id": "s5_7790000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1092
+    },
+    {
+      "case_id": "s5_7790000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 848
+    },
+    {
+      "case_id": "s5_7790000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1092
+    },
+    {
+      "case_id": "s5_7800000_0",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1581
+    },
+    {
+      "case_id": "s5_7800000_0",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1652
+    },
+    {
+      "case_id": "s5_7800000_0",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1610
+    },
+    {
+      "case_id": "s5_7800000_0",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 1652
+    },
+    {
+      "case_id": "s5_7800000_1",
+      "mode": "none",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 64
+    },
+    {
+      "case_id": "s5_7800000_1",
+      "mode": "bounded",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 67
+    },
+    {
+      "case_id": "s5_7800000_1",
+      "mode": "full",
+      "valid": true,
+      "cost_ratio": 1.0,
+      "unique": 64
+    },
+    {
+      "case_id": "s5_7800000_1",
+      "mode": "seed",
+      "valid": true,
+      "cost_ratio": 1.0128952844385846,
+      "unique": 6
+    }
+  ]
+}

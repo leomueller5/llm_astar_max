@@ -856,3 +856,74 @@ wird aus bloßem Verwerfen schlechter Hinweise abgeleitet. Nächste Tests: gezie
 externes Fehlerfeedback gegen gleich teure Selbstprüfung; Auswahl eines einzelnen
 bereits geometrisch erreichbaren Kandidaten. Original und alte Ergebnisse bleiben
 unverändert. Details im neuen Session-5-Log und Checkpoint.
+
+### Session 5 – Abschluss mit echten Modellantworten, aber ohne bestätigten Sieger
+
+Alle 113 erfolgreichen Aufrufe stammen nachweislich von
+`gpt-4o-mini-2024-07-18` (112 Forschungsantworten plus ein Verbindungstest).
+Das historische Notebook nennt nur den Alias; alte Antworten werden nicht
+nachträglich mit einem unbewiesenen Snapshot versehen. Original und neue
+Verfahren verwenden im jeweiligen Vergleich dieselben echten Antworten.
+
+**Neuer direkter Forschungsprototyp: Evidence-Gated Online Repair (EGOR-A*).**
+Die Originalklasse wird erweitert, ohne Heuristikformel, CLOSED-Verhalten oder
+Nachbar-Wegpunktwechsel stillschweigend zu ersetzen. Wenn ein tatsächlicher
+geometrischer Widerspruch vorliegt und nach 16 Expansionen noch gesucht wird,
+kann genau eine Korrektur mit Fehlerkante und aktuellem Suchzustand angefragt
+werden. Die neue Liste wird nur bei besserer empirischer Evidenz angenommen;
+OPEN wird nur bei tatsächlichem Planwechsel neu priorisiert. Der Evidenzwert
+ist kein Optimalitäts- oder Erreichbarkeitsbeweis. Endziel-Heuristik bleibt 2h.
+
+Entwicklungspilot auf zehn Karten, kontrollierte Wiederholung derselben echten
+Korrekturen:
+
+| Original-basierte Variante | Heap-Pops | Eindeutige Zustände | Pfadkosten/Optimum (geom. Mittel) |
+|---|---:|---:|---:|
+| Original | 349,6 | 230,8 | 1,02491 |
+| EGOR mit Evidenzprüfung | 330,1 | 225,3 | 1,02789 |
+| Ungeprüfte Korrektur | 422,2 | 294,4 | 1,02167 |
+| Neustart mit derselben angenommenen Korrektur | 340,2 | 225,3 | 1,01959 |
+| Dasselbe Original ohne LLM-Wegpunkte | 320,8 | 208,8 | 1,01997 |
+
+Die mittlere Pop-Reduktion von 5,58 % ist **nicht abgesichert**:
+Verhältnis 0,9442, exploratives 95%-Karten-Bootstrap [0,7423; 1,0728]. Pfade
+werden leicht länger; die No-Guidance-Kontrolle ist besser. Zudem steigen
+Heap-Pushes 625,2→746,9 und Queue-Neuaufbauten 4,6→8,7. Push+Pop-Aufrufe steigen
+insgesamt um rund 10,5 %. Weniger Paper-„Operations“ sind hier kein Beleg für
+weniger gesamte Rechenarbeit. Der Speicher verbessert sich ebenfalls nicht.
+
+Ein Prompt mit einem bereits geometrisch erreichbaren Kandidaten senkt auf zehn
+separaten Validierungskarten Original-Pops 914,3→824,1, verschlechtert aber den
+Pfadfaktor leicht von 1,01598 auf 1,01856. Endpoint-IDs garantieren gültige
+Koordinaten durch den Compiler, nicht bessere räumliche LLM-Schlüsse. ASCII,
+mehrere Koordinaten, branchenspezifischer Fortschritt und zusätzliche Präfix-
+Seeds zeigen bisher keinen überzeugenden Gesamtgewinn. Negative Varianten
+bleiben reproduzierbar erhalten.
+
+Wichtig: Acht Online-Selbstprüfungs-Kontrollaufrufe scheiterten an Transportfehlern;
+sie sind **kein erfolgreicher Kontrollversuch**. Eine erneute kostenlose
+Verbindungsprüfung lief in das Zeitlimit der automatischen Freigabeprüfung,
+nicht in eine Sicherheitsablehnung. Neue API-Aufrufe wurden daraufhin beendet.
+Eine frische Holdout-Auswertung mit neuen LLM-Antworten fehlt ausdrücklich.
+20 frische Kartenanfragen mit 80 Shapely-geprüften Zufallszielpfaden prüfen
+nur die Korrektheit der begrenzten Suchvarianten, nicht LLM-Generalisation.
+
+API-Budget: bekannte nutzungsbasierte Schätzung **0,02871540 USD**, zusätzlich
+**0,15851520 USD** konservativ für die acht unklaren Fehler reserviert.
+Maximal berücksichtigte Exposition 0,18723060 USD, unter der 3-USD-Grenze.
+92.696 Inputtokens (davon 24.064 gecacht), 27.693 Outputtokens, Reasoning 0.
+Reasoning würde innerhalb der Outputtokens abgerechnet, nicht doppelt.
+Reservierungen und Cache bleiben über Neustarts/Checkouts erhalten. Keine
+Schlüsselwerte oder Auth-Header in Logs/Commits; Artefakte geprüft.
+
+128 Tests bestehen; Original und `main` bleiben unverändert. Wissenschaftlich
+vertretbare Schlussfolgerung: ein nachvollziehbarer Prototyp für externe,
+selektive LLM-Korrektur und ein informativer negativer/uneindeutiger Befund,
+**kein verifiziert überlegenes neues LLM-A***. Vor einer positiven Behauptung
+braucht es erfolgreiche gleich teure Kontrollaufrufe, neue unabhängige Karten
+und vergleichbare Pfadqualität. Echte Online-Latenz übersteigt Suchzeiten um
+Größenordnungen; kein End-to-End-Laufzeitgewinn.
+
+[Session-5-Abschlussbericht](improving_llm_star/experiments/results/research_session5/REPORT.md),
+[Reproduktion und Fortsetzung](improving_llm_star/experiments/research/session5/README.md),
+[PDF: tatsächliche Korrektur-Tradeoffs](improving_llm_star/experiments/results/research_session5/analysis/repair_tradeoffs.pdf).

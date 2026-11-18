@@ -73,7 +73,7 @@ class Ledger:
         # Cache first, before any accounting logic. Crash leaves a held reservation.
         raw=json.dumps(response);self.db.execute('UPDATE requests SET response=?,latency=?,status=? WHERE id=?',(raw,latency,'cached_pending_accounting',identifier));self.db.commit()
         u=response.get('usage',{});p=u.get('prompt_tokens');o=u.get('completion_tokens')
-        if not isinstance(p,int) or not isinstance(o,int):return
+        if not isinstance(p,int) or not isinstance(o,int) or p<0 or o<0:return
         cached=min(p,u.get('prompt_tokens_details',{}).get('cached_tokens',0));amount=(p-cached)*INPUT+cached*CACHED_INPUT+o*OUTPUT
         limit=self.db.execute('SELECT reserve FROM requests WHERE id=?',(identifier,)).fetchone()[0]
         if amount>limit:raise RuntimeError('Usage exceeds conservative reservation; stop all requests')

@@ -65,3 +65,39 @@ Next independent work: offline counterfactual EGOR replay/gate/restart ablations
 source/credential audit, fresh-map bounded correctness with EXPLICIT synthetic
 controls only, report/plots/pseudocode, final local commit. Network remains off.
 Exact model staysgpt-4o-mini-2024-07-18. No original/main/push/merge changes.
+
+## Final closure checkpoint (08:35UTC, no further API requests)
+
+Research wall window06:22:51→~08:35UTC;~132min includes substantial tool approval/
+network interruption. Active work was not separately metered. Do not claim120min
+measured productive CPU work. The live-research loop stopped at its~120min target;
+subsequent work completed offline audits/reports and preserved results.
+
+128 tests pass; compileall passes. Fresh OFFLINE audit20queries/10maps,80 bounded
+paths,6312 independent Shapely edges; no real-model held-out claim. Original
+unchanged. Milestoneb928a02 preserves research code/real outputs before audit.
+Later robustness-only wrapper patch handles trivial/unreachable original failures;
+no change to valid distinct-endpoint comparison behavior. API usage estimate and
+holds unchanged:known0.0287154,held0.1585152,totalexposure0.1872306,remaining2.8127694.
+No pending requests/processes.8 failed requests remain held; generic online
+control is invalid as model efficacy data. No implicit paid retries are permitted.
+
+Authoritative offline sources:
+- results/research_session5/REPORT.md
+- research/session5/README.md and EXPERIMENT_LOG.md
+- api_export.json (portable budget/cache; SQLiteignored)
+- repair_replay_controls_v2/results.json.gz (correct endpoint-preserving controls)
+- analysis/statistics.json,TABLES.md,repair_tradeoffs.pdf
+- heap_audit.json,fresh_offline_audit_v2/audit.json
+
+Exact conclusion: no reliable new winner. EGOR development pops349.6→330.1 but
+costGM1.02491→1.02789, CI includes no gain; no-guidance320.8pops is better. Heap
+push+pop API calls actually rise974.8→1077.0. Branch-local labels and seeding are
+negative variants. Candidate prompt trades slightly worse path for lower original
+operations on validation. No fresh real-model test or successful online generic
+self-control; these gaps must remain visible.
+
+Resume only after consciously restoring network access with a FREE model listing,
+keeping same ledger/holds/exact snapshot and freezing a NEW real-model holdout.
+Never recollect successful responses just to reproduce. Never reset/delete the
+export/ledger to regain budget. No main edits,pushes,merges or auth changes.

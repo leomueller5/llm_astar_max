@@ -29,8 +29,8 @@ def main():
   for mode,settings in [('none',dict(guidance=False)),('bounded',{}),('full',dict(trust=True,path_budget=True,skip_unverified=True)),('seed',dict(seed_prefix=True))]:
    r=PathConsistentSearch(score='bounded',**settings).search(q,hints)
    assert r['valid'] and r['length']<=2*c['optimal_cost']+1e-7
-   for a,b in zip(r['path'],r['path'][1:]):
-    assert max(abs(a[0]-b[0]),abs(a[1]-b[1]))==1 and not len(tree.query(LineString([a,b]),predicate='intersects'));edges+=1
+   for u,v in zip(r['path'],r['path'][1:]):
+    assert max(abs(u[0]-v[0]),abs(u[1]-v[1]))==1 and not len(tree.query(LineString([u,v]),predicate='intersects'));edges+=1
    assert abs(sum(math.dist(a,b) for a,b in zip(r['path'],r['path'][1:]))-r['length'])<1e-7
    rows.append({'case_id':c['id'],'mode':mode,'valid':True,'cost_ratio':r['length']/c['optimal_cost'],'unique':r['unique']})
  result={'scope':'Fresh-map algorithmic correctness on random synthetic targets ONLY, not held-out LLM evaluation. No model responses or optimal paths supplied as advice. Reference costs used only after search. Exact geometry disjoint from Session5 dev/validation and Session4 dev/fresh.','cases':len(cases),'maps':len(set(c['map_id'] for c in cases)),'checked_paths':len(rows),'shapely_edges':edges,'paid_api_calls':0,'runs':rows}

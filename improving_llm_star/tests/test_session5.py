@@ -117,3 +117,15 @@ def test_direct_original_repair_is_once_and_falls_back_on_unreachable():
     g=SegmentGridGraph(blocked);p.cost=g.cost;p.is_collision=lambda a,b:not math.isfinite(g.cost(a,b))
     with contextlib.redirect_stdout(io.StringIO()):r=p.searching(json.loads(json.dumps(blocked)))
     assert not r['valid'] and p.plot.path==[] and p.classical_fallback_result['valid'] is False
+
+
+def test_direct_repair_trivial_start_goal_uses_safe_fallback():
+    import sys,contextlib,io
+    sys.path.insert(0,str(ROOT/'experiments'));sys.path.insert(0,str(ROOT/'experiments/research/session5'))
+    import measure_waypoint_progress as replay
+    from repair import repaired_class
+    replay.BACKEND='installed';Original=replay.load_planner(ROOT.parent/'llm-astar',response='')
+    q={'range_x':[0,8],'range_y':[0,8],'start':[3,3],'goal':[3,3],'horizontal_barriers':[],'vertical_barriers':[]}
+    p=repaired_class(Original)();p.model=replay.OfflineModel('Generated Path: [[3,3]]');p.set_repair(q,[(3,3)],lambda c:None)
+    with contextlib.redirect_stdout(io.StringIO()):r=p.searching(json.loads(json.dumps(q)))
+    assert r['valid'] and r['length']==0 and p.plot.path==[(3,3)]

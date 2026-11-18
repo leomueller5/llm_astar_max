@@ -105,3 +105,44 @@ Live dynamic pilot running; original/candidate prompts retained for validation.
 Session5 split seed ranges corrected BEFORE generating validation/fresh:
 development5510000..5600000,validation6610000..6700000,fresh7710000..7800000.
 No cross-split case-ID collisions. Exact geometry disjointness will be audited.
+
+## Closure and execution limits
+
+At08:20 the requested~120min wall window was nearly reached; active time was not
+metered and an extended approval/transport interruption occurred. No more paid
+requests after113 successful calls and8 uncertain transport failures. A free
+connectivity check's automatic approval review timed out (not a safety denial).
+Do not claim network health or a successful online-self control from that run.
+Known estimated billed$0.02871540 plus retained worst-case$0.15851520=$0.18723060
+accounted exposure; remaining$2.81276940. Actual failed-request billing unknown.
+All113 successful responses explicitly match the approved exact model snapshot.
+
+Milestoneb928a02 freezes candidate code and real response archive before fresh
+OFFLINE correctness checks. SQLite remains local/ignored; committed portable
+api_export.json restores the ledger on a fresh checkout so budget is not reset.
+Credential-value scan passed227 tracked session files, including decompressed
+archives; no keys persisted. No Codex auth configuration was changed.
+
+Controlled replay of exact successful EGOR responses: original349.6pops,
+EGOR-gated330.1,costGM1.02491→1.02789; no-guidance ORIGINAL engine320.8/cost1.01997.
+Unconditional correction422.2/cost1.02167; evidence gate protects against one
+harmful proposal here, not a guaranteed property. Restart with the same accepted
+correction340.2/cost1.01959, charging the actual16-prefix expansions. Retaining
+CLOSED saves operations but can preserve worse paths; matched controls expose
+that tradeoff. Corrected shuffle/random controls preserve start/goal and target
+count:332.2/365.4pops. Initial replay incorrectly shuffled boundary endpoints;
+repair_replay_controls_v2 supersedes only those controls, not raw observations.
+
+4000 map-bootstrap samples (development only): EGOR/original mean-pop ratio0.9442,
+CI[0.7423,1.0728]; EGOR/no-guidance1.0290,[0.9307,1.4376]. No reliable victory,
+no held-out confirmation. Mean initial API7.679s; extra correction API2.093s/query;
+actual online loop2.131s; derived initial+loop9.810s excludes initial setup.
+Latency gain is NOT claimed. Preflight self-review17 successful outputs can be
+analyzed only separately; all8 online-self requests failed.
+
+Fresh offline audit20 cases/10 maps,80 bounded random-target paths and6312
+independent Shapely edges passed; geometry disjoint from Session5 dev/validation
+and Session4 dev/fresh. This is correctness only, NOT fresh LLM performance.
+First audit attempt completed checks but hit argparse-variable shadowing while
+writing output; fixed audit-only variable and reran into fresh_offline_audit_v2.
+No algorithm change based on fresh cases. No Session5 real-model holdout exists.
