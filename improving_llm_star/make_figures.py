@@ -39,7 +39,6 @@ C_ASTAR = "#6b6a65"         # A* and other baselines (neutral grey)
 C_OBST = "#2b2b2b"          # barriers
 C_TEXT = "#0b0b0b"
 C_MUTED = "#52514e"
-C_GRID = "#e4e3df"
 
 plt.rcParams.update({
     "font.size": 9, "axes.titlesize": 10, "axes.labelsize": 9,
