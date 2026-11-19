@@ -1,8 +1,8 @@
-import transformers
-import torch
-
 class Llama3:
   def __init__(self):
+    
+    import transformers
+    import torch
     model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
     self.pipeline = transformers.pipeline(
         "text-generation",
