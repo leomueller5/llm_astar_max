@@ -23,9 +23,8 @@ improving_llm_star/
         pather/llm_a_star_ww/llm_a_star_ww.py   implementation of LLM-A*-WW
         model/chatgpt.py       GPT wrapper updated for openai>=1.0 / GPT-4o mini
     LLM_AStar_WW.ipynb         evaluation of LLM-A*-WW (1000 samples, ablation, examples)
-    make_figures.py            report figures from the notebook results
     results/                   result files of the notebook
-    figures/                   report figures
+    figures/                   report figures (created by the notebook)
 requirements.txt
 ```
 
@@ -117,11 +116,7 @@ It runs A\*, Dynamic WA\*, static weighted A\* (w = 2), LLM-A\* and LLM-A\*-WW (
 | `LIMIT` | e.g. `50` for a quick test; `None` = all 1000 samples |
 | `QUERY_LLM` | `True`: ask GPT-4o mini again (needs `OPENAI_API_KEY`) |
 
-Results are written to `improving_llm_star/results/`. The report figures are then created with
-
-```bash
-python improving_llm_star/make_figures.py
-```
+Results are written to `improving_llm_star/results/`, the report figures (example searches and failure cases) to `improving_llm_star/figures/`.
 
 **Our results** (operation ratio in % of A\*, mean over 1000 samples):
 
@@ -132,10 +127,3 @@ python improving_llm_star/make_figures.py
 | RePE | 50.13 | 35.08 |
 
 Static weighted A\* (w = 2) reaches 34.32. All methods find a valid path in 100 % of the samples. Full tables with confidence intervals: `improving_llm_star/results/ww_with_ci.csv`.
-
----
-
-## Team notes
-
-* Leave `llm-astar/` untouched; it is only used for benchmarking.
-* Only change code in `improving_llm_star/`.
