@@ -16,7 +16,9 @@ def gm(values):
 
 def quantile(values,p):
     if not values:return None
-    v=sorted(values);return v[min(len(v)-1,int(p*(len(v)-1)))]
+    if not 0<=p<=1:raise ValueError('Quantile probability must be in [0,1]')
+    v=sorted(values);position=p*(len(v)-1);low=math.floor(position);high=math.ceil(position)
+    return v[low]+(position-low)*(v[high]-v[low])
 
 
 def clustered_ratio(pairs,bootstrap=4000,geometric=False):
@@ -134,7 +136,7 @@ def main():
     (a.output/'analysis.json').write_text(json.dumps(report,indent=2))
     with (a.output/'summary.csv').open('w',newline='') as f:
         records=[dict(stratum=s,method=m,**v) for s,data in report.items() for m,v in data['summary'].items()]
-        writer=csv.DictWriter(f,fieldnames=list(records[0]));writer.writeheader();writer.writerows(records)
+        writer=csv.DictWriter(f,fieldnames=list(records[0]),lineterminator='\n');writer.writeheader();writer.writerows(records)
     text=['# Frozen held-out benchmark','',
           'All methods reuse the same raw model outputs. Native timing excludes API latency. Whole-map paired bootstrap, 4,000 resamples. Work/path means exclude incomplete audits; capped timings and timeout counts are disclosed.','']
     for stratum in ['team_maps','challenging']:
@@ -145,7 +147,7 @@ def main():
             fmt=lambda x,n=2:'—' if x is None else f'{x:.{n}f}'
             text.append(f'| {method} | {v["valid_audits"]}/{v["cases"]} | {fmt(v["mean_ms"])} | {fmt(v["mean_unique"],1)} | {fmt(v["mean_total_heap_pops"],1)} | {fmt(v["mean_queue_operations"],1)} | {fmt(v["gm_cost_ratio"],5)} | {v["audit_timeouts"]} |')
         text.append('')
-    (a.output/'RESULTS.md').write_text('\n'.join(text)+'\n')
+    (a.output/'RESULTS.md').write_text('\n'.join(text).rstrip()+'\n')
     print(a.output/'RESULTS.md')
 
 

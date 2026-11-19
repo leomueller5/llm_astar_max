@@ -1038,7 +1038,7 @@ Zeitmessungen je Methode/Aufgabe, zusätzlich Warmup und getrennte Heap-Zählung
 frische Vorverarbeitung, gleiche Zeitgrenze: kein Timeout, alle 14 Methoden
 220/220 gültig. 3,080 gespeicherte Wege und 242,757 Einheitskanten wurden unabhängig
 mit Shapely sowie neu berechneten Kosten geprüft. Kein Geometrie-Overlap zwischen
-Entwicklung/Validierung und Test. Vollständige Testsuite: **157 bestanden**.
+Entwicklung/Validierung und Test. Vollständige Testsuite: **158 bestanden**.
 
 | Verfahren | Team: ms | Team: Heap-Pops | Team: GM Kosten/Optimum | Schwierig: ms | Schwierig: Heap-Pops |
 |---|---:|---:|---:|---:|---:|

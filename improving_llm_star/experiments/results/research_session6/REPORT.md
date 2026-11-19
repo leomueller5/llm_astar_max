@@ -66,7 +66,7 @@ On challenging maps the geometric-consensus pop ratio is 0.981 [0.924,0.999], a 
 
 At comparable high quality, the separate w=1.05 matched block gives team VM 1037.2 pops versus 1036.9 geometric-consensus and 1036.6 all-endpoints. Challenging VM uses 1382.2 versus 1394.7 and 1372.5. This again does not show a general model advantage. Maximum primary team path ratios are 1.293 for VM and 1.016 for VM-quality; averages do not imply every path is near-optimal.
 
-Complete tables, queue counts, original-paper OR/SR/RPL denominators, medians, per-family outcomes and paired intervals are in `final_analysis/analysis.json`, `summary.csv`, `RESULTS.md`; the quality block is in `quality_analysis`. Original-paper operation counts are kept distinct from unique states and audited push+pop totals.
+Complete tables, queue counts, original-paper OR/SR/RPL denominators, medians, per-family outcomes and paired intervals are in `final_analysis_corrected/analysis.json`, `summary.csv`, `RESULTS.md`; the quality block is in `quality_analysis_corrected`. Original-paper operation counts are kept distinct from unique states and audited push+pop totals.
 
 ## Prompt-only, direct-original, and structural ablations
 
@@ -130,7 +130,7 @@ Cumulative ledger: **$0.2679828 successful estimated charges + $0.1783152 unreso
 
 ## Correctness and limitations
 
-Full automated tests: **157 passed**. Independently audited **3,080 saved primary paths and 242,757 unit edges**, with Shapely collision checking and recomputed costs; all valid. Map fingerprint audit found zero development/validation/test geometry overlap. Earlier prototype/production parity also matched 360 runs and independently checked 25,061 edges. Test hashes still match the frozen algorithm; original implementation remains unchanged.
+Full automated tests: **158 passed**. Independently audited **3,080 saved primary paths and 242,757 unit edges**, with Shapely collision checking and recomputed costs; all valid. Map fingerprint audit found zero development/validation/test geometry overlap. Earlier prototype/production parity also matched 360 runs and independently checked 25,061 edges. Test hashes still match the frozen algorithm; original implementation remains unchanged.
 
 Limitations: 20 team test maps and twenty independent challenging maps are modest; structured axis-aligned geometry is assumed by the strongest anchor; arbitrary maps use safe weaker fallbacks; nominal multiple comparisons must not be mistaken for confirmatory successes. The model sees a bounded candidate pool, which may omit the right strategy. Vote thresholds can erase useful minority targets. A valid geometric route is not an optimality certificate. Macros add preprocessing, allocation and collision costs. Current model latency dwarfs millisecond search savings. Query parsing latency is separate when natural-language input, rather than the structured benchmark query, is used.
 
@@ -141,3 +141,9 @@ Present one central mechanism: **geometry-constrained model advice as verified o
 For the deadline, submit the frozen original reproduction, the bounded verified-guidance method, the high-quality w=1.05 configuration, and the negative LLM ablation. Use Cut-only as the recommended runtime control. The strongest next research direction is verified construction/repair of complete strategic route candidates, where the oracle experiment indicates headroom; another late alpha threshold sweep is poorly motivated. Do not claim that a language model improves classical planning on this evidence.
 
 Reproduction instructions: [research README](../../research/session6/README.md). Charts: [standalone PDF](figures/SESSION6_FIGURES.pdf). Raw primary output: `final_heldout/`; per-family and interval data: `final_analysis/`; factorial: `factorial_analysis/`; secondary: `supplementary_matched/`.
+
+## Final analysis correction and publication status
+
+A final audit found floor-indexed percentiles misleading for two-case family summaries (p95 could lie below the median). Linear interpolation and a regression test fix this reporting error. Corrected outputs are in `final_analysis_corrected`, `factorial_analysis_corrected`, and `quality_analysis_corrected`; the earlier outputs remain preserved. All means, medians, counts, costs and validity conclusions are unchanged. `ANALYSIS_CORRECTION.json` records the exact scope. Minor bootstrap endpoint interpolation changes do not change the rounded conclusions above.
+
+The final GitHub fetch found additional teammate notebook/figure/result updates on dev1020fe0. Byte-exact prior versions are archived in `team_before_1020fe0` before incorporating them; they are not Session6 measurements. Main remains unchanged. Publication is withheld because the configured author email could not be verified as associated with the authenticated GitHub account. No identity/authentication settings or historical commit metadata were changed, and no push to any branch was attempted.

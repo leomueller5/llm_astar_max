@@ -39,4 +39,3 @@ All methods reuse the same raw model outputs. Native timing excludes API latency
 | hybrid_first | 20/20 | 8.13 | 544.1 | 1665.0 | 3482.9 | 1.00996 | 0 |
 | witness | 20/20 | 8.97 | 1613.7 | 4091.7 | 8347.5 | 1.01583 | 0 |
 | astar | 20/20 | 12.94 | 2584.4 | 3519.9 | 7230.0 | 1.00000 | 0 |
-

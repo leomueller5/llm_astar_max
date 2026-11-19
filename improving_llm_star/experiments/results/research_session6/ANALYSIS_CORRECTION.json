@@ -1,0 +1,21 @@
+{
+  "issue": "Old percentile helper used floor index. For two-map families its p95 could incorrectly lie below the median. Linear interpolation now used; bootstrap endpoints may shift slightly too.",
+  "preserved_original_analyses": [
+    "final_analysis",
+    "factorial_analysis",
+    "quality_analysis"
+  ],
+  "corrected_directories": [
+    "final_analysis_corrected",
+    "factorial_analysis_corrected",
+    "quality_analysis_corrected"
+  ],
+  "checked_unchanged": [
+    "all mean and median runtimes",
+    "all mean work counts",
+    "geometric mean and maximum path ratios",
+    "validity counts"
+  ],
+  "raw_experiments_changed": false,
+  "regression_test": "test_final_report_quantile_interpolates_small_families"
+}

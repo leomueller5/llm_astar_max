@@ -1,0 +1,35 @@
+{
+  "reason": "Preserve pre-update team notebooks, figures, deleted explanations/scripts and experimental result snapshots before safely merging origin/dev1020fe0. New results belong to teammate, not Session6 measurements.",
+  "remote_commit": "1020fe0",
+  "preserved_paths": [
+    "README.md",
+    "improving_llm_star/LLM_ASTAR_WW_ERKLAERUNG.md",
+    "improving_llm_star/LLM_AStar_WW.ipynb",
+    "improving_llm_star/figures/fig1_example_paths.png",
+    "improving_llm_star/figures/fig4_per_sample_or.png",
+    "improving_llm_star/figures/fig5_pseudocode.png",
+    "improving_llm_star/figures/fig6_failure_cases.png",
+    "improving_llm_star/make_figures.py",
+    "improving_llm_star/results/example_searches.json",
+    "improving_llm_star/results/failure_searches.json",
+    "improving_llm_star/results/per_sample_results_ww.json",
+    "improving_llm_star/results/ww_with_ci.csv",
+    "improving_llm_star/results/ww_with_statistics.csv"
+  ],
+  "storage": "Each preserved path is gzip-compressed with .gz appended; decompress to recover byte-exact original.",
+  "sha256_uncompressed": {
+    "README.md": "e3d81deda7d02353123db1dd575f31e29abd388ff98e16333cbac673f11290fd",
+    "improving_llm_star/LLM_ASTAR_WW_ERKLAERUNG.md": "9ca3886cd3166fd3315b83c46afb815082a4a0c359df98037c99ff1e0f23904a",
+    "improving_llm_star/LLM_AStar_WW.ipynb": "8c930cf2f771b4dea6111f23fee395ca5840e39ffa6359bdaf30a7d5c9c99d64",
+    "improving_llm_star/figures/fig1_example_paths.png": "878c9d3567e9038256fd226f816675a3e0bfc8707ff916278a07f1dcf0729c55",
+    "improving_llm_star/figures/fig4_per_sample_or.png": "102d67a68e3b42bb95a3961ab3cce69ffd243a1840ac08f05dfc74642a5dadd6",
+    "improving_llm_star/figures/fig5_pseudocode.png": "be07956c516fd59a9abcae72a3ae74b0032f09680beb65e0793da12f23b60355",
+    "improving_llm_star/figures/fig6_failure_cases.png": "b277447bf76377eee8d795d0beed78b300407e37c6a32ef0c19cfbbce5323eac",
+    "improving_llm_star/make_figures.py": "c14da8f406266d3451711c5c6c28181c09a4e0f27d5f6240a704262af927c764",
+    "improving_llm_star/results/example_searches.json": "1ae85e4fe39a00ba8624ee63a3db70b57bf94ca3a86ec4e68c2aeda4b6339e41",
+    "improving_llm_star/results/failure_searches.json": "019f98b4556929d996eee23ad16f1ae9d3a885990e558c675141fcb994ddba6c",
+    "improving_llm_star/results/per_sample_results_ww.json": "bcebad564001be1997e94c51f3fbe21ce45006c9745d4f6bb8d7172b5f88c03e",
+    "improving_llm_star/results/ww_with_ci.csv": "66b08ca02aeceae1c5497080911b29dca0373527c7c015d9845c395ea1250434",
+    "improving_llm_star/results/ww_with_statistics.csv": "575ea81765f3adf2560c9777da75599ee8e758422adf5fd9277485ec1269af21"
+  }
+}

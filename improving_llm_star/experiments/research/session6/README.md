@@ -185,3 +185,5 @@ Final results: [full report](../../results/research_session6/REPORT.md),
 [budget audit](../../results/research_session6/BUDGET_REPORT.json).
 The budget export and portable response caches are sufficient for offline
 reproduction; no credentials or network access are needed.
+
+Final reporting correction: use `final_analysis_corrected`, `factorial_analysis_corrected`, and `quality_analysis_corrected` for interpolated percentiles. Older analyses remain preserved; mean/median/work/path conclusions are identical. The full suite now has158passing tests. `ANALYSIS_CORRECTION.json` explains the small-family p95 issue.

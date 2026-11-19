@@ -21,4 +21,3 @@ All methods reuse the same raw model outputs. Native timing excludes API latency
 | cut105 | 20/20 | 6.83 | 881.4 | 1398.5 | 2984.4 | 1.00000 | 0 |
 | geometry_best_quality | 20/20 | 9.06 | 878.0 | 1400.0 | 2986.2 | 1.00000 | 0 |
 | geometry_consensus_quality | 20/20 | 8.98 | 872.9 | 1394.7 | 2967.2 | 1.00000 | 0 |
-

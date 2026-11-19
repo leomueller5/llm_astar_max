@@ -39,4 +39,3 @@ All methods reuse the same raw model outputs. Native timing excludes API latency
 | original_hybrid_consensus | 19/20 | 663.24 | 2263.3 | 3391.2 | 7113.5 | 1.01687 | 1 |
 | adaptive_goal2 | 20/20 | 21.90 | 2048.8 | 5480.1 | 11281.8 | 1.01072 | 0 |
 | original_bounds_prompt | 20/20 | 492.09 | 2069.4 | 3273.1 | 7380.3 | 1.02104 | 0 |
-

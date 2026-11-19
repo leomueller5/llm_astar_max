@@ -360,3 +360,16 @@ def test_always_guidance_ablation_does_not_silently_use_geometry():
     r=HybridWaypointPlanner(provider=provider,source='hybrid_always').search(q)
     assert provider.calls==1 and not r['geometry_gate'] and r['geometry_route_available']
     assert (3,20) in r['processed_waypoints']
+
+
+def test_final_report_quantile_interpolates_small_families():
+    """A two-map p95 must not be below its median (old floor indexing was)."""
+    import importlib.util
+    from pathlib import Path
+    path=Path(__file__).resolve().parents[1]/'experiments/research/session6/analyze_final.py'
+    spec=importlib.util.spec_from_file_location('session6_report_quantile_test',path)
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    assert module.quantile([1.,3.],.95)==pytest.approx(2.9)
+    assert module.quantile([3.],.95)==3.
+    assert module.quantile([], .95) is None
+    with pytest.raises(ValueError):module.quantile([1.],1.01)

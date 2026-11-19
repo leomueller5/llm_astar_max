@@ -28,7 +28,7 @@ Ablationen und der belegten Grenze heutiger echter Modellanleitung. Oracle-
 Experimente zeigen Potenzial besserer vollständiger Routen, aber keine Leistung,
 die wir dem realen Modell zuschreiben dürfen.
 
-157 Tests bestanden; 3,080 Wege mit 242,757 Kanten unabhängig überprüft.
+158 Tests bestanden; 3,080 Wege mit 242,757 Kanten unabhängig überprüft.
 Kumulierte geschätzte API-Kosten inklusive Unsicherheitsreserve: $0.4463 von $3.
 Alle neuen Experimente nutzten `gpt-4o-mini-2024-07-18`.
 
