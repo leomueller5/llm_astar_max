@@ -41,7 +41,7 @@ def main():
             try:
                 response,rid,cached=client.chat(messages(case['query'],version,proposal),
                     {'phase':'hybrid_'+case['split'],'prompt_version':'s6_'+version+'_v1',
-                     'case_id':case['id']},max_tokens=a.original_max_tokens if version=='original' else a.max_tokens)
+                     'case_id':case['id']},max_tokens=a.original_max_tokens if version in ['original','bounds_original'] else a.max_tokens)
             except RequestUnavailable:
                 failures+=1
                 print(json.dumps({'case':case['id'],'prompt':version,'failed':True,

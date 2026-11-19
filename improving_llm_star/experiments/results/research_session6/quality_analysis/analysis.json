@@ -1,0 +1,5654 @@
+{
+  "all": {
+    "summary": {
+      "geometry_consensus_quality": {
+        "cases": 220,
+        "valid_audits": 220,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 660,
+        "mean_ms": 7.008582566314462,
+        "median_ms": 4.091645940206945,
+        "p95_ms": 20.495207980275154,
+        "mean_unique": 651.7681818181818,
+        "mean_search_operations": 1058.8363636363636,
+        "mean_total_heap_pops": 1069.418181818182,
+        "mean_total_heap_pushes": 1227.490909090909,
+        "mean_queue_operations": 2296.909090909091,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2296.909090909091,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 763.3909090909091,
+        "gm_cost_ratio": 1.000464743539982,
+        "mean_cost_ratio": 1.0004672700080057,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 98.30909090909091,
+        "mean_geometry_ms": 1.007165743927048,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 7.855194128668781,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 220,
+        "valid_audits": 220,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 660,
+        "mean_ms": 5.549266711089082,
+        "median_ms": 3.99141653906554,
+        "p95_ms": 16.12983294762671,
+        "mean_unique": 676.5454545454545,
+        "mean_search_operations": 1090.2363636363636,
+        "mean_total_heap_pops": 1090.2363636363636,
+        "mean_total_heap_pushes": 1269.1181818181817,
+        "mean_queue_operations": 2359.3545454545456,
+        "mean_heapify_calls": 0.7681818181818182,
+        "mean_all_heap_api_calls": 2360.1227272727274,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 813.2636363636364,
+        "gm_cost_ratio": 1.0004434880894788,
+        "mean_cost_ratio": 1.0004462919797106,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.020972364554389,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 6.759837319524112,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 220,
+        "valid_audits": 220,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 660,
+        "mean_ms": 7.083029305266047,
+        "median_ms": 4.337437450885773,
+        "p95_ms": 20.741957938298583,
+        "mean_unique": 651.0227272727273,
+        "mean_search_operations": 1058,
+        "mean_total_heap_pops": 1068.581818181818,
+        "mean_total_heap_pushes": 1228.1090909090908,
+        "mean_queue_operations": 2296.690909090909,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2296.690909090909,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 764.3272727272728,
+        "gm_cost_ratio": 1.0004255060511387,
+        "mean_cost_ratio": 1.0004278802860709,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 112.72727272727273,
+        "mean_geometry_ms": 1.0067998103543438,
+        "mean_provider_cpu_ms": 0.019934666554697535,
+        "mean_search_ms": 7.258376305584203,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 220,
+        "valid_audits": 220,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 660,
+        "mean_ms": 7.242803993126885,
+        "median_ms": 4.31625044438988,
+        "p95_ms": 21.078916965052485,
+        "mean_unique": 650.8636363636364,
+        "mean_search_operations": 1056.5954545454545,
+        "mean_total_heap_pops": 1067.1772727272728,
+        "mean_total_heap_pushes": 1228.0727272727272,
+        "mean_queue_operations": 2295.25,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2295.25,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 764.4318181818181,
+        "gm_cost_ratio": 1.000398665223702,
+        "mean_cost_ratio": 1.0004007379894315,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 119.93636363636364,
+        "mean_geometry_ms": 1.0019200451841408,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 9.129886793777008,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 220,
+        "valid_audits": 220,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 660,
+        "mean_ms": 7.010550400115211,
+        "median_ms": 4.300333559513092,
+        "p95_ms": 20.732708042487502,
+        "mean_unique": 652.3136363636364,
+        "mean_search_operations": 1059.240909090909,
+        "mean_total_heap_pops": 1069.8227272727272,
+        "mean_total_heap_pushes": 1228.3136363636363,
+        "mean_queue_operations": 2298.1363636363635,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2298.1363636363635,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 764.1727272727272,
+        "gm_cost_ratio": 1.000464743539982,
+        "mean_cost_ratio": 1.0004672700080057,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 97.99545454545455,
+        "mean_geometry_ms": 1.0041645410555329,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 6.394102284684777,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 0.9992179264850896,
+          "ci95": [
+            0.9950319435819347,
+            1.0019195535500411
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9999050106862978,
+          "ci95": [
+            0.9941664483451227,
+            1.0038041487361773
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9988562581509042,
+          "ci95": [
+            0.9930710069391528,
+            1.0026389952270025
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999607807380552,
+          "ci95": [
+            0.9998651902309529,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.010622224714795,
+          "ci95": [
+            1.002950211492636,
+            1.0182644556686773
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.2687914659534074,
+        "worst_absolute_runtime_regression_ms": 1.821666955947876,
+        "win_rate_heap_pops": 0.06818181818181818,
+        "tie_rate_heap_pops": 0.8045454545454546
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 0.980137751613495,
+          "ci95": [
+            0.965105171842408,
+            0.9910392526990427
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9734403477068073,
+          "ci95": [
+            0.955320150770534,
+            0.9868403802032121
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9622749260951358,
+          "ci95": [
+            0.9421851662790918,
+            0.976803575228772
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999820259329445,
+          "ci95": [
+            0.9997933917870846,
+            1.000183370457799
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.2763901383784728,
+          "ci95": [
+            1.252389008041759,
+            1.2976814785987199
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 22.439004919706672,
+        "worst_absolute_runtime_regression_ms": 8.447583066299558,
+        "win_rate_heap_pops": 0.4727272727272727,
+        "tie_rate_heap_pops": 0.01818181818181818
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0013161313405372,
+          "ci95": [
+            0.9968475713039163,
+            1.0054312692474103
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0006277787129547,
+          "ci95": [
+            0.9956729830450732,
+            1.0053565856896656
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0002444304769886,
+          "ci95": [
+            0.9959764213728846,
+            1.004611731675084
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0000268301311963,
+          "ci95": [
+            0.9998858198287315,
+            1.0001903799956393
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9779402165221567,
+          "ci95": [
+            0.9701128252397578,
+            0.9854498309283704
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.8819635658408256,
+        "worst_absolute_runtime_regression_ms": 1.5494998078793287,
+        "win_rate_heap_pops": 0.13636363636363635,
+        "tie_rate_heap_pops": 0.75
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 0.9988400797073432,
+          "ci95": [
+            0.9943462090761068,
+            1.0017732667206414
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9993710318637631,
+          "ci95": [
+            0.9931590270394386,
+            1.0036350921526265
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9980210300399278,
+          "ci95": [
+            0.9915886198975083,
+            1.0022831208186025
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999607807380552,
+          "ci95": [
+            0.9998651902309529,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0103385470489799,
+          "ci95": [
+            1.0014541002488753,
+            1.01792047348933
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 220,
+          "maps": 40,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.2714725685764932,
+        "worst_absolute_runtime_regression_ms": 1.8359578680247068,
+        "win_rate_heap_pops": 0.07727272727272727,
+        "tie_rate_heap_pops": 0.7727272727272727
+      }
+    }
+  },
+  "team_maps": {
+    "summary": {
+      "geometry_consensus_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 6.811278314562514,
+        "median_ms": 4.370853886939585,
+        "p95_ms": 20.271416986361146,
+        "mean_unique": 629.66,
+        "mean_search_operations": 1025.85,
+        "mean_total_heap_pops": 1036.89,
+        "mean_total_heap_pushes": 1192.99,
+        "mean_queue_operations": 2229.88,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2229.88,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 739.455,
+        "gm_cost_ratio": 1.0005112297715852,
+        "mean_cost_ratio": 1.0005139970088064,
+        "p95_cost_ratio": 1.00145123535195,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 98.805,
+        "mean_geometry_ms": 0.9633364749606699,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 7.479904576903209,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 5.42128378758207,
+        "median_ms": 4.127271007746458,
+        "p95_ms": 15.741082839667797,
+        "mean_unique": 656.065,
+        "mean_search_operations": 1059.405,
+        "mean_total_heap_pops": 1059.405,
+        "mean_total_heap_pushes": 1237.44,
+        "mean_queue_operations": 2296.845,
+        "mean_heapify_calls": 0.78,
+        "mean_all_heap_api_calls": 2297.625,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 792.12,
+        "gm_cost_ratio": 1.0004878477144803,
+        "mean_cost_ratio": 1.0004909211776818,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.020972364554389,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 5.99045604467392,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 6.8844562012236565,
+        "median_ms": 4.5267295790836215,
+        "p95_ms": 20.3553750179708,
+        "mean_unique": 630.095,
+        "mean_search_operations": 1026.18,
+        "mean_total_heap_pops": 1037.22,
+        "mean_total_heap_pushes": 1196.085,
+        "mean_queue_operations": 2233.305,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2233.305,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 742.915,
+        "gm_cost_ratio": 1.0004680666130286,
+        "mean_cost_ratio": 1.000470668314678,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 113.02,
+        "mean_geometry_ms": 0.9658379130996764,
+        "mean_provider_cpu_ms": 0.017373753944411874,
+        "mean_search_ms": 6.796966437250376,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 7.022892296081409,
+        "median_ms": 4.417999996803701,
+        "p95_ms": 20.625374978408217,
+        "mean_unique": 630.96,
+        "mean_search_operations": 1025.605,
+        "mean_total_heap_pops": 1036.645,
+        "mean_total_heap_pushes": 1198.195,
+        "mean_queue_operations": 2234.84,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2234.84,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 745.24,
+        "gm_cost_ratio": 1.000438540486395,
+        "mean_cost_ratio": 1.0004408117883747,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 121.07,
+        "mean_geometry_ms": 0.9597851743455976,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 8.819470681482926,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 6.806076697539538,
+        "median_ms": 4.431770532391965,
+        "p95_ms": 20.368792116642,
+        "mean_unique": 629.74,
+        "mean_search_operations": 1025.765,
+        "mean_total_heap_pops": 1036.805,
+        "mean_total_heap_pushes": 1192.53,
+        "mean_queue_operations": 2229.335,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2229.335,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 738.96,
+        "gm_cost_ratio": 1.0005112297715852,
+        "mean_cost_ratio": 1.0005139970088064,
+        "p95_cost_ratio": 1.00145123535195,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 98.425,
+        "mean_geometry_ms": 0.9621901775244623,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 6.261200637090951,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0003182594103521,
+          "ci95": [
+            0.9966447592309001,
+            1.0027832606750826
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0015359570918614,
+          "ci95": [
+            0.9967343032958854,
+            1.0050237664607142
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0006908490296351,
+          "ci95": [
+            0.9960645597399832,
+            1.0039821795102204
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999568588964599,
+          "ci95": [
+            0.9998705822727639,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0107436347894767,
+          "ci95": [
+            1.0031976159690057,
+            1.018845407262118
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.2687914659534074,
+        "worst_absolute_runtime_regression_ms": 1.821666955947876,
+        "win_rate_heap_pops": 0.06,
+        "tie_rate_heap_pops": 0.815
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 0.9790590000991123,
+          "ci95": [
+            0.9618470803606562,
+            0.990768715704207
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9723359652044435,
+          "ci95": [
+            0.9519837819064875,
+            0.9861789617509996
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9604155076097642,
+          "ci95": [
+            0.937362709062833,
+            0.9759741229807936
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999802285440078,
+          "ci95": [
+            0.9997710259110277,
+            1.000231360647927
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.2698940824667975,
+          "ci95": [
+            1.2435250764970105,
+            1.2907238647836634
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 19.712873531945768,
+        "worst_absolute_runtime_regression_ms": 7.925999816507101,
+        "win_rate_heap_pops": 0.495,
+        "tie_rate_heap_pops": 0.015
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0005546739722857,
+          "ci95": [
+            0.9957697746487348,
+            1.0047907876230662
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9993131499346709,
+          "ci95": [
+            0.9942865129881301,
+            1.0037973290651727
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9986290731583619,
+          "ci95": [
+            0.9941445409169078,
+            1.0020879638984306
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0000295131839076,
+          "ci95": [
+            0.9998705822727639,
+            1.000217988103594
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9802878801181394,
+          "ci95": [
+            0.9741992360479588,
+            0.9865805464928677
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.5096947148281024,
+        "worst_absolute_runtime_regression_ms": 1.180750085040927,
+        "win_rate_heap_pops": 0.145,
+        "tie_rate_heap_pops": 0.74
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.000400268131423,
+          "ci95": [
+            0.9969249817325647,
+            1.0027579028264857
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.001780800104067,
+          "ci95": [
+            0.9973123105543197,
+            1.005193968396156
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0005637247117858,
+          "ci95": [
+            0.9961348922601218,
+            1.0037309385913538
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999568588964599,
+          "ci95": [
+            0.9998705822727639,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0115161064394784,
+          "ci95": [
+            1.0025897365948344,
+            1.0189259229737655
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.2714725685764932,
+        "worst_absolute_runtime_regression_ms": 1.8359578680247068,
+        "win_rate_heap_pops": 0.07,
+        "tie_rate_heap_pops": 0.78
+      }
+    }
+  },
+  "challenging": {
+    "summary": {
+      "all_endpoints_quality": {
+        "cases": 20,
+        "valid_audits": 20,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 60,
+        "mean_ms": 9.441920963581651,
+        "median_ms": 2.4870623601600528,
+        "p95_ms": 27.835542103275657,
+        "mean_unique": 849.9,
+        "mean_search_operations": 1366.5,
+        "mean_total_heap_pops": 1372.5,
+        "mean_total_heap_pushes": 1526.85,
+        "mean_queue_operations": 2899.35,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2899.35,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 956.35,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 108.6,
+        "mean_geometry_ms": 1.4232687535695732,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 12.234047916717827,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 20,
+        "valid_audits": 20,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 60,
+        "mean_ms": 9.068760345689952,
+        "median_ms": 2.7921873843297362,
+        "p95_ms": 25.829749880358577,
+        "mean_unique": 860.3,
+        "mean_search_operations": 1376.2,
+        "mean_total_heap_pops": 1382.2,
+        "mean_total_heap_pushes": 1548.35,
+        "mean_queue_operations": 2930.55,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2930.55,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 978.45,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 109.8,
+        "mean_geometry_ms": 1.4164187829010189,
+        "mean_provider_cpu_ms": 0.04554379265755415,
+        "mean_search_ms": 11.872474988922477,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 20,
+        "valid_audits": 20,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 60,
+        "mean_ms": 6.829095946159214,
+        "median_ms": 2.9778130119666457,
+        "p95_ms": 20.26900020428002,
+        "mean_unique": 881.35,
+        "mean_search_operations": 1398.55,
+        "mean_total_heap_pops": 1398.55,
+        "mean_total_heap_pushes": 1585.9,
+        "mean_queue_operations": 2984.45,
+        "mean_heapify_calls": 0.65,
+        "mean_all_heap_api_calls": 2985.1,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1024.7,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 14.453650068026036,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 20,
+        "valid_audits": 20,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 60,
+        "mean_ms": 9.055287425871938,
+        "median_ms": 3.6495206877589226,
+        "p95_ms": 25.61175008304417,
+        "mean_unique": 878.05,
+        "mean_search_operations": 1394,
+        "mean_total_heap_pops": 1400,
+        "mean_total_heap_pushes": 1586.15,
+        "mean_queue_operations": 2986.15,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2986.15,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1016.3,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 93.7,
+        "mean_geometry_ms": 1.4239081763662398,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 7.723118760623038,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 20,
+        "valid_audits": 20,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 60,
+        "mean_ms": 8.981625083833933,
+        "median_ms": 3.2500835368409753,
+        "p95_ms": 25.72487504221499,
+        "mean_unique": 872.85,
+        "mean_search_operations": 1388.7,
+        "mean_total_heap_pops": 1394.7,
+        "mean_total_heap_pushes": 1572.5,
+        "mean_queue_operations": 2967.2,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2967.2,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1002.75,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 93.35,
+        "mean_geometry_ms": 1.4454584335908294,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 11.608089646324515,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0070673952641165,
+          "ci95": [
+            0.9991240145163309,
+            1.0299757549041217
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.010761032645248,
+          "ci95": [
+            0.9992628413044761,
+            1.0441603718768158
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0122367337333804,
+          "ci95": [
+            1.0,
+            1.049986416734583
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9604783158712074,
+          "ci95": [
+            0.9250002780797625,
+            1.00534251293232
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.8819635658408256,
+        "worst_absolute_runtime_regression_ms": 1.5494998078793287,
+        "win_rate_heap_pops": 0.05,
+        "tie_rate_heap_pops": 0.85
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 0.9883093203675235,
+          "ci95": [
+            0.9522444136840024,
+            1.002733004130563
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9819397208865955,
+          "ci95": [
+            0.9300998573466477,
+            1.005526279770052
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9761161853974017,
+          "ci95": [
+            0.9194290976058932,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.327959135028753,
+          "ci95": [
+            1.2583489542242927,
+            1.4084765452475807
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 22.439004919706672,
+        "worst_absolute_runtime_regression_ms": 8.447583066299558,
+        "win_rate_heap_pops": 0.25,
+        "tie_rate_heap_pops": 0.05
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 0.9872857142857143,
+          "ci95": [
+            0.9505813953488372,
+            1.001089583580966
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9813807076000871,
+          "ci95": [
+            0.930850439882698,
+            1.0021592997699318
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.979784750298958,
+          "ci95": [
+            0.9250557018432246,
+            1.001756234632947
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.001487851150867,
+          "ci95": [
+            0.9565496368556216,
+            1.0303967560572636
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.1136542222556385,
+        "worst_absolute_runtime_regression_ms": 1.2656250037252903,
+        "win_rate_heap_pops": 0.15,
+        "tie_rate_heap_pops": 0.7
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 0.9910374991037499,
+          "ci95": [
+            0.9628430049482681,
+            1.0012508778089888
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.987648287948234,
+          "ci95": [
+            0.9492352873870095,
+            1.002879602813405
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9856218135991293,
+          "ci95": [
+            0.9432624113475178,
+            1.001896847619908
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0097015029065124,
+          "ci95": [
+            0.9766392073005847,
+            1.0330289517618119
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 20,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.121674643279413,
+        "worst_absolute_runtime_regression_ms": 1.3452500570565462,
+        "win_rate_heap_pops": 0.15,
+        "tie_rate_heap_pops": 0.7
+      }
+    }
+  },
+  "family_bottlenecks": {
+    "summary": {
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.5896670520305634,
+        "median_ms": 1.5896670520305634,
+        "p95_ms": 0.044667162001132965,
+        "mean_unique": 99,
+        "mean_search_operations": 99,
+        "mean_total_heap_pops": 99,
+        "mean_total_heap_pushes": 283,
+        "mean_queue_operations": 382,
+        "mean_heapify_calls": 0.5,
+        "mean_all_heap_api_calls": 382.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 284.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.4219374861568213,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.06414598505944,
+        "median_ms": 2.06414598505944,
+        "p95_ms": 0.5638748407363892,
+        "mean_unique": 101,
+        "mean_search_operations": 101,
+        "mean_total_heap_pops": 104,
+        "mean_total_heap_pushes": 300.5,
+        "mean_queue_operations": 404.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 404.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 297.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 14.5,
+        "mean_geometry_ms": 0.2901460975408554,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.8746040295809507,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.3406249238178134,
+        "median_ms": 2.3406249238178134,
+        "p95_ms": 0.5667079240083694,
+        "mean_unique": 109,
+        "mean_search_operations": 109,
+        "mean_total_heap_pops": 112,
+        "mean_total_heap_pushes": 329,
+        "mean_queue_operations": 441,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 441,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 326,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 15,
+        "mean_geometry_ms": 0.28979149647057056,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.8876043614000082,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.2481044977903366,
+        "median_ms": 1.2481044977903366,
+        "p95_ms": 0.5641670431941748,
+        "mean_unique": 25,
+        "mean_search_operations": 25,
+        "mean_total_heap_pops": 28,
+        "mean_total_heap_pushes": 119,
+        "mean_queue_operations": 147,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 147,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 116,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 10.5,
+        "mean_geometry_ms": 0.2877080114558339,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.9141459595412016,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.2521875323727727,
+        "median_ms": 1.2521875323727727,
+        "p95_ms": 0.5665000062435865,
+        "mean_unique": 25,
+        "mean_search_operations": 25,
+        "mean_total_heap_pops": 28,
+        "mean_total_heap_pushes": 119,
+        "mean_queue_operations": 147,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 147,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 116,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 10.5,
+        "mean_geometry_ms": 0.2894584322348237,
+        "mean_provider_cpu_ms": 0.023791450075805187,
+        "mean_search_ms": 0.9583336068317294,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 0.2828282828282828,
+          "ci95": [
+            0.22727272727272727,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.25775,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.38481675392670156,
+          "ci95": [
+            0.3075916230366492,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.25775,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.25252525252525254,
+          "ci95": [
+            0.20707070707070707,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.25775,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.787704274787157,
+          "ci95": [
+            0.6182076419348255,
+            12.682695314943391
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 12.682695314943391,
+        "worst_absolute_runtime_regression_ms": 0.5218328442424536,
+        "win_rate_heap_pops": 0.5,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 0.2692307692307692,
+          "ci95": [
+            0.22842639593908629,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.36341161928306553,
+          "ci95": [
+            0.31333333333333335,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.24752475247524752,
+          "ci95": [
+            0.21243523316062177,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.6066370990406059,
+          "ci95": [
+            0.5436723560010726,
+            1.004655581908512
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.004655581908512,
+        "worst_absolute_runtime_regression_ms": 0.00262516550719738,
+        "win_rate_heap_pops": 0.5,
+        "tie_rate_heap_pops": 0.5
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 0.25,
+          "ci95": [
+            0.2112676056338028,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.3333333333333333,
+          "ci95": [
+            0.28554070473876064,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.22935779816513763,
+          "ci95": [
+            0.19617224880382775,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.5349800045409748,
+          "ci95": [
+            0.47098196943235565,
+            0.99963311300941
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.99963311300941,
+        "worst_absolute_runtime_regression_ms": -0.00020791776478290558,
+        "win_rate_heap_pops": 0.5,
+        "tie_rate_heap_pops": 0.5
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0032713884051092,
+          "ci95": [
+            1.0030191405048194,
+            1.0041352345507513
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0041352345507513,
+        "worst_absolute_runtime_regression_ms": 0.005833106115460396,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      }
+    }
+  },
+  "family_braided_maze": {
+    "summary": {
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 18.482583574950695,
+        "median_ms": 18.482583574950695,
+        "p95_ms": 16.69616694562137,
+        "mean_unique": 2548,
+        "mean_search_operations": 3543,
+        "mean_total_heap_pops": 3543,
+        "mean_total_heap_pushes": 3901,
+        "mean_queue_operations": 7444,
+        "mean_heapify_calls": 1,
+        "mean_all_heap_api_calls": 7445,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 2770,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 17.564459005370736,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 24.243062478490174,
+        "median_ms": 24.243062478490174,
+        "p95_ms": 22.761249914765358,
+        "mean_unique": 2536,
+        "mean_search_operations": 3528.5,
+        "mean_total_heap_pops": 3532.5,
+        "mean_total_heap_pushes": 3872,
+        "mean_queue_operations": 7404.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 7404.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 2737.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 249,
+        "mean_geometry_ms": 4.054083488881588,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 20.559396012686193,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 24.58752039819956,
+        "median_ms": 24.58752039819956,
+        "p95_ms": 23.34529091604054,
+        "mean_unique": 2548,
+        "mean_search_operations": 3540.5,
+        "mean_total_heap_pops": 3544.5,
+        "mean_total_heap_pushes": 3905,
+        "mean_queue_operations": 7449.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 7449.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 2770.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 4.009499913081527,
+        "mean_provider_cpu_ms": 0.15249988064169884,
+        "mean_search_ms": 20.726437564007938,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 26.856458629481494,
+        "median_ms": 26.856458629481494,
+        "p95_ms": 25.877375155687332,
+        "mean_unique": 2548,
+        "mean_search_operations": 3540.5,
+        "mean_total_heap_pops": 3544.5,
+        "mean_total_heap_pushes": 3905,
+        "mean_queue_operations": 7449.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 7449.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 2770.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 4.115458461456001,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 64.48608357459307,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 24.248250061646104,
+        "median_ms": 24.248250061646104,
+        "p95_ms": 22.884750040248036,
+        "mean_unique": 2536,
+        "mean_search_operations": 3530,
+        "mean_total_heap_pops": 3534,
+        "mean_total_heap_pushes": 3873.5,
+        "mean_queue_operations": 7407.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 7407.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 2737.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 249.5,
+        "mean_geometry_ms": 3.9739998755976558,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 20.595020498149097,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 1.0004233700254022,
+          "ci95": [
+            1.0,
+            1.0006846188954814
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0007388500806018,
+          "ci95": [
+            1.000673174015483,
+            1.0007824726134584
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.3303075459386986,
+          "ci95": [
+            1.2743475070321597,
+            1.3982425422598523
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.3982425422598523,
+        "worst_absolute_runtime_regression_ms": 6.6491239704191685,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0033970276008493,
+          "ci95": [
+            1.0,
+            1.008955223880597
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0060773853737592,
+          "ci95": [
+            1.0,
+            1.0153688524590163
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0047318611987381,
+          "ci95": [
+            1.0,
+            1.0124416796267497
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.014208515117057,
+          "ci95": [
+            1.004076787077546,
+            1.0256594432846287
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0256594432846287,
+        "worst_absolute_runtime_regression_ms": 0.5840410012751818,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.915516104986708,
+          "ci95": [
+            0.9021506538274114,
+            0.9279413271178563
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9279413271178563,
+        "worst_absolute_runtime_regression_ms": -2.00579222291708,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0029711375212225,
+          "ci95": [
+            1.0,
+            1.0078270592620202
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.005669929125886,
+          "ci95": [
+            1.0,
+            1.0143295803480041
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0047318611987381,
+          "ci95": [
+            1.0,
+            1.0124416796267497
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0139915390055336,
+          "ci95": [
+            1.0085117103129446,
+            1.0201243568307514
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0201243568307514,
+        "worst_absolute_runtime_regression_ms": 0.46054087579250336,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      }
+    }
+  },
+  "family_competing_corridors": {
+    "summary": {
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 25.658895494416356,
+        "median_ms": 25.658895494416356,
+        "p95_ms": 12.531707994639874,
+        "mean_unique": 3092,
+        "mean_search_operations": 5610,
+        "mean_total_heap_pops": 5622,
+        "mean_total_heap_pushes": 5973.5,
+        "mean_queue_operations": 11595.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 11595.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 3292.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 210,
+        "mean_geometry_ms": 1.6635621432214975,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 24.459729669615626,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 26.137458626180887,
+        "median_ms": 26.137458626180887,
+        "p95_ms": 13.196542160585523,
+        "mean_unique": 3092,
+        "mean_search_operations": 5610,
+        "mean_total_heap_pops": 5622,
+        "mean_total_heap_pushes": 5973.5,
+        "mean_queue_operations": 11595.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 11595.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 3292.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 1.6678960528224707,
+        "mean_provider_cpu_ms": 0.07595866918563843,
+        "mean_search_ms": 66.97758298832923,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 26.480833534151316,
+        "median_ms": 26.480833534151316,
+        "p95_ms": 13.691541971638799,
+        "mean_unique": 3092,
+        "mean_search_operations": 5610,
+        "mean_total_heap_pops": 5622,
+        "mean_total_heap_pushes": 5973.5,
+        "mean_queue_operations": 11595.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 11595.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 3292.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 1.6421665204688907,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 25.70956200361252,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 20.038708578795195,
+        "median_ms": 20.038708578795195,
+        "p95_ms": 9.446625132113695,
+        "mean_unique": 3092,
+        "mean_search_operations": 5613,
+        "mean_total_heap_pops": 5613,
+        "mean_total_heap_pushes": 5957,
+        "mean_queue_operations": 11570,
+        "mean_heapify_calls": 1,
+        "mean_all_heap_api_calls": 11571,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 3292.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 20.158125087618828,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 25.62466694507748,
+        "median_ms": 25.62466694507748,
+        "p95_ms": 12.727041961625218,
+        "mean_unique": 3092,
+        "mean_search_operations": 5610,
+        "mean_total_heap_pops": 5622,
+        "mean_total_heap_pushes": 5973.5,
+        "mean_queue_operations": 11595.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 11595.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 3292.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 210,
+        "mean_geometry_ms": 1.6488750698044896,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 64.09575056750327,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.018650963829237,
+          "ci95": [
+            1.0075360045412984,
+            1.053052159069619
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.053052159069619,
+        "worst_absolute_runtime_regression_ms": 0.6648341659456491,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9870330778097453,
+          "ci95": [
+            0.9638463065680521,
+            0.9951171531943026
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9951171531943026,
+        "worst_absolute_runtime_regression_ms": -0.19175000488758087,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 1.0016034206306788,
+          "ci95": [
+            1.0013458950201883,
+            1.0025974025974025
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0022039757994814,
+          "ci95": [
+            1.0014155822943323,
+            1.0052377959354704
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.304348457556758,
+          "ci95": [
+            1.2757872881404244,
+            1.3969583820706537
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.3969583820706537,
+        "worst_absolute_runtime_regression_ms": 8.447583066299558,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0200116427738357,
+          "ci95": [
+            1.0144353602915999,
+            1.0368899702205705
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0368899702205705,
+        "worst_absolute_runtime_regression_ms": 0.5560831632465124,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      }
+    }
+  },
+  "family_nested": {
+    "summary": {
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 14.304499956779182,
+        "median_ms": 14.304499956779182,
+        "p95_ms": 13.064374914392829,
+        "mean_unique": 1319,
+        "mean_search_operations": 2476.5,
+        "mean_total_heap_pops": 2488.5,
+        "mean_total_heap_pushes": 2733.5,
+        "mean_queue_operations": 5222,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 5222,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1465,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 1.4498959062620997,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 12.96318753156811,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 13.760833535343409,
+        "median_ms": 13.760833535343409,
+        "p95_ms": 12.990749906748533,
+        "mean_unique": 1314.5,
+        "mean_search_operations": 2464,
+        "mean_total_heap_pops": 2476,
+        "mean_total_heap_pushes": 2712.5,
+        "mean_queue_operations": 5188.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 5188.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1452,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 233,
+        "mean_geometry_ms": 1.433999976143241,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 12.342833448201418,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 10.461395839229226,
+        "median_ms": 10.461395839229226,
+        "p95_ms": 9.574541822075844,
+        "mean_unique": 1319,
+        "mean_search_operations": 2475.5,
+        "mean_total_heap_pops": 2475.5,
+        "mean_total_heap_pushes": 2707.5,
+        "mean_queue_operations": 5183,
+        "mean_heapify_calls": 1,
+        "mean_all_heap_api_calls": 5184,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1465,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 91.14072902593762,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 13.550479081459343,
+        "median_ms": 13.550479081459343,
+        "p95_ms": 12.853250140324235,
+        "mean_unique": 1314.5,
+        "mean_search_operations": 2464,
+        "mean_total_heap_pops": 2476,
+        "mean_total_heap_pushes": 2712.5,
+        "mean_queue_operations": 5188.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 5188.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1452,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 233,
+        "mean_geometry_ms": 1.5388124156743288,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 12.476479052565992,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 14.11499991081655,
+        "median_ms": 14.11499991081655,
+        "p95_ms": 13.277208898216486,
+        "mean_unique": 1319,
+        "mean_search_operations": 2469.5,
+        "mean_total_heap_pops": 2481.5,
+        "mean_total_heap_pushes": 2728,
+        "mean_queue_operations": 5209.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 5209.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1465.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 1.4272710541263223,
+        "mean_provider_cpu_ms": 0.02762500662356615,
+        "mean_search_ms": 12.510791537351906,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 0.9971870604781997,
+          "ci95": [
+            0.9950842696629213,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9976062811183455,
+          "ci95": [
+            0.9956918835085301,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9867524173137682,
+          "ci95": [
+            0.9619267704572679,
+            1.0162911723843122
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0162911723843122,
+        "worst_absolute_runtime_regression_ms": 0.21283398382365704,
+        "win_rate_heap_pops": 0.5,
+        "tie_rate_heap_pops": 0.5
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.002221324717286,
+          "ci95": [
+            1.0,
+            1.003896563939072
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.004047412546979,
+          "ci95": [
+            1.0,
+            1.0073221757322175
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.00342335488779,
+          "ci95": [
+            1.0,
+            1.0056039850560399
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.02573727634765,
+          "ci95": [
+            1.0220509973268856,
+            1.0290328376879956
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0290328376879956,
+        "worst_absolute_runtime_regression_ms": 0.4218737594783306,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 1.0024237527772166,
+          "ci95": [
+            0.9925407925407925,
+            1.0099786172487526
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0051128689947906,
+          "ci95": [
+            0.9965643117887052,
+            1.0120861797162375
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.3492463269467982,
+          "ci95": [
+            1.3176296885115462,
+            1.3867200274381246
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.3867200274381246,
+        "worst_absolute_runtime_regression_ms": 3.702667076140642,
+        "win_rate_heap_pops": 0.5,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.002221324717286,
+          "ci95": [
+            1.0,
+            1.003896563939072
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.004047412546979,
+          "ci95": [
+            1.0,
+            1.0073221757322175
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.00342335488779,
+          "ci95": [
+            1.0,
+            1.0056039850560399
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0416605808520543,
+          "ci95": [
+            1.0329845566890645,
+            1.0494874614010914
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0494874614010914,
+        "worst_absolute_runtime_regression_ms": 0.7050829008221626,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      }
+    }
+  },
+  "family_open": {
+    "summary": {
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.15606300439685583,
+        "median_ms": 0.15606300439685583,
+        "p95_ms": 0.13041705824434757,
+        "mean_unique": 2,
+        "mean_search_operations": 2,
+        "mean_total_heap_pops": 3,
+        "mean_total_heap_pushes": 11,
+        "mean_queue_operations": 14,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 14,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 10,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 1,
+        "mean_geometry_ms": 0.03310397733002901,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.10795798152685165,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.1557080540806055,
+        "median_ms": 0.1557080540806055,
+        "p95_ms": 0.1293751411139965,
+        "mean_unique": 2,
+        "mean_search_operations": 2,
+        "mean_total_heap_pops": 3,
+        "mean_total_heap_pushes": 11,
+        "mean_queue_operations": 14,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 14,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 10,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 1,
+        "mean_geometry_ms": 0.032145995646715164,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.10812492109835148,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.021104002371430397,
+        "median_ms": 0.021104002371430397,
+        "p95_ms": 0.018333084881305695,
+        "mean_unique": 0,
+        "mean_search_operations": 0,
+        "mean_total_heap_pops": 0,
+        "mean_total_heap_pushes": 0,
+        "mean_queue_operations": 0,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 0,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0,
+        "mean_search_ms": 0.0,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.15618756879121065,
+        "median_ms": 0.15618756879121065,
+        "p95_ms": 0.13037514872848988,
+        "mean_unique": 2,
+        "mean_search_operations": 2,
+        "mean_total_heap_pops": 3,
+        "mean_total_heap_pushes": 11,
+        "mean_queue_operations": 14,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 14,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 10,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 1,
+        "mean_geometry_ms": 0.03258360084146261,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.10764540638774633,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.15681248623877764,
+        "median_ms": 0.15681248623877764,
+        "p95_ms": 0.13195793144404888,
+        "mean_unique": 2,
+        "mean_search_operations": 2,
+        "mean_total_heap_pops": 3,
+        "mean_total_heap_pushes": 11,
+        "mean_queue_operations": 14,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 14,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 10,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 1,
+        "mean_geometry_ms": 0.03160454798489809,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.11047942098230124,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9977255960333321,
+          "ci95": [
+            0.9920108830518248,
+            1.0018271884618046
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0018271884618046,
+        "worst_absolute_runtime_regression_ms": 0.0003320164978504181,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": null,
+          "ci95": null,
+          "zero_denominator_bootstrap_fraction": 1.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": null,
+          "ci95": null,
+          "zero_denominator_bootstrap_fraction": 1.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": null,
+          "ci95": null,
+          "zero_denominator_bootstrap_fraction": 1.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 7.378129102723933,
+          "ci95": [
+            7.056921513843028,
+            7.624778139689103
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 7.624778139689103,
+        "worst_absolute_runtime_regression_ms": 0.1581660471856594,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9969298791554522,
+          "ci95": [
+            0.992329768178628,
+            1.0002251549219379
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0002251549219379,
+        "worst_absolute_runtime_regression_ms": 4.0978193283081055e-05,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9929569884091346,
+          "ci95": [
+            0.9804271687060546,
+            1.0020583040907192
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0020583040907192,
+        "worst_absolute_runtime_regression_ms": 0.0003739260137081146,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      }
+    }
+  },
+  "family_random_walls": {
+    "summary": {
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.870062387548387,
+        "median_ms": 0.870062387548387,
+        "p95_ms": 0.5512498319149017,
+        "mean_unique": 5.5,
+        "mean_search_operations": 5.5,
+        "mean_total_heap_pops": 10.5,
+        "mean_total_heap_pushes": 33.5,
+        "mean_queue_operations": 44,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 44,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 28.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 3.5,
+        "mean_geometry_ms": 0.5392079474404454,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.4426039522513747,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.867791473865509,
+        "median_ms": 0.867791473865509,
+        "p95_ms": 0.5532919894903898,
+        "mean_unique": 5.5,
+        "mean_search_operations": 5.5,
+        "mean_total_heap_pops": 10.5,
+        "mean_total_heap_pushes": 33.5,
+        "mean_queue_operations": 44,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 44,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 28.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 3.5,
+        "mean_geometry_ms": 0.5439165979623795,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.3080625319853425,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.04702096339315176,
+        "median_ms": 0.04702096339315176,
+        "p95_ms": 0.02645794302225113,
+        "mean_unique": 0,
+        "mean_search_operations": 0,
+        "mean_total_heap_pops": 0,
+        "mean_total_heap_pushes": 0,
+        "mean_queue_operations": 0,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 0,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0,
+        "mean_search_ms": 0.0,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.865875044837594,
+        "median_ms": 0.865875044837594,
+        "p95_ms": 0.5472500342875719,
+        "mean_unique": 5.5,
+        "mean_search_operations": 5.5,
+        "mean_total_heap_pops": 10.5,
+        "mean_total_heap_pushes": 33.5,
+        "mean_queue_operations": 44,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 44,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 28.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 3.5,
+        "mean_geometry_ms": 0.5493544740602374,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.32914604526013136,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.9369376348331571,
+        "median_ms": 0.9369376348331571,
+        "p95_ms": 0.5571672227233648,
+        "mean_unique": 5.5,
+        "mean_search_operations": 5.5,
+        "mean_total_heap_pops": 10.5,
+        "mean_total_heap_pushes": 33.5,
+        "mean_queue_operations": 44,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 44,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 28.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 3.5,
+        "mean_geometry_ms": 0.5583749152719975,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.303395907394588,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0768625885244933,
+          "ci95": [
+            1.010734499070789,
+            1.107524432653066
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.107524432653066,
+        "worst_absolute_runtime_regression_ms": 0.12783310376107693,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0796806180402325,
+          "ci95": [
+            1.0070039568737372,
+            1.1136920550440035
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.1136920550440035,
+        "worst_absolute_runtime_regression_ms": 0.13441708870232105,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": null,
+          "ci95": null,
+          "zero_denominator_bootstrap_fraction": 1.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": null,
+          "ci95": null,
+          "zero_denominator_bootstrap_fraction": 1.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": null,
+          "ci95": null,
+          "zero_denominator_bootstrap_fraction": 1.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 19.925955727432306,
+          "ci95": [
+            19.482545621160916,
+            21.05859938751804
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 21.05859938751804,
+        "worst_absolute_runtime_regression_ms": 1.249124063178897,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0820702599286618,
+          "ci95": [
+            1.0181218598710613,
+            1.1116150150892727
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.1116150150892727,
+        "worst_absolute_runtime_regression_ms": 0.13220799155533314,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      }
+    }
+  },
+  "family_rooms": {
+    "summary": {
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.5467913364991546,
+        "median_ms": 2.5467913364991546,
+        "p95_ms": 2.175582805648446,
+        "mean_unique": 49,
+        "mean_search_operations": 51.5,
+        "mean_total_heap_pops": 57.5,
+        "mean_total_heap_pushes": 166.5,
+        "mean_queue_operations": 224,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 224,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 134,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 22.5,
+        "mean_geometry_ms": 1.0250210762023926,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.508416491560638,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.8979795277118683,
+        "median_ms": 1.8979795277118683,
+        "p95_ms": 0.9749999735504389,
+        "mean_unique": 54,
+        "mean_search_operations": 56.5,
+        "mean_total_heap_pops": 56.5,
+        "mean_total_heap_pushes": 159,
+        "mean_queue_operations": 215.5,
+        "mean_heapify_calls": 0.5,
+        "mean_all_heap_api_calls": 216,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 134.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.1481455294415355,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.5666459696367383,
+        "median_ms": 2.5666459696367383,
+        "p95_ms": 2.1349999587982893,
+        "mean_unique": 49,
+        "mean_search_operations": 51.5,
+        "mean_total_heap_pops": 57.5,
+        "mean_total_heap_pushes": 166.5,
+        "mean_queue_operations": 224,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 224,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 134,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 22.5,
+        "mean_geometry_ms": 1.028416445478797,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.4032084727659822,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.519959001801908,
+        "median_ms": 2.519959001801908,
+        "p95_ms": 2.059333957731724,
+        "mean_unique": 49,
+        "mean_search_operations": 51.5,
+        "mean_total_heap_pops": 57.5,
+        "mean_total_heap_pushes": 166.5,
+        "mean_queue_operations": 224,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 224,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 134,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 22.5,
+        "mean_geometry_ms": 1.1041664984077215,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.4468954177573323,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.5295414961874485,
+        "median_ms": 2.5295414961874485,
+        "p95_ms": 2.1615829318761826,
+        "mean_unique": 49,
+        "mean_search_operations": 51.5,
+        "mean_total_heap_pops": 57.5,
+        "mean_total_heap_pushes": 166.5,
+        "mean_queue_operations": 224,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 224,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 134,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 22.5,
+        "mean_geometry_ms": 1.0560831287875772,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.4229585649445653,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0077959402692471,
+          "ci95": [
+            0.9813462182433177,
+            1.0275161469415164
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0275161469415164,
+        "worst_absolute_runtime_regression_ms": 0.08029211312532425,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 1.0176991150442478,
+          "ci95": [
+            0.8230088495575221,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.25775,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0394431554524362,
+          "ci95": [
+            0.7888631090487239,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.25775,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9074074074074074,
+          "ci95": [
+            0.75,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.25775,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.35230434899948,
+          "ci95": [
+            1.0628626270197898,
+            2.189743606888253
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 2.189743606888253,
+        "worst_absolute_runtime_regression_ms": 1.1599999852478504,
+        "win_rate_heap_pops": 0.5,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0185268759537145,
+          "ci95": [
+            1.0059410955472365,
+            1.036742948263675
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.036742948263675,
+        "worst_absolute_runtime_regression_ms": 0.07566600106656551,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0146684581001,
+          "ci95": [
+            0.9877020804125151,
+            1.0347858215261347
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0347858215261347,
+        "worst_absolute_runtime_regression_ms": 0.10079191997647285,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      }
+    }
+  },
+  "family_serpentine": {
+    "summary": {
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 3.1981250504031777,
+        "median_ms": 3.1981250504031777,
+        "p95_ms": 2.730750013142824,
+        "mean_unique": 267.5,
+        "mean_search_operations": 267.5,
+        "mean_total_heap_pops": 267.5,
+        "mean_total_heap_pushes": 672.5,
+        "mean_queue_operations": 940,
+        "mean_heapify_calls": 1,
+        "mean_all_heap_api_calls": 941,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 674.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 2.730645937845111,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 3.210874507203698,
+        "median_ms": 3.210874507203698,
+        "p95_ms": 2.902165986597538,
+        "mean_unique": 201,
+        "mean_search_operations": 201,
+        "mean_total_heap_pops": 205,
+        "mean_total_heap_pushes": 474,
+        "mean_queue_operations": 679,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 679,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 470,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 27,
+        "mean_geometry_ms": 0.5969374906271696,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 2.6976249646395445,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 2.8081039199605584,
+        "median_ms": 2.8081039199605584,
+        "p95_ms": 2.3098329547792673,
+        "mean_unique": 129,
+        "mean_search_operations": 129,
+        "mean_total_heap_pops": 133,
+        "mean_total_heap_pushes": 347,
+        "mean_queue_operations": 480,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 480,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 343,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 28,
+        "mean_geometry_ms": 0.38968748413026333,
+        "mean_provider_cpu_ms": 0.0347294844686985,
+        "mean_search_ms": 2.4036039831116796,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.673833467066288,
+        "median_ms": 1.673833467066288,
+        "p95_ms": 1.5907918568700552,
+        "mean_unique": 25,
+        "mean_search_operations": 25,
+        "mean_total_heap_pops": 29,
+        "mean_total_heap_pushes": 126.5,
+        "mean_queue_operations": 155.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 155.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 122.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 16,
+        "mean_geometry_ms": 0.3898540744557977,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 1.2272915337234735,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 3.6495206877589226,
+        "median_ms": 3.6495206877589226,
+        "p95_ms": 3.3133751712739468,
+        "mean_unique": 245,
+        "mean_search_operations": 245,
+        "mean_total_heap_pops": 249,
+        "mean_total_heap_pushes": 581,
+        "mean_queue_operations": 830,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 830,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 577,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 31.5,
+        "mean_geometry_ms": 0.391291338019073,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 3.0768750002607703,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 0.497196261682243,
+          "ci95": [
+            0.42616033755274263,
+            0.5536912751677853
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.5106382978723404,
+          "ci95": [
+            0.43509615384615385,
+            0.5706106870229007
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.4822429906542056,
+          "ci95": [
+            0.4092827004219409,
+            0.540268456375839
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.8780469417875169,
+          "ci95": [
+            0.8458602741599467,
+            0.9020255916156324
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9020255916156324,
+        "worst_absolute_runtime_regression_ms": -0.3591252025216818,
+        "win_rate_heap_pops": 1.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 0.6487804878048781,
+          "ci95": [
+            0.5838150289017341,
+            0.6962025316455697
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.7069219440353461,
+          "ci95": [
+            0.6339754816112084,
+            0.7598475222363406
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.6417910447761194,
+          "ci95": [
+            0.5739644970414202,
+            0.6909871244635193
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.8745604705697743,
+          "ci95": [
+            0.7958996712959502,
+            0.9394223290135927
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9394223290135927,
+        "worst_absolute_runtime_regression_ms": -0.2132081426680088,
+        "win_rate_heap_pops": 1.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 4.586206896551724,
+          "ci95": [
+            3.4827586206896552,
+            5.689655172413793
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 3.0868167202572345,
+          "ci95": [
+            2.4133333333333336,
+            3.7142857142857144
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 5.16,
+          "ci95": [
+            3.88,
+            6.44
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.67764832954517,
+          "ci95": [
+            1.452001998126866,
+            1.8819635658408256
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.8819635658408256,
+        "worst_absolute_runtime_regression_ms": 1.5494998078793287,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 0.5341365461847389,
+          "ci95": [
+            0.4410480349344978,
+            0.6133828996282528
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.5783132530120482,
+          "ci95": [
+            0.4833110814419226,
+            0.6564215148188803
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.5265306122448979,
+          "ci95": [
+            0.4311111111111111,
+            0.6075471698113207
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.7694445819637052,
+          "ci95": [
+            0.6971238798446022,
+            0.8295664302297202
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.8295664302297202,
+        "worst_absolute_runtime_regression_ms": -0.6792913191020489,
+        "win_rate_heap_pops": 1.0,
+        "tie_rate_heap_pops": 0.0
+      }
+    }
+  },
+  "family_team_random_walls": {
+    "summary": {
+      "geometry_consensus_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 6.811278314562514,
+        "median_ms": 4.370853886939585,
+        "p95_ms": 20.271416986361146,
+        "mean_unique": 629.66,
+        "mean_search_operations": 1025.85,
+        "mean_total_heap_pops": 1036.89,
+        "mean_total_heap_pushes": 1192.99,
+        "mean_queue_operations": 2229.88,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2229.88,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 739.455,
+        "gm_cost_ratio": 1.0005112297715852,
+        "mean_cost_ratio": 1.0005139970088064,
+        "p95_cost_ratio": 1.00145123535195,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 98.805,
+        "mean_geometry_ms": 0.9633364749606699,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 7.479904576903209,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 5.42128378758207,
+        "median_ms": 4.127271007746458,
+        "p95_ms": 15.741082839667797,
+        "mean_unique": 656.065,
+        "mean_search_operations": 1059.405,
+        "mean_total_heap_pops": 1059.405,
+        "mean_total_heap_pushes": 1237.44,
+        "mean_queue_operations": 2296.845,
+        "mean_heapify_calls": 0.78,
+        "mean_all_heap_api_calls": 2297.625,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 792.12,
+        "gm_cost_ratio": 1.0004878477144803,
+        "mean_cost_ratio": 1.0004909211776818,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.020972364554389,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 5.99045604467392,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "hybrid_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 6.8844562012236565,
+        "median_ms": 4.5267295790836215,
+        "p95_ms": 20.3553750179708,
+        "mean_unique": 630.095,
+        "mean_search_operations": 1026.18,
+        "mean_total_heap_pops": 1037.22,
+        "mean_total_heap_pushes": 1196.085,
+        "mean_queue_operations": 2233.305,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2233.305,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 742.915,
+        "gm_cost_ratio": 1.0004680666130286,
+        "mean_cost_ratio": 1.000470668314678,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 113.02,
+        "mean_geometry_ms": 0.9658379130996764,
+        "mean_provider_cpu_ms": 0.017373753944411874,
+        "mean_search_ms": 6.796966437250376,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 7.022892296081409,
+        "median_ms": 4.417999996803701,
+        "p95_ms": 20.625374978408217,
+        "mean_unique": 630.96,
+        "mean_search_operations": 1025.605,
+        "mean_total_heap_pops": 1036.645,
+        "mean_total_heap_pushes": 1198.195,
+        "mean_queue_operations": 2234.84,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2234.84,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 745.24,
+        "gm_cost_ratio": 1.000438540486395,
+        "mean_cost_ratio": 1.0004408117883747,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 121.07,
+        "mean_geometry_ms": 0.9597851743455976,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 8.819470681482926,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 200,
+        "valid_audits": 200,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 600,
+        "mean_ms": 6.806076697539538,
+        "median_ms": 4.431770532391965,
+        "p95_ms": 20.368792116642,
+        "mean_unique": 629.74,
+        "mean_search_operations": 1025.765,
+        "mean_total_heap_pops": 1036.805,
+        "mean_total_heap_pushes": 1192.53,
+        "mean_queue_operations": 2229.335,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 2229.335,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 738.96,
+        "gm_cost_ratio": 1.0005112297715852,
+        "mean_cost_ratio": 1.0005139970088064,
+        "p95_cost_ratio": 1.00145123535195,
+        "max_cost_ratio": 1.0156393868926756,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 98.425,
+        "mean_geometry_ms": 0.9621901775244623,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 6.261200637090951,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0003182594103521,
+          "ci95": [
+            0.9966447592309001,
+            1.0027832606750826
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0015359570918614,
+          "ci95": [
+            0.9967343032958854,
+            1.0050237664607142
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0006908490296351,
+          "ci95": [
+            0.9960645597399832,
+            1.0039821795102204
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999568588964599,
+          "ci95": [
+            0.9998705822727639,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0107436347894767,
+          "ci95": [
+            1.0031976159690057,
+            1.018845407262118
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.2687914659534074,
+        "worst_absolute_runtime_regression_ms": 1.821666955947876,
+        "win_rate_heap_pops": 0.06,
+        "tie_rate_heap_pops": 0.815
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 0.9790590000991123,
+          "ci95": [
+            0.9618470803606562,
+            0.990768715704207
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9723359652044435,
+          "ci95": [
+            0.9519837819064875,
+            0.9861789617509996
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9604155076097642,
+          "ci95": [
+            0.937362709062833,
+            0.9759741229807936
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999802285440078,
+          "ci95": [
+            0.9997710259110277,
+            1.000231360647927
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.2698940824667975,
+          "ci95": [
+            1.2435250764970105,
+            1.2907238647836634
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 19.712873531945768,
+        "worst_absolute_runtime_regression_ms": 7.925999816507101,
+        "win_rate_heap_pops": 0.495,
+        "tie_rate_heap_pops": 0.015
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0005546739722857,
+          "ci95": [
+            0.9957697746487348,
+            1.0047907876230662
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 0.9993131499346709,
+          "ci95": [
+            0.9942865129881301,
+            1.0037973290651727
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9986290731583619,
+          "ci95": [
+            0.9941445409169078,
+            1.0020879638984306
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0000295131839076,
+          "ci95": [
+            0.9998705822727639,
+            1.000217988103594
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9802878801181394,
+          "ci95": [
+            0.9741992360479588,
+            0.9865805464928677
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.5096947148281024,
+        "worst_absolute_runtime_regression_ms": 1.180750085040927,
+        "win_rate_heap_pops": 0.145,
+        "tie_rate_heap_pops": 0.74
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.000400268131423,
+          "ci95": [
+            0.9969249817325647,
+            1.0027579028264857
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.001780800104067,
+          "ci95": [
+            0.9973123105543197,
+            1.005193968396156
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0005637247117858,
+          "ci95": [
+            0.9961348922601218,
+            1.0037309385913538
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 0.9999568588964599,
+          "ci95": [
+            0.9998705822727639,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0115161064394784,
+          "ci95": [
+            1.0025897365948344,
+            1.0189259229737655
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 200,
+          "maps": 20,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.2714725685764932,
+        "worst_absolute_runtime_regression_ms": 1.8359578680247068,
+        "win_rate_heap_pops": 0.07,
+        "tie_rate_heap_pops": 0.78
+      }
+    }
+  },
+  "family_tree_maze": {
+    "summary": {
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 16.553582972846925,
+        "median_ms": 16.553582972846925,
+        "p95_ms": 12.401374988257885,
+        "mean_unique": 1412,
+        "mean_search_operations": 1907.5,
+        "mean_total_heap_pops": 1913.5,
+        "mean_total_heap_pushes": 2121,
+        "mean_queue_operations": 4034.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 4034.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1557,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 3.9506874745711684,
+        "mean_provider_cpu_ms": 0.1408334355801344,
+        "mean_search_ms": 12.464520405046642,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 11.632812442258,
+        "median_ms": 11.632812442258,
+        "p95_ms": 7.968040881678462,
+        "mean_unique": 1412,
+        "mean_search_operations": 1909,
+        "mean_total_heap_pops": 1909,
+        "mean_total_heap_pushes": 2115,
+        "mean_queue_operations": 4024,
+        "mean_heapify_calls": 1,
+        "mean_all_heap_api_calls": 4025,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1557,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 9.90595854818821,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 15.77308343257755,
+        "median_ms": 15.77308343257755,
+        "p95_ms": 11.056124931201339,
+        "mean_unique": 1406,
+        "mean_search_operations": 1902,
+        "mean_total_heap_pops": 1908,
+        "mean_total_heap_pushes": 2102.5,
+        "mean_queue_operations": 4010.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 4010.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1538,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 164.5,
+        "mean_geometry_ms": 3.9408750599250197,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 11.956479051150382,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 18.604000099003315,
+        "median_ms": 18.604000099003315,
+        "p95_ms": 14.958125073462725,
+        "mean_unique": 1412,
+        "mean_search_operations": 1907.5,
+        "mean_total_heap_pops": 1913.5,
+        "mean_total_heap_pushes": 2121,
+        "mean_queue_operations": 4034.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 4034.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1557,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 256,
+        "mean_geometry_ms": 3.9362499956041574,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 14.325813041068614,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 15.934229013510048,
+        "median_ms": 15.934229013510048,
+        "p95_ms": 11.135749984532595,
+        "mean_unique": 1406,
+        "mean_search_operations": 1901.5,
+        "mean_total_heap_pops": 1907.5,
+        "mean_total_heap_pushes": 2102,
+        "mean_queue_operations": 4009.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 4009.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 1538,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 162.5,
+        "mean_geometry_ms": 3.9427083684131503,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 12.07731303293258,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 1.002357255107386,
+          "ci95": [
+            1.0013966480446927,
+            1.0025789813023855
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0026093439363817,
+          "ci95": [
+            1.0023966446974235,
+            1.0026649945132466
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.423007811310828,
+          "ci95": [
+            1.353533404594821,
+            1.55638947796733
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.55638947796733,
+        "worst_absolute_runtime_regression_ms": 5.408206954598427,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0028825995807127,
+          "ci95": [
+            1.0,
+            1.0155807365439093
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0059842912355068,
+          "ci95": [
+            1.0,
+            1.0295384615384615
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.004267425320057,
+          "ci95": [
+            1.0,
+            1.0220183486238532
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0494830033458988,
+          "ci95": [
+            1.0105294573909431,
+            1.121674643279413
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.121674643279413,
+        "worst_absolute_runtime_regression_ms": 1.3452500570565462,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.8897862225733788,
+          "ci95": [
+            0.8290728234556093,
+            0.9306025692969101
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9306025692969101,
+        "worst_absolute_runtime_regression_ms": -1.5440841671079397,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0031454783748361,
+          "ci95": [
+            1.0,
+            1.0170212765957447
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0062351914203767,
+          "ci95": [
+            1.0,
+            1.030807147258164
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.004267425320057,
+          "ci95": [
+            1.0,
+            1.0220183486238532
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.0388694023922806,
+          "ci95": [
+            0.9987017091546181,
+            1.1136542222556385
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.1136542222556385,
+        "worst_absolute_runtime_regression_ms": 1.2656250037252903,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.5
+      }
+    }
+  },
+  "family_u_traps": {
+    "summary": {
+      "hybrid_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.5744584379717708,
+        "median_ms": 1.5744584379717708,
+        "p95_ms": 0.5628340877592564,
+        "mean_unique": 21.5,
+        "mean_search_operations": 21.5,
+        "mean_total_heap_pops": 28.5,
+        "mean_total_heap_pushes": 79,
+        "mean_queue_operations": 107.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 107.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 67.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 8.5,
+        "mean_geometry_ms": 0.8107500616461039,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.8687505032867193,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_consensus_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.595020992681384,
+        "median_ms": 1.595020992681384,
+        "p95_ms": 0.5509168840944767,
+        "mean_unique": 21.5,
+        "mean_search_operations": 21.5,
+        "mean_total_heap_pops": 28.5,
+        "mean_total_heap_pushes": 79,
+        "mean_queue_operations": 107.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 107.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 67.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 8.5,
+        "mean_geometry_ms": 0.8099795086309314,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.6887710187584162,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "cut105": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 0.9215624304488301,
+        "median_ms": 0.9215624304488301,
+        "p95_ms": 0.025082845240831375,
+        "mean_unique": 22,
+        "mean_search_operations": 22,
+        "mean_total_heap_pops": 22,
+        "mean_total_heap_pushes": 64,
+        "mean_queue_operations": 86,
+        "mean_heapify_calls": 0.5,
+        "mean_all_heap_api_calls": 86.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 67,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 0,
+        "mean_geometry_ms": 0,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.4665000597015023,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "all_endpoints_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.6827500658109784,
+        "median_ms": 1.6827500658109784,
+        "p95_ms": 0.5669582169502974,
+        "mean_unique": 21.5,
+        "mean_search_operations": 21.5,
+        "mean_total_heap_pops": 28.5,
+        "mean_total_heap_pushes": 79,
+        "mean_queue_operations": 107.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 107.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 67.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 8.5,
+        "mean_geometry_ms": 0.8038750384002924,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.7688750047236681,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      },
+      "geometry_best_quality": {
+        "cases": 2,
+        "valid_audits": 2,
+        "audit_timeouts": 0,
+        "native_timeouts": 0,
+        "native_trials": 6,
+        "mean_ms": 1.6150835435837507,
+        "median_ms": 1.6150835435837507,
+        "p95_ms": 0.6330420728772879,
+        "mean_unique": 21.5,
+        "mean_search_operations": 21.5,
+        "mean_total_heap_pops": 28.5,
+        "mean_total_heap_pushes": 79,
+        "mean_queue_operations": 107.5,
+        "mean_heapify_calls": 0,
+        "mean_all_heap_api_calls": 107.5,
+        "mean_open_rebuilds": 0,
+        "mean_storage_states": 67.5,
+        "gm_cost_ratio": 1.0,
+        "mean_cost_ratio": 1.0,
+        "p95_cost_ratio": 1.0,
+        "max_cost_ratio": 1.0,
+        "paper_operation_ratio_percent": null,
+        "paper_storage_ratio_percent": null,
+        "paper_ratio_cases": 0,
+        "mean_macro_probes": 8.5,
+        "mean_geometry_ms": 0.8110414491966367,
+        "mean_provider_cpu_ms": 0.0,
+        "mean_search_ms": 0.6849580677226186,
+        "scope": "Work and path means on completed audits. Native times include capped timed trials; timeouts are censored lower bounds, not complete solution times."
+      }
+    },
+    "comparisons": {
+      "geometry_consensus_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9871082858445357,
+          "ci95": [
+            0.9799015540951372,
+            1.0216315818390056
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 1.0216315818390056,
+        "worst_absolute_runtime_regression_ms": 0.011917203664779663,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "cut105": {
+        "total_heap_pops": {
+          "ratio": 1.2954545454545454,
+          "ci95": [
+            1.2045454545454546,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.2565,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.25,
+          "ci95": [
+            1.1569767441860466,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.2565,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 0.9772727272727273,
+          "ci95": [
+            0.9318181818181818,
+            null
+          ],
+          "zero_denominator_bootstrap_fraction": 0.2565,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 1.7084663892005227,
+          "ci95": [
+            1.4224549080346616,
+            22.439004919706672
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 22.439004919706672,
+        "worst_absolute_runtime_regression_ms": 0.7680407725274563,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 0.0
+      },
+      "all_endpoints_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9356460415367638,
+          "ci95": [
+            0.9240822067471871,
+            0.9927258675017977
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9927258675017977,
+        "worst_absolute_runtime_regression_ms": -0.004124129191040993,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      },
+      "geometry_best_quality": {
+        "total_heap_pops": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "queue_operations": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "unique": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "path_cost": {
+          "ratio": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "native_seconds": {
+          "ratio": 0.9748464370320833,
+          "ci95": [
+            0.8890942827876767,
+            0.9957482885709503
+          ],
+          "zero_denominator_bootstrap_fraction": 0.0,
+          "cases": 2,
+          "maps": 2,
+          "resampling": "Whole maps, all paired queries retained"
+        },
+        "worst_runtime_ratio": 0.9957482885709503,
+        "worst_absolute_runtime_regression_ms": -0.011042226105928421,
+        "win_rate_heap_pops": 0.0,
+        "tie_rate_heap_pops": 1.0
+      }
+    }
+  }
+}

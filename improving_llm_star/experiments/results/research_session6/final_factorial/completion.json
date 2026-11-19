@@ -1,0 +1,20 @@
+{
+  "trials": 2080,
+  "cases": 40,
+  "methods": [
+    "original",
+    "original_hybrid_prompt",
+    "original_hybrid_consensus",
+    "always_hybrid",
+    "hybrid",
+    "ww",
+    "robust_original",
+    "adaptive",
+    "adaptive_goal2",
+    "constant05_goal2",
+    "no_macros",
+    "no_sharing",
+    "euclidean_anchor"
+  ],
+  "all_frozen_sources_match": true
+}

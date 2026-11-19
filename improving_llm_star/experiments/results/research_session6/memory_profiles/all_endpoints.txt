@@ -1,0 +1,43 @@
+         339738 function calls (339502 primitive calls) in 0.077 seconds
+
+   Ordered by: cumulative time
+   List reduced from 108 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        4    0.000    0.000    0.077    0.019 final_benchmark.py:143(execute)
+        4    0.000    0.000    0.076    0.019 hybrid_guidance.py:82(search)
+        4    0.007    0.002    0.066    0.017 macro_guidance.py:47(search)
+     3493    0.013    0.000    0.030    0.000 geometry.py:11(get)
+    26011    0.007    0.000    0.022    0.000 macro_guidance.py:84(offer)
+    24976    0.007    0.000    0.011    0.000 geometry.py:59(blocked)
+     5704    0.001    0.000    0.009    0.000 macro_guidance.py:71(h)
+     2915    0.001    0.000    0.008    0.000 cuts.py:143(value)
+     5830    0.001    0.000    0.007    0.000 cuts.py:88(value)
+        4    0.000    0.000    0.007    0.002 geometric_advice.py:70(portfolio)
+    72461    0.006    0.000    0.006    0.000 {method 'get' of 'dict' objects}
+      206    0.002    0.000    0.006    0.000 cuts.py:29(octile_transform)
+       63    0.000    0.000    0.006    0.000 geometric_advice.py:81(offer)
+     5830    0.001    0.000    0.006    0.000 cuts.py:73(vector)
+       62    0.000    0.000    0.005    0.000 geometric_advice.py:57(assess)
+      501    0.001    0.000    0.004    0.000 geometry.py:147(lattice_segment)
+     1016    0.001    0.000    0.003    0.000 geometry.py:87(cost)
+      412    0.002    0.000    0.003    0.000 cuts.py:16(_past_min)
+     1203    0.002    0.000    0.003    0.000 geometry.py:113(clear_piece)
+       73    0.000    0.000    0.003    0.000 geometric_advice.py:37(first_conflict)
+      277    0.000    0.000    0.003    0.000 macro_guidance.py:95(connect)
+  729/493    0.000    0.000    0.003    0.000 {built-in method builtins.all}
+     8515    0.002    0.000    0.002    0.000 {built-in method builtins.any}
+     1016    0.001    0.000    0.002    0.000 geometry.py:77(collision)
+    27444    0.002    0.000    0.002    0.000 search.py:53(inside)
+     5704    0.002    0.000    0.002    0.000 <string>:2(__init__)
+        4    0.000    0.000    0.002    0.001 cuts.py:117(__init__)
+        8    0.000    0.000    0.002    0.000 cuts.py:43(__init__)
+     2185    0.001    0.000    0.002    0.000 search.py:14(octile)
+    18840    0.002    0.000    0.002    0.000 {built-in method math.hypot}
+    15404    0.002    0.000    0.002    0.000 {built-in method builtins.max}
+    19993    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+      422    0.000    0.000    0.001    0.000 geometry.py:94(valid_point)
+     5350    0.001    0.000    0.001    0.000 {built-in method _heapq.heappop}
+    19783    0.001    0.000    0.001    0.000 geometry.py:67(degenerate_collision)
+
+

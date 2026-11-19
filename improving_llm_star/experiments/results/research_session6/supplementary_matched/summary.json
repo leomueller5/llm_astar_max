@@ -1,0 +1,134 @@
+{
+  "scope": "Secondary preregistered follow-up, twenty new map-disjoint geometries. No primary candidate changes. All modes bypass the same geometry validity gate. Offline cached model replay; random seeds averaged within case, maps are bootstrap units. Nominal confidence intervals, no multiplicity adjustment.",
+  "summary": {
+    "all_endpoints": {
+      "valid": 20,
+      "trials": 20,
+      "mean_pops": 1951.5,
+      "mean_seconds": 0.009447637479752302,
+      "gm_cost_ratio": 1.0265238111033335
+    },
+    "geometry_best": {
+      "valid": 20,
+      "trials": 20,
+      "mean_pops": 1965.6,
+      "mean_seconds": 0.009093587391544134,
+      "gm_cost_ratio": 1.009770774882654
+    },
+    "geometry_consensus": {
+      "valid": 20,
+      "trials": 20,
+      "mean_pops": 1949.4,
+      "mean_seconds": 0.009032893588300794,
+      "gm_cost_ratio": 1.009770774882654
+    },
+    "random_endpoint": {
+      "valid": 100,
+      "trials": 100,
+      "mean_pops": 1982.5900000000001,
+      "mean_seconds": 0.009418943694327025,
+      "gm_cost_ratio": 1.0165454506796257
+    },
+    "real": {
+      "valid": 20,
+      "trials": 20,
+      "mean_pops": 1984.45,
+      "mean_seconds": 0.009218708251137287,
+      "gm_cost_ratio": 1.0144862823121585
+    }
+  },
+  "paired_real_over_control": {
+    "all_endpoints": {
+      "pops": {
+        "ratio_of_means": 1.01688444786062,
+        "paired_map_bootstrap_ci95": [
+          0.9856183191051994,
+          1.0593896200482633
+        ]
+      },
+      "seconds": {
+        "ratio_of_means": 0.9757686269074523,
+        "paired_map_bootstrap_ci95": [
+          0.8792670728427753,
+          1.034923007261043
+        ]
+      },
+      "cost_ratio": {
+        "ratio_of_means": 0.9879787230738926,
+        "paired_map_bootstrap_ci95": [
+          0.9711027971376881,
+          1.0027053464208913
+        ]
+      }
+    },
+    "geometry_best": {
+      "pops": {
+        "ratio_of_means": 1.0095899470899472,
+        "paired_map_bootstrap_ci95": [
+          0.8961482608995184,
+          1.2926467101737131
+        ]
+      },
+      "seconds": {
+        "ratio_of_means": 1.0137592409030456,
+        "paired_map_bootstrap_ci95": [
+          0.9601375989762968,
+          1.1313620973493455
+        ]
+      },
+      "cost_ratio": {
+        "ratio_of_means": 1.0047761711489884,
+        "paired_map_bootstrap_ci95": [
+          1.0,
+          1.0120854295288468
+        ]
+      }
+    },
+    "geometry_consensus": {
+      "pops": {
+        "ratio_of_means": 1.0179798912485893,
+        "paired_map_bootstrap_ci95": [
+          0.9163058865475657,
+          1.3159004109275019
+        ]
+      },
+      "seconds": {
+        "ratio_of_means": 1.0205708902712145,
+        "paired_map_bootstrap_ci95": [
+          0.9736246379890626,
+          1.1244543841392598
+        ]
+      },
+      "cost_ratio": {
+        "ratio_of_means": 1.0047761711489884,
+        "paired_map_bootstrap_ci95": [
+          1.0,
+          1.0121371942741417
+        ]
+      }
+    },
+    "random_endpoint": {
+      "pops": {
+        "ratio_of_means": 1.0009381667414847,
+        "paired_map_bootstrap_ci95": [
+          0.9365598943665422,
+          1.0282093556281047
+        ]
+      },
+      "seconds": {
+        "ratio_of_means": 0.9787411996835336,
+        "paired_map_bootstrap_ci95": [
+          0.9091199346547195,
+          1.0010935647276447
+        ]
+      },
+      "cost_ratio": {
+        "ratio_of_means": 0.9977863106762004,
+        "paired_map_bootstrap_ci95": [
+          0.9911428820229502,
+          1.004997283710922
+        ]
+      }
+    }
+  }
+}

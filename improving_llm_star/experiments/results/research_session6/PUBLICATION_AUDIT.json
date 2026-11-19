@@ -1,0 +1,32 @@
+{
+  "branch": "research/waypoint-guidance",
+  "head": "85723dec3f74b5f9aa73f3d23259fee46be2d056",
+  "remote": "https://github.com/leomueller5/llm_astar_max.git",
+  "main_unchanged": true,
+  "preserved_contribution_ancestors": {
+    "572603d": true,
+    "2ed7763": true,
+    "31f2798": true
+  },
+  "scanned_files": 1381,
+  "scanned_bytes": 56453669,
+  "gzip_payloads_scanned": 90,
+  "secret_findings": [],
+  "unwanted_artifacts": [],
+  "frozen_source_checks": {
+    "improving_llm_star/llmastar/research/hybrid_guidance.py": true,
+    "improving_llm_star/llmastar/research/geometric_advice.py": true,
+    "improving_llm_star/llmastar/research/macro_guidance.py": true,
+    "improving_llm_star/llmastar/research/geometry.py": true,
+    "improving_llm_star/llmastar/research/strategic/cuts.py": true,
+    "improving_llm_star/experiments/research/session6/strategic.py": true,
+    "llm-astar/llmastar/pather/llm_a_star/llm_a_star.py": true,
+    "llm-astar/llmastar/pather/a_star/a_star.py": true
+  },
+  "git_diff_check_clean": true,
+  "identity": {
+    "name": "Leo",
+    "email": "leonard.mueller2005@gmail.com"
+  },
+  "publication_decision": "Do not push: configured author email cannot be verified as associated with authenticated GitHub account. Identity and authentication remain unchanged."
+}

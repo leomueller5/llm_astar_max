@@ -1,0 +1,8 @@
+{
+  "trials": 160,
+  "cases": 40,
+  "methods": [
+    "original_bounds_prompt"
+  ],
+  "all_frozen_sources_match": true
+}

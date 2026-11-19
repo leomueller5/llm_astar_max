@@ -1,0 +1,100 @@
+{
+  "args": {
+    "cases": "improving_llm_star/experiments/results/research_session6/heldout_all.json.gz",
+    "original": [
+      "improving_llm_star/experiments/results/research_session6/heldout_original_a/responses.json.gz",
+      "improving_llm_star/experiments/results/research_session6/heldout_original_b/responses.json.gz"
+    ],
+    "hybrid": [
+      "improving_llm_star/experiments/results/research_session6/heldout_hybrid/responses.json.gz"
+    ],
+    "forced": null,
+    "methods": [
+      "hybrid_quality",
+      "geometry_best_quality",
+      "geometry_consensus_quality",
+      "all_endpoints_quality",
+      "cut105"
+    ],
+    "repeats": 3,
+    "timeout": 3.0,
+    "output": "improving_llm_star/experiments/results/research_session6/final_quality_controls",
+    "audit_only": false
+  },
+  "frozen": {
+    "status": "frozen",
+    "utc": "2026-11-19T05:48:06.934444+00:00",
+    "branch": "research/waypoint-guidance",
+    "previous_milestone": "c270d4a4607a7c3669211a3c09f6d4c3fa24ad6d",
+    "primary": {
+      "name": "LLM-A*-VM",
+      "class": "llmastar.research.hybrid_guidance.HybridWaypointPlanner",
+      "weight": 2.0,
+      "selection": "consensus",
+      "source": "hybrid",
+      "portfolio_budget": 12,
+      "share_anchor": true,
+      "target_order": "given",
+      "interval": 8,
+      "probe_budget": 256,
+      "probes_per_event": 3,
+      "heuristic": "cut"
+    },
+    "quality_profile": {
+      "weight": 1.05,
+      "selection": "consensus",
+      "source": "hybrid"
+    },
+    "model": {
+      "name": "gpt-4o-mini-2024-07-18",
+      "temperature": 0,
+      "seed": 20261118,
+      "prompt_version": "s6_multi_strict_v1",
+      "max_completion_tokens": 384,
+      "original_max_completion_tokens": 1000
+    },
+    "selection_rationale": "Consensus retained because it reduces validation regression relative to first-route guidance. No established LLM-specific win; test is confirmatory, no subsequent parameter tuning.",
+    "heldout": {
+      "team_maps": 20,
+      "queries_per_team_map": 10,
+      "synthetic_families": 10,
+      "maps_per_family": 2,
+      "queries_per_synthetic_map": 1,
+      "factorial_subset": "first query on each team held-out map plus all20 synthetic test queries"
+    },
+    "ablations": [
+      "same engine geometry_best",
+      "same engine geometry_consensus",
+      "same engine all_endpoints",
+      "same engine old original-prompt points",
+      "first vs consensus",
+      "no macro edges",
+      "unshared anchor",
+      "Euclidean vs cut anchor",
+      "shuffled votes preserving endpoint identities",
+      "random endpoint bijection preserving route overlaps",
+      "same engine oracle guidance"
+    ],
+    "sources": {
+      "improving_llm_star/llmastar/research/hybrid_guidance.py": "33927fb3bd4699527b453c0bb9617b261f2c91089740e55f66edb5310ee80329",
+      "improving_llm_star/llmastar/research/geometric_advice.py": "e78d27aa69c42b1bd3250c15f6c9b78c9e6fca026a4c2ccee89891344ef3dc67",
+      "improving_llm_star/llmastar/research/macro_guidance.py": "5fb24ecfc1718b7e914282391964f5de3309f4bf8d9b9b781394aeac1fda2347",
+      "improving_llm_star/llmastar/research/geometry.py": "17f4493cc29428ddd33cd7986e72a32027d59839e69ea4794f09ad26aec82b89",
+      "improving_llm_star/llmastar/research/strategic/cuts.py": "283c104e7f9d80a76dfa7423d0df0334123c8dd0e2e7b020108968707f6b7748",
+      "improving_llm_star/experiments/research/session6/strategic.py": "0114da40a2b7f1257c3d05976dc053b43a5850cd618e47b5517ae9628b10dfcd",
+      "llm-astar/llmastar/pather/llm_a_star/llm_a_star.py": "58f0b2c49c3ab0c34c2c9c11cc3e8f4de146fc8c78518af024a9ecaf854691d5",
+      "llm-astar/llmastar/pather/a_star/a_star.py": "ff8d57eab468979d8d22001d4e2e40d28e932f357804f7cf554f25cc1c4fd797"
+    },
+    "team_split_sha256": "360ab087d5a6efa41c0b629fa3ac9fbb06ddced533397238ff456c6f4f1a1242",
+    "policy": "Algorithm and prompts frozen before held-out query preparation. Report failures and all matched controls. Any required correctness repair must be disclosed; never tune against test results.",
+    "nonsemantic_changes": [
+      {
+        "file": "improving_llm_star/llmastar/research/geometric_advice.py",
+        "old_sha256": "62aa550e3b2527a59ceda9aa26c9f46fcec4082fe925a402088d815a75c9a814",
+        "new_sha256": "e78d27aa69c42b1bd3250c15f6c9b78c9e6fca026a4c2ccee89891344ef3dc67",
+        "reason": "Remove blank line at EOF reported by git diff --check; parsed Python AST exactly identical; no parameter or algorithm change."
+      }
+    ]
+  },
+  "timing": "Fresh graph, candidate and anchor per query. Cached provider reconstructs prompt and decodes actual stored output. API latency excluded from native timing. Warmup excluded, randomized method order, separate heap audit, equal per-trial timeout."
+}

@@ -24,6 +24,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--split',choices=BASE,default='development')
     p.add_argument('--maps',type=int,default=2);p.add_argument('--queries',type=int,default=1)
     p.add_argument('--families',nargs='+',default=FAMILIES)
+    p.add_argument('--seed-base',type=int);p.add_argument('--sizes',type=int,nargs=2)
     p.add_argument('--output',type=Path,required=True);p.add_argument('--frozen-manifest',type=Path)
     a=p.parse_args()
     if a.output.exists():raise FileExistsError(a.output)
@@ -34,8 +35,8 @@ def main():
     for family in a.families:
         fi=FAMILIES.index(family)
         for mi in range(a.maps):
-            seed=BASE[a.split]+fi*10000+mi;rng=random.Random(seed)
-            size=SIZES[a.split][mi%2];q=make_map(family,size,seed,index=6+mi)
+            seed=(a.seed_base if a.seed_base is not None else BASE[a.split])+fi*10000+mi;rng=random.Random(seed)
+            size=(a.sizes or SIZES[a.split])[mi%2];q=make_map(family,size,seed,index=6+mi)
             graph=SegmentGridGraph(q)
             for qi in range(a.queries):
                 for _ in range(1000):
@@ -54,6 +55,7 @@ def main():
     with gzip.open(a.output,'wt') as f:json.dump(cases,f)
     a.output.with_suffix('.manifest.json').write_text(json.dumps({'generator':'session6/prepare_challenging.py',
         'base_seeds':BASE,'sizes':SIZES,'families':FAMILIES,
+        'selected_seed_base':a.seed_base if a.seed_base is not None else BASE[a.split],'selected_sizes':a.sizes or SIZES[a.split],
         'heldout_policy':'No generation/reference search until frozen configuration exists',
         'sha256':hashlib.sha256(a.output.read_bytes()).hexdigest()},indent=2))
 

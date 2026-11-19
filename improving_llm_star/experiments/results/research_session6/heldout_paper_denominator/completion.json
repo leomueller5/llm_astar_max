@@ -1,0 +1,8 @@
+{
+  "trials": 220,
+  "cases": 220,
+  "methods": [
+    "paper_astar"
+  ],
+  "all_frozen_sources_match": true
+}

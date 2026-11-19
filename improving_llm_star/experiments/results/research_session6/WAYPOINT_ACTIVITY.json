@@ -1,0 +1,11 @@
+{
+  "scope": "All frozen-original waypoint-switch events, including the switch to final goal; counters are original CLOSED appends/queue pops, not distinct states.",
+  "queries": 220,
+  "switch_events": 710,
+  "median_active_pops": 10.0,
+  "mean_active_pops": 194.1450704225352,
+  "fraction_at_most_one": 0.2619718309859155,
+  "fraction_below_30": 0.7183098591549296,
+  "mean_duplicate_pops": 879.1318181818182,
+  "pops_definition": "Original operation field equals every appended CLOSED entry, including duplicates. Separate heap audit also counts pushes and heapify calls."
+}

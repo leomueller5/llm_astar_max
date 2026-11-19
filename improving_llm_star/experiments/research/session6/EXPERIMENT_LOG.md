@@ -137,3 +137,84 @@ snapshot. Archived older notebook uses the gpt-4o-mini alias; plain old response
 caches lack provider metadata, so exact historical snapshots cannot be verified
 from those strings alone. All new paid comparisons use exactly the approved
 snapshot and cached provider metadata.
+
+## Confirmatory evaluation in progress (06:07 UTC)
+
+All220 original-prompt and220 hybrid records are cached.40 forced improved-prompt
+records and40 original+bounds records support the predeclared factorial subset.
+Original+bounds is an additional stronger-baseline control motivated by the
+verified absence of range_x/range_y in the original generation prompt, not by
+held-out performance. Main algorithm/prompt parameters remain frozen.
+
+Native final benchmark is serial, with5timed repeats,1warmup and separate heap
+audit per query/method. No simultaneous API experiments or second timing runs.
+All query-local preprocessing is rebuilt. Cached providers reconstruct input
+prompts and decode actual outputs; no model request occurs during replay.
+
+Sampling sensitivity (10hash-selected hard development cases,3real outputs at
+temperature0.3): first-route mean2101.2heap pops,consensus2113.4; within-case SD
+143.6→112.7, but path cost GM1.01390→1.01622. Not a universal improvement;
+primary tests retain temperature0.
+
+A git diff check flagged one redundant blank line at EOF after milestone85723de.
+Removed without changing the parsed Python AST; both byte hashes and the reason
+are recorded in frozen_manifest.nonsemantic_changes. No algorithm adjustment.
+
+## Frozen final evaluation — 19 November 2026
+
+Hypothesis: geometry-constrained consensus targets, inserted as verified macro
+edges into a fixed complete anchor search, can improve original LLM-A* and
+provide additional real-model benefit beyond matched geometry.
+
+Parameters frozen05:48:06UTC: weight2, cut anchor, shared preprocessing,
+portfolio12, three advice probes every8expansions, total256probes, consensus.
+Secondary quality profile1.05 was prespecified. New prompt/models never tuned
+on final outcomes. Primary raw result: final_heldout/results.json.gz.
+
+220tasks:200queries/20reservedteam maps +20fresh challenging maps/10families.
+14methods, one warmup+5timings+oneinstrumented audit, fresh preprocessing,
+randomized order, equal3second cap. All220/220valid, zero timeouts.
+Team original:183.414ms,2050.9pops,1209.1unique,GMcost1.03604.
+Hybrid:5.607ms,1007.4pops,393unique,GMcost1.01852.
+Allendpoints:5.568ms,955.1pops,379.4unique,GMcost1.01881.
+Cutonly:4.735ms,1166.5pops,GMcost1.01856.
+Paired whole-map bootstrap real/allpops1.055[1.004,1.108]. Real/geometrybest
+0.963[.850,1.028]; real/geoconsensus1.008[.986,1.030]. Additional LLM benefit
+not established; strongest control wins. Classical engine+geometry explains
+most original-baseline improvement. Quality-matched1.05 control confirms
+no general extra model advantage. Detailed per-family/variance/OR/SR in analysis.
+
+Forty-query factorial: direct original+improvedprompt worsens work in both
+strata; consensus has mixed effects. Original+bounds prompt, WW team code,
+no-macro, no-share, Euclidean-anchor, alpha with explicit finalgoal variants
+all retained. Cutanchor is a major classical contribution, not model reasoning.
+
+Independent audit:3080savedpaths/242757unit edges, all valid/cost-consistent.
+Zero geometry overlap with development/validation. Fullsuite157passed.
+14fixedmemory cases:meanVM1079KiB vs original628KiB; do not claim RAM reduction.
+Separate live6case API-inclusive means:Original8.460s,hybrid2.288s(4calls),
+geometry.0092s,all.0158s. API avoidance explains original-latency reduction;
+no advantage over no-call geometry. cProfile confirms original CLOSED handling
+as large bottleneck. Instrumented profile times are not native benchmark results.
+
+Oracle controls distinguish limited target integration from complete-route
+potential:optimal targets1098.0pops,verifiedoptimalincumbent85.1. Reference
+computation recorded separately, no optimal reference was ever sent to model.
+
+### Secondary gate-policy hypothesis and independent negative replication
+
+The always-call factorial looked better on challenging maps but worse on team
+maps. A stricter test must ungate the classical controls too. Hypothesis and
+unchanged source/prompt frozen separately BEFORE generating20independent maps,
+sizes92/124,seeds11210000+. Actual20newresponses. Same underlying engine,
+geometryportfolio/anchor, no primary parameter changes. Native5repetitions,
+warmup, separateheap audit;5bijective endpoint randomizations preserve votes.
+Real1984.45pops/9.219ms/GM1.01449;geometryconsensus1949.4/9.033/1.00977;
+all1951.5/9.448/1.02652;random1982.59/9.419/1.01655.
+Real/allpop1.017[.986,1.059],real/random1.001[.937,1.028]. Negative replication,
+retain as evidence against overinterpreting the first subset. No post-test tuning.
+
+Final cumulative charges$.2679828 + held$.1783152, remaining$2.553702.
+Session6:659successes,oneHTTP520hold$.0198, exact snapshot for every response,
+825232input/195319outputtokens,0reportedreasoning. Old eight holds preserved.
+No further paid calls planned. Export/accounting in BUDGET_REPORT.json.

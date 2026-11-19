@@ -1,0 +1,21 @@
+{
+  "trials": 18480,
+  "cases": 220,
+  "methods": [
+    "original",
+    "robust_original",
+    "astar",
+    "wa2",
+    "witness",
+    "cut2",
+    "cut105",
+    "hybrid",
+    "hybrid_first",
+    "hybrid_quality",
+    "geometry_best",
+    "geometry_consensus",
+    "all_endpoints",
+    "llm_only"
+  ],
+  "all_frozen_sources_match": true
+}

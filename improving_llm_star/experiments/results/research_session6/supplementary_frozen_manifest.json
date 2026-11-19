@@ -1,0 +1,21 @@
+{
+  "status": "frozen",
+  "utc": "2026-11-19T06:44:50.001554+00:00",
+  "hypothesis": "Validity-only geometry gating can suppress beneficial model refinements. Test existing frozen hybrid_always mode against equally ungated geometry and vote-preserving random controls.",
+  "class_parameters": "Original frozen consensus/weight2 configuration; only pre-existing source=hybrid_always mode. No change to main candidate.",
+  "dataset": {
+    "seed_base": 11210000,
+    "sizes": [
+      92,
+      124
+    ],
+    "families": 10,
+    "maps_per_family": 2,
+    "queries_per_map": 1
+  },
+  "model": "gpt-4o-mini-2024-07-18",
+  "prompt": "s6_multi_strict_v1",
+  "temperature": 0,
+  "max_completion_tokens": 384,
+  "scope": "Secondary hypothesis from a predeclared ablation; fresh map-disjoint follow-up, reported separately from the confirmatory primary set."
+}

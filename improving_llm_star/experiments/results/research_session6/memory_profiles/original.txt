@@ -1,0 +1,43 @@
+         576998 function calls (576790 primitive calls) in 1.092 seconds
+
+   Ordered by: cumulative time
+   List reduced from 91 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        4    0.000    0.000    1.092    0.273 final_benchmark.py:143(execute)
+        4    0.000    0.000    1.091    0.273 final_benchmark.py:85(legacy)
+        4    0.998    0.249    1.090    0.273 llm_a_star.py:106(searching)
+    29938    0.016    0.000    0.080    0.000 geometry.py:87(cost)
+    29938    0.025    0.000    0.057    0.000 geometry.py:77(collision)
+    58414    0.011    0.000    0.020    0.000 geometry.py:59(blocked)
+    70637    0.006    0.000    0.006    0.000 {method 'get' of 'dict' objects}
+     9721    0.002    0.000    0.005    0.000 llm_a_star.py:190(f_value)
+    59145    0.005    0.000    0.005    0.000 {built-in method builtins.max}
+    59876    0.005    0.000    0.005    0.000 search.py:53(inside)
+   118294    0.005    0.000    0.005    0.000 {built-in method builtins.abs}
+     9721    0.002    0.000    0.004    0.000 llm_a_star.py:201(heuristic)
+    12207    0.002    0.000    0.003    0.000 {built-in method builtins.any}
+     8157    0.003    0.000    0.003    0.000 llm_a_star.py:174(get_neighbor)
+    25961    0.002    0.000    0.002    0.000 {built-in method math.dist}
+     8161    0.002    0.000    0.002    0.000 {built-in method _heapq.heappop}
+    19442    0.001    0.000    0.001    0.000 {built-in method math.hypot}
+    25738    0.001    0.000    0.001    0.000 geometry.py:67(degenerate_collision)
+   130/12    0.000    0.000    0.001    0.000 {built-in method builtins.all}
+     9721    0.001    0.000    0.001    0.000 {built-in method _heapq.heappush}
+      227    0.000    0.000    0.001    0.000 final_benchmark.py:184(<genexpr>)
+        4    0.000    0.000    0.001    0.000 llm_a_star.py:44(_initialize_parameters)
+        4    0.000    0.000    0.001    0.000 env.py:2(__init__)
+        4    0.001    0.000    0.001    0.000 env.py:14(obs_map)
+     8506    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+     7097    0.001    0.000    0.001    0.000 geometry.py:63(<genexpr>)
+        9    0.000    0.000    0.001    0.000 llm_a_star.py:162(_update_queue)
+        8    0.000    0.000    0.000    0.000 geometry.py:105(__init__)
+        8    0.000    0.000    0.000    0.000 geometry.py:35(__init__)
+        4    0.000    0.000    0.000    0.000 final_benchmark.py:111(initialize)
+        4    0.000    0.000    0.000    0.000 llm_a_star.py:64(_initialize_llm_paths)
+        4    0.000    0.000    0.000    0.000 utils.py:19(list_parse)
+     2841    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 ast.py:56(literal_eval)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+
+

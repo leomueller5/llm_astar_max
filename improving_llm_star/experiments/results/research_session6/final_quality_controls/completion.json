@@ -1,0 +1,12 @@
+{
+  "trials": 4400,
+  "cases": 220,
+  "methods": [
+    "hybrid_quality",
+    "geometry_best_quality",
+    "geometry_consensus_quality",
+    "all_endpoints_quality",
+    "cut105"
+  ],
+  "all_frozen_sources_match": true
+}

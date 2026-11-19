@@ -1,0 +1,839 @@
+{
+  "scope": "14 cases chosen before performance inspection: four team cases by hash plus first query/map of each synthetic family. Tracemalloc covers Python and exposed array allocations for planning plus returned diagnostics; it is not full native RSS. Instrumented runtime is excluded from performance claims.",
+  "summary": {
+    "original": {
+      "measured_cases": 14,
+      "mean_KiB": 627.9854910714286,
+      "median_KiB": 444.5234375,
+      "max_KiB": 1303.26171875
+    },
+    "robust_original": {
+      "measured_cases": 14,
+      "mean_KiB": 748.5827287946429,
+      "median_KiB": 539.95751953125,
+      "max_KiB": 1746.0751953125
+    },
+    "astar": {
+      "measured_cases": 14,
+      "mean_KiB": 2473.2575334821427,
+      "median_KiB": 1997.33203125,
+      "max_KiB": 6291.78125
+    },
+    "wa2": {
+      "measured_cases": 14,
+      "mean_KiB": 1821.9701450892858,
+      "median_KiB": 902.103515625,
+      "max_KiB": 5225.0625
+    },
+    "cut2": {
+      "measured_cases": 14,
+      "mean_KiB": 1131.5316685267858,
+      "median_KiB": 489.580078125,
+      "max_KiB": 4233.470703125
+    },
+    "hybrid": {
+      "measured_cases": 14,
+      "mean_KiB": 1078.7984095982142,
+      "median_KiB": 296.26611328125,
+      "max_KiB": 4097.1748046875
+    },
+    "geometry_best": {
+      "measured_cases": 14,
+      "mean_KiB": 1131.444614955357,
+      "median_KiB": 472.9560546875,
+      "max_KiB": 4092.5966796875
+    },
+    "all_endpoints": {
+      "measured_cases": 14,
+      "mean_KiB": 1079.5975167410713,
+      "median_KiB": 262.4072265625,
+      "max_KiB": 4096.7451171875
+    }
+  },
+  "runs": [
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "original",
+      "peak_traced_bytes": 1257964,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "robust_original",
+      "peak_traced_bytes": 1787981,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "astar",
+      "peak_traced_bytes": 6442784,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "wa2",
+      "peak_traced_bytes": 5088792,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "cut2",
+      "peak_traced_bytes": 4335074,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "hybrid",
+      "peak_traced_bytes": 4195507,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "geometry_best",
+      "peak_traced_bytes": 4190819,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_5_0",
+      "family": "team_random_walls",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 4195067,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "original",
+      "peak_traced_bytes": 342532,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "robust_original",
+      "peak_traced_bytes": 378573,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "astar",
+      "peak_traced_bytes": 551640,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "wa2",
+      "peak_traced_bytes": 271636,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "cut2",
+      "peak_traced_bytes": 83936,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "hybrid",
+      "peak_traced_bytes": 179021,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "geometry_best",
+      "peak_traced_bytes": 178821,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_63_0",
+      "family": "team_random_walls",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 178789,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "original",
+      "peak_traced_bytes": 304084,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "robust_original",
+      "peak_traced_bytes": 315191,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "astar",
+      "peak_traced_bytes": 1166560,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "wa2",
+      "peak_traced_bytes": 198744,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "cut2",
+      "peak_traced_bytes": 92489,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "hybrid",
+      "peak_traced_bytes": 191845,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "geometry_best",
+      "peak_traced_bytes": 191661,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_77_0",
+      "family": "team_random_walls",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 191637,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "original",
+      "peak_traced_bytes": 157328,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "robust_original",
+      "peak_traced_bytes": 169890,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "astar",
+      "peak_traced_bytes": 551928,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "wa2",
+      "peak_traced_bytes": 90904,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "cut2",
+      "peak_traced_bytes": 239654,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "hybrid",
+      "peak_traced_bytes": 191145,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "geometry_best",
+      "peak_traced_bytes": 191009,
+      "status": "ok"
+    },
+    {
+      "case_id": "team_54_0",
+      "family": "team_random_walls",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 190977,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "original",
+      "peak_traced_bytes": 1281172,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "robust_original",
+      "peak_traced_bytes": 1603208,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "astar",
+      "peak_traced_bytes": 6095848,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "wa2",
+      "peak_traced_bytes": 5350464,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "cut2",
+      "peak_traced_bytes": 719812,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "hybrid",
+      "peak_traced_bytes": 351275,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "geometry_best",
+      "peak_traced_bytes": 788327,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10900000_0",
+      "family": "bottlenecks",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 350411,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "original",
+      "peak_traced_bytes": 1334540,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "robust_original",
+      "peak_traced_bytes": 1549565,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "astar",
+      "peak_traced_bytes": 4496528,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "wa2",
+      "peak_traced_bytes": 3432976,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "cut2",
+      "peak_traced_bytes": 3459958,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "hybrid",
+      "peak_traced_bytes": 3350481,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "geometry_best",
+      "peak_traced_bytes": 3344185,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10840000_0",
+      "family": "braided_maze",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 3354113,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "original",
+      "peak_traced_bytes": 519236,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "robust_original",
+      "peak_traced_bytes": 576712,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "astar",
+      "peak_traced_bytes": 2742832,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "wa2",
+      "peak_traced_bytes": 1575872,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "cut2",
+      "peak_traced_bytes": 1538412,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "hybrid",
+      "peak_traced_bytes": 1561468,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "geometry_best",
+      "peak_traced_bytes": 1557692,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10890000_0",
+      "family": "competing_corridors",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 1562076,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "original",
+      "peak_traced_bytes": 721228,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "robust_original",
+      "peak_traced_bytes": 791164,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "astar",
+      "peak_traced_bytes": 2658216,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "wa2",
+      "peak_traced_bytes": 1976848,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "cut2",
+      "peak_traced_bytes": 1283069,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "hybrid",
+      "peak_traced_bytes": 1150977,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "geometry_best",
+      "peak_traced_bytes": 1283017,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10880000_0",
+      "family": "nested",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 1387585,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "original",
+      "peak_traced_bytes": 139128,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "robust_original",
+      "peak_traced_bytes": 146032,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "astar",
+      "peak_traced_bytes": 617824,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "wa2",
+      "peak_traced_bytes": 85072,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "cut2",
+      "peak_traced_bytes": 10136,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "hybrid",
+      "peak_traced_bytes": 42899,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "geometry_best",
+      "peak_traced_bytes": 42923,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10810000_0",
+      "family": "open",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 42923,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "original",
+      "peak_traced_bytes": 117328,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "robust_original",
+      "peak_traced_bytes": 125992,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "astar",
+      "peak_traced_bytes": 402932,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "wa2",
+      "peak_traced_bytes": 101888,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "cut2",
+      "peak_traced_bytes": 16712,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "hybrid",
+      "peak_traced_bytes": 93735,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "geometry_best",
+      "peak_traced_bytes": 93775,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10820000_0",
+      "family": "random_walls",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 93775,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "original",
+      "peak_traced_bytes": 391148,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "robust_original",
+      "peak_traced_bytes": 529121,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "astar",
+      "peak_traced_bytes": 1432320,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "wa2",
+      "peak_traced_bytes": 242912,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "cut2",
+      "peak_traced_bytes": 290812,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "hybrid",
+      "peak_traced_bytes": 255478,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "geometry_best",
+      "peak_traced_bytes": 255518,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10830000_0",
+      "family": "rooms",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 255518,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "original",
+      "peak_traced_bytes": 1185644,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "robust_original",
+      "peak_traced_bytes": 1407560,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "astar",
+      "peak_traced_bytes": 4761904,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "wa2",
+      "peak_traced_bytes": 4709640,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "cut2",
+      "peak_traced_bytes": 711848,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "hybrid",
+      "peak_traced_bytes": 508028,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "geometry_best",
+      "peak_traced_bytes": 713096,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10860000_0",
+      "family": "serpentine",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 281892,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "original",
+      "peak_traced_bytes": 1134292,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "robust_original",
+      "peak_traced_bytes": 1227501,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "astar",
+      "peak_traced_bytes": 3115272,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "wa2",
+      "peak_traced_bytes": 2908560,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "cut2",
+      "peak_traced_bytes": 3425094,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "hybrid",
+      "peak_traced_bytes": 3301567,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "geometry_best",
+      "peak_traced_bytes": 3297279,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10850000_0",
+      "family": "tree_maze",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 3300079,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "original",
+      "peak_traced_bytes": 117176,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "robust_original",
+      "peak_traced_bytes": 123192,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "astar",
+      "peak_traced_bytes": 420032,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "wa2",
+      "peak_traced_bytes": 85456,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "cut2",
+      "peak_traced_bytes": 14632,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "hybrid",
+      "peak_traced_bytes": 92228,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "geometry_best",
+      "peak_traced_bytes": 92268,
+      "status": "ok"
+    },
+    {
+      "case_id": "s6_10870000_0",
+      "family": "u_traps",
+      "method": "all_endpoints",
+      "peak_traced_bytes": 92268,
+      "status": "ok"
+    }
+  ]
+}

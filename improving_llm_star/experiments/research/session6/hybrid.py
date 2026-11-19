@@ -126,8 +126,13 @@ def portfolio(query, graph=None, budget=12, include_cuts=True):
 
 
 def messages(query, variant, proposal=None):
-    if variant == 'original':
-        return old_messages(query,'original')[0]
+    if variant in ['original','bounds_original']:
+        result=old_messages(query,'original')[0]
+        if variant=='bounds_original':
+            bounds=('Actual map bounds: '+json.dumps({'range_x':query['range_x'],'range_y':query['range_y']})+
+                '. Valid integer cells lie strictly between the lower bound and upper bound minus one in each axis. Closed wall endpoints are blocked.\n')
+            result=[dict(result[0],content=bounds+result[0]['content'])]
+        return result
     if variant == 'endpoints':
         return old_messages(query,'endpoints_v1')[0]
     payload = {'map':query,'candidate_points':proposal['points']}
@@ -159,7 +164,7 @@ def messages(query, variant, proposal=None):
 
 
 def decode(raw, query, variant, proposal):
-    if variant == 'original':
+    if variant in ['original','bounds_original']:
         from llmastar.utils import list_parse
         return list_parse(raw), {'parsed':True}
     try:

@@ -1,0 +1,56 @@
+{
+  "cumulative": {
+    "cap_usd": 3.0,
+    "accounted_usd": 0.2679828,
+    "held_worst_case_usd": 0.1783152,
+    "remaining_authorized_usd": 2.553702,
+    "attempts": 781,
+    "successes": 772,
+    "prompt_tokens": 917928,
+    "completion_tokens": 223012,
+    "reasoning_tokens": 0,
+    "cached_input_tokens": 46848
+  },
+  "session6_only": {
+    "attempts": 660,
+    "successes": 659,
+    "charged_usd": 0.2392674,
+    "held_usd": 0.0198,
+    "input_tokens": 825232,
+    "output_tokens": 195319,
+    "reasoning_tokens_in_output": 0,
+    "actual_response_models": {
+      "gpt-4o-mini-2024-07-18": 659
+    }
+  },
+  "historical_session5": {
+    "attempts": 121,
+    "successes": 113,
+    "charged_usd": 0.0287154,
+    "held_usd": 0.1585152,
+    "input_tokens": 92696,
+    "output_tokens": 27693,
+    "reasoning_tokens_in_output": 0,
+    "actual_response_models": {
+      "gpt-4o-mini-2024-07-18": 113
+    }
+  },
+  "pricing": {
+    "model": "gpt-4o-mini-2024-07-18",
+    "input_usd_per_million": 0.15,
+    "cached_input_usd_per_million": 0.075,
+    "output_usd_per_million": 0.6,
+    "context_tokens": 128000,
+    "verified_utc": "2026-11-18",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+    "reasoning_billing": "Reasoning tokens, if reported, are a subset of completion tokens; never double charged."
+  },
+  "new_ambiguous_failures": [
+    {
+      "id": "05ffbe7b29552b60c32b48d41510882edbcb10a88645d38041510e356db9e6fc",
+      "reserved_usd": 0.0198,
+      "error_type": "HTTP_520"
+    }
+  ],
+  "note": "Reasoning tokens are included in billed output tokens, not added a second time. All unknown failures remain held, including eight historical and one new attempt. No budget reset or refund assumption."
+}

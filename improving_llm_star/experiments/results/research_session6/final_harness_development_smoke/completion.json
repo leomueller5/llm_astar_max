@@ -1,0 +1,17 @@
+{
+  "trials": 320,
+  "cases": 16,
+  "methods": [
+    "paper_astar",
+    "original",
+    "robust_original",
+    "ww",
+    "adaptive",
+    "adaptive_goal2",
+    "constant05_goal2",
+    "hybrid",
+    "geometry_best",
+    "all_endpoints"
+  ],
+  "all_frozen_sources_match": true
+}

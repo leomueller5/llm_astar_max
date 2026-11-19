@@ -1,0 +1,36 @@
+{
+  "generator": "session6/prepare_challenging.py",
+  "base_seeds": {
+    "development": 8610000,
+    "validation": 9710000,
+    "heldout": 10810000
+  },
+  "sizes": {
+    "development": [
+      72,
+      104
+    ],
+    "validation": [
+      80,
+      112
+    ],
+    "heldout": [
+      88,
+      120
+    ]
+  },
+  "families": [
+    "open",
+    "random_walls",
+    "rooms",
+    "braided_maze",
+    "tree_maze",
+    "serpentine",
+    "u_traps",
+    "nested",
+    "competing_corridors",
+    "bottlenecks"
+  ],
+  "heldout_policy": "No generation/reference search until frozen configuration exists",
+  "sha256": "43a33c9d0c13f15a39252603b40acade1843932d855d08057e4e5a1b6e06deb8"
+}

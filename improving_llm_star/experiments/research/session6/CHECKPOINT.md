@@ -61,3 +61,39 @@ comparisons explicitly marked invalid in experiment log.
 Next: lazy sparse geometric roadmap completion, with exact graph-search controls
 and LLM-proposed missing connections. This changes the information representation
 substantively rather than retuning previously unsuccessful weights.
+
+## Frozen final phase, 19 November 05:48 UTC
+
+Production sources and prompt frozen in results/research_session6/frozen_manifest.json.
+Milestone85723de records the pre-test implementation. Primary: HybridWaypointPlanner,
+source=hybrid, consensus, weight2, cut anchor, shared anchor,12 portfolio expansions,
+8-expansion macro events,3 advisory probes/event,256 total probes. Quality profile
+weight1.05. All original algorithms preserved.157 tests passing.
+
+EOF whitespace cleanup of geometric_advice.py recorded explicitly in manifest;
+AST before/after identical. No algorithm/parameter tuning after held-out opening.
+One stronger original+bounds prompt control added from code inspection: frozen
+original prompt omits map dimensions. This is auxiliary, not used for selection.
+
+Held-out data now prepared:200 tasks/20 reserved team maps plus20 independently
+seeded challenging cases/10 families. Factorial subset:first team query/map plus
+all20 synthetic cases (40). Model exactlygpt-4o-mini-2024-07-18,temperature0,seed20261118.
+Original max1000completiontokens, hybrid384, same cached response per method.
+
+Running API collections (all cumulative-budget tracked): heldout_original_a,
+heldout_original_b, heldout_hybrid; forced improved prompt and original+bounds
+on the40-query subset. No further parameter selection. Final benchmark framework
+final_benchmark.py is offline only; native timing randomized/repeated, heap audit
+separate, equal3-second trial cap, frozen source hashes verified.
+
+Remaining: finish collections; validate benchmark harness; execute native final
+benchmark and factorial/alpha/WW subset; paper A* operation denominator; independent
+Shapely verification; memory/profile/LLM-seed controls; map-bootstrap statistics;
+plots and report; credential/metadata/diff checks; final local commits.
+
+Push remains blocked by unverified mapping of configured commit email to GitHub
+account. Main never moved. Do not change identity or auth settings.
+
+Active windows:Nov18 10:43:32–11:27:46 (~44min); resumedNov19 04:58:44.
+The overnight interruption is not research time.180 active minutes would end
+around07:14:30 UTC if productive work remains; never prolong meaningless runs.

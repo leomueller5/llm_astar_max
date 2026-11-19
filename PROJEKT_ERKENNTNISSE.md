@@ -1013,3 +1013,110 @@ reduziert. Die drei Routen stammen aus derselben Antwort und sind NICHT unabhän
 Stichproben; die Häufigkeit ist kein kalibrierter Wahrscheinlichkeitswert.
 Das folgende Testset bleibt bis zum schriftlichen Einfrieren aller Parameter
 von Modellauswahl und Promptentwicklung getrennt.
+
+### Sitzung 6: Eingefrorene Abschlussauswertung (19.11.2026)
+
+**Ergebnis: großer Fortschritt gegenüber dem Original, aber weiterhin kein
+allgemein belegter zusätzlicher Nutzen echter LLM-Anleitung gegenüber starken
+Geometrie-Kontrollen.** Das ist die zentrale wissenschaftliche Aussage; die
+Verbesserung darf nicht pauschal dem LLM zugeschrieben werden.
+
+Die neue Implementierung `HybridWaypointPlanner` (LLM-A*-VM) integriert
+geometrisch eingeschränkte Modellvorschläge als verifizierte optionale
+Makrokanten. Die Priorität bleibt `g+w*h_cut`; normale Gitterkanten, Reopenings
+und klassische Rückfallebene bleiben erhalten. Dadurch gilt unter den im
+Theoriedokument genannten Bedingungen `C <= w*C*`, bei `w=1` Optimalität.
+`w=2` ist der eingefrorene Standard, `w=1.05` das vorab festgelegte Qualitätsprofil.
+Ungeprüfte LLM-Schätzungen beeinflussen die Priorität nicht; OPEN muss deshalb
+nicht wegen der Modellanleitung neu aufgebaut werden. Das ursprüngliche
+`g+h_goal+d_target` mit final `g+2*h_goal` bleibt separat unverändert reproduzierbar.
+
+Die Hauptauswertung umfasst 200 Aufgaben auf 20 reservierten neuen Teamkarten
+und 20 Aufgaben aus zehn frisch erzeugten anspruchsvollen Kartenfamilien.
+Parameter und Prompt wurden vor der Testgenerierung eingefroren. Fünf native
+Zeitmessungen je Methode/Aufgabe, zusätzlich Warmup und getrennte Heap-Zählung,
+frische Vorverarbeitung, gleiche Zeitgrenze: kein Timeout, alle 14 Methoden
+220/220 gültig. 3,080 gespeicherte Wege und 242,757 Einheitskanten wurden unabhängig
+mit Shapely sowie neu berechneten Kosten geprüft. Kein Geometrie-Overlap zwischen
+Entwicklung/Validierung und Test. Vollständige Testsuite: **157 bestanden**.
+
+| Verfahren | Team: ms | Team: Heap-Pops | Team: GM Kosten/Optimum | Schwierig: ms | Schwierig: Heap-Pops |
+|---|---:|---:|---:|---:|---:|
+| Original LLM-A* | 183.414 | 2050.9 | 1.03604 | 481.892 | 3274.4 |
+| Original mit robustem Suchkern | 13.043 | 3494.1 | 1.02403 | 21.714 | 5772.9 |
+| Standard A* | 8.688 | 2329.6 | 1.00000 | 12.942 | 3519.9 |
+| Weighted A* | 6.106 | 2742.1 | 1.02653 | 11.094 | 4666.1 |
+| Cut ohne LLM | 4.735 | 1166.5 | 1.01856 | 6.113 | 1851.5 |
+| VM mit geometrischem Konsens | 5.499 | 999.4 | 1.01772 | 8.136 | 1691.5 |
+| VM mit allen geometrischen Endpunkten | 5.568 | 955.1 | 1.01881 | 8.581 | 1669.7 |
+| **VM mit echter hybrider Anleitung** | **5.607** | **1007.4** | **1.01852** | **8.080** | **1658.5** |
+| VM mit w=1.05 | 6.912 | 1037.2 | 1.00047 | 9.180 | 1382.2 |
+
+Zeit = gesamte lokale Berechnung inklusive frischer Geometrie, Portfolio,
+Untergrenzen, Decodierung und Suche; API-Wartezeit separat. Auf Teamkarten
+67.5% weniger unterschiedliche Expansionen und 50.9% weniger Pops als Original.
+Kartenweises gepaartes Bootstrap mit 4,000 Wiederholungen: LLM/geometrische
+Best-Route Pops 0.963 [0.850,1.028], LLM/geometrischer Konsens 1.008 [0.986,1.030],
+LLM/alle Endpunkte **1.055 [1.004,1.108]**. Das LLM ist gegen die stärkste Kontrolle
+also sogar schlechter bei Pops. Kleine positive Signale auf anspruchsvollen
+Karten reichen nicht für einen allgemeinen Laufzeitvorteil; die nominalen
+Intervalle sind nicht für Mehrfachvergleiche korrigiert. Im passenden
+w=1.05-Qualitätsvergleich sind LLM und geometrische Kontrollen ebenfalls nahe
+beieinander. Cut ohne LLM bleibt insgesamt schneller.
+
+Die Original-Prompt/verbesserter-Prompt/zusätzliche-Konsens-Verarbeitung-Faktoriell-
+Auswertung auf 40 vorab definierten Aufgaben zeigt gemischte Ergebnisse, keinen
+allgemeinen Prompt-Erfolg. Ein zusätzlicher Bounds-Prompt kontrolliert den Fehler,
+dass die ursprüngliche Promptfunktion die tatsächlichen Kartengrenzen auslässt.
+Auch Team-WW und alte Alpha-Varianten sind separat dokumentiert. Bei Alpha muss
+explizit zwischen final `g+h` und dem passenden final `g+2h` unterschieden werden.
+
+710 Original-Wechselereignisse: median 10 aktive Pops, 26.2% höchstens ein Pop,
+71.8% weniger als 30. Der Mittelwert 194.1 ist wegen langer Ausreißer untypisch.
+Original-Duplikat-Pops: durchschnittlich 879.1/Aufgabe. Dies erklärt die verspätete
+Stagnationsreaktion und die Verfälschung durch rohe Pop-Zähler. Eine kleine
+Distanzverschlechterung beweist außerdem keinen strategischen Fehler.
+
+Ein auffälliger Nebeneffekt der Always-Call-Ablation wurde separat eingefroren
+und auf 20 weiteren Karten (Größen 92/124, neue Seeds) mit **gleichfalls ungegateten**
+Geometrie-Kontrollen geprüft. Echte LLM-Auswahl: 1984.45 Pops; Geometriekonsens:
+1949.40; alle Endpunkte:1951.50; zufällige, konsenserhaltende Endpunkte:1982.59.
+LLM/alle Pops 1.017 [0.986,1.059], LLM/Zufall 1.001 [0.937,1.028]. Der scheinbar
+positive Teilbefund generalisierte nicht. Keine Änderung der Hauptkonfiguration.
+
+Oracle-Experimente sind ausdrücklich getrennt: optimale Zielpunkte im identischen
+VM-Kern benötigen noch 1098 Pops, ein vollständig verifizierter optimaler
+Incumbent im Cut-Verfahren nur 85.1. Die Oracle-Erzeugung wird separat protokolliert
+und niemals als kostenlose LLM-Information behandelt. Das deutet auf Potenzial
+für bessere vollständige Routen hin, das reale Modellantworten bisher nicht
+zuverlässig realisieren. Zufällige und umgeordnete echte Antworten sind ähnlich
+stark wie unveränderte echte Antworten. Dynamische Makro-Korrektur, interaktive
+Frontier-Wahl, Beta-Vertrauen, Bildprompts und spärliche Roadmaps wurden mit
+negativen oder gemischten Ergebnissen erhalten, nicht verschwiegen.
+
+Weitere Grenzen: Tracemalloc-Mittelwert VM1079KiB gegenüber Original628KiB;
+Median VM296KiB gegenüber Original445KiB, aber VM-Maximum4097KiB. Kein allgemeiner
+RAM-Gewinn. Kleine Live-Kalibrierung auf sechs Aufgaben: Original8.460s,
+Hybrid2.288s bei vier Modellaufrufen, Geometrie0.0092s. Einsparen von Modellaufrufen
+hilft gegenüber dem Original, belegt aber keinen Vorteil gegenüber Klassik ohne API.
+
+API-Stand kumulativ: **$0.2679828 geschätzte erfolgreiche Kosten + $0.1783152
+unaufgelöste Reservierungen = $0.4462980**; Rest $2.553702 des unveränderten $3-Limits.
+Sitzung6:659 erfolgreiche Antworten,825,232 Eingabe- und195,319 Ausgabetokens,
+alle mit exakt `gpt-4o-mini-2024-07-18`;0 gemeldete Reasoning-Tokens. Eine neue
+HTTP520-Unsicherheit reserviert$0.0198; acht alte Reservierungen bleiben bestehen.
+Reasoning-Tokens wären Teil der Ausgabetokens und würden nicht doppelt berechnet.
+Schlüssel blieb ausschließlich im Prozess, kein Zurücksetzen des Ledgers.
+
+**Empfehlung fürs Projekt:** Eine klare sichere Integrationsmethode mit
+Nachweisgrenzen, Original-Reproduktion und ehrlichen starken Ablationen vorlegen;
+keine erfundene LLM-Überlegenheit. Als nächster Forschungsschritt ist gezielte
+verifizierte Reparatur vollständiger strategischer Routen plausibler als eine
+weitere späte Alpha-Schwellenoptimierung. Etablierte Verfahren werden als
+Integration/Adaption eingeordnet, nicht als absolut neue Erfindungen.
+
+Ausführliche Tabellen, Mathematik, Pseudocode, Fehlschläge und Befehle:
+`improving_llm_star/experiments/results/research_session6/REPORT.md`,
+`improving_llm_star/experiments/research/session6/README.md`, `THEORY.md` und
+`EXPERIMENT_LOG.md`. Wissenschaftliche Abbildungen als eigenständige PDF:
+`improving_llm_star/experiments/results/research_session6/figures/SESSION6_FIGURES.pdf`.

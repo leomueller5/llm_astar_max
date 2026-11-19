@@ -1,0 +1,635 @@
+{
+  "scope": "Ten development cases selected by hash among geometry-unresolved queries. Three true API outputs at temperature0.3, same exact snapshot. Sensitivity only; main baseline uses temperature0. All methods replay the identical response per seed.",
+  "distinct_route_outputs": {
+    "team_38_1": 3,
+    "team_26_1": 2,
+    "team_57_0": 3,
+    "team_34_0": 3,
+    "team_70_1": 3,
+    "team_57_1": 3,
+    "team_79_0": 3,
+    "team_37_0": 3,
+    "team_15_0": 3,
+    "team_52_1": 3
+  },
+  "summary": {
+    "first": {
+      "trials": 30,
+      "valid": 30,
+      "mean_pops": 2101.2,
+      "mean_within_case_sd": 143.57902501356733,
+      "largest_within_case_range": 754,
+      "gm_cost_ratio": 1.0138989912912133
+    },
+    "consensus": {
+      "trials": 30,
+      "valid": 30,
+      "mean_pops": 2113.4333333333334,
+      "mean_within_case_sd": 112.68167436144817,
+      "largest_within_case_range": 765,
+      "gm_cost_ratio": 1.0162187296888534
+    }
+  },
+  "runs": [
+    {
+      "case_id": "team_38_1",
+      "map_id": "team_38",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 634,
+      "unique": 341,
+      "cost_ratio": 1.031249128115765,
+      "valid": true
+    },
+    {
+      "case_id": "team_38_1",
+      "map_id": "team_38",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 634,
+      "unique": 341,
+      "cost_ratio": 1.031249128115765,
+      "valid": true
+    },
+    {
+      "case_id": "team_26_1",
+      "map_id": "team_26",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 3597,
+      "unique": 1839,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_26_1",
+      "map_id": "team_26",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 3586,
+      "unique": 1839,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_0",
+      "map_id": "team_57",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 30,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_0",
+      "map_id": "team_57",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 30,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_34_0",
+      "map_id": "team_34",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 45,
+      "unique": 33,
+      "cost_ratio": 1.0403790199018526,
+      "valid": true
+    },
+    {
+      "case_id": "team_34_0",
+      "map_id": "team_34",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 351,
+      "unique": 278,
+      "cost_ratio": 1.1142091151610658,
+      "valid": true
+    },
+    {
+      "case_id": "team_70_1",
+      "map_id": "team_70",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 5647,
+      "unique": 2544,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_70_1",
+      "map_id": "team_70",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 5658,
+      "unique": 2544,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_1",
+      "map_id": "team_57",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 4329,
+      "unique": 1794,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_1",
+      "map_id": "team_57",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 3781,
+      "unique": 1794,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_79_0",
+      "map_id": "team_79",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 4423,
+      "unique": 1260,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_79_0",
+      "map_id": "team_79",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 4857,
+      "unique": 1481,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_37_0",
+      "map_id": "team_37",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 61,
+      "unique": 49,
+      "cost_ratio": 1.0101488832455252,
+      "valid": true
+    },
+    {
+      "case_id": "team_37_0",
+      "map_id": "team_37",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 45,
+      "unique": 33,
+      "cost_ratio": 1.0101488832455252,
+      "valid": true
+    },
+    {
+      "case_id": "team_15_0",
+      "map_id": "team_15",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 1270,
+      "unique": 439,
+      "cost_ratio": 1.042329173487608,
+      "valid": true
+    },
+    {
+      "case_id": "team_15_0",
+      "map_id": "team_15",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 1270,
+      "unique": 439,
+      "cost_ratio": 1.042329173487608,
+      "valid": true
+    },
+    {
+      "case_id": "team_52_1",
+      "map_id": "team_52",
+      "seed": 20261119,
+      "selection": "first",
+      "pops": 642,
+      "unique": 331,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_52_1",
+      "map_id": "team_52",
+      "seed": 20261119,
+      "selection": "consensus",
+      "pops": 642,
+      "unique": 331,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_38_1",
+      "map_id": "team_38",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 634,
+      "unique": 341,
+      "cost_ratio": 1.031249128115765,
+      "valid": true
+    },
+    {
+      "case_id": "team_38_1",
+      "map_id": "team_38",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 634,
+      "unique": 341,
+      "cost_ratio": 1.031249128115765,
+      "valid": true
+    },
+    {
+      "case_id": "team_26_1",
+      "map_id": "team_26",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 4351,
+      "unique": 1839,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_26_1",
+      "map_id": "team_26",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 4351,
+      "unique": 1839,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_0",
+      "map_id": "team_57",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 30,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_0",
+      "map_id": "team_57",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 30,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_34_0",
+      "map_id": "team_34",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 45,
+      "unique": 33,
+      "cost_ratio": 1.0403790199018526,
+      "valid": true
+    },
+    {
+      "case_id": "team_34_0",
+      "map_id": "team_34",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 45,
+      "unique": 33,
+      "cost_ratio": 1.0403790199018526,
+      "valid": true
+    },
+    {
+      "case_id": "team_70_1",
+      "map_id": "team_70",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 5899,
+      "unique": 2544,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_70_1",
+      "map_id": "team_70",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 5656,
+      "unique": 2544,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_1",
+      "map_id": "team_57",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 3644,
+      "unique": 1794,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_1",
+      "map_id": "team_57",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 3644,
+      "unique": 1794,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_79_0",
+      "map_id": "team_79",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 4856,
+      "unique": 1481,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_79_0",
+      "map_id": "team_79",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 4477,
+      "unique": 1481,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_37_0",
+      "map_id": "team_37",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 53,
+      "unique": 41,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_37_0",
+      "map_id": "team_37",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 53,
+      "unique": 41,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_15_0",
+      "map_id": "team_15",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 1270,
+      "unique": 439,
+      "cost_ratio": 1.042329173487608,
+      "valid": true
+    },
+    {
+      "case_id": "team_15_0",
+      "map_id": "team_15",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 1270,
+      "unique": 439,
+      "cost_ratio": 1.042329173487608,
+      "valid": true
+    },
+    {
+      "case_id": "team_52_1",
+      "map_id": "team_52",
+      "seed": 20261120,
+      "selection": "first",
+      "pops": 642,
+      "unique": 331,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_52_1",
+      "map_id": "team_52",
+      "seed": 20261120,
+      "selection": "consensus",
+      "pops": 642,
+      "unique": 331,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_38_1",
+      "map_id": "team_38",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 634,
+      "unique": 341,
+      "cost_ratio": 1.031249128115765,
+      "valid": true
+    },
+    {
+      "case_id": "team_38_1",
+      "map_id": "team_38",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 634,
+      "unique": 341,
+      "cost_ratio": 1.031249128115765,
+      "valid": true
+    },
+    {
+      "case_id": "team_26_1",
+      "map_id": "team_26",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 4351,
+      "unique": 1839,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_26_1",
+      "map_id": "team_26",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 4351,
+      "unique": 1839,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_0",
+      "map_id": "team_57",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 30,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_0",
+      "map_id": "team_57",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 286,
+      "unique": 177,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_34_0",
+      "map_id": "team_34",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 335,
+      "unique": 262,
+      "cost_ratio": 1.1142091151610658,
+      "valid": true
+    },
+    {
+      "case_id": "team_34_0",
+      "map_id": "team_34",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 335,
+      "unique": 262,
+      "cost_ratio": 1.1142091151610658,
+      "valid": true
+    },
+    {
+      "case_id": "team_70_1",
+      "map_id": "team_70",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 5591,
+      "unique": 2544,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_70_1",
+      "map_id": "team_70",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 5591,
+      "unique": 2544,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_1",
+      "map_id": "team_57",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 3637,
+      "unique": 1794,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_57_1",
+      "map_id": "team_57",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 3780,
+      "unique": 1794,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_79_0",
+      "map_id": "team_79",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 4423,
+      "unique": 1260,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_79_0",
+      "map_id": "team_79",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 4857,
+      "unique": 1481,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_37_0",
+      "map_id": "team_37",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 37,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_37_0",
+      "map_id": "team_37",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 37,
+      "unique": 25,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_15_0",
+      "map_id": "team_15",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 1270,
+      "unique": 439,
+      "cost_ratio": 1.042329173487608,
+      "valid": true
+    },
+    {
+      "case_id": "team_15_0",
+      "map_id": "team_15",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 1250,
+      "unique": 419,
+      "cost_ratio": 1.042329173487608,
+      "valid": true
+    },
+    {
+      "case_id": "team_52_1",
+      "map_id": "team_52",
+      "seed": 20261121,
+      "selection": "first",
+      "pops": 626,
+      "unique": 315,
+      "cost_ratio": 1.0,
+      "valid": true
+    },
+    {
+      "case_id": "team_52_1",
+      "map_id": "team_52",
+      "seed": 20261121,
+      "selection": "consensus",
+      "pops": 626,
+      "unique": 315,
+      "cost_ratio": 1.0,
+      "valid": true
+    }
+  ]
+}

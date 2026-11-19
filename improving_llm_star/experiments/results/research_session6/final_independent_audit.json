@@ -1,0 +1,8 @@
+{
+  "valid_paths_independently_checked": 3080,
+  "independent_unit_edges": 242757,
+  "heldout_cases": 220,
+  "heldout_map_geometries": 40,
+  "development_geometry_overlap": 0,
+  "predicate": "Shapely STRtree intersects on original closed line segments, plus bounds and exact unit-step cost"
+}

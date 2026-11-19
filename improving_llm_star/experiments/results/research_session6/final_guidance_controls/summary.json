@@ -1,0 +1,58 @@
+{
+  "real": {
+    "trials": 40,
+    "valid": 40,
+    "mean_pops": 1180.725,
+    "mean_unique": 422.75,
+    "gm_cost_ratio": 1.0177384240903478
+  },
+  "geometry": {
+    "trials": 40,
+    "valid": 40,
+    "mean_pops": 1170.825,
+    "mean_unique": 421.45,
+    "gm_cost_ratio": 1.013898762190052
+  },
+  "all_endpoints": {
+    "trials": 40,
+    "valid": 40,
+    "mean_pops": 1162.05,
+    "mean_unique": 411.1,
+    "gm_cost_ratio": 1.0149544096984837
+  },
+  "shuffled": {
+    "trials": 400,
+    "valid": 400,
+    "mean_pops": 1178.4525,
+    "mean_unique": 422.645,
+    "gm_cost_ratio": 1.0177384240903478
+  },
+  "random_endpoint": {
+    "trials": 400,
+    "valid": 400,
+    "mean_pops": 1159.295,
+    "mean_unique": 417.3425,
+    "gm_cost_ratio": 1.0148153222551954
+  },
+  "random_free": {
+    "trials": 400,
+    "valid": 400,
+    "mean_pops": 1183.6675,
+    "mean_unique": 424.1775,
+    "gm_cost_ratio": 1.015958670377527
+  },
+  "oracle_same_engine": {
+    "trials": 40,
+    "valid": 40,
+    "mean_pops": 1098.025,
+    "mean_unique": 390.1,
+    "gm_cost_ratio": 1.013124909043116
+  },
+  "oracle_verified_incumbent": {
+    "trials": 40,
+    "valid": 40,
+    "mean_pops": 85.1,
+    "mean_unique": 28.075,
+    "gm_cost_ratio": 1.0
+  }
+}

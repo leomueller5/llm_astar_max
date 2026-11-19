@@ -125,4 +125,3 @@ def portfolio(query, graph=None, budget=12, include_cuts=True, anchor=None):
     return {'candidates':rows, 'points':lookup, 'geometry_best':best,
             'seconds':perf_counter()-tick,'heap_pushes':pushes,'heap_pops':pops,
             'segment_checks':graph.segment_checks, 'budget':budget}
-
