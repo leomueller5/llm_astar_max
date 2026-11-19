@@ -40,9 +40,7 @@ No API key is needed to reproduce our numbers: all notebooks use the stored GPT-
 
 ## Running the notebooks
 
-Locally, start Jupyter in the repository folder and open the notebook; it finds the project folder by itself.
-In Google Colab, upload the notebook; it looks for the project in `/content/llm_astar_max`, then in Google Drive under `MyDrive/llm_astar_max`, and otherwise clones the repository using the Colab secret `GITHUB_TOKEN` (requires access to the repository).
-
+Locally, start Jupyter in the folder llm_astar_max and open the notebook; it finds the project folder by itself. In Google Colab, upload the whole folder llm_astar_max (with exactly this name) to /content/ or to MyDrive/ in Google Drive, then open the notebook from there. The notebook finds the folder automatically. Cloning with the Colab secret GITHUB_TOKEN is only a fallback for team members with access to the private repository.
 Run all cells from top to bottom. The settings are in the first cell of each notebook.
 
 ---
