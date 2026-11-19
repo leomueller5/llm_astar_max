@@ -1,0 +1,49 @@
+{
+  "label": "Illustrative prompt/schema export only; no API request is made by this command. No optimal route supplied.",
+  "prompt_version": "s6_multi_strict_v1",
+  "model": "gpt-4o-mini-2024-07-18",
+  "temperature": 0,
+  "seed": 20261118,
+  "max_tokens": 384,
+  "messages": [
+    {
+      "role": "system",
+      "content": "You advise an eight-neighbor grid A* planner. x increases right; y increases UP. Walls are CLOSED segments including endpoints. Only integer cells strictly inside the supplied boundary are allowed. Return compact route guidance, not a dense sequence of unit moves. Do not provide explanations."
+    },
+    {
+      "role": "user",
+      "content": "Produce up to THREE genuinely different short bypass strategies from start to goal using the supplied free endpoint IDs. Geometry proposals are hints, not mandatory targets. Try opposite sides of ambiguous obstacles; each sequence should describe a coherent full route. Do not repeat near-identical candidates.\n{\"map\":{\"range_x\":[0,20],\"range_y\":[0,20],\"start\":[2,10],\"goal\":[18,10],\"horizontal_barriers\":[],\"vertical_barriers\":[[10,2,17]]},\"free_targets\":{\"v0:B\":[10,1],\"v0:T\":[10,18]},\"proposals\":[{\"route\":[[2,10],[10,18],[18,10]],\"failed_links\":0,\"conflicts\":[],\"verified_prefix_links\":2,\"octile_chain_cost\":22.627416997969522,\"source\":\"cut_x\",\"id\":\"R0\"},{\"route\":[[2,10],[10,1],[18,10]],\"failed_links\":0,\"conflicts\":[],\"verified_prefix_links\":2,\"octile_chain_cost\":24.627416997969522,\"source\":\"R1+v0:B\",\"id\":\"R2\"},{\"route\":[[2,10],[18,10]],\"failed_links\":1,\"conflicts\":[{\"from\":[2,10],\"to\":[18,10],\"failed_edge\":[[9,10],[10,10]],\"obstacles\":[\"v0\"],\"leg\":0}],\"verified_prefix_links\":0,\"octile_chain_cost\":16.0,\"source\":\"direct\",\"id\":\"R1\"}]}"
+    }
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "route_portfolio",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "routes": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "v0:B",
+                  "v0:T"
+                ]
+              },
+              "maxItems": 10
+            }
+          }
+        },
+        "required": [
+          "routes"
+        ]
+      }
+    }
+  }
+}

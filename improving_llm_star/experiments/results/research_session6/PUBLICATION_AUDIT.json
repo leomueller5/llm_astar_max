@@ -1,16 +1,17 @@
 {
   "branch": "research/waypoint-guidance",
-  "head": "85723dec3f74b5f9aa73f3d23259fee46be2d056",
+  "head": "c3b2e444b0f0a888e13ec083c3977f2f87211b08",
   "remote": "https://github.com/leomueller5/llm_astar_max.git",
   "main_unchanged": true,
   "preserved_contribution_ancestors": {
     "572603d": true,
     "2ed7763": true,
+    "1020fe0": true,
     "31f2798": true
   },
-  "scanned_files": 1381,
-  "scanned_bytes": 56453669,
-  "gzip_payloads_scanned": 90,
+  "scanned_files": 1413,
+  "scanned_bytes": 59442832,
+  "gzip_payloads_scanned": 103,
   "secret_findings": [],
   "unwanted_artifacts": [],
   "frozen_source_checks": {

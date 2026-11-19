@@ -1120,3 +1120,16 @@ Ausführliche Tabellen, Mathematik, Pseudocode, Fehlschläge und Befehle:
 `improving_llm_star/experiments/research/session6/README.md`, `THEORY.md` und
 `EXPERIMENT_LOG.md`. Wissenschaftliche Abbildungen als eigenständige PDF:
 `improving_llm_star/experiments/results/research_session6/figures/SESSION6_FIGURES.pdf`.
+
+Abschlussprüfung: Ein Darstellungsfehler bei p95 sehr kleiner Kartenfamilien wurde
+mit Regressionstest behoben. Unveränderte Rohdaten und Mittel-/Medianwerte;
+korrigierte Perzentile stehen in `*_analysis_corrected`, alte Auswertungen bleiben
+erhalten. Endstand **158 Tests bestanden**, auch nach dem letzten Team-Merge.
+Dev1020fe0 wurde mit c3b2e44 integriert; alle13 vorherigen betroffenen Dateien
+liegen gzip-komprimiert mit geprüftem Original-SHA im Archiv. Eine unabhängige
+Offline-Wiederholung von20Läufen reproduziert Kosten und Suchzähler exakt.
+Vollständiger Abschlussbericht als `SESSION6_REPORT_FINAL.pdf` (7Seiten),
+aktuelle Abbildungen in `figures_final`. Die Sitzung umfasst rund175aktive Minuten
+mit ausgeschlossener nächtlicher Unterbrechung. Kein Push: Zuordnung der
+konfigurierten Commit-E-Mail zum angemeldeten GitHub-Konto weiterhin unbestätigt;
+Git-Identität und Authentifizierung unverändert. Main wurde nicht verändert.

@@ -1,0 +1,58 @@
+{
+  "first_parent_session_commits": [
+    {
+      "commit": "c3b2e444b0f0a888e13ec083c3977f2f87211b08",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    },
+    {
+      "commit": "19b4377c5b69970410d906172c79e19d7e2be149",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    },
+    {
+      "commit": "73c6d2f78f938aa1cbadd899385e083f9dbf4dbe",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    },
+    {
+      "commit": "85723dec3f74b5f9aa73f3d23259fee46be2d056",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    },
+    {
+      "commit": "c270d4a4607a7c3669211a3c09f6d4c3fa24ad6d",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    },
+    {
+      "commit": "8bc8a66f2be0d911fe41fb77c0beb03e862d04bc",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    },
+    {
+      "commit": "da51b287b277ed16b27a111184d5a1430c74bed0",
+      "author": "Leo",
+      "email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "trailers": "No co-author trailer"
+    }
+  ],
+  "identity_settings_changed": false,
+  "github_push_allowed": false,
+  "reason": "Configured commit email not verified for authenticated GitHub account; no push attempted.",
+  "team_update1020fe0_incorporated": true,
+  "prior_team_versions_byte_exact_verified": 13
+}

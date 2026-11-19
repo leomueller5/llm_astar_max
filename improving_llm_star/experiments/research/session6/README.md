@@ -187,3 +187,11 @@ The budget export and portable response caches are sufficient for offline
 reproduction; no credentials or network access are needed.
 
 Final reporting correction: use `final_analysis_corrected`, `factorial_analysis_corrected`, and `quality_analysis_corrected` for interpolated percentiles. Older analyses remain preserved; mean/median/work/path conclusions are identical. The full suite now has158passing tests. `ANALYSIS_CORRECTION.json` explains the small-family p95 issue.
+
+The final full-text PDF is `../../results/research_session6/SESSION6_REPORT_FINAL.pdf`; corrected figure exports are in `figures_final`. The original exports remain available. An illustrative exact prompt and strict JSON schema are in `PROMPT_SCHEMA_EXAMPLE.json`.
+
+```sh
+.venv/bin/python improving_llm_star/experiments/research/session6/report_pdf.py \
+  --report improving_llm_star/experiments/results/research_session6/REPORT.md \
+  --output /tmp/llm-astar-session6-report.pdf
+```

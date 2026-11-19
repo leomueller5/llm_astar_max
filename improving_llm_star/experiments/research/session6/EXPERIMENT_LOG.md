@@ -218,3 +218,29 @@ Final cumulative charges$.2679828 + held$.1783152, remaining$2.553702.
 Session6:659successes,oneHTTP520hold$.0198, exact snapshot for every response,
 825232input/195319outputtokens,0reportedreasoning. Old eight holds preserved.
 No further paid calls planned. Export/accounting in BUDGET_REPORT.json.
+
+### Closing checks and teammate synchronization
+
+A final reporting audit found that floor-indexed p95 can lie below the median
+for two-map families. Corrected to linear interpolation; added a regression test.
+Raw experiments, means, medians, work and path results are unchanged, verified
+programmatically. Previous analysis JSONs remain preserved; authoritative
+corrected files are in *_analysis_corrected. Bootstrap endpoint interpolation
+changes slightly, with no material conclusion change. CSV CRLF/EOF presentation
+cleanups do not change data. The complete post-merge suite passes158tests.
+
+Fetched newerdev1020fe0: team notebook/figure/result revisions, no new algorithm
+source or maps. Archived all13 prior versions byte-exact with SHA256+gzip before
+mergec3b2e44. Team measurements remain distinct from Session6 experiments.
+Main untouched, original baseline unchanged, all frozen source hashes match.
+A fresh offline replay of4fixed cases x5methods exactly reproduced costs,
+operations, unique states and all heap counters (20matches, no API calls).
+
+Final output:REPORT.md,TEAM_BRIEF.md,SESSION6_REPORT_FINAL.pdf (7pages),
+figures_final/SESSION6_FIGURES.pdf, exact prompt/schema example, budget report,
+independent path and archive audits. A PDF preview and paired-CI figure were
+visually inspected. No secret findings in actual-key and generic-pattern scan,
+including decompressed archived artifacts. Commit metadata checked; no AI author
+or co-author trailers introduced. Github account login verified, configured
+commit email unverified => publication withheld under user's explicit condition.
+No identity/auth changes, no force operations, no push or main update.

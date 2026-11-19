@@ -1,0 +1,14 @@
+{
+  "independent_offline_replay_cases": 4,
+  "methods": 5,
+  "matched_runs": 20,
+  "identical": [
+    "path cost",
+    "original operation field",
+    "unique states",
+    "validity",
+    "heap pop/push/heapify audit"
+  ],
+  "sample": "Fixed dataset indices0,99,200,219, chosen without performance selection.",
+  "paid_requests": 0
+}

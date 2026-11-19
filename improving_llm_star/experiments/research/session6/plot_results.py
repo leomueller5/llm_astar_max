@@ -27,7 +27,10 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True);a=p.parse_args()
     if a.output.exists():raise FileExistsError(a.output)
-    a.output.mkdir(parents=True);analysis=json.loads((a.root/'final_analysis/analysis.json').read_text())
+    a.output.mkdir(parents=True)
+    analysis_path=a.root/'final_analysis_corrected/analysis.json'
+    if not analysis_path.exists():analysis_path=a.root/'final_analysis/analysis.json'
+    analysis=json.loads(analysis_path.read_text())
     raw=json.load(gzip.open(a.root/'final_heldout/results.json.gz','rt'))['runs']
     plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
     with PdfPages(a.output/'SESSION6_FIGURES.pdf') as pdf:

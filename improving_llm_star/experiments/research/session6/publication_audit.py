@@ -23,7 +23,7 @@ def main():
         if path.suffix in ['.sqlite3','.db','.env'] or any(x in path.parts for x in ['__pycache__','.venv']):artifacts.append(name)
     manifest=json.loads(Path('improving_llm_star/experiments/results/research_session6/frozen_manifest.json').read_text())
     hashes={name:hashlib.sha256(Path(name).read_bytes()).hexdigest()==expected for name,expected in manifest['sources'].items()}
-    ancestors={ref:subprocess.run(['git','merge-base','--is-ancestor',ref,'HEAD']).returncode==0 for ref in ['572603d','2ed7763','31f2798']}
+    ancestors={ref:subprocess.run(['git','merge-base','--is-ancestor',ref,'HEAD']).returncode==0 for ref in ['572603d','2ed7763','1020fe0','31f2798']}
     result={'branch':git('branch','--show-current'),'head':git('rev-parse','HEAD'),'remote':git('remote','get-url','origin'),
         'main_unchanged':git('rev-parse','main')=='66baa31d2fc2b658b501dcd4b34e09d31af66cb4',
         'preserved_contribution_ancestors':ancestors,'scanned_files':scanned,'scanned_bytes':size,'gzip_payloads_scanned':decompressed,

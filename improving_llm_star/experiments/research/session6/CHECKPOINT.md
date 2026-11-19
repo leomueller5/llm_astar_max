@@ -97,3 +97,41 @@ account. Main never moved. Do not change identity or auth settings.
 Active windows:Nov18 10:43:32–11:27:46 (~44min); resumedNov19 04:58:44.
 The overnight interruption is not research time.180 active minutes would end
 around07:14:30 UTC if productive work remains; never prolong meaningless runs.
+
+## Completed research checkpoint — 19 November around07:10UTC
+
+Status: multiple genuinely distinct research iterations and held-out evaluations
+completed. Roughly175minutes active research across two windows; the overnight
+interruption is excluded, not claimed as work. No paid request remains in flight.
+Cumulativeaccounted$.2679828+reserved$.1783152=$.4462980, remaining$2.553702.
+659new successful exact-snapshot responses; one newHTTP520hold; oldholds intact.
+
+Best verified integration: frozenLLM-A*-VM/HybridWaypointPlanner from85723de,
+weight2,consensus,cutanchor; qualityprofile1.05. No algorithm retuning after
+heldout opening. Strong original-baseline gains but no reliable general genuine-
+LLM advantage against strong matched geometric controls. ClassicalCut-only still
+best overall runtime recommendation. Secondary gate-policy hypothesis rejected
+on20additional map-disjoint maps. Oracle complete-route potential remains open.
+
+Final files:results/research_session6/REPORT.md,SESSION6_REPORT_FINAL.pdf,
+TEAM_BRIEF.md,figures_final,final_analysis_corrected,factorial_analysis_corrected,
+quality_analysis_corrected,supplementary_matched,BUDGET_REPORT.json.
+Reproduction exactcommands:session6/README.md. All primaryraw outputs cached;
+no credential/network needed for replay. Original outputs and old analyses kept.
+
+Verification:158tests pass after latestteammerge;3080primarypaths/242757edges
+independentlyvalid;20freshreplayruns matchwork/cost exactly; frozenhashes intact;
+13prior teamfileversions archived with byte-exactSHAchecks. Scans/diff/metadata
+checks run beforefinalcommit. Main remains66baa31. No AI authors/coauthors.
+
+Milestones:c270d4a(firstresearch),85723de(prefreezeimplementation),
+73c6d2f(fulltestresults),19b4377(percentilereportingrepair+archives),
+c3b2e44(latestteamdevmerge1020fe0). A final documentation/auditcommit follows.
+Push withheld: configuredcommit email notverifiedforauthenticatedleomueller5.
+Do not alteridentity/auth to bypasscondition. No push has been attempted.
+
+Resume: do NOT repeat old threshold sweeps. The strongest remaining hypothesis
+is verified full-route construction/targetedrepair where oracleincumbents show
+headroom. New research must usefreshmap splits, keep strongall-endpoint/geometry
+controls, and retain the SAME cumulativeledger. Any future onlinecall needs
+existing budgetcheck/reservation, never reset exports or discard failureholds.
