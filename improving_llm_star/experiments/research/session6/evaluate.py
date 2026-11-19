@@ -60,8 +60,9 @@ def execute(case,points,method,Original,meta=None,prompt=None):
     if method.endswith('_geometry'):
         proposal=portfolio(q,graph);points=proposal['geometry_best'];prep=proposal['seconds']
         geo_pops=proposal['heap_pops'];geo_pushes=proposal['heap_pushes']
+        meta={'routes':[r['route'] for r in proposal['candidates'][:3]]}
     elif method.endswith('_none'):
-        points=[]
+        points=[];meta={}
     name=method.removesuffix('_geometry').removesuffix('_none')
     raw='Generated Path: '+json.dumps(points)
     if name=='original':

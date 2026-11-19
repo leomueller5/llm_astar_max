@@ -1,0 +1,6 @@
+{
+  "paths_checked": 360,
+  "independent_shapely_edges": 25061,
+  "prototype_parity_comparisons": 360,
+  "scope": "Fresh complete query execution; exact path cost, boundaries, unit edges and Shapely STRtree collision predicates. No API calls."
+}

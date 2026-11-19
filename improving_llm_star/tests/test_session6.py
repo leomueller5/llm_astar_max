@@ -171,3 +171,192 @@ def test_cut_anchor_and_regret_order_remain_bounded_with_bad_advice():
         r=MacroGuidedSearch(weight=1.05,heuristic='cut',target_order='regret',initial_chain=initial).search(q,[(2,21),(27,21),(13,2),(14,16)])
         assert r['valid'] and r['length']<=1.05*ref['length']+1e-7
     with pytest.raises(ValueError):MacroGuidedSearch(interval=1.5)
+
+
+def test_geometry_and_disabled_controls_cannot_inherit_llm_route_metadata():
+    spec=importlib.util.spec_from_file_location('session6_eval_regression',SESSION/'evaluate.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    q=sample();case={'query':q,'optimal_cost':100.}
+    for method in ['macro_portfolio_geometry','macro_portfolio_none']:
+        a=module.execute(case,[(2,20)],method,None,{'routes':[[(27,20),(2,21)]]},'multi_strict')
+        b=module.execute(case,[(25,4)],method,None,{'routes':[[(13,16)]]},'multi_strict')
+        assert a['operation']==b['operation'] and a['length']==b['length']
+        assert a['processed_waypoints']==b['processed_waypoints']
+
+
+def test_evidence_triggered_revision_is_once_without_queue_rekey():
+    from llmastar.research.macro_guidance import MacroGuidedSearch
+    from llmastar.research.incumbent import IncumbentSearch
+    q=sample();calls=[]
+    def revise(context):
+        calls.append(context)
+        assert len(context['failed_macro_links'])==2
+        assert sum(x['verified'] for x in context['failed_macro_links'])<=1
+        return [(13,16)]
+    r=MacroGuidedSearch(interval=1,heuristic='cut').search(q,[(25,5)],revision=revise,
+        intervention_after=2,failure_window=2)
+    ref=IncumbentSearch(use_waypoints=False,visibility_budget=0,goal_weight=1).search(q,[])
+    assert len(calls)==r['revision_calls']==1 and r['rebuilds']==0
+    assert r['valid'] and r['length']<=2*ref['length']+1e-7
+    calls.clear()
+    MacroGuidedSearch(probe_budget=0).search(q,[(25,5)],revision=revise)
+    assert not calls
+
+
+def test_easy_case_geometry_gate_is_identical_across_advisory_sources():
+    spec=importlib.util.spec_from_file_location('session6_opportunity_regression',SESSION/'opportunity_study.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    q=sample();case={'query':q,'optimal_cost':100.}
+    response={'points':[(2,20)],'meta':{'routes':[[(26,20)],[(2,3)]]}}
+    for config in module.CONFIGS:
+        rr=[module.run(case,response,config,source) for source in ['llm','geometry','all']]
+        assert all(r['geometry_gate'] for r in rr)
+        assert len({(r['heap_pops'],r['length'],tuple(r['processed_waypoints'])) for r in rr})==1
+
+
+def test_adaptive_macro_confidence_updates_from_actual_edge_checks():
+    from llmastar.research.macro_guidance import MacroGuidedSearch
+    from llmastar.research.incumbent import IncumbentSearch
+    q=sample();points=[(25,5),(12,16),(14,16),(3,20)]
+    r=MacroGuidedSearch(heuristic='cut',target_order='adaptive',require_descent=True,interval=1).search(q,points)
+    ref=IncumbentSearch(use_waypoints=False,visibility_budget=0,goal_weight=1).search(q,[])
+    assert r['valid'] and r['length']<=2*ref['length']+1e-7
+    assert r['trust_updates']>0 and 0<r['trust_contexts']<=r['trust_updates']
+    assert r['rebuilds']==0 and r['macro_probes']<=256
+
+
+def test_roadmap_complete_and_lazy_paths_have_exact_grid_costs():
+    from roadmap import Roadmap
+    from llmastar.research.geometry import SegmentGridGraph
+    q=sample();full=Roadmap(q,k=None);ids,cost,_=full.shortest()
+    assert ids and math.isfinite(cost)
+    dense=full.dense_path(ids);g=SegmentGridGraph(q)
+    assert abs(cost-sum(math.dist(a,b) for a,b in zip(dense,dense[1:])))<1e-8
+    assert all(math.isfinite(g.cost(a,b)) for a,b in zip(dense,dense[1:]))
+    lazy=Roadmap(q,k=1);_,lazy_cost,_=lazy.lazy_augment(len(lazy.points)**2)
+    assert abs(lazy_cost-cost)<1e-8
+
+
+def test_roadmap_verification_is_cached_and_blocked_links_never_trusted():
+    from roadmap import Roadmap,complete_routes
+    q=sample();roadmap=Roadmap(q,k=1)
+    before=roadmap.probes
+    for _ in range(3):assert not roadmap.verify('S','G')
+    assert roadmap.probes<=before+1
+    rows,_=complete_routes(roadmap,[['S','G']])
+    assert not rows[0]['valid'] and rows[0]['cost'] is None
+
+
+def test_interactive_frontier_uses_only_verified_prefixes_and_hard_budget():
+    from frontier import plan
+    from llmastar.research.geometry import SegmentGridGraph
+    from llmastar.research.strategic.cuts import CutPotential
+    q=sample();g=SegmentGridGraph(q);p=portfolio(q,g);potential=CutPotential(q,tuple(q['goal']))
+    contexts=[]
+    def controller(context):
+        contexts.append(context)
+        assert all(r['verified_prefix_cost']>=0 for r in context['frontier'])
+        return context['frontier'][0]['id']
+    result=plan(q,p,g,potential,controller,budget=2)
+    assert result['abstract_expanded']<=3 and result['abstract_selections']<=2
+    for a,b in zip(result['route'],result['route'][1:]):assert g.lattice_segment(a,b)
+    if result['complete']:
+        assert result['route'][0]==tuple(q['start']) and result['route'][-1]==tuple(q['goal'])
+        assert abs(result['cost']-sum(max(abs(a[0]-b[0]),abs(a[1]-b[1]))+(math.sqrt(2)-1)*min(abs(a[0]-b[0]),abs(a[1]-b[1])) for a,b in zip(result['route'],result['route'][1:])))<1e-8
+
+
+def test_deployable_planner_preserves_query_and_baseline_result_keys():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    q=sample();before=json.dumps(q,sort_keys=True)
+    r=HybridWaypointPlanner().searching(q)
+    assert r['valid'] and {'operation','storage','length','llm_output'}<=set(r)
+    assert json.dumps(q,sort_keys=True)==before
+    assert r['total_heap_pops']>=r['operation'] and r['provider_calls']==0
+
+
+def test_consensus_votes_are_per_route_not_repeated_points():
+    from llmastar.research.hybrid_guidance import select_targets
+    routes=[[(2,3),(2,3),(4,5)],[(4,5),(8,9)],[(7,9)]]
+    assert select_targets(routes)==[(4,5)]
+    assert select_targets(routes[:1])==[(2,3),(4,5)]
+
+
+def test_deployable_geometry_gate_never_calls_provider_and_handles_no_path():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    class Forbidden:
+        def propose(self,q,c):pytest.fail('Model must not be invoked')
+    open_q=dict(sample(),vertical_barriers=[])
+    r=HybridWaypointPlanner(provider=Forbidden()).search(open_q)
+    assert r['valid'] and r['geometry_gate'] and r['provider_calls']==0
+    blocked=dict(sample(),vertical_barriers=[[13,0,24]])
+    r=HybridWaypointPlanner(provider=Forbidden()).search(blocked)
+    assert not r['valid'] and r['proof_unreachable'] and r['operation']==0
+
+
+def test_shared_anchor_matches_unshared_search_and_rejects_wrong_goal():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    from llmastar.research.macro_guidance import MacroGuidedSearch
+    from llmastar.research.strategic.cuts import CutPotential
+    q=sample()
+    a=HybridWaypointPlanner(share_anchor=True).search(q)
+    b=HybridWaypointPlanner(share_anchor=False).search(q)
+    assert a['operation']==b['operation'] and a['length']==b['length']
+    wrong=CutPotential(q,(24,8))
+    with pytest.raises(ValueError):MacroGuidedSearch(heuristic='cut').search(q,[],anchor=wrong)
+
+
+def test_production_geometry_candidates_match_preserved_prototype():
+    from llmastar.research.geometric_advice import portfolio as production
+    q=sample();a=portfolio(q);b=production(q)
+    assert a['candidates']==b['candidates'] and a['geometry_best']==b['geometry_best']
+    assert a['heap_pops']==b['heap_pops'] and a['heap_pushes']==b['heap_pushes']
+
+
+def test_original_json_and_natural_language_input_interfaces():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    q=dict(sample(),vertical_barriers=[])
+    r=HybridWaypointPlanner().searching(json.dumps(q))
+    assert r['valid'] and r['parsing_provider_calls']==0
+    class Parser:
+        def parse_query(self,text):assert text=='planning input';return q
+        def propose(self,q,c):pytest.fail('Open route should not call planner model')
+    r=HybridWaypointPlanner(provider=Parser()).searching('planning input')
+    assert r['valid'] and r['parsing_provider_calls']==1
+
+
+def test_failed_provider_retains_complete_classical_fallback():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    class Failed:
+        def propose(self,q,c):raise TimeoutError('private details must not be persisted')
+    a=HybridWaypointPlanner(provider=Failed(),source='llm_only').search(sample())
+    b=HybridWaypointPlanner(source='goal_only').search(sample())
+    assert a['valid'] and a['provider_error']=='TimeoutError'
+    assert a['operation']==b['operation'] and a['length']==b['length']
+    assert 'private details' not in json.dumps(a)
+
+
+def test_roadmap_prompt_cache_identity_does_not_depend_on_runtime():
+    from roadmap import Roadmap,roadmap_messages
+    q=sample();p=Roadmap(q).proposal();a=roadmap_messages(q,p)
+    p['preprocess_seconds']=1000.
+    b=roadmap_messages(q,p)
+    assert a==b
+
+
+def test_probe_disabled_variant_has_no_advisory_effect():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    q=sample()
+    a=HybridWaypointPlanner(source='llm_only',probe_budget=0).search(q,routes=[[(2,21),(27,20)]])
+    b=HybridWaypointPlanner(source='goal_only',probe_budget=0).search(q)
+    assert a['operation']==b['operation'] and a['path']==b['path']
+
+
+def test_always_guidance_ablation_does_not_silently_use_geometry():
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    class Provider:
+        def __init__(self):self.calls=0
+        def propose(self,q,c):self.calls+=1;return {'routes':[[(3,20)]]}
+    q=dict(sample(),vertical_barriers=[]);provider=Provider()
+    r=HybridWaypointPlanner(provider=provider,source='hybrid_always').search(q)
+    assert provider.calls==1 and not r['geometry_gate'] and r['geometry_route_available']
+    assert (3,20) in r['processed_waypoints']

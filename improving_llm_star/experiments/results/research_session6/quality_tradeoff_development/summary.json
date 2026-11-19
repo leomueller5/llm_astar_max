@@ -1,0 +1,98 @@
+{
+  "1.0/geometry": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 821.5625,
+    "mean_unique": 555.4375,
+    "mean_ms": 6.755981870810501,
+    "gm_cost_ratio": 1.0
+  },
+  "1.0/llm": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 820.6875,
+    "mean_unique": 554.4375,
+    "mean_ms": 6.845544325187802,
+    "gm_cost_ratio": 1.0
+  },
+  "1.0/no_advice": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 823.0625,
+    "mean_unique": 557.375,
+    "mean_ms": 6.939236976904795,
+    "gm_cost_ratio": 1.0
+  },
+  "1.05/geometry": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 819.75,
+    "mean_unique": 474.25,
+    "mean_ms": 5.977932232781313,
+    "gm_cost_ratio": 1.0010307546708448
+  },
+  "1.05/llm": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 821.375,
+    "mean_unique": 475.5625,
+    "mean_ms": 6.140596306067891,
+    "gm_cost_ratio": 1.0010307546708448
+  },
+  "1.05/no_advice": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 847.375,
+    "mean_unique": 494.75,
+    "mean_ms": 6.141372461570427,
+    "gm_cost_ratio": 1.0
+  },
+  "1.2/geometry": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 1072,
+    "mean_unique": 404.625,
+    "mean_ms": 6.3486250437563285,
+    "gm_cost_ratio": 1.0039306211824295
+  },
+  "1.2/llm": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 1041.8125,
+    "mean_unique": 404.125,
+    "mean_ms": 6.109963389462791,
+    "gm_cost_ratio": 1.0032972323536313
+  },
+  "1.2/no_advice": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 1169.5,
+    "mean_unique": 470.375,
+    "mean_ms": 6.621682245167904,
+    "gm_cost_ratio": 1.0035612479592901
+  },
+  "2.0/geometry": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 721.375,
+    "mean_unique": 199.8125,
+    "mean_ms": 4.483309923671186,
+    "gm_cost_ratio": 1.0228239334169482
+  },
+  "2.0/llm": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 374.1875,
+    "mean_unique": 165.3125,
+    "mean_ms": 3.6708045954583213,
+    "gm_cost_ratio": 1.0185889985993979
+  },
+  "2.0/no_advice": {
+    "valid": 16,
+    "cases": 16,
+    "mean_pops": 1099.875,
+    "mean_unique": 349.5,
+    "mean_ms": 5.975114516331814,
+    "gm_cost_ratio": 1.0306665743551295
+  }
+}

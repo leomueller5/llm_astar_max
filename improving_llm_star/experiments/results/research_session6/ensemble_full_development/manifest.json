@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "improving_llm_star/experiments/research/session6/opportunity_study.py": "d54da75c908a5b198cdb59ba18b82a7818ade272d83421a8b2f616cae4c3e47d",
+    "improving_llm_star/experiments/research/session6/hybrid.py": "aa4cae990e4a9694fbdf017c9720cb261f81c871d0331537d2981c6362da0261",
+    "improving_llm_star/llmastar/research/macro_guidance.py": "1233e4c9a0525c32952b6ee54f09ba6e1a05ec0f2a76a7002d269228aae62b3b"
+  },
+  "args": {
+    "cases": "improving_llm_star/experiments/results/research_session6/development_full.json.gz",
+    "responses": "improving_llm_star/experiments/results/research_session6/development_full_guidance/responses.json.gz",
+    "output": "improving_llm_star/experiments/results/research_session6/ensemble_full_development",
+    "repeats": 3,
+    "configs": [
+      "portfolio_given",
+      "portfolio_regret",
+      "consensus",
+      "consensus_rank"
+    ],
+    "sources": [
+      "llm",
+      "geometry",
+      "all"
+    ],
+    "weight": 2.0
+  }
+}

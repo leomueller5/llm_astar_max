@@ -1,0 +1,23 @@
+{
+  "cases": [
+    "team_38_1",
+    "team_26_1",
+    "team_57_0",
+    "team_34_0",
+    "team_70_1",
+    "team_57_1",
+    "team_79_0",
+    "team_37_0",
+    "team_15_0",
+    "team_52_1"
+  ],
+  "seeds": [
+    20261119,
+    20261120,
+    20261121
+  ],
+  "temperature": 0.3,
+  "selection": "Hash order among geometry-unresolved development cases; no performance-based selection",
+  "primary_temperature": 0,
+  "scope": "Exploratory output-variability sensitivity, not a different-temperature primary baseline comparison"
+}

@@ -962,3 +962,54 @@ Noch keine positive Wirksamkeitsaussage: Entwicklungsexperimente laufen.
 Publikation bisher gesperrt: Git-Anmeldung ist `leomueller5`, die konfigurierte
 Commit-E-Mail ist jedoch nicht als verifizierte Konto-E-Mail bestätigt. Es wurden
 weder Identität noch Authentifizierung verändert.
+
+### Sitzung 6: Stand vor dem unangetasteten Abschlusstest
+
+Die Forschung wurde zwischen 18.11. 11:27 UTC und 19.11. 04:58 UTC unterbrochen.
+Diese Zeit zählt nicht als aktive Forschungszeit. Alle Reservierungen und Caches
+blieben erhalten. Es wurden mehrere unterschiedliche Richtungen geprüft:
+geometrische Routenauswahl/-reparatur, strikte Kandidatenentscheidungen, verifizierte
+Makrokanten, Bild- statt Textkarten, dynamische Korrektur, spärliche Sichtbarkeitsgraphen,
+interaktive Frontier-Auswahl, lokales adaptives Vertrauen und Konsens mehrerer Routen.
+
+Der große Entwicklungstest umfasst jetzt 120 Aufgaben auf 60 Karten. Die frühe
+Verbesserung von rund 47 Prozent gegenüber geometrischen Wegpunkten schrumpft dort
+auf 5.7 Prozent; gegenüber allen geometrischen Endpunkten bleiben nur 1.1 Prozent.
+95-Prozent-Konfidenzintervalle (kartenweises Bootstrap): LLM/Geometrie [0.840,1.013],
+LLM/alle Endpunkte [0.965,1.009]. Damit ist kein belastbarer zusätzlicher LLM-Vorteil
+nachgewiesen. Die separaten Validierungskarten zeigen teilweise Regressionen.
+
+Wiederholte Fehlversuche geometrischer Makroverbindungen sind ein früheres Signal
+als 30 Expansionen ohne Distanzfortschritt. Eine lokale Beta-Vertrauensschätzung
+und eine Schranke für positiven Prioritätsfortschritt wurden implementiert. Sie
+konnten die Ergebnisse aber nicht zuverlässig verbessern; die Schranke verwirft
+auch nützliche Umwege. Die Heuristik selbst bleibt bei diesen Tests unverändert,
+sodass keine OPEN-Neubewertungen erforderlich sind.
+
+Das Eingreifen während der Suche ergab ebenfalls keinen stabilen Vorteil:
+sechs Makro-Korrekturanfragen auf 16 Aufgaben verschlechterten die mittleren
+Such-Pops von 374.2 auf 382.0. Die interaktive Wahl tatsächlich erreichbarer
+abstrakter Frontier-Zustände (höchstens vier Modellentscheidungen) lag mit 752.2
+Gitter-Pops nahe an der Zufallskontrolle (759.1); Klassik775.3. API-Latenz und
+abstrakte Sucharbeit kommen hinzu. Dies sind Entwicklungsergebnisse.
+
+Der ausführbare neue Kandidat ist `HybridWaypointPlanner` in
+`llmastar/research/hybrid_guidance.py` (Arbeitsname LLM-A*-VM): Geometrie versucht
+zuerst einen kleinen Routenpool. Bei vollständiger geometrischer Route wird das
+LLM ausgelassen. Andernfalls erzeugt GPT-4o mini bis zu drei Kandidatenrouten aus
+freien Endpunkt-IDs. Mehrheitskonsens filtert Zielpunkte; A* verwendet sie nur für
+kollisionsgeprüfte echte Makrokanten. Alle normalen Gitterkanten bleiben erhalten.
+Die Priorität lautet g+w*h_cut; die LLM-Ziele verändern keine ungeprüften h-Werte.
+Mit Reopenings gilt die übliche w-Schranke, bei w=1 Optimalität (bis auf numerische
+Toleranz). Das Original bleibt unverändert mit g+h_goal+d_target und final g+2h_goal.
+
+Eine gemeinsame Wiederverwendung der Schnitt-Heuristik vermeidet doppelte
+Vorverarbeitung; das ist eine klassische Optimierung und wird nicht dem LLM
+zugeschrieben. 360 Produktions-/Prototypvergleiche stimmten in Pops, Pushes und
+Kosten überein. 25,061 Pfadkanten wurden unabhängig mit Shapely geprüft.
+
+Konsens wurde gewählt, weil er die Validierungsregressionen der ersten LLM-Route
+reduziert. Die drei Routen stammen aus derselben Antwort und sind NICHT unabhängige
+Stichproben; die Häufigkeit ist kein kalibrierter Wahrscheinlichkeitswert.
+Das folgende Testset bleibt bis zum schriftlichen Einfrieren aller Parameter
+von Modellauswahl und Promptentwicklung getrennt.

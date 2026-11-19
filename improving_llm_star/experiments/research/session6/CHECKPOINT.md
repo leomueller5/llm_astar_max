@@ -41,3 +41,23 @@ responses, evaluate matched controls. Freeze before opening held-out cases.
 `.venv/bin/python improving_llm_star/experiments/research/session6/api.py status`
 
 Do not invoke Session 5 export after new requests: retain historical artifacts.
+
+## Update 11:28 UTC
+
+Milestone c270d4a preserves first four research directions and cached requests.
+Development macro-cut first multi-route shows real search-work advantage versus
+geometry controls, but independent validation reverses it. No success claim.
+Random/shuffle controls saved; 10 seeds averaged per query before map bootstrap.
+Dynamic real correction pilot: 6 requests/16 tasks; 382 mean search pops versus
+374.2 without intervention, random380.4, classical462.6. Trigger/goal and geometric
+preprocessing are retained; no reliable benefit. One trigger may be redundant
+when a full geometric route exists, so a future gated provider must avoid this.
+
+Macro-portfolio geometry ablation contained metadata leakage (ONLY that ablation,
+not macro-cut). Fixed by replacing every metadata route with geometric routes,
+and resetting metadata in disabled controls; regression test added. Old affected
+comparisons explicitly marked invalid in experiment log.
+
+Next: lazy sparse geometric roadmap completion, with exact graph-search controls
+and LLM-proposed missing connections. This changes the information representation
+substantively rather than retuning previously unsuccessful weights.

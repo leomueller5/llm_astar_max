@@ -1,0 +1,101 @@
+{
+  "llm": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.813796844449826,
+    "mean_heap_pops": 848.5625,
+    "mean_heap_pushes": 971.0625,
+    "mean_unique_union": 486.4375,
+    "mean_probes": 73.5,
+    "certificates": 1,
+    "gm_cost_ratio": 1.0
+  },
+  "geometry4": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.450690034194849,
+    "mean_heap_pops": 871.875,
+    "mean_heap_pushes": 1002,
+    "mean_unique_union": 499.3125,
+    "mean_probes": 71.1875,
+    "certificates": 1,
+    "gm_cost_ratio": 1.0
+  },
+  "geometry8": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.394689840613864,
+    "mean_heap_pops": 830.1875,
+    "mean_heap_pushes": 947.25,
+    "mean_unique_union": 489.3125,
+    "mean_probes": 141.8125,
+    "certificates": 4,
+    "gm_cost_ratio": 1.0104636057271885
+  },
+  "geometry_full": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.787010391941294,
+    "mean_heap_pops": 785.4375,
+    "mean_heap_pushes": 880.5,
+    "mean_unique_union": 437.4375,
+    "mean_probes": 405,
+    "certificates": 5,
+    "gm_cost_ratio": 1.0084950348960828
+  },
+  "random_complete": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.535080606932752,
+    "mean_heap_pops": 872.125,
+    "mean_heap_pushes": 1002.25,
+    "mean_unique_union": 499.5625,
+    "mean_probes": 73.5,
+    "certificates": 1,
+    "gm_cost_ratio": 1.0
+  },
+  "greedy_complete": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 6.370460920152254,
+    "mean_heap_pops": 871.875,
+    "mean_heap_pushes": 1002,
+    "mean_unique_union": 499.3125,
+    "mean_probes": 73.5,
+    "certificates": 1,
+    "gm_cost_ratio": 1.0
+  },
+  "lazy_matched": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.973778679617681,
+    "mean_heap_pops": 940.0625,
+    "mean_heap_pushes": 1089.25,
+    "mean_unique_union": 505.1875,
+    "mean_probes": 73.5,
+    "certificates": 1,
+    "gm_cost_ratio": 1.0
+  },
+  "lazy_full": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 20.22092447441537,
+    "mean_heap_pops": 3120.625,
+    "mean_heap_pushes": 3456.5,
+    "mean_unique_union": 446.625,
+    "mean_probes": 135.4375,
+    "certificates": 5,
+    "gm_cost_ratio": 1.0084950348960828
+  },
+  "cut_only": {
+    "cases": 16,
+    "valid": 16,
+    "mean_ms": 5.278148499201052,
+    "mean_heap_pops": 855.3125,
+    "mean_heap_pushes": 1003.125,
+    "mean_unique_union": 502.4375,
+    "mean_probes": 0,
+    "certificates": 0,
+    "gm_cost_ratio": 1.0
+  }
+}

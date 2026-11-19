@@ -22,7 +22,8 @@ def main():
     a=p.parse_args()
     if a.output.exists():
         raise FileExistsError(a.output)
-    if a.split=='heldout' and not a.frozen_manifest:
+    if a.split=='heldout' and (not a.frozen_manifest or not a.frozen_manifest.is_file()
+        or json.loads(a.frozen_manifest.read_text()).get('status')!='frozen'):
         raise ValueError('Held-out evaluation requires a frozen configuration manifest')
     split=json.loads((ROOT/'experiments/results/research_session6/team_split.json').read_text())
     ids=sorted(split[a.split],key=lambda i:hashlib.sha256(f'case-order-{i}'.encode()).hexdigest())[:a.maps]

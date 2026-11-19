@@ -1,0 +1,22 @@
+{
+  "improving_llm_star/experiments/research/session6/controls.py": "997f9aa5b68200b54f598e8aee514773bda0cc99f75e90cd0df78eeb407e14fd",
+  "improving_llm_star/experiments/research/session6/collect.py": "b19ccba250f606aa9ad4833a699d1d7d651a4d22204f9ff84a76794e50c7d7b0",
+  "improving_llm_star/experiments/research/session6/roadmap.py": "80e755657172a3dd8c7240f63b6debf167a1362f500b0f9db633bb84c7936620",
+  "improving_llm_star/experiments/research/session6/evaluate_roadmap.py": "244eb8a96217d66ca07c814d4108b9e2f1975b8b8a1ec92fefd4b54f1d394914",
+  "improving_llm_star/experiments/research/session6/opportunity_study.py": "067ab80930cab42ce759d483550613efb7752ec08daa92fe00f6b37ed5faf612",
+  "improving_llm_star/experiments/research/session6/vision.py": "41b23fd1467ebed4c57a6ee879f2ea8c8becb481eb277b9cc9dad0a7f02b90f3",
+  "improving_llm_star/experiments/research/session6/hybrid.py": "aa4cae990e4a9694fbdf017c9720cb261f81c871d0331537d2981c6362da0261",
+  "improving_llm_star/experiments/research/session6/collect_roadmap.py": "c1521ffe351749b8d079f714d0e475bbcc998a4936a78174423f0b254f9f7ffe",
+  "improving_llm_star/experiments/research/session6/weight_study.py": "952d037edd9a9c2dddcdca9ed8d6bf4bfd147b17a457eef2800445428fbae01e",
+  "improving_llm_star/experiments/research/session6/api.py": "a9691e63d5b9a9c6945d4861a57dfb76c6019e1df32c77189f145d277be56ba8",
+  "improving_llm_star/experiments/research/session6/dynamic.py": "135dca57bed4c702a04a0e6690edf9ce6c76022a727039cd243a28b91b8cea6f",
+  "improving_llm_star/experiments/research/session6/strategic.py": "0114da40a2b7f1257c3d05976dc053b43a5850cd618e47b5517ae9628b10dfcd",
+  "improving_llm_star/experiments/research/session6/evaluate.py": "546a59477e22fee5fc72d0a3df62742bb0fbd345bea2edc10bbfa5e48333fa01",
+  "improving_llm_star/experiments/research/session6/direct.py": "23effcd444110c7b07e4c995f1a1b5b35d7cf9fa870171660ecb73cf4ee72fd3",
+  "improving_llm_star/experiments/research/session6/collect_strategic.py": "bb975523acb9d4077400bf7ca71306c5d200a033b666c6bff0ded3bf5cdce1a5",
+  "improving_llm_star/experiments/research/session6/prepare.py": "47d6a0edee7f55a5c75ac71ac089c90b8a3c7f3ef8ac95d4258a4fa44df0278b",
+  "improving_llm_star/experiments/research/session6/frontier.py": "963df2e670f4f6508b4b5c465743110bec4c1ca10249ec377cf17b0abc0a5b54",
+  "improving_llm_star/experiments/research/session6/collect_vision.py": "0ce7f362ea538c2480e8483c33e08863b3f00ad1b19449a42c85632d6bb7b9ad",
+  "improving_llm_star/experiments/research/session6/prepare_challenging.py": "6392060fc7e0cfbb6454e6c19deb1999e3b569c61ee48711299d816b3e341a35",
+  "improving_llm_star/llmastar/research/macro_guidance.py": "1233e4c9a0525c32952b6ee54f09ba6e1a05ec0f2a76a7002d269228aae62b3b"
+}

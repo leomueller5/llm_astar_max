@@ -70,7 +70,7 @@ class RetryClient:
                                'retryable': True}
             raise
 
-    def _structured_chat(self,messages,metadata,max_tokens,response_format):
+    def _structured_chat(self,messages,metadata,max_tokens,response_format,seed,temperature):
         if not 1<=max_tokens<=16384 or not isinstance(response_format,dict) or response_format.get('type')!='json_schema':
             raise ValueError('Invalid structured request')
         def valid_message(m):
@@ -91,7 +91,7 @@ class RetryClient:
         if not isinstance(messages,list) or not all(valid_message(m) for m in messages):
             raise ValueError('Only text or embedded local PNG messages allowed')
         payload={'model':MODEL,'messages':messages,'max_completion_tokens':max_tokens,
-                 'seed':20261118,'temperature':0,'response_format':response_format}
+                 'seed':seed,'temperature':temperature,'response_format':response_format}
         identifier=hashlib.sha256(json.dumps({'payload':payload,'metadata':metadata},sort_keys=True).encode()).hexdigest()
         cached=self.ledger.reserve(identifier,payload,metadata)
         if cached is not None:
@@ -107,14 +107,16 @@ class RetryClient:
             self.ledger.fail(identifier,kind,time.perf_counter()-started);self.ledger.export()
             raise RequestUnavailable('Structured request failed safely: '+kind) from None
 
-    def chat(self, messages, metadata, max_tokens=512,response_format=None):
+    def chat(self, messages, metadata, max_tokens=512,response_format=None,seed=20261118,temperature=0):
+        if type(seed) is not int or type(temperature) not in [int,float] or not 0<=temperature<=2:
+            raise ValueError('Invalid reproducible model configuration')
         if self.consecutive_failures >= 3:
             raise RequestUnavailable('Circuit open after three failed logical requests')
         client = BudgetClient(self.ledger, self.transport)
         for attempt in range(self.attempts):
             try:
                 tagged=dict(metadata,session=6,retry_attempt=attempt)
-                result = self._structured_chat(messages,tagged,max_tokens,response_format) if response_format else client.chat(messages,tagged,max_tokens=max_tokens)
+                result = self._structured_chat(messages,tagged,max_tokens,response_format,seed,temperature) if response_format else client.chat(messages,tagged,max_tokens=max_tokens,seed=seed,temperature=temperature)
                 self.consecutive_failures = 0
                 return result
             except RequestUnavailable:
