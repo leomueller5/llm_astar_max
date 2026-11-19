@@ -1133,3 +1133,43 @@ aktuelle Abbildungen in `figures_final`. Die Sitzung umfasst rund175aktive Minut
 mit ausgeschlossener nächtlicher Unterbrechung. Kein Push: Zuordnung der
 konfigurierten Commit-E-Mail zum angemeldeten GitHub-Konto weiterhin unbestätigt;
 Git-Identität und Authentifizierung unverändert. Main wurde nicht verändert.
+
+### Sitzung7 begonnen: persistente räumliche Heuristiken statt kurzlebiger Wegpunkte
+
+Start19.11.2026 07:25:52UTC auf `research/waypoint-guidance`, sauberer Stand86c8c88.
+GitHub aktualisiert; zunächst keine neuen Beiträge gegenüber dem bereits
+integrierten dev1020fe0. Original und eingefrorene Sitzung6 bleiben unverändert.
+Das kumulierte API-Limit bleibt$3; Startbelastung$.2679828+Reserve$.1783152.
+Alle neuen Aufrufe verwenden exakt `gpt-4o-mini-2024-07-18` und denselben Ledger,
+mit eigenem portablen Sitzung7-Export. Schlüssel wird nur im Prozess geladen.
+
+Neue Forschungsfrage: Können räumliche Modellvorhersagen über Restkosten und
+vielversprechende Regionen A* zusätzlich unterstützen? Zuerst Oracle-Kontrollen:
+Feine perfekte Restkosten helfen deutlich, aber selbst perfekte Werte in nur4x4
+Regionen können die Suche verschlechtern. Eine8x8-Korridormaske hat messbares
+Potenzial. Deshalb werden Informationsauflösung, Modellqualität und Suchintegration
+getrennt getestet. Focal Search und TransPath sind verwandte etablierte Verfahren;
+unsere mögliche Leistung ist eine Integration allgemeiner Sprachmodellvorhersagen,
+keine behauptete Erfindung dieser Sucharchitekturen.
+
+Drei neue getrennte Suchvarianten: begrenzte Prioritätshülle, Focal mit zulässigem
+Anker und ankergeprüfte zwei Warteschlangen. Normale Gitterkanten, verifizierte
+Kosten, Reopenings und vollständige Rückfallebene bleiben erhalten. Heuristik-
+änderungen bauen nur lebende OPEN-Einträge neu auf; Duplikate sind kein Fortschritt.
+
+Erste echte Entwicklungstests (20neueKarten, sechsgepaarteDarstellungen) liefern
+schlechte Korridormasken: häufig falsche Regionszuordnung, fehlende Start-/Ziel-
+regionen und widersprüchliche Markierungen. Explizite Zuordnung in einer getrennten
+Promptrevision beseitigt das Leistungsproblem bisher nicht. Bildbasierte numerische
+Zusatzkosten senken dagegen vorläufig Pops gegenüber demselben Kern ohneZusatzterm,
+aber nicht gegenüber der stärkeren klassischen KontrolleWA1.05. Absolut sind die
+numerischen Schätzungen ungenauer als die geometrische Untergrenze. Noch keine
+positive Wirksamkeitsaussage; unabhängige Validierung und weitere Kontrollen laufen.
+
+Neuer Alpha-Ansatz: Zusatzkosten werden an kollisionsgeprüften oberen und zulässigen
+unteren Kostengrenzen für Regionsstichproben kalibriert. Das vermeidet die verspätete
+30-Expansions-Reaktion. Die Interpolation ist weiterhin nicht als zulässige Heuristik
+bewiesen; die unabhängige begrenzte Suchpriorität sichert die Pfadqualität ab.
+Alle negativen Versuche, insbesondere eine bereits amOracle scheiternde persistente
+Wandseiten-Heuristik, bleiben im Log erhalten. Stand und Befehle:
+`improving_llm_star/experiments/research/session7/CHECKPOINT.md` und `EXPERIMENT_LOG.md`.
