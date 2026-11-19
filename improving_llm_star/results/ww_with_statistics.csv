@@ -1,0 +1,103 @@
+Method,Prompt,Metric,mean,ci_low,ci_high,sd,n
+Dynamic WA*,-,OR,60.9,57.73,64.25,43.07,1000
+Dynamic WA*,-,SR,78.52,76.77,80.32,24.11,1000
+Dynamic WA*,-,RL,100.24,100.18,100.31,1.07,1000
+Dynamic WA*,-,VPR,100.0,99.62,100.0,0.0,1000
+Dynamic WA*,-,Worse than A* (OR > 100 %),60.4,57.33,63.39,48.93,1000
+Dynamic WA*,-,Time,78.41,74.85,82.15,51.09,1000
+Static WA* (w=2),-,OR,34.32,32.74,35.97,32.89,1000
+Static WA* (w=2),-,SR,56.23,55.08,57.41,19.55,1000
+Static WA* (w=2),-,RL,102.02,101.77,102.26,4.23,1000
+Static WA* (w=2),-,VPR,100.0,99.62,100.0,0.0,1000
+Static WA* (w=2),-,Worse than A* (OR > 100 %),5.3,4.07,6.87,22.41,1000
+Static WA* (w=2),-,Time,42.17,40.65,43.74,29.89,1000
+LLM-A*,Few-Shot,OR,46.09,43.71,48.59,81.6,1000
+LLM-A*,Few-Shot,SR,65.4,63.68,67.17,39.6,1000
+LLM-A*,Few-Shot,RL,102.74,102.49,102.98,4.13,1000
+LLM-A*,Few-Shot,VPR,100.0,99.62,100.0,0.0,1000
+LLM-A*,Few-Shot,Worse than A* (OR > 100 %),17.3,15.08,19.77,37.84,1000
+LLM-A*,Few-Shot,Time,55.29,52.95,57.74,70.68,1000
+LLM-A*-WW,Few-Shot,OR,34.75,33.17,36.41,32.9,1000
+LLM-A*-WW,Few-Shot,SR,56.59,55.43,57.77,19.69,1000
+LLM-A*-WW,Few-Shot,RL,102.13,101.89,102.37,4.15,1000
+LLM-A*-WW,Few-Shot,VPR,100.0,99.62,100.0,0.0,1000
+LLM-A*-WW,Few-Shot,Worse than A* (OR > 100 %),5.6,4.34,7.2,23.0,1000
+LLM-A*-WW,Few-Shot,Time,43.8,42.25,45.41,30.17,1000
+WW: weights only (partial),Few-Shot,OR,40.39,38.62,42.24,33.54,1000
+WW: weights only (partial),Few-Shot,SR,60.09,58.89,61.31,19.95,1000
+WW: weights only (partial),Few-Shot,RL,102.0,101.76,102.25,4.19,1000
+WW: weights only (partial),Few-Shot,VPR,100.0,99.62,100.0,0.0,1000
+WW: weights only (partial),Few-Shot,Worse than A* (OR > 100 %),7.1,5.67,8.86,25.7,1000
+WW: weights only (partial),Few-Shot,Time,49.81,48.1,51.58,30.81,1000
+WW: switching only,Few-Shot,OR,39.59,37.66,41.62,54.14,1000
+WW: switching only,Few-Shot,SR,60.7,59.27,62.16,29.71,1000
+WW: switching only,Few-Shot,RL,102.88,102.62,103.15,4.4,1000
+WW: switching only,Few-Shot,VPR,100.0,99.62,100.0,0.0,1000
+WW: switching only,Few-Shot,Worse than A* (OR > 100 %),10.7,8.93,12.77,30.93,1000
+WW: switching only,Few-Shot,Time,48.67,46.77,50.65,49.77,1000
+WW: line-of-sight weights only,Few-Shot,OR,35.15,33.54,36.83,33.35,1000
+WW: line-of-sight weights only,Few-Shot,SR,56.86,55.69,58.05,20.03,1000
+WW: line-of-sight weights only,Few-Shot,RL,102.14,101.9,102.38,4.16,1000
+WW: line-of-sight weights only,Few-Shot,VPR,100.0,99.62,100.0,0.0,1000
+WW: line-of-sight weights only,Few-Shot,Worse than A* (OR > 100 %),6.0,4.69,7.65,23.76,1000
+WW: line-of-sight weights only,Few-Shot,Time,44.0,42.43,45.63,30.84,1000
+LLM-A*,CoT,OR,47.61,45.17,50.19,72.99,1000
+LLM-A*,CoT,SR,66.24,64.47,68.06,39.4,1000
+LLM-A*,CoT,RL,102.61,102.35,102.87,4.4,1000
+LLM-A*,CoT,VPR,100.0,99.62,100.0,0.0,1000
+LLM-A*,CoT,Worse than A* (OR > 100 %),17.2,14.99,19.66,37.76,1000
+LLM-A*,CoT,Time,56.45,54.05,58.95,65.59,1000
+LLM-A*-WW,CoT,OR,35.24,33.64,36.92,34.04,1000
+LLM-A*-WW,CoT,SR,56.96,55.79,58.15,20.07,1000
+LLM-A*-WW,CoT,RL,102.26,102.01,102.52,4.46,1000
+LLM-A*-WW,CoT,VPR,100.0,99.62,100.0,0.0,1000
+LLM-A*-WW,CoT,Worse than A* (OR > 100 %),6.2,4.87,7.87,24.13,1000
+LLM-A*-WW,CoT,Time,44.07,42.5,45.7,31.4,1000
+WW: weights only (partial),CoT,OR,40.93,39.14,42.79,40.68,1000
+WW: weights only (partial),CoT,SR,60.39,59.16,61.65,23.02,1000
+WW: weights only (partial),CoT,RL,101.82,101.59,102.05,3.94,1000
+WW: weights only (partial),CoT,VPR,100.0,99.62,100.0,0.0,1000
+WW: weights only (partial),CoT,Worse than A* (OR > 100 %),7.0,5.58,8.75,25.53,1000
+WW: weights only (partial),CoT,Time,49.74,48.02,51.52,36.56,1000
+WW: switching only,CoT,OR,40.92,38.91,43.04,58.05,1000
+WW: switching only,CoT,SR,61.44,59.95,62.96,31.56,1000
+WW: switching only,CoT,RL,102.74,102.47,103.0,4.5,1000
+WW: switching only,CoT,VPR,100.0,99.62,100.0,0.0,1000
+WW: switching only,CoT,Worse than A* (OR > 100 %),11.2,9.39,13.31,31.55,1000
+WW: switching only,CoT,Time,49.61,47.65,51.66,53.06,1000
+WW: line-of-sight weights only,CoT,OR,35.7,34.08,37.4,34.53,1000
+WW: line-of-sight weights only,CoT,SR,57.3,56.12,58.5,20.48,1000
+WW: line-of-sight weights only,CoT,RL,102.26,102.0,102.51,4.38,1000
+WW: line-of-sight weights only,CoT,VPR,100.0,99.62,100.0,0.0,1000
+WW: line-of-sight weights only,CoT,Worse than A* (OR > 100 %),6.3,4.95,7.98,24.31,1000
+WW: line-of-sight weights only,CoT,Time,44.23,42.64,45.87,31.58,1000
+LLM-A*,RePE,OR,50.13,47.52,52.89,79.47,1000
+LLM-A*,RePE,SR,68.31,66.44,70.22,42.34,1000
+LLM-A*,RePE,RL,102.3,102.07,102.53,3.91,1000
+LLM-A*,RePE,VPR,100.0,99.62,100.0,0.0,1000
+LLM-A*,RePE,Worse than A* (OR > 100 %),19.2,16.88,21.76,39.41,1000
+LLM-A*,RePE,Time,58.7,56.14,61.38,73.78,1000
+LLM-A*-WW,RePE,OR,35.08,33.45,36.79,38.95,1000
+LLM-A*-WW,RePE,SR,56.86,55.66,58.08,22.31,1000
+LLM-A*-WW,RePE,RL,102.08,101.84,102.33,4.27,1000
+LLM-A*-WW,RePE,VPR,100.0,99.62,100.0,0.0,1000
+LLM-A*-WW,RePE,Worse than A* (OR > 100 %),5.8,4.51,7.42,23.39,1000
+LLM-A*-WW,RePE,Time,43.51,41.92,45.15,34.35,1000
+WW: weights only (partial),RePE,OR,41.59,39.77,43.5,34.0,1000
+WW: weights only (partial),RePE,SR,61.04,59.8,62.29,20.65,1000
+WW: weights only (partial),RePE,RL,101.71,101.5,101.91,3.48,1000
+WW: weights only (partial),RePE,VPR,100.0,99.62,100.0,0.0,1000
+WW: weights only (partial),RePE,Worse than A* (OR > 100 %),6.8,5.4,8.53,25.19,1000
+WW: weights only (partial),RePE,Time,50.2,48.45,52.01,31.94,1000
+WW: switching only,RePE,OR,40.24,38.31,42.27,49.58,1000
+WW: switching only,RePE,SR,61.13,59.73,62.57,27.85,1000
+WW: switching only,RePE,RL,102.65,102.4,102.9,4.22,1000
+WW: switching only,RePE,VPR,100.0,99.62,100.0,0.0,1000
+WW: switching only,RePE,Worse than A* (OR > 100 %),10.1,8.38,12.12,30.15,1000
+WW: switching only,RePE,Time,48.82,46.92,50.8,45.79,1000
+WW: line-of-sight weights only,RePE,OR,35.43,33.78,37.15,40.84,1000
+WW: line-of-sight weights only,RePE,SR,57.1,55.89,58.34,23.21,1000
+WW: line-of-sight weights only,RePE,RL,102.11,101.86,102.36,4.28,1000
+WW: line-of-sight weights only,RePE,VPR,100.0,99.62,100.0,0.0,1000
+WW: line-of-sight weights only,RePE,Worse than A* (OR > 100 %),6.1,4.78,7.76,23.95,1000
+WW: line-of-sight weights only,RePE,Time,43.76,42.15,45.43,35.92,1000

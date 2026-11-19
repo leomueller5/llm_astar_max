@@ -1,0 +1,9 @@
+Method,Prompt,OR,SR,RL,VPR,Worse than A*
+A*,-,100.0,100.0,100.0,100.0,
+Dynamic WA*,-,60.9,78.52,100.24,100.0,60.4
+LLM-only,Few-Shot,,,119.38,6.8,
+LLM-only,CoT,,,124.2,6.2,
+LLM-only,RePE,,,117.33,9.9,
+LLM-A*,Few-Shot,46.09,65.4,102.74,100.0,17.3
+LLM-A*,CoT,47.61,66.24,102.61,100.0,17.2
+LLM-A*,RePE,50.13,68.31,102.3,100.0,19.2

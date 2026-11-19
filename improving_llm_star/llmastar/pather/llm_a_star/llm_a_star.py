@@ -1,6 +1,7 @@
 import json
 import math
 import heapq
+from time import perf_counter
 
 from llmastar.env.search import env, plotting
 from llmastar.model import ChatGPT, Llama3
@@ -13,7 +14,36 @@ class LLMAStar:
     GPT_METHOD = "PARSE"
     GPT_LLMASTAR_METHOD = "LLM-A*"
 
-    def __init__(self, llm='gpt', prompt='standard'):
+    def __init__(self, llm='gpt', prompt='standard', alpha=1.0, track_progress=False,
+                 adaptive_alpha=False, stagnation_threshold=30, alpha_decrease=0.2,
+                 alpha_increase=0.1, alpha_min=0.2, alpha_max=1.0,
+                 alpha_update_interval=10, progress_epsilon=1e-9):
+        for name, value in [("stagnation_threshold", stagnation_threshold),
+                            ("alpha_update_interval", alpha_update_interval)]:
+            if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+                raise ValueError(f"{name} must be a positive integer")
+        if not all(math.isfinite(v) for v in
+                   (alpha_min, alpha_max, alpha_decrease, alpha_increase, progress_epsilon)):
+            raise ValueError("Adaptive parameters must be finite")
+        if not 0 <= alpha_min <= alpha_max <= 1:
+            raise ValueError("Require 0 <= alpha_min <= alpha_max <= 1")
+        if alpha_decrease <= 0 or alpha_increase <= 0 or progress_epsilon < 0:
+            raise ValueError("Alpha steps must be positive; progress_epsilon must be nonnegative")
+        self.alpha = alpha
+        self.track_progress = track_progress
+        self.adaptive_alpha = adaptive_alpha
+        self.stagnation_threshold = stagnation_threshold
+        self.alpha_decrease = alpha_decrease
+        self.alpha_increase = alpha_increase
+        self.alpha_min, self.alpha_max = alpha_min, alpha_max
+        self.alpha_update_interval = alpha_update_interval
+        self.progress_epsilon = progress_epsilon
+        self._progress_enabled = track_progress or adaptive_alpha
+        self.waypoint_progress = []
+        self.alpha_history = []
+        self.alpha_adjustments = 0
+        self.open_queue_rebuilds = 0
+        self.search_metrics = {}
         self.llm = llm
         if self.llm == 'gpt':
             self.parser = ChatGPT(method=self.GPT_METHOD, sysprompt=sysprompt_parse, example=example_parse)
@@ -112,17 +142,33 @@ class LLMAStar:
         print(query)
         input_data = self._parse_query(query)
         self._initialize_parameters(input_data)
+        self.waypoint_progress = []
+        self.alpha_history = []
+        self.alpha_adjustments = 0
+        self.open_queue_rebuilds = 0
+        self.search_metrics = {}
+        self.path = []
+        if self.adaptive_alpha:
+            self.alpha = self.alpha_max
         self._initialize_llm_paths()
+        if self._progress_enabled:
+            self._start_waypoint_measurement()
+        self._log_alpha_event("initial")
+        search_started = perf_counter()
         
         self.PARENT[self.s_start] = self.s_start
         self.g[self.s_start] = 0
         heapq.heappush(self.OPEN, (self.f_value(self.s_start), self.s_start))
 
+        goal_reached = False
         while self.OPEN:
             _, s = heapq.heappop(self.OPEN)
             self.CLOSED.append(s)
+            if self._progress_enabled:
+                self._record_waypoint_progress(s)
 
             if s == self.s_goal:  # stop condition
+                goal_reached = True
                 break
 
             for s_n in self.get_neighbor(s):
@@ -143,13 +189,29 @@ class LLMAStar:
                     self.PARENT[s_n] = s
                     heapq.heappush(self.OPEN, (self.f_value(s_n), s_n))
 
-        path = self.extract_path(self.PARENT)
+            if self.adaptive_alpha:
+                self._maybe_update_alpha()
+
+        path = self.extract_path(self.PARENT) if goal_reached else []
+        self.path = path
+        path_valid = self._is_valid_path(path)
         visited = self.CLOSED
         result = {
             "operation": len(self.CLOSED),
             "storage": len(self.g),
-            "length": sum(self._euclidean_distance(path[i], path[i+1]) for i in range(len(path)-1)),
+            "length": sum(self._euclidean_distance(path[i], path[i+1]) for i in range(len(path)-1)) if path_valid else math.inf,
             "llm_output": self.target_list
+        }
+        self.search_metrics = {
+            "expanded_nodes": len(self.CLOSED),
+            "unique_expanded_nodes": len(set(self.CLOSED)),
+            "path_cost": result["length"] if path_valid else None,
+            "path_valid": path_valid,
+            "goal_reached": goal_reached,
+            "alpha_adjustments": self.alpha_adjustments,
+            "final_alpha": self.alpha,
+            "open_queue_rebuilds": self.open_queue_rebuilds,
+            "search_time_seconds": perf_counter() - search_started,
         }
         print(result)
         self.plot.animation(path, visited, True, "LLM-A*", self.filepath)
@@ -160,16 +222,111 @@ class LLMAStar:
         return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 
     def _update_queue(self):
-        queue = []
-        for _, s in self.OPEN:
-            heapq.heappush(queue, (self.f_value(s), s))
+        if not self.OPEN:
+            return
+        queue = [(self.f_value(s), s) for _, s in self.OPEN]
+        heapq.heapify(queue)
         self.OPEN = queue
+        self.open_queue_rebuilds += 1
 
     def _update_target(self):
         """Update the current target in the path."""
         self.i += 1
         if self.i < len(self.target_list):
             self.s_target = self.target_list[self.i]
+            if self._progress_enabled:
+                self._start_waypoint_measurement()
+            if self.adaptive_alpha:
+                # The caller refreshes OPEN once for both target and alpha changes.
+                if not self._set_alpha(self.alpha_max, "target_reset"):
+                    self._log_alpha_event("target_reset")
+                self.waypoint_progress[-1]["alpha"] = self.alpha
+
+    def _start_waypoint_measurement(self):
+        """Start a summary for one active target; never change search priorities."""
+        self.waypoint_progress.append({
+            "target_index": self.i,
+            "target": self.s_target,
+            "alpha": self.alpha,
+            "expansions": 0,
+            "initial_distance": None,
+            "best_distance": None,
+            "improvements": 0,
+            "expansions_without_progress": 0,
+            "max_expansions_without_progress": 0,
+        })
+        self._evaluated_improvements = 0
+
+    def _record_waypoint_progress(self, s):
+        """Measure Euclidean progress per heap pop, including baseline duplicates.
+
+        The first pop after a target switch establishes the distance baseline.
+        Strict improvements beyond numerical tolerance reset the stall counter.
+        Summaries use O(number of target activations) storage, not a node trace.
+        """
+        summary = self.waypoint_progress[-1]
+        summary["expansions"] += 1
+        distance = math.hypot(self.s_target[0] - s[0], self.s_target[1] - s[1])
+
+        if summary["initial_distance"] is None:
+            summary["initial_distance"] = distance
+            summary["best_distance"] = distance
+        elif summary["best_distance"] - distance > self.progress_epsilon:
+            summary["best_distance"] = distance
+            summary["improvements"] += 1
+            summary["expansions_without_progress"] = 0
+        else:
+            summary["expansions_without_progress"] += 1
+            summary["max_expansions_without_progress"] = max(
+                summary["max_expansions_without_progress"],
+                summary["expansions_without_progress"],
+            )
+
+    def _maybe_update_alpha(self):
+        summary = self.waypoint_progress[-1]
+        if not summary["expansions"] or summary["expansions"] % self.alpha_update_interval:
+            return
+        improvements = summary["improvements"]
+        if summary["expansions_without_progress"] >= self.stagnation_threshold:
+            changed = self._set_alpha(self.alpha - self.alpha_decrease, "stagnation")
+        elif improvements > self._evaluated_improvements:
+            changed = self._set_alpha(self.alpha + self.alpha_increase, "progress")
+        else:
+            changed = False
+        self._evaluated_improvements = improvements
+        if changed:
+            self._update_queue()
+
+    def _set_alpha(self, value, reason):
+        value = min(self.alpha_max, max(self.alpha_min, round(value, 12)))
+        if math.isclose(value, self.alpha, rel_tol=0, abs_tol=1e-12):
+            return False
+        old_alpha = self.alpha
+        self.alpha = value
+        self.alpha_adjustments += 1
+        self._log_alpha_event(reason, old_alpha)
+        return True
+
+    def _log_alpha_event(self, reason, old_alpha=None):
+        summary = self.waypoint_progress[-1] if self.waypoint_progress else {}
+        self.alpha_history.append({
+            "expansion": len(self.CLOSED), "target_index": self.i,
+            "target": self.s_target, "reason": reason,
+            "old_alpha": old_alpha, "alpha": self.alpha,
+            "best_distance": summary.get("best_distance"),
+            "expansions_without_progress": summary.get("expansions_without_progress", 0),
+            "improvements": summary.get("improvements", 0),
+            "open_size": len(self.OPEN),
+        })
+
+    def _is_valid_path(self, path):
+        if not path or path[0] != self.s_start or path[-1] != self.s_goal:
+            return False
+        if any(not (self.range_x[0] < x < self.range_x[1]
+                    and self.range_y[0] < y < self.range_y[1]) for x, y in path):
+            return False
+        return all((b[0] - a[0], b[1] - a[1]) in self.u_set
+                   and not self.is_collision(a, b) for a, b in zip(path, path[1:]))
 
     def get_neighbor(self, s):
         """Find neighbors of state s that are not in obstacles."""
@@ -199,6 +356,12 @@ class LLMAStar:
         return path[::-1]
 
     def heuristic(self, s):
-        """Calculate heuristic value."""
-        return math.hypot(self.s_goal[0] - s[0], self.s_goal[1] - s[1]) + math.hypot(self.s_target[0] - s[0], self.s_target[1] - s[1])
+        """Combine goal distance with waypoint distance weighted by alpha."""
+        goal_distance = math.hypot(
+            self.s_goal[0] - s[0], self.s_goal[1] - s[1]
+        )
+        waypoint_distance = math.hypot(
+            self.s_target[0] - s[0], self.s_target[1] - s[1]
+        )
+        return goal_distance + self.alpha * waypoint_distance
 
