@@ -80,7 +80,9 @@ def decode(query,raw,side=8,task='corridor',confidence=True):
     except (TypeError,ValueError):return field,{'parsed':False,'error':'json'}
     if not isinstance(obj,dict):return field,{'parsed':False,'error':'object'}
     if task=='cost':
-        field.update(obj);return field,{'parsed':field.rejections==0,'rejections':field.rejections,'coverage':len(field.values)/len(field.regions)}
+        try:field.update(obj)
+        except (ValueError,TypeError):return field,{'parsed':False,'error':'prediction_list'}
+        return field,{'parsed':field.rejections==0,'rejections':field.rejections,'coverage':len(field.values)/len(field.regions)}
     ids={r['id'] for r in field.regions};pref=obj.get('preferred',[]);avoid=obj.get('avoid',[]);conf=obj.get('confidence',0.)
     if (not isinstance(pref,list) or not isinstance(avoid,list) or any(type(v) is not str or v not in ids for v in pref+avoid) or type(conf) not in [int,float] or not math.isfinite(conf) or not 0<=conf<=1):return field,{'parsed':False,'error':'schema'}
     field.update([{'region_id':r['id'],'priority':1. if r['id'] in pref else 0. if r['id'] in avoid else .5,'detour':0.,'confidence':conf if confidence else 1.} for r in field.regions])

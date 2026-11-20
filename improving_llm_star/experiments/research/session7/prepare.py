@@ -7,16 +7,16 @@ from llmastar.research.geometry import SegmentGridGraph
 from llmastar.research.incumbent import IncumbentSearch
 FAMILIES=['open','random_walls','rooms','braided_maze','tree_maze','serpentine','u_traps','nested','competing_corridors','bottlenecks']
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--split',choices=['development','validation','heldout'],required=True);p.add_argument('--maps',type=int,default=2);p.add_argument('--queries',type=int,default=1);p.add_argument('--frozen',type=str);p.add_argument('--output',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--split',choices=['development','validation','heldout'],required=True);p.add_argument('--maps',type=int,default=2);p.add_argument('--queries',type=int,default=1);p.add_argument('--frozen',type=str);p.add_argument('--seed-base',type=int);p.add_argument('--sizes',type=int,nargs='+');p.add_argument('--output',required=True);a=p.parse_args()
     from pathlib import Path
     if Path(a.output).exists():raise FileExistsError(a.output)
     if a.split=='heldout':
         import json
         if not a.frozen or json.loads(Path(a.frozen).read_text()).get('status')!='frozen':raise ValueError('Freeze before generating test maps')
-    base={'development':13110000,'validation':14210000,'heldout':15310000}[a.split];sizes={'development':[72,104],'validation':[80,112],'heldout':[88,120]}[a.split];cases=[]
+    base=a.seed_base if a.seed_base is not None else {'development':13110000,'validation':14210000,'heldout':15310000}[a.split];sizes=a.sizes or {'development':[72,104],'validation':[80,112],'heldout':[94,126,158,190]}[a.split];cases=[]
     for fi,family in enumerate(FAMILIES):
         for mi in range(a.maps):
-            seed=base+fi*10000+mi;rng=random.Random(seed);size=sizes[mi%2];q=make_map(family,size,seed,index=6+mi);g=SegmentGridGraph(q)
+            seed=base+fi*10000+mi;rng=random.Random(seed);size=sizes[mi%len(sizes)];q=make_map(family,size,seed,index=6+mi);g=SegmentGridGraph(q)
             for qi in range(a.queries):
                 for _ in range(2000):
                     s=(rng.randrange(1,g.x1),rng.randrange(1,g.y1));t=(rng.randrange(1,g.x1),rng.randrange(1,g.y1))

@@ -118,3 +118,62 @@ def test_icl_retrieval_uses_available_features_without_test_labels():
     from examples import select_examples,features
     q=query();bank=[{'case_id':'near','features':features(q)},{'case_id':'far','features':[100]*5}]
     assert select_examples(bank,q,1)[0]['case_id']=='near'
+
+
+def test_deployable_spatial_planner_preserves_io_and_provider_failure_fallback():
+    from llmastar.research.spatial_planner import SpatialResidualAStar
+    import json
+    q=query();copy=json.loads(json.dumps(q))
+    class Failed:
+        def predict(self,query,regions):raise TimeoutError('do not persist private error details')
+    r=SpatialResidualAStar(provider=Failed()).searching(json.dumps(q),filepath='unused.png')
+    assert r['valid'] and r['provider_calls']==1 and r['provider_error']=='TimeoutError'
+    assert {'operation','storage','length','llm_output'}.issubset(r)
+    assert q==copy and 'do not persist' not in str(r)
+
+
+def test_deployable_disabled_and_geometry_controls_never_use_model():
+    from llmastar.research.spatial_planner import SpatialResidualAStar
+    class Forbidden:
+        def predict(self,*args):pytest.fail('No model call allowed')
+    for source in ['none','geometry_midpoint','geometry_upper']:
+        r=SpatialResidualAStar(provider=Forbidden(),source=source).search(query())
+        assert r['valid'] and r['provider_calls']==0
+
+
+def test_malformed_regional_predictions_fall_back_safely():
+    from llmastar.research.spatial_planner import SpatialResidualAStar
+    from prompts_spatial import decode
+    for raw in ['not JSON','{"predictions":"bad"}','{"predictions":null}']:
+        f,meta=decode(query(),raw,4,'cost');assert not meta['parsed']
+        r=SpatialResidualAStar().search(query(),predictions=raw);assert r['valid'] and r['prediction_parse_error']
+
+
+def test_geometric_interval_controls_are_independent_of_model_costs():
+    from llmastar.research.spatial_planner import SpatialResidualAStar
+    q=query();a=SpatialResidualAStar(source='geometry_midpoint').search(q)
+    b=SpatialResidualAStar(source='geometry_midpoint').search(q,predictions={'predictions':[{'region_id':'R0','detour':10000}]})
+    assert (a['length'],a['heap_pops'],a['heap_pushes'])==(b['length'],b['heap_pops'],b['heap_pushes'])
+
+
+def test_spatial_macro_control_matches_frozen_vm_engine():
+    from macro_integration import plan
+    from llmastar.research.hybrid_guidance import HybridWaypointPlanner
+    for weight in [1.05,2.]:
+        q=query();a=plan(q,base=weight,bound=weight)
+        b=HybridWaypointPlanner(weight=weight,source='all_endpoints').search(q)
+        assert a['total_heap_pops']==b['total_heap_pops']
+        assert a['total_heap_pushes']==b['total_heap_pushes']
+        assert a['length']==pytest.approx(b['length'])
+
+
+def test_feedback_local_damping_retains_global_calibration_and_revises_only_touched_region():
+    from cost_controls import Scaled
+    from feedback import damp_from_evidence
+    q=query();raw=random_field(q);initial=Scaled(raw,.2)
+    n=(3,4);m=(4,4);pair={'a':n,'b':m,'predicted_remaining_a':100.,'predicted_remaining_b':1.}
+    fixed=damp_from_evidence(q,initial,[pair]);rid=raw.identifier(n)
+    for region in raw.regions:
+        if region['sample'] is None:continue
+        point=tuple(region['sample']);d,_,c=initial.value(point)
+        assert fixed.value(point)[0]==pytest.approx(d*c*(.5 if region['id']==rid else 1.))

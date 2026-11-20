@@ -1,0 +1,96 @@
+{
+  "known_prior_geometries": 450,
+  "sources": [
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session2/fresh_cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session2/development_cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session2/validation_cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session5/development.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session5/validation.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/development_maps_v1.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/fresh_maps_frozen.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/pilot_maps.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session3/fresh_cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/heldout_original_a.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/heldout_all.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/validation_multi_only.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/development.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/validation.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/sampling_development.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/development_full.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/supplementary_cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session5/fresh_offline_audit_v2/cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/phase3_optimized_cached/cases.json.gz",
+    "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session4/final_cached_validation/cases.json.gz"
+  ],
+  "files": {
+    "improving_llm_star/experiments/results/research_session7/development.json.gz": {
+      "cases": 20,
+      "distinct_geometries": 20,
+      "within_file_duplicate_geometry_clusters": [],
+      "overlap": [
+        {
+          "case_ids": [
+            "s7_13110000_0"
+          ],
+          "prior_source": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+          "session7_training_ids": [
+            "s7_13110000_0"
+          ]
+        },
+        {
+          "case_ids": [
+            "s7_13110001_0"
+          ],
+          "prior_source": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+          "session7_training_ids": [
+            "s7_13110001_0"
+          ]
+        },
+        {
+          "case_ids": [
+            "s7_13160000_0"
+          ],
+          "prior_source": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+          "session7_training_ids": [
+            "s7_13160000_0"
+          ]
+        },
+        {
+          "case_ids": [
+            "s7_13160001_0"
+          ],
+          "prior_source": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+          "session7_training_ids": [
+            "s7_13160001_0"
+          ]
+        },
+        {
+          "case_ids": [
+            "s7_13200000_0"
+          ],
+          "prior_source": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+          "session7_training_ids": [
+            "s7_13200000_0"
+          ]
+        },
+        {
+          "case_ids": [
+            "s7_13200001_0"
+          ],
+          "prior_source": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session6/challenging_development.json.gz",
+          "session7_training_ids": [
+            "s7_13200001_0"
+          ]
+        }
+      ]
+    },
+    "improving_llm_star/experiments/results/research_session7/validation.json.gz": {
+      "cases": 30,
+      "distinct_geometries": 30,
+      "within_file_duplicate_geometry_clusters": [],
+      "overlap": []
+    }
+  },
+  "scope": "Canonical sorted geometry fingerprint excludes start/goal. Statistical resampling must cluster equal geometries, regardless of map IDs. Prior scan covers all recognizably named map/case datasets, omitting model messages and analysis outputs."
+}

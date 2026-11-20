@@ -1,0 +1,12 @@
+{
+  "remote_commit": "53d5f39",
+  "merge_base": "1020fe09fb22b6ac3d2d31b6eedbb754f94ec877",
+  "preserved_prior_sha256": {
+    "README.md": "8c4c143bd9ebecf86aae0530e1b71b2867741f6a5b5427822820bd28b27ecfb4",
+    "improving_llm_star/llm_astar_ww/llmastar/model/llama3.py": "d8f71f18b1ecf6fea445d7c4c915a6ce007fd4ebdc79481daa18b7111d38efbb",
+    "table1_reproduction/Analyse.ipynb": "0e54dbbfe6dbfea4da2eb95cd6798e4fe328ffa9622175d755360040d4363642",
+    "table1_reproduction/reproduced/table1_with_ci.csv": "de10ea7e53d2d0cb8b8c5326c79d63ac1b233c2ee73f9c322c88c7936a3ad791",
+    "table1_reproduction/reproduced/table1_with_statistics.csv": "cd2274c0c98293eec10d4154952edc206a6416c12cec2e56bc5338b314e55e11"
+  },
+  "scope": "Two edited team files plus three deleted historical reproduction artifacts preserved byte-exact. The merge had multiple ancestry effects beyond the simple remote delta; actual merge diff audited."
+}

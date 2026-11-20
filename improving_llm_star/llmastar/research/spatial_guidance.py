@@ -56,16 +56,19 @@ class RegionField:
 
 class SpatialSearch:
     def __init__(self,mode='envelope',bound=2.,base_weight=1.5,heuristic='cut',signal='detour',alpha=1.,
-                 macro=False,interval=8,probe_budget=256):
+                 macro=False,interval=8,probe_budget=256,target_order='given'):
         if mode not in ['weighted','envelope','heuristic_envelope','focal','tie','dual']:raise ValueError('Unknown search mode')
         if signal not in ['detour','priority','combined']:raise ValueError('Unknown signal')
         if heuristic not in ['cut','octile','euclidean']:raise ValueError('Unknown anchor')
         if not all(math.isfinite(v) for v in [bound,base_weight,alpha]) or bound<1 or base_weight<1 or base_weight>bound or alpha<0:raise ValueError('Invalid weights')
         if type(interval) is not int or interval<1 or type(probe_budget) is not int or probe_budget<0:raise ValueError('Invalid macro budget')
         self.mode=mode;self.bound=bound;self.base_weight=base_weight;self.heuristic=heuristic;self.signal=signal;self.alpha=alpha
+        if target_order not in ['given','cost']:raise ValueError('Unknown macro target ordering')
+        self.target_order=target_order
         self.macro=macro;self.interval=interval;self.probe_budget=probe_budget
     def search(self,query,field=None,graph=None,targets=(),record_trace=False,revision=None,revision_after=128):
         began=perf_counter();graph=graph or SegmentGridGraph(query);start,goal=tuple(query['start']),tuple(query['goal'])
+        targets=list(dict.fromkeys(tuple(p) for p in targets if isinstance(p,(list,tuple)) and len(p)==2 and tuple(p) not in [start,goal] and graph.valid_point(tuple(p))))
         potential=None
         if self.heuristic=='cut':
             from .strategic.cuts import CutPotential
@@ -152,7 +155,7 @@ class SpatialSearch:
             n=label.node;active.pop(n,None);reopens+=int(n in closed);closed[n]=label.g;expanded+=1
             if record_trace:trace.append({'node':n,'g':label.g,'expanded':expanded,'region':field.identifier(n) if isinstance(field,RegionField) else None})
             if n==goal:found=label;break
-            if revision is not None and revision_calls==0 and expanded>=revision_after:
+            if revision is not None and revision_calls==0 and len(closed)>=revision_after:
                 t=perf_counter();revision_calls+=1
                 replacement=revision({'query':query,'expanded':expanded,'unique':len(closed),'current':list(n),'g':label.g,'anchor':h(n),'region_expansions':dict(__import__('collections').Counter(field.identifier(p) for p in closed)) if isinstance(field,RegionField) else {},'frontier':[{'node':list(l.node),'g':l.g,'h':h(l.node)} for l in sorted(active.values(),key=lambda l:l.g+h(l.node))[:8]]})
                 revision_seconds+=perf_counter()-t
@@ -166,7 +169,9 @@ class SpatialSearch:
                             anchor[:]=[(l.g+h(l.node),l.node,l.sequence,l) for l in active.values()];heapq.heapify(anchor)
                     rebuilds+=1;events.append({'expanded':expanded,'event':'field_revision','active':len(active)})
             if self.macro and (expanded==1 or expanded%self.interval==0):
-                for target in [goal]+[tuple(p) for p in targets][:3]:
+                choices=[p for p in targets if p!=n and label.g+octile(n,p)<getattr(best.get(p),'g',math.inf)-1e-12]
+                if self.target_order=='cost':choices.sort(key=lambda p:octile(n,p)+h(p)+advice(p))
+                for target in [goal]+choices[:3]:
                     if probes>=self.probe_budget:break
                     cost=label.g+octile(n,target)
                     if target==n or cost>=getattr(best.get(target),'g',math.inf)-1e-12:continue

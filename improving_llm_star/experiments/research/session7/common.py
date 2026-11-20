@@ -7,6 +7,7 @@ WORKSPACE=ROOT.parent
 RESULTS=ROOT/'experiments/results/research_session7'
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(HERE.parent/'session6'))
 from api import CumulativeLedger,RetryClient,RequestUnavailable,MODEL,load_key
+sys.path.insert(0,str(HERE)) # Imported legacy API modules prepend their own script paths.
 
 class Session7Client(RetryClient):
     def __init__(self,**kwargs):

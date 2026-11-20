@@ -1,0 +1,79 @@
+{
+  "status": "frozen",
+  "utc": "2026-11-20T09:41:18.199116+00:00",
+  "branch": "research/waypoint-guidance",
+  "pre_test_head": "7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+  "primary": {
+    "name": "LLM-RH*",
+    "class": "llmastar.research.spatial_planner.SpatialResidualAStar",
+    "bound": 1.05,
+    "alpha": 0.22640953779865894,
+    "side": 4,
+    "base_weight": 1.0,
+    "source": "model",
+    "macros": false
+  },
+  "secondary_profile": {
+    "bound": 2.0,
+    "other_parameters": "same as primary"
+  },
+  "selection_rationale": "The tight1.05 profile improves validation total queue work and unique expansions relative to our looser2 profile, with a stronger theoretical bound. It does NOT beat the strongest uniform1.05 control in total queue work; no general LLM superiority claimed. Simpler calibrated residual retained over extra verified-interval preprocessing, after mixed dev/validation VRC results.",
+  "coefficient_training": "One nonnegative scalar minimizes normalized residual MSE on20development map instances. The language model is unchanged; no model fine-tuning. Scalar is not tuned on validation or final work results.",
+  "model": {
+    "name": "gpt-4o-mini-2024-07-18",
+    "temperature": 0,
+    "seed": 20261119,
+    "prompt_version": "s7_cost_image_s4_grounded_v2",
+    "max_completion_tokens": 1400,
+    "original_max_completion_tokens": 1000
+  },
+  "heldout": {
+    "primary_maps_per_family": 4,
+    "primary_queries_per_map": 2,
+    "primary_generator_sizes": [
+      97,
+      131,
+      163,
+      197
+    ],
+    "primary_seed_base": 15310000,
+    "families": 10,
+    "extra_queries": "third query/map reserved only for live latency calibration",
+    "large_maps_per_family": 2,
+    "large_queries_per_map": 1,
+    "large_generator_sizes": [
+      227,
+      263
+    ],
+    "large_seed_base": 16410000
+  },
+  "ablations": [
+    "same engine zero residual",
+    "same engine fixed1.05 and2inflation",
+    "same images rawalpha1",
+    "same input structured text calibratedalpha.07056526284991615",
+    "five region-shuffle seeds",
+    "same-query scalar mean residual",
+    "verified geometry-only residual midpoint",
+    "same frozen development ICL examples and primaryalpha",
+    "same-cost field with geometric macros",
+    "frozenSession6 genuinehybrid versus geometricmacro controls",
+    "frozenoriginal and robust original with same waypoint response"
+  ],
+  "sources": {
+    "improving_llm_star/llmastar/research/spatial_guidance.py": "09b818cd22b512420f60bcf1ac00af73dabd51f8f9358cb7b1fd6448f327bccf",
+    "improving_llm_star/llmastar/research/spatial_calibration.py": "2865dc1f2c4c0b362a0265267f2a95b6f3df0c19e3fb333cfe5a64629a70d416",
+    "improving_llm_star/llmastar/research/spatial_planner.py": "cd36e2bac04ab0fdb293453bcbcf7f48730359ffbbd91bd6050546f1eb641d88",
+    "improving_llm_star/llmastar/research/geometry.py": "17f4493cc29428ddd33cd7986e72a32027d59839e69ea4794f09ad26aec82b89",
+    "improving_llm_star/llmastar/research/strategic/cuts.py": "283c104e7f9d80a76dfa7423d0df0334123c8dd0e2e7b020108968707f6b7748",
+    "improving_llm_star/llmastar/research/hybrid_guidance.py": "33927fb3bd4699527b453c0bb9617b261f2c91089740e55f66edb5310ee80329",
+    "improving_llm_star/llmastar/research/macro_guidance.py": "5fb24ecfc1718b7e914282391964f5de3309f4bf8d9b9b781394aeac1fda2347",
+    "improving_llm_star/experiments/research/session7/prompts_spatial.py": "f24358228be852f3233ce9219c2841bd2fb084d239ff0a7f024671d2f730aebf",
+    "improving_llm_star/experiments/research/session7/prompts_grounded.py": "fc597a6858c88370e888e2ee5d3eb2ff1c7abe4d79551dd5e451bd2a3df06ea5",
+    "improving_llm_star/experiments/research/session7/common.py": "c8c463cca8384c510016235d0952ee3db1abebae97e06e614973f29dd3f2bb62",
+    "improving_llm_star/experiments/research/session6/strategic.py": "0114da40a2b7f1257c3d05976dc053b43a5850cd618e47b5517ae9628b10dfcd",
+    "llm-astar/llmastar/pather/llm_a_star/llm_a_star.py": "58f0b2c49c3ab0c34c2c9c11cc3e8f4de146fc8c78518af024a9ecaf854691d5",
+    "llm-astar/llmastar/pather/a_star/a_star.py": "ff8d57eab468979d8d22001d4e2e40d28e932f357804f7cf554f25cc1c4fd797"
+  },
+  "policy": "No changes to selected algorithm, prompt, model parameters or calibration after opening heldout. Any correctness repair must be explicitly documented and previous runs preserved. All future decisions remain descriptive; no test-guided model selection."
+}
