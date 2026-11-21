@@ -1,0 +1,60 @@
+[
+  {
+    "expected": {
+      "policy": "witness",
+      "direction": "reverse",
+      "confidence": 0.1
+    },
+    "actual": {
+      "policy": "witness",
+      "direction": "reverse",
+      "confidence": 0.1
+    },
+    "model": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 111,
+      "completion_tokens": 16,
+      "total_tokens": 127,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_id": "95bee7bff59051c4b8ec2699a6965c373b2a87f5bc41fc0e9b74e08ff5208cca"
+  },
+  {
+    "expected": {
+      "policy": "vm2",
+      "direction": "reverse",
+      "confidence": 0.1
+    },
+    "actual": {
+      "policy": "vm2",
+      "direction": "reverse",
+      "confidence": 0.1
+    },
+    "model": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 112,
+      "completion_tokens": 16,
+      "total_tokens": 128,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_id": "a34f78dee49b85c8e66350f118e1b8757750bbe6b1bfe56348f026f29318e6cb"
+  }
+]

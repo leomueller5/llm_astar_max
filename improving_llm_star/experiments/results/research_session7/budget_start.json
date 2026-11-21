@@ -1,0 +1,12 @@
+{
+  "cap_usd": 3.0,
+  "accounted_usd": 0.2679828,
+  "held_worst_case_usd": 0.1783152,
+  "remaining_authorized_usd": 2.553702,
+  "attempts": 781,
+  "successes": 772,
+  "prompt_tokens": 917928,
+  "completion_tokens": 223012,
+  "reasoning_tokens": 0,
+  "cached_input_tokens": 46848
+}

@@ -1,0 +1,10 @@
+{
+  "checked_paths": 69,
+  "checked_edges": 8764,
+  "by_method": {
+    "paper_astar": 69
+  },
+  "declared_invalid": [],
+  "all_returned_valid_paths_independently_pass": true,
+  "checker": "Shapely closed-segment STRtree; integer grid, strict bounds, endpoints, unit neighbours, recomputed Euclidean cost and declared search bound."
+}

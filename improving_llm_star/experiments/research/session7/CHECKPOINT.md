@@ -1,3 +1,39 @@
+# CURRENT STATUS — Session 7 complete, 21 November 2026
+
+Research, implementation, offline/real-model experiments and final verification
+are COMPLETE. No further paid calls or algorithm tuning are required for this
+session. Earlier sections below are retained chronological checkpoints, not
+pending instructions.
+
+- Frozen new candidate: LLM-RH*, persistent regional cost residuals, explicit
+  1.05 quality envelope. No reliable additional LLM advantage over strong controls.
+- Keep frozen Session6 LLM-A-VM* as the practical submission fallback; disclose
+  the geometry-only, abstaining and spatially shuffled controls.
+- 100 fresh tasks/60geometries, 209tests passed, 4217stored paths and1105593edges
+  independently checked. Source integrity:52old/selected modules unchanged;
+  2new late prototypes separately labelled. main still66baa31d2fc2b658b501dcd4b34e09d31af66cb4.
+- Correct final tables:results/research_session7/final_analysis_corrected.
+  Classical A* raw paths are goal-to-start:69completed paths normalized,31caps.
+  Historical raw files and initial summaries remain preserved, not authoritative.
+- Correct pathmax:ONLYpathmax_v2_*;v1hadfloating-tie confounding and is excluded.
+- VM robustness results:vm_controls/analysis.json. Real targets do not robustly
+  beat abstention or count/overlap-preserving shuffled targets. No new API calls.
+- Budget:1.47216705USDsuccessful estimated+.1977456held=1.66991265exposure<3.
+  Zero open requests;905successful Session7responses,exactsnapshot,reasoning0.
+- Reports:REPORT.md,15-pageREPORT.pdf,TEAM_BRIEF.md; exact commands inREADME.md.
+  THEORY.md/WAYPOINT_BOUND.md include equations, assumptions and pseudocode.
+- Final team README-only updatedd6a2d9safelymergedascb111ef. No main/dev push.
+- Publication WITHHELD:existing commit email lacks verified association with
+  authenticatedleomueller5,confirmed again21Nov. No identity/auth settings changed.
+  Manual command:git push -u origin research/waypoint-guidance.
+- Verified active research before final packaging is~200minutes over three dated
+  intervals inEXECUTION_TIME.json; both overnight gaps excluded.
+
+A final local code/data checkpoint and documentation checkpoint follow. Inspect
+Git log for the completed HEAD; historical commit metadata is not rewritten.
+
+---
+
 # Session 7 persistent checkpoint
 
 Started2026-11-19 07:25:52UTC; target~180productive minutes if available.
@@ -94,3 +130,113 @@ verification,independentallpathaudit,memory/CPUprofiling,statistics+CI+perfamily
 figures+PDF+README,exactreplaycommands,Gitsecret/metadata/artifactreview.
 Latestteammergepreserved5priorversions;mainstill66baa31. Publicationemail
 unverified=>doNOTpush;provide manualgitpushoriginresearch/waypoint-guidance.
+
+## Continuation20November~10:47UTC
+
+The overnight gap is NOT active work. Approx41min in first episode, second
+active episode resumed09:16:49UTC. Main native timing process14699 running,
+~87/100queriesdone. Do NOT run other heavy diagnostics/API collections until
+it finishes. All final collections complete:base200records,cost200,ICL100,
+bounds20. Ledgercharged1.4581956+held.1977456=exposure1.6559412,remaining1.3440588,
+zeroopenrequests. No paid requests since collections completed.
+
+After final_native/completion.json exists, run sequential OFFLINE pipeline:
+`.venv/bin/python improving_llm_star/experiments/research/session7/finish_offline.py`
+It reuses only completed outputs, creates auxiliary matched controls, goal-only
+original/robust counts, paper denominators, bounds prompt factorial, independent
+paths/references, late dev/validation pilots, analyses, CPU/memory/profile audits,
+figures and full tests. No network/paid calls. Partial output dirs are preserved;
+if a step fails, diagnose and use a new output directory rather than overwrite.
+Do not run multiple timing blocks simultaneously.
+
+New isolated late hypotheses: discrepancy_guidance.py converts model estimates
+to local successor policy then bounded Focal discrepancy ranking; pathmax_guidance.py
+regularizes descending heuristic cliffs via established pathmax, with independent
+w*h upper clip (not globally consistent). No frozen source edited. Their pilots
+use only existing20dev/30validation advice, no paid calls and no final-data tuning.
+If weak, keep negative results. New correctness tests reference Shapely-only
+Dijkstra, not the production successor engine. Await full suite after timings.
+
+Aux control addenda declared before final-result inspection:matched_uniform2,
+rh_macro_zero105, rh_macro_uniform105;original_goal_only/robust_goal_only replace
+onlyreplyby[start,goal], same scoring. Explicit VM provider enum compatibility
+control retained beside literal vm_strict2. All primary/prompt/model coefficients
+still frozen. Final performance has NOT yet been inspected or used for changes.
+
+Optional true online latency audit AFTER native phases:
+`.venv/bin/python improving_llm_star/experiments/research/session7/live_latency.py --output improving_llm_star/experiments/results/research_session7/live_latency --limit 6`
+Uses fixed-hash reserved third queries, actual original model.ask and actual
+regional provider, warm imports/fonts but fresh query prep; caches/reserves every
+request. Approximately12actual calls, still bound by same cumulative3USDledger.
+Run separately from native/resource timings to avoid interference.
+
+Finish results interpretation, root documentation, README exactcommands, TEAM_BRIEF,
+fullREPORT and session7/report_pdf.py export. Newreport is currently full static
+methods/negative-findings narrative with final-results placeholder. New helper
+report_pdf supports embedded figures and correctSession7header. Verify figures,
+PDF, frozen sources, fulltests, actual-key/genericsecret scan includinggzip,
+artifactreview, gitdiff/metadata/mainunchanged/teamarchive checks. Commit under
+existingLeoidentity only; do NOT push while configuredemail/accountassociation
+remainsunverified. Manual `git push -u origin research/waypoint-guidance`.
+
+## FINAL PHASE20November~11:22UTC
+
+Mainnative COMPLETE:17400records,100queries/60geometries,25methods+5shuffle
+seeds. Newvariants all100valid;original74/100audits complete,26five-sectimeouts.
+Primarymain80meanms:RH34.53,matcheduniform1.05 27.18,VMgeo1.05 23.63,
+ICL30.76. QopsRH8161.9vsuniform7274.8. Largestress20RH191.42ms/Q43443.7
+vsuniform124.68ms/Q34251.4. No generalLM-specificbenefit. Do NOT compareoriginal
+completed-onlypopmeanswithall100successes;reportcensoringandpairedcoverage.
+
+Paidliveaudit COMPLETE12actualcalls,6reservedqueries,actualoldmodel.askandnew
+provider,randomizedwithinqueryorder. No more paid calls needed. Finalbudget
+BUDGET_REPORT.json:charged1.47216705+held.1977456=exposure1.66991265<3,
+remaining1.33008735,open0. Session7success905,charges1.20418425,input7442139,
+output281031,cached1076736subset,reasoning0. Allsnapshotsexact.API_METHODS.json
+complete. Originaloutputtruncates29/100at1000cap;do notretunepromptafterobserving.
+8VMschemacompatresponsesreturnedunknownIDs,decoderrejects;44geometrygatescallfree.
+
+SequentialofflinepipelineNOWRUNNINGsession61169. Fulltests206passed beforelate
+pathmaxfix. Auxnative3controlsCOMPLETE;goal-onlycountsCOMPLETE;paperdenominator
+COMPLETE;bounds_native~2/20around11:21. Then analysis/audits/prediction/tradeoffs/
+guidance_lifetimes/resources/figures. Do NOT run concurrentheavywork/native
+benchmarks. Light code/doc editing okay. Pipelinemayfail;preserveallartifacts.
+
+IMPORTANTlatepathmaxv1confound:usingg+min(H)vsfrozenmin(g+H,...) changedfloating
+plateauties. Someapparentgainswithzeroactualraiseswereinvalid. Archived
+pathmax_source_v1.pyandoriginalpathmax_pilot_* results. DO NOTusev1findings.
+Correctedv2storesFdirectly, exactfrozenoff-controlarithmetic, onlyraises>1e-12.
+Addedunsaturated25case/no-phantom-update regression; finalfullsuiteexpected207.
+Runningpipelinecompiledolder script and alreadyranv1,so AFTERitfinishesrun:
+  pathmax_pilot.py --cases R/development.json.gz --responses R/cost_pilot/responses.json.gz --output R/pathmax_v2_development.json.gz
+  pathmax_pilot.py --cases R/validation.json.gz --responses R/validation_cost/responses.json.gz --output R/pathmax_v2_validation.json.gz
+  confidence_ablation.py samecase/responsepairs ->confidence_development.json.gz/validation
+  .venv/bin/python -m pytest improving_llm_star/tests -q
+Do notmodifyfrozenprimarysources/newmethodselection. Discrepancynegative:
+valrealQ9039.8vsnoLM9562.3vsstronguniform2108.3. Policyhasweaksignalbuttooexpensive.
+Newenvelope_ceiling_validation.json.gzcompleted:pointwisefineoracle1.05Q2781.7
+vsuniform2108.3;full-keyfineoracle2Q1715.6;trustedexactoracleQ1526.8. Tightcap,
+coarseresolutionandmodelqualityareallbottlenecks. Noadditionalpaidclaims.
+
+NEWfinalizationhelperswrittenbutNOTRUN:finalize_report.pyrequirescorrectedv2files,
+resource/prediction/analysis/guidanceauditcomplete;fillsREPORT.mdplaceholderwith
+actualtables/CI/budget/limits/recommendation. figures.pypipelinecreates6plots;
+case_visuals.pycreateshash-selectedtree/nestedpathillustrations(optional).
+report_pdf.pynewcorrectSession7header+embeddedimages. Needpolishreportspacing,
+TEAM_BRIEF.md,updaterootPROJEKT_ERKENNTNISSE,READMEexactreplay/analysis/audit/
+PDFcommands. Nativeanalyzerhandlescensoredcoverage,clusterCI,phase-native medians.
+
+Publicationread-onlyverificationnowdefinitive:GitcredentialANDGitHubappaccount
+leomueller5correct. GET/user/emailsavailablebutconfiguredLeo/GmailhasNOmatching
+VERIFIEDassociation. PUBLICATION_AUDIT.json recordsbooleans. DO NOTPUSH,do not
+changeidentity/auth.Exactmanualcommandgitpush-uoriginresearch/waypoint-guidance.
+Needfetchfinalreadonly+preserveanynewteamchangeifclear;mainmustremain66baa31.
+
+Nextafterpipeline:correctedv2/confidence+207tests,integrity_audit.py(checkentire
+historicalresearch+originaldependenciesagainstpre-testGit tree,selectedmanifest),
+independentpathsummary,budgetunchanged,figures/PDFpreview,secretactualkeyscan
+includinggzip+genericpatterns,gitdiff/artifact/authorchecks,localcommitsunder
+existingLeoidentityonly,noAItrailers.No push. Needrecordactualactiveintervals:
+verifiedepisode1 19Nov07:25:52–08:06:26UTC(40m34s);episode2 20Nov09:16:49–finalUTC.
+Overnightexcluded.Target~180active min reachesaround11:36:15UTC. Productivework
+mayfinishlater;reportactualdurationtruthfully. Neveridlejusttomatchduration.

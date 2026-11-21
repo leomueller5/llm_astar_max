@@ -1,0 +1,20 @@
+{
+  "scope": "Conservative verified active research intervals; overnight gaps excluded. Further final packaging after this timestamp is not included. Benchmarks ran while analysis/documentation proceeded; no artificial waiting to fill time.",
+  "intervals_utc": [
+    [
+      "2026-11-19T07:25:52Z",
+      "2026-11-19T08:06:26Z"
+    ],
+    [
+      "2026-11-20T09:16:49Z",
+      "2026-11-20T11:39:09Z"
+    ],
+    [
+      "2026-11-21T02:34:00Z",
+      "2026-11-21T02:50:40.447371+00:00"
+    ]
+  ],
+  "verified_active_seconds": 11974.447371,
+  "verified_active_minutes": 199.57412285,
+  "target_approximately_minutes": 180
+}

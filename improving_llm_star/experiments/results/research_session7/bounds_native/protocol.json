@@ -1,0 +1,18 @@
+{
+  "cases": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session7/bounds_control_cases.json.gz",
+  "methods": [
+    "original",
+    "original_bounds",
+    "robust_original",
+    "rh_image105",
+    "matched_uniform105",
+    "vm_geo105"
+  ],
+  "repeats": 3,
+  "timeout": 5.0,
+  "shuffle_seeds": 5,
+  "scope": "Offline cached-guidance computational planning, fresh preprocessing every trial; separate first-use prompt/image and API-inclusive measurements required. Five shuffle seeds are averaged within query, not independent map samples.",
+  "fixture_smoke": false,
+  "skip_warmup": false,
+  "manifest_sha256": "9de658a8ddc5ca81334b4a3452c3d4a6ea20484a4dd1f84eb0198f062b7d8126"
+}

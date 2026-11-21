@@ -1,0 +1,16 @@
+{
+  "case": "s7_15340003_0",
+  "kind": "vm",
+  "budget": {
+    "cap_usd": 3.0,
+    "accounted_usd": 0.878823,
+    "held_worst_case_usd": 0.2378256,
+    "remaining_authorized_usd": 1.8833514,
+    "attempts": 1295,
+    "successes": 1283,
+    "prompt_tokens": 4753616,
+    "completion_tokens": 348045,
+    "reasoning_tokens": 0,
+    "cached_input_tokens": 573952
+  }
+}

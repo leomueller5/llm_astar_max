@@ -1,0 +1,329 @@
+{
+  "status": "passed",
+  "branch": "research/waypoint-guidance",
+  "main_unchanged": "66baa31d2fc2b658b501dcd4b34e09d31af66cb4",
+  "selected_manifest_sources": 13,
+  "dependencies": [
+    {
+      "path": "improving_llm_star/llmastar/research/incumbent.py",
+      "sha256": "f44041b8072f9d632195ffcd18213ae64d169e50a1a27245005993cd6ba280b7",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/corridor.py",
+      "sha256": "6d9a944713a33ae9ac4ff6db7daafb9455c2c3d969249d5a12b3210d1e9becb1",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/discrepancy_guidance.py",
+      "status": "New separate late prototype, not used by frozen main benchmark"
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/efficient.py",
+      "sha256": "4d29dbdce7976a3e401469326c89548eb4afd2e9dffe684fc304b8399b5b2c3d",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/geometric_advice.py",
+      "sha256": "e78d27aa69c42b1bd3250c15f6c9b78c9e6fca026a4c2ccee89891344ef3dc67",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/spatial_guidance.py",
+      "sha256": "09b818cd22b512420f60bcf1ac00af73dabd51f8f9358cb7b1fd6448f327bccf",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/__init__.py",
+      "sha256": "aa4a2806aff9cde9c1e0e49f1caf41875ba9b3aec049c93d21adb71fc854849b",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/pathmax_guidance.py",
+      "status": "New separate late prototype, not used by frozen main benchmark"
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/scheduled.py",
+      "sha256": "dd559b13ecee5e68ce5f31506ed249d8f5af8e2e1def55b2c8f8a4118c8b24a2",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/spatial_calibration.py",
+      "sha256": "2865dc1f2c4c0b362a0265267f2a95b6f3df0c19e3fb333cfe5a64629a70d416",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/macro_guidance.py",
+      "sha256": "5fb24ecfc1718b7e914282391964f5de3309f4bf8d9b9b781394aeac1fda2347",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/geometry.py",
+      "sha256": "17f4493cc29428ddd33cd7986e72a32027d59839e69ea4794f09ad26aec82b89",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/search.py",
+      "sha256": "6bfb4da0e65ce1536bf078983fba54ef279cd8972bc1b78acb337d868fa69958",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/hybrid_guidance.py",
+      "sha256": "33927fb3bd4699527b453c0bb9617b261f2c91089740e55f66edb5310ee80329",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/spatial_planner.py",
+      "sha256": "cd36e2bac04ab0fdb293453bcbcf7f48730359ffbbd91bd6050546f1eb641d88",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/guidance.py",
+      "sha256": "d0d42d527368553805af27c077189d3b25acef2a5afc5d125c225075cf5c42f1",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/planner.py",
+      "sha256": "8fe504ea111eb354bf5c0bbff95d67d18b6c056a4aa388685586d5ca359dba06",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/compiler.py",
+      "sha256": "0eefe2bfd8125895fdafc41e832288bf2b5bedf41e49cc438d346f19928263cb",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/roadmap.py",
+      "sha256": "bd93a412c43eeabfaea8234077f0876f55fd841453821fc5d104d8dab373c76f",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/cut_search.py",
+      "sha256": "95207a28d6fcfe0f09697bbfcc36b72ee05b67dfb6a9d18214989ab0abd94a98",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/route.py",
+      "sha256": "6a8d0eed7b66b6b2745f1079b7c8b4d5ed5c5ed0b9fd127ad40e9d22a5a1a5fb",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/abstraction.py",
+      "sha256": "1cc9beba2f5def70102120f2b5080998d6acdd124dcc46eb0f52fa7c11dc9d3a",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/__init__.py",
+      "sha256": "34296de6a5154d06c69766fdcb9807b1e6a3c29c4fb411a5a233575ac8f85ea3",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/local_routes.py",
+      "sha256": "e94f70c468bacdedada863ee88210ed55638067f094dfd6c8c5dac8dc706080c",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/prompts.py",
+      "sha256": "0deb7df6193908c6e70dcda583fada85346d0eaa261d9ad70cbb0b50d8defbb4",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/api.py",
+      "sha256": "62b771c264b3c5c4ad415cfc1b3bbe5429b177611b546a83c04dec53d52986af",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/providers.py",
+      "sha256": "5ed82a2d605298b9d207baf1fa2aa3f094f261eb0dfe41622cd0263f76ce1cb4",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/primal.py",
+      "sha256": "a4aa822135eb6df98c88e8c30e4f4a91c073e911db2efa149710d857874e906e",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/schema.py",
+      "sha256": "ccb82cd4f2c6f21fda468dca3cd8588c84ebefa9de175397b201608bad937196",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/strategic/cuts.py",
+      "sha256": "283c104e7f9d80a76dfa7423d0df0334123c8dd0e2e7b020108968707f6b7748",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/real_guidance/__init__.py",
+      "sha256": "da3ba6418ffab9d06759f339ea2e03b5c4faa6cc696ea925d66917839bfc5361",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/llmastar/research/real_guidance/lineage.py",
+      "sha256": "e1b6a1eac15789a7720de4352facc270597f008ec86b137a706afaacdb8736be",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/version.py",
+      "sha256": "2b49c99622c4f2eaef51238db190b8c7e11e587529287bd3ef80c54884fa3d92",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/__init__.py",
+      "sha256": "f332c683e0df4219c39762b2d27fb35e937ef1efa0ee247401c688e25e15be99",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/dataset/__init__.py",
+      "sha256": "435abddb88793d4d3c6ea6f4d32be7844b45c6478144d7778dff23cb626f487b",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/dataset/dataset.py",
+      "sha256": "0cb8cf5b28cb71be712e29ed0641d6a33bb78c49b047a680dfe0a46eba4ce6a3",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/utils/__init__.py",
+      "sha256": "2107cbff9544633f4257ca69da45ad128a0d4e720902758c0dbe93ec797282d3",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/utils/utils.py",
+      "sha256": "2407a48082a32d93d1785c44490fb72b9e37b6df5e6107f24bbfb2b680a31fb1",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/utils/filter.py",
+      "sha256": "236c3046f15b4ff718975c5dcbdada8656b9e69641a087bf1c12f83acc43d49d",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/env/__init__.py",
+      "sha256": "23997e5b210a30fd1918ce158c5466a18d0beeff5344256bf056acf6cff02f1b",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/model/__init__.py",
+      "sha256": "f07dffebb94fdafa80bfa53385b016385b95b0a820a4a0f55fda96dafda3da49",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/model/chatgpt.py",
+      "sha256": "1ef03aa9b638001cf8bd8123946b77462da8ac9c9e2adeddce69682205b641c9",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/model/llama3.py",
+      "sha256": "d8f71f18b1ecf6fea445d7c4c915a6ce007fd4ebdc79481daa18b7111d38efbb",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/pather/__init__.py",
+      "sha256": "3b00dd8a63937250906cfe2b5453db5d5a8683ef30930749e1da09080c4bb6fc",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/env/search/env.py",
+      "sha256": "b23b38c908913464f6f6f52b8fc5805f3103012e422400e809a66b324ca6d6ba",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/env/search/plotting.py",
+      "sha256": "e965f32f6f8dd417a0970c512dd6ab982e549ee0656a9b155ad458df76a1803f",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/env/search/__init__.py",
+      "sha256": "86874d43baaebf9271d4fbdf2052099d671380a23e7f487dbb2ebec0a5cbff4b",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/pather/a_star/a_star.py",
+      "sha256": "ff8d57eab468979d8d22001d4e2e40d28e932f357804f7cf554f25cc1c4fd797",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/pather/a_star/__init__.py",
+      "sha256": "8fd9f34344bc8449f8c205fc0e60a5a2a88b3d7ba50756a72875853f1fe0c39d",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/pather/llm_a_star/__init__.py",
+      "sha256": "2c7f85635695548f03ba2165278cdd6c8bd62f0b2c55e7846875889a13a9bcb4",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/pather/llm_a_star/llm_a_star.py",
+      "sha256": "58f0b2c49c3ab0c34c2c9c11cc3e8f4de146fc8c78518af024a9ecaf854691d5",
+      "origin": "Explicit pre-test manifest",
+      "matches": true
+    },
+    {
+      "path": "llm-astar/llmastar/pather/llm_a_star/prompt.py",
+      "sha256": "8a947438479729bd2b0c28751188612dddab79401cbfb79aa48a6e43f21ca6e8",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/experiments/research/session4/maps.py",
+      "sha256": "e0828644c154b4205164229571a6940ed6bcd302924eb19c57486118a4beb9af",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    },
+    {
+      "path": "improving_llm_star/experiments/research/session6/final_benchmark.py",
+      "sha256": "85c6a5b04f005e617d6f17172ee3ba3a5d2ae0bc1ab353663d28f0a6c6b887d1",
+      "origin": "Immutable Git pre-test tree 7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "matches": true
+    }
+  ],
+  "scope": "Explicit pre-test hashes plus immutable pre-test Git tree verify all historical production research and frozen original package dependencies. New unselected prototypes labelled separately. Benchmark/analysis protocol addenda are documented, not retroactively claimed pre-frozen."
+}

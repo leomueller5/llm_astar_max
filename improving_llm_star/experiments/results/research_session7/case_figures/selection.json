@@ -1,0 +1,7 @@
+{
+  "scope": "One primary tree-maze and nested-obstacle query chosen by fixed ID hash, not favorable performance. Analysis-only path overlays never enter model inputs.",
+  "cases": [
+    "s7_15350001_0",
+    "s7_15380000_0"
+  ]
+}

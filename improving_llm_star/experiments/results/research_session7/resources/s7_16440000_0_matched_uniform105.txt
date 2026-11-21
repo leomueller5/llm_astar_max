@@ -1,0 +1,28 @@
+         204215 function calls (199915 primitive calls) in 0.050 seconds
+
+   Ordered by: cumulative time
+   List reduced from 97 to 22 due to restriction <22>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.052    0.052 native_benchmark.py:87(execute)
+        1    0.000    0.000    0.052    0.052 spatial_planner.py:32(search)
+        1    0.002    0.002    0.049    0.049 spatial_guidance.py:69(search)
+     1348    0.007    0.000    0.018    0.000 geometry.py:11(get)
+     8907    0.003    0.000    0.017    0.000 spatial_guidance.py:106(offer)
+     2212    0.000    0.000    0.013    0.000 spatial_guidance.py:101(entry)
+     2212    0.002    0.000    0.013    0.000 spatial_guidance.py:95(score)
+     6635    0.001    0.000    0.010    0.000 spatial_guidance.py:78(h)
+        1    0.000    0.000    0.009    0.009 cuts.py:117(__init__)
+     1582    0.001    0.000    0.008    0.000 cuts.py:143(value)
+    12480    0.004    0.000    0.008    0.000 geometry.py:59(blocked)
+     3164    0.001    0.000    0.008    0.000 cuts.py:88(value)
+      224    0.003    0.000    0.008    0.000 cuts.py:29(octile_transform)
+     3164    0.000    0.000    0.007    0.000 cuts.py:73(vector)
+        2    0.000    0.000    0.006    0.003 cuts.py:43(__init__)
+  4325/25    0.001    0.000    0.006    0.000 {built-in method builtins.all}
+       51    0.004    0.000    0.004    0.000 cuts.py:61(free_mask)
+      448    0.002    0.000    0.004    0.000 cuts.py:16(_past_min)
+        1    0.000    0.000    0.003    0.003 geometry.py:105(__init__)
+        1    0.000    0.000    0.003    0.003 geometry.py:35(__init__)
+     3971    0.001    0.000    0.002    0.000 {built-in method builtins.any}
+     2151    0.000    0.000    0.002    0.000 cuts.py:122(<genexpr>)

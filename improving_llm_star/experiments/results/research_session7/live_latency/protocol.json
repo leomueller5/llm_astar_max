@@ -1,0 +1,12 @@
+{
+  "selected": [
+    "s7_15390003_2",
+    "s7_15330001_2",
+    "s7_15340000_2",
+    "s7_15350000_2",
+    "s7_15400003_2",
+    "s7_15310000_2"
+  ],
+  "order": "Within-query deterministic shuffled method order, seed s7liveorder+caseID",
+  "selection": "Fixed hash of family/query IDs, never search performance. Distinct reserved queries, not used for tuning. Includes actual credential-safe API calls, response caching, ledger/export and prompt/image CPU. Original search receives the API response directly through original model.ask. No artificial API latency simulation."
+}

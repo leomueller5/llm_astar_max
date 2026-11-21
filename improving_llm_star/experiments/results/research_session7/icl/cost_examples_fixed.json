@@ -1,0 +1,230 @@
+[
+  {
+    "case_id": "s7_13110000_0",
+    "map_id": "s7_13110000",
+    "family": "open",
+    "features": [
+      0.0,
+      1.0,
+      0.581081081081081,
+      0.4339622641509434,
+      1.3962264150943395
+    ],
+    "input": "IMPORTANT exact spatial grounding (computed from coordinates; do not infer a different region numbering):{\"start_region\":\"R7\",\"goal_region\":\"R1\",\"free_region_samples\":[{\"id\":\"R0\",\"bounds\":[[1,1],[18,13]],\"sample\":[10,7]},{\"id\":\"R1\",\"bounds\":[[19,1],[36,13]],\"sample\":[28,7]},{\"id\":\"R2\",\"bounds\":[[37,1],[54,13]],\"sample\":[46,7]},{\"id\":\"R3\",\"bounds\":[[55,1],[72,13]],\"sample\":[64,7]},{\"id\":\"R4\",\"bounds\":[[1,14],[18,26]],\"sample\":[10,20]},{\"id\":\"R5\",\"bounds\":[[19,14],[36,26]],\"sample\":[28,20]},{\"id\":\"R6\",\"bounds\":[[37,14],[54,26]],\"sample\":[46,20]},{\"id\":\"R7\",\"bounds\":[[55,14],[72,26]],\"sample\":[64,20]},{\"id\":\"R8\",\"bounds\":[[1,27],[18,39]],\"sample\":[10,33]},{\"id\":\"R9\",\"bounds\":[[19,27],[36,39]],\"sample\":[28,33]},{\"id\":\"R10\",\"bounds\":[[37,27],[54,39]],\"sample\":[46,33]},{\"id\":\"R11\",\"bounds\":[[55,27],[72,39]],\"sample\":[64,33]},{\"id\":\"R12\",\"bounds\":[[1,40],[18,51]],\"sample\":[10,46]},{\"id\":\"R13\",\"bounds\":[[19,40],[36,51]],\"sample\":[28,46]},{\"id\":\"R14\",\"bounds\":[[37,40],[54,51]],\"sample\":[46,46]},{\"id\":\"R15\",\"bounds\":[[55,40],[72,51]],\"sample\":[64,46]}],\"self_check_rules\":[\"The preferred route must start in start_region and finish in goal_region.\",\"Never mark start_region or goal_region as avoid.\",\"A region ID is a location, not its numeric rank. Descending IDs are not inherently a route.\",\"Do not mark a location both preferred and avoid. Empty avoid is better than invented dead ends.\"]}\nFor EACH region sample, estimate ADDITIONAL remaining distance beyond the supplied geometric_lower_bound to the GOAL, ignoring the start. detour=0 when the bound already accounts for the route. priority is the chance this region is useful for a SHORT start-to-goal route, not merely locally close to the goal. confidence is your uncertainty estimate. Do not confuse distance-to-goal with additional detour. Return each region ID once.\n{\"range_x\":[0,74],\"range_y\":[0,53],\"start\":[63,26],\"goal\":[20,3],\"region_grid\":{\"side\":4,\"id_rule\":\"R(iy*side+ix), ix increases right, iy increases UP from zero\",\"interior_min\":[1,1],\"interior_max\":[72,51],\"width\":72,\"height\":51},\"regions\":[{\"id\":\"R0\",\"bounds\":[[1,1],[18,13]],\"sample\":[10,7],\"geometric_lower_bound\":11.65685424949238},{\"id\":\"R1\",\"bounds\":[[19,1],[36,13]],\"sample\":[28,7],\"geometric_lower_bound\":9.65685424949238},{\"id\":\"R2\",\"bounds\":[[37,1],[54,13]],\"sample\":[46,7],\"geometric_lower_bound\":27.65685424949238},{\"id\":\"R3\",\"bounds\":[[55,1],[72,13]],\"sample\":[64,7],\"geometric_lower_bound\":45.65685424949238},{\"id\":\"R4\",\"bounds\":[[1,14],[18,26]],\"sample\":[10,20],\"geometric_lower_bound\":21.14213562373095},{\"id\":\"R5\",\"bounds\":[[19,14],[36,26]],\"sample\":[28,20],\"geometric_lower_bound\":20.31370849898476},{\"id\":\"R6\",\"bounds\":[[37,14],[54,26]],\"sample\":[46,20],\"geometric_lower_bound\":33.04163056034262},{\"id\":\"R7\",\"bounds\":[[55,14],[72,26]],\"sample\":[64,20],\"geometric_lower_bound\":51.04163056034262},{\"id\":\"R8\",\"bounds\":[[1,27],[18,39]],\"sample\":[10,33],\"geometric_lower_bound\":34.14213562373095},{\"id\":\"R9\",\"bounds\":[[19,27],[36,39]],\"sample\":[28,33],\"geometric_lower_bound\":33.31370849898476},{\"id\":\"R10\",\"bounds\":[[37,27],[54,39]],\"sample\":[46,33],\"geometric_lower_bound\":40.76955262170047},{\"id\":\"R11\",\"bounds\":[[55,27],[72,39]],\"sample\":[64,33],\"geometric_lower_bound\":56.42640687119285},{\"id\":\"R12\",\"bounds\":[[1,40],[18,51]],\"sample\":[10,46],\"geometric_lower_bound\":47.14213562373095},{\"id\":\"R13\",\"bounds\":[[19,40],[36,51]],\"sample\":[28,46],\"geometric_lower_bound\":46.31370849898476},{\"id\":\"R14\",\"bounds\":[[37,40],[54,51]],\"sample\":[46,46],\"geometric_lower_bound\":53.76955262170047},{\"id\":\"R15\",\"bounds\":[[55,40],[72,51]],\"sample\":[64,46],\"geometric_lower_bound\":61.811183182043095}],\"obstacles\":{\"horizontal_barriers\":[],\"vertical_barriers\":[]},\"wall_descriptions\":[]}\nThis is a verified development example. Predict only the EXTRA cost beyond the given lower bound. A large lower bound does not imply a large EXTRA cost.",
+    "answer": {
+      "predictions": [
+        {
+          "region_id": "R0",
+          "detour": 0.0,
+          "priority": 0.512,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R1",
+          "detour": 0.0,
+          "priority": 0.872,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R2",
+          "detour": 0.0,
+          "priority": 0.773,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R3",
+          "detour": 0.0,
+          "priority": 0.359,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R4",
+          "detour": 0.0,
+          "priority": 0.134,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R5",
+          "detour": 0.0,
+          "priority": 0.635,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R6",
+          "detour": 0.0,
+          "priority": 0.646,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R7",
+          "detour": 0.0,
+          "priority": 0.773,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R8",
+          "detour": 0.0,
+          "priority": 0.0,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R9",
+          "detour": 0.0,
+          "priority": 0.047,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R10",
+          "detour": 0.0,
+          "priority": 0.231,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R11",
+          "detour": 0.0,
+          "priority": 0.679,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R12",
+          "detour": 0.0,
+          "priority": 0.0,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R13",
+          "detour": 0.0,
+          "priority": 0.0,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R14",
+          "detour": 0.0,
+          "priority": 0.0,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R15",
+          "detour": 0.0,
+          "priority": 0.092,
+          "confidence": 1.0
+        }
+      ]
+    },
+    "teacher_source": "Offline exact residuals on DEVELOPMENT examples only; never evaluation query costs."
+  },
+  {
+    "case_id": "s7_13150000_0",
+    "map_id": "s7_13150000",
+    "family": "tree_maze",
+    "features": [
+      0.9980865173557472,
+      1.4707849345843629,
+      0.7702702702702703,
+      0.8867924528301887,
+      1.3962264150943395
+    ],
+    "input": "IMPORTANT exact spatial grounding (computed from coordinates; do not infer a different region numbering):{\"start_region\":\"R0\",\"goal_region\":\"R15\",\"free_region_samples\":[{\"id\":\"R0\",\"bounds\":[[1,1],[18,13]],\"sample\":[10,7]},{\"id\":\"R1\",\"bounds\":[[19,1],[36,13]],\"sample\":[28,7]},{\"id\":\"R2\",\"bounds\":[[37,1],[54,13]],\"sample\":[46,7]},{\"id\":\"R3\",\"bounds\":[[55,1],[72,13]],\"sample\":[64,7]},{\"id\":\"R4\",\"bounds\":[[1,14],[18,26]],\"sample\":[10,20]},{\"id\":\"R5\",\"bounds\":[[19,14],[36,26]],\"sample\":[28,20]},{\"id\":\"R6\",\"bounds\":[[37,14],[54,26]],\"sample\":[46,20]},{\"id\":\"R7\",\"bounds\":[[55,14],[72,26]],\"sample\":[64,20]},{\"id\":\"R8\",\"bounds\":[[1,27],[18,39]],\"sample\":[10,33]},{\"id\":\"R9\",\"bounds\":[[19,27],[36,39]],\"sample\":[28,33]},{\"id\":\"R10\",\"bounds\":[[37,27],[54,39]],\"sample\":[46,33]},{\"id\":\"R11\",\"bounds\":[[55,27],[72,39]],\"sample\":[64,33]},{\"id\":\"R12\",\"bounds\":[[1,40],[18,51]],\"sample\":[10,46]},{\"id\":\"R13\",\"bounds\":[[19,40],[36,51]],\"sample\":[28,46]},{\"id\":\"R14\",\"bounds\":[[37,40],[54,51]],\"sample\":[46,46]},{\"id\":\"R15\",\"bounds\":[[55,40],[72,51]],\"sample\":[64,46]}],\"self_check_rules\":[\"The preferred route must start in start_region and finish in goal_region.\",\"Never mark start_region or goal_region as avoid.\",\"A region ID is a location, not its numeric rank. Descending IDs are not inherently a route.\",\"Do not mark a location both preferred and avoid. Empty avoid is better than invented dead ends.\"]}\nFor EACH region sample, estimate ADDITIONAL remaining distance beyond the supplied geometric_lower_bound to the GOAL, ignoring the start. detour=0 when the bound already accounts for the route. priority is the chance this region is useful for a SHORT start-to-goal route, not merely locally close to the goal. confidence is your uncertainty estimate. Do not confuse distance-to-goal with additional detour. Return each region ID once.\n{\"range_x\":[0,74],\"range_y\":[0,53],\"start\":[5,1],\"goal\":[62,48],\"region_grid\":{\"side\":4,\"id_rule\":\"R(iy*side+ix), ix increases right, iy increases UP from zero\",\"interior_min\":[1,1],\"interior_max\":[72,51],\"width\":72,\"height\":51},\"regions\":[{\"id\":\"R0\",\"bounds\":[[1,1],[18,13]],\"sample\":[10,7],\"geometric_lower_bound\":78.39696961967},{\"id\":\"R1\",\"bounds\":[[19,1],[36,13]],\"sample\":[28,7],\"geometric_lower_bound\":68.35533905932738},{\"id\":\"R2\",\"bounds\":[[37,1],[54,13]],\"sample\":[46,7],\"geometric_lower_bound\":50.941125496954285},{\"id\":\"R3\",\"bounds\":[[55,1],[72,13]],\"sample\":[64,7],\"geometric_lower_bound\":51.526911934581186},{\"id\":\"R4\",\"bounds\":[[1,14],[18,26]],\"sample\":[10,20],\"geometric_lower_bound\":74.32590180780453},{\"id\":\"R5\",\"bounds\":[[19,14],[36,26]],\"sample\":[28,20],\"geometric_lower_bound\":55.840620433565945},{\"id\":\"R6\",\"bounds\":[[37,14],[54,26]],\"sample\":[46,20],\"geometric_lower_bound\":34.62741699796952},{\"id\":\"R7\",\"bounds\":[[55,14],[72,26]],\"sample\":[64,20],\"geometric_lower_bound\":35.45584412271572},{\"id\":\"R8\",\"bounds\":[[1,27],[18,39]],\"sample\":[10,33],\"geometric_lower_bound\":77.2253967444162},{\"id\":\"R9\",\"bounds\":[[19,27],[36,39]],\"sample\":[28,33],\"geometric_lower_bound\":55.08326112068523},{\"id\":\"R10\",\"bounds\":[[37,27],[54,39]],\"sample\":[46,33],\"geometric_lower_bound\":31.62741699796952},{\"id\":\"R11\",\"bounds\":[[55,27],[72,39]],\"sample\":[64,33],\"geometric_lower_bound\":23.38477631085025},{\"id\":\"R12\",\"bounds\":[[1,40],[18,51]],\"sample\":[10,46],\"geometric_lower_bound\":76.08326112068524},{\"id\":\"R13\",\"bounds\":[[19,40],[36,51]],\"sample\":[28,46],\"geometric_lower_bound\":55.597979746446654},{\"id\":\"R14\",\"bounds\":[[37,40],[54,51]],\"sample\":[46,46],\"geometric_lower_bound\":44.62741699796952},{\"id\":\"R15\",\"bounds\":[[55,40],[72,51]],\"sample\":[64,46],\"geometric_lower_bound\":2.8284271247461903}],\"obstacles\":{\"horizontal_barriers\":[[9,0,3],[9,5,8],[17,0,2],[17,4,8],[26,0,4],[26,6,8],[35,0,8],[43,0,1],[43,3,8],[9,8,13],[9,15,16],[17,8,9],[17,11,16],[26,8,16],[35,8,16],[43,8,13],[43,15,16],[9,16,24],[17,16,24],[26,16,24],[35,16,19],[35,21,24],[43,16,19],[43,21,24],[9,24,32],[17,24,32],[26,24,27],[26,29,32],[35,24,27],[35,29,32],[43,24,32],[9,32,41],[17,32,35],[17,37,41],[26,32,41],[35,32,35],[35,37,41],[43,32,41],[9,41,46],[9,48,49],[17,41,49],[26,41,45],[26,47,49],[35,41,49],[43,41,43],[43,45,49],[9,49,57],[17,49,54],[17,56,57],[26,49,50],[26,52,57],[35,49,53],[35,55,57],[43,49,57],[9,57,60],[9,62,65],[17,57,58],[17,60,65],[26,57,62],[26,64,65],[35,57,65],[43,57,58],[43,60,65],[9,65,67],[9,69,73],[17,65,66],[17,68,73],[26,65,69],[26,71,73],[35,65,67],[35,69,73],[43,65,69],[43,71,73]],\"vertical_barriers\":[[8,0,9],[8,9,17],[8,17,26],[8,26,32],[8,34,35],[8,35,40],[8,42,43],[8,43,52],[16,0,1],[16,3,9],[16,9,17],[16,17,18],[16,20,26],[16,26,28],[16,30,35],[16,35,43],[16,43,48],[16,50,52],[24,0,2],[24,4,9],[24,9,11],[24,13,17],[24,17,23],[24,25,26],[24,26,35],[24,35,43],[24,43,44],[24,46,52],[32,0,1],[32,3,9],[32,9,13],[32,15,17],[32,17,26],[32,26,28],[32,30,35],[32,35,43],[32,43,44],[32,46,52],[41,0,6],[41,8,9],[41,9,17],[41,17,19],[41,21,26],[41,26,35],[41,35,38],[41,40,43],[41,43,46],[41,48,52],[49,0,9],[49,9,12],[49,14,17],[49,17,26],[49,26,27],[49,29,35],[49,35,43],[49,43,52],[57,0,3],[57,5,9],[57,9,17],[57,17,26],[57,26,35],[57,35,39],[57,41,43],[57,43,49],[57,51,52],[65,0,3],[65,5,9],[65,9,17],[65,17,26],[65,26,35],[65,35,43],[65,43,46],[65,48,52]]},\"wall_descriptions\":[{\"id\":\"H0\",\"from\":[0,9],\"to\":[3,9]},{\"id\":\"H1\",\"from\":[5,9],\"to\":[8,9]},{\"id\":\"H2\",\"from\":[0,17],\"to\":[2,17]},{\"id\":\"H3\",\"from\":[4,17],\"to\":[8,17]},{\"id\":\"H4\",\"from\":[0,26],\"to\":[4,26]},{\"id\":\"H5\",\"from\":[6,26],\"to\":[8,26]},{\"id\":\"H6\",\"from\":[0,35],\"to\":[8,35]},{\"id\":\"H7\",\"from\":[0,43],\"to\":[1,43]},{\"id\":\"H8\",\"from\":[3,43],\"to\":[8,43]},{\"id\":\"H9\",\"from\":[8,9],\"to\":[13,9]},{\"id\":\"H10\",\"from\":[15,9],\"to\":[16,9]},{\"id\":\"H11\",\"from\":[8,17],\"to\":[9,17]},{\"id\":\"H12\",\"from\":[11,17],\"to\":[16,17]},{\"id\":\"H13\",\"from\":[8,26],\"to\":[16,26]},{\"id\":\"H14\",\"from\":[8,35],\"to\":[16,35]},{\"id\":\"H15\",\"from\":[8,43],\"to\":[13,43]},{\"id\":\"H16\",\"from\":[15,43],\"to\":[16,43]},{\"id\":\"H17\",\"from\":[16,9],\"to\":[24,9]},{\"id\":\"H18\",\"from\":[16,17],\"to\":[24,17]},{\"id\":\"H19\",\"from\":[16,26],\"to\":[24,26]},{\"id\":\"H20\",\"from\":[16,35],\"to\":[19,35]},{\"id\":\"H21\",\"from\":[21,35],\"to\":[24,35]},{\"id\":\"H22\",\"from\":[16,43],\"to\":[19,43]},{\"id\":\"H23\",\"from\":[21,43],\"to\":[24,43]},{\"id\":\"H24\",\"from\":[24,9],\"to\":[32,9]},{\"id\":\"H25\",\"from\":[24,17],\"to\":[32,17]},{\"id\":\"H26\",\"from\":[24,26],\"to\":[27,26]},{\"id\":\"H27\",\"from\":[29,26],\"to\":[32,26]},{\"id\":\"H28\",\"from\":[24,35],\"to\":[27,35]},{\"id\":\"H29\",\"from\":[29,35],\"to\":[32,35]},{\"id\":\"H30\",\"from\":[24,43],\"to\":[32,43]},{\"id\":\"H31\",\"from\":[32,9],\"to\":[41,9]},{\"id\":\"H32\",\"from\":[32,17],\"to\":[35,17]},{\"id\":\"H33\",\"from\":[37,17],\"to\":[41,17]},{\"id\":\"H34\",\"from\":[32,26],\"to\":[41,26]},{\"id\":\"H35\",\"from\":[32,35],\"to\":[35,35]},{\"id\":\"H36\",\"from\":[37,35],\"to\":[41,35]},{\"id\":\"H37\",\"from\":[32,43],\"to\":[41,43]},{\"id\":\"H38\",\"from\":[41,9],\"to\":[46,9]},{\"id\":\"H39\",\"from\":[48,9],\"to\":[49,9]},{\"id\":\"H40\",\"from\":[41,17],\"to\":[49,17]},{\"id\":\"H41\",\"from\":[41,26],\"to\":[45,26]},{\"id\":\"H42\",\"from\":[47,26],\"to\":[49,26]},{\"id\":\"H43\",\"from\":[41,35],\"to\":[49,35]},{\"id\":\"H44\",\"from\":[41,43],\"to\":[43,43]},{\"id\":\"H45\",\"from\":[45,43],\"to\":[49,43]},{\"id\":\"H46\",\"from\":[49,9],\"to\":[57,9]},{\"id\":\"H47\",\"from\":[49,17],\"to\":[54,17]},{\"id\":\"H48\",\"from\":[56,17],\"to\":[57,17]},{\"id\":\"H49\",\"from\":[49,26],\"to\":[50,26]},{\"id\":\"H50\",\"from\":[52,26],\"to\":[57,26]},{\"id\":\"H51\",\"from\":[49,35],\"to\":[53,35]},{\"id\":\"H52\",\"from\":[55,35],\"to\":[57,35]},{\"id\":\"H53\",\"from\":[49,43],\"to\":[57,43]},{\"id\":\"H54\",\"from\":[57,9],\"to\":[60,9]},{\"id\":\"H55\",\"from\":[62,9],\"to\":[65,9]},{\"id\":\"H56\",\"from\":[57,17],\"to\":[58,17]},{\"id\":\"H57\",\"from\":[60,17],\"to\":[65,17]},{\"id\":\"H58\",\"from\":[57,26],\"to\":[62,26]},{\"id\":\"H59\",\"from\":[64,26],\"to\":[65,26]},{\"id\":\"H60\",\"from\":[57,35],\"to\":[65,35]},{\"id\":\"H61\",\"from\":[57,43],\"to\":[58,43]},{\"id\":\"H62\",\"from\":[60,43],\"to\":[65,43]},{\"id\":\"H63\",\"from\":[65,9],\"to\":[67,9]},{\"id\":\"H64\",\"from\":[69,9],\"to\":[73,9]},{\"id\":\"H65\",\"from\":[65,17],\"to\":[66,17]},{\"id\":\"H66\",\"from\":[68,17],\"to\":[73,17]},{\"id\":\"H67\",\"from\":[65,26],\"to\":[69,26]},{\"id\":\"H68\",\"from\":[71,26],\"to\":[73,26]},{\"id\":\"H69\",\"from\":[65,35],\"to\":[67,35]},{\"id\":\"H70\",\"from\":[69,35],\"to\":[73,35]},{\"id\":\"H71\",\"from\":[65,43],\"to\":[69,43]},{\"id\":\"H72\",\"from\":[71,43],\"to\":[73,43]},{\"id\":\"V0\",\"from\":[8,0],\"to\":[8,9]},{\"id\":\"V1\",\"from\":[8,9],\"to\":[8,17]},{\"id\":\"V2\",\"from\":[8,17],\"to\":[8,26]},{\"id\":\"V3\",\"from\":[8,26],\"to\":[8,32]},{\"id\":\"V4\",\"from\":[8,34],\"to\":[8,35]},{\"id\":\"V5\",\"from\":[8,35],\"to\":[8,40]},{\"id\":\"V6\",\"from\":[8,42],\"to\":[8,43]},{\"id\":\"V7\",\"from\":[8,43],\"to\":[8,52]},{\"id\":\"V8\",\"from\":[16,0],\"to\":[16,1]},{\"id\":\"V9\",\"from\":[16,3],\"to\":[16,9]},{\"id\":\"V10\",\"from\":[16,9],\"to\":[16,17]},{\"id\":\"V11\",\"from\":[16,17],\"to\":[16,18]},{\"id\":\"V12\",\"from\":[16,20],\"to\":[16,26]},{\"id\":\"V13\",\"from\":[16,26],\"to\":[16,28]},{\"id\":\"V14\",\"from\":[16,30],\"to\":[16,35]},{\"id\":\"V15\",\"from\":[16,35],\"to\":[16,43]},{\"id\":\"V16\",\"from\":[16,43],\"to\":[16,48]},{\"id\":\"V17\",\"from\":[16,50],\"to\":[16,52]},{\"id\":\"V18\",\"from\":[24,0],\"to\":[24,2]},{\"id\":\"V19\",\"from\":[24,4],\"to\":[24,9]},{\"id\":\"V20\",\"from\":[24,9],\"to\":[24,11]},{\"id\":\"V21\",\"from\":[24,13],\"to\":[24,17]},{\"id\":\"V22\",\"from\":[24,17],\"to\":[24,23]},{\"id\":\"V23\",\"from\":[24,25],\"to\":[24,26]},{\"id\":\"V24\",\"from\":[24,26],\"to\":[24,35]},{\"id\":\"V25\",\"from\":[24,35],\"to\":[24,43]},{\"id\":\"V26\",\"from\":[24,43],\"to\":[24,44]},{\"id\":\"V27\",\"from\":[24,46],\"to\":[24,52]},{\"id\":\"V28\",\"from\":[32,0],\"to\":[32,1]},{\"id\":\"V29\",\"from\":[32,3],\"to\":[32,9]},{\"id\":\"V30\",\"from\":[32,9],\"to\":[32,13]},{\"id\":\"V31\",\"from\":[32,15],\"to\":[32,17]},{\"id\":\"V32\",\"from\":[32,17],\"to\":[32,26]},{\"id\":\"V33\",\"from\":[32,26],\"to\":[32,28]},{\"id\":\"V34\",\"from\":[32,30],\"to\":[32,35]},{\"id\":\"V35\",\"from\":[32,35],\"to\":[32,43]},{\"id\":\"V36\",\"from\":[32,43],\"to\":[32,44]},{\"id\":\"V37\",\"from\":[32,46],\"to\":[32,52]},{\"id\":\"V38\",\"from\":[41,0],\"to\":[41,6]},{\"id\":\"V39\",\"from\":[41,8],\"to\":[41,9]},{\"id\":\"V40\",\"from\":[41,9],\"to\":[41,17]},{\"id\":\"V41\",\"from\":[41,17],\"to\":[41,19]},{\"id\":\"V42\",\"from\":[41,21],\"to\":[41,26]},{\"id\":\"V43\",\"from\":[41,26],\"to\":[41,35]},{\"id\":\"V44\",\"from\":[41,35],\"to\":[41,38]},{\"id\":\"V45\",\"from\":[41,40],\"to\":[41,43]},{\"id\":\"V46\",\"from\":[41,43],\"to\":[41,46]},{\"id\":\"V47\",\"from\":[41,48],\"to\":[41,52]},{\"id\":\"V48\",\"from\":[49,0],\"to\":[49,9]},{\"id\":\"V49\",\"from\":[49,9],\"to\":[49,12]},{\"id\":\"V50\",\"from\":[49,14],\"to\":[49,17]},{\"id\":\"V51\",\"from\":[49,17],\"to\":[49,26]},{\"id\":\"V52\",\"from\":[49,26],\"to\":[49,27]},{\"id\":\"V53\",\"from\":[49,29],\"to\":[49,35]},{\"id\":\"V54\",\"from\":[49,35],\"to\":[49,43]},{\"id\":\"V55\",\"from\":[49,43],\"to\":[49,52]},{\"id\":\"V56\",\"from\":[57,0],\"to\":[57,3]},{\"id\":\"V57\",\"from\":[57,5],\"to\":[57,9]},{\"id\":\"V58\",\"from\":[57,9],\"to\":[57,17]},{\"id\":\"V59\",\"from\":[57,17],\"to\":[57,26]},{\"id\":\"V60\",\"from\":[57,26],\"to\":[57,35]},{\"id\":\"V61\",\"from\":[57,35],\"to\":[57,39]},{\"id\":\"V62\",\"from\":[57,41],\"to\":[57,43]},{\"id\":\"V63\",\"from\":[57,43],\"to\":[57,49]},{\"id\":\"V64\",\"from\":[57,51],\"to\":[57,52]},{\"id\":\"V65\",\"from\":[65,0],\"to\":[65,3]},{\"id\":\"V66\",\"from\":[65,5],\"to\":[65,9]},{\"id\":\"V67\",\"from\":[65,9],\"to\":[65,17]},{\"id\":\"V68\",\"from\":[65,17],\"to\":[65,26]},{\"id\":\"V69\",\"from\":[65,26],\"to\":[65,35]},{\"id\":\"V70\",\"from\":[65,35],\"to\":[65,43]},{\"id\":\"V71\",\"from\":[65,43],\"to\":[65,46]},{\"id\":\"V72\",\"from\":[65,48],\"to\":[65,52]}]}\nThis is a verified development example. Predict only the EXTRA cost beyond the given lower bound. A large lower bound does not imply a large EXTRA cost.",
+    "answer": {
+      "predictions": [
+        {
+          "region_id": "R0",
+          "detour": 14.101,
+          "priority": 0.797,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R1",
+          "detour": 5.899,
+          "priority": 0.819,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R2",
+          "detour": 1.172,
+          "priority": 0.955,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R3",
+          "detour": 5.515,
+          "priority": 0.39,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R4",
+          "detour": 30.586,
+          "priority": 0.899,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R5",
+          "detour": 68.627,
+          "priority": 0.769,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R6",
+          "detour": 0.586,
+          "priority": 0.769,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R7",
+          "detour": 39.899,
+          "priority": 0.57,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R8",
+          "detour": 122.426,
+          "priority": 1.0,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R9",
+          "detour": 75.556,
+          "priority": 0.773,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R10",
+          "detour": 0.0,
+          "priority": 0.769,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R11",
+          "detour": 63.799,
+          "priority": 0.551,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R12",
+          "detour": 112.326,
+          "priority": 0.527,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R13",
+          "detour": 112.326,
+          "priority": 0.955,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R14",
+          "detour": 107.64,
+          "priority": 0.872,
+          "confidence": 1.0
+        },
+        {
+          "region_id": "R15",
+          "detour": 0.0,
+          "priority": 0.872,
+          "confidence": 1.0
+        }
+      ]
+    },
+    "teacher_source": "Offline exact residuals on DEVELOPMENT examples only; never evaluation query costs."
+  }
+]

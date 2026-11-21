@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-20T10:33:49.572829+00:00",
+  "purpose": "Matched additional controls, before final result inspection. No source/prompt/coefficient tuning. Original native process remains25methods, not changed while running.",
+  "auxiliary_methods": [
+    "matched_uniform2",
+    "rh_macro_zero105",
+    "rh_macro_uniform105"
+  ],
+  "reason": "Secondarybound2needsidenticalengineuniform2. Macroresidualvariantneedsidenticalno-guidancebase1anduniform1.05controls; frozenVM1.05alonewouldchangebothweightandguidance.",
+  "compatibility": "vm_strict2is25thmethodaddedtransparentlyafterproviderlimitdiagnosis; originalanalysis_controls24methoddescriptionretainedasdatedhistory."
+}

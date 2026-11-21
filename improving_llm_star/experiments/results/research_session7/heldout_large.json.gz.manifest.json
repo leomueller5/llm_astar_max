@@ -1,0 +1,23 @@
+{
+  "split": "heldout",
+  "base": 16410000,
+  "sizes": [
+    227,
+    263
+  ],
+  "families": [
+    "open",
+    "random_walls",
+    "rooms",
+    "braided_maze",
+    "tree_maze",
+    "serpentine",
+    "u_traps",
+    "nested",
+    "competing_corridors",
+    "bottlenecks"
+  ],
+  "maps": 2,
+  "queries": 1,
+  "sha256": "f036b80004d1a10147b42d430c778ec07a59b699c03d9713297ce8dd5f945690"
+}

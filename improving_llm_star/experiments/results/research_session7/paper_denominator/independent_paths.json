@@ -1,0 +1,285 @@
+{
+  "checked_paths": 0,
+  "checked_edges": 0,
+  "by_method": {},
+  "declared_invalid": [
+    {
+      "case_id": "s7_15310000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310003_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15310003_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15320003_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330003_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15330003_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340003_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15340003_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15350000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15350000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15350001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15350002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15350002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15360000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15360000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15360001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15360002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15360003_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15370003_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15380000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15380000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15380001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15380002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15380002_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15390000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15390000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15390001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15390002_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15400000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15400000_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15400001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_15400001_1",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16420000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16430000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16440000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16440001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16450000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16450001_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16470000_0",
+      "method": "paper_astar"
+    },
+    {
+      "case_id": "s7_16470001_0",
+      "method": "paper_astar"
+    }
+  ],
+  "all_returned_valid_paths_independently_pass": true,
+  "checker": "Shapely closed-segment STRtree; integer grid, strict bounds, endpoints, unit neighbours, recomputed Euclidean cost and declared search bound."
+}

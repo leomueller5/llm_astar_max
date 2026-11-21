@@ -1,0 +1,28 @@
+         7130 function calls (7106 primitive calls) in 0.002 seconds
+
+   Ordered by: cumulative time
+   List reduced from 116 to 22 due to restriction <22>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.002    0.002 native_benchmark.py:87(execute)
+        1    0.000    0.000    0.002    0.002 hybrid_guidance.py:82(search)
+        1    0.000    0.000    0.001    0.001 macro_guidance.py:47(search)
+    61/37    0.000    0.000    0.001    0.000 {built-in method builtins.all}
+      167    0.000    0.000    0.001    0.000 geometry.py:87(cost)
+      144    0.000    0.000    0.001    0.000 macro_guidance.py:189(<genexpr>)
+      167    0.000    0.000    0.000    0.000 geometry.py:77(collision)
+       63    0.000    0.000    0.000    0.000 macro_guidance.py:84(offer)
+      427    0.000    0.000    0.000    0.000 geometry.py:59(blocked)
+        1    0.000    0.000    0.000    0.000 geometric_advice.py:70(portfolio)
+       43    0.000    0.000    0.000    0.000 cuts.py:143(value)
+       86    0.000    0.000    0.000    0.000 cuts.py:88(value)
+        8    0.000    0.000    0.000    0.000 cuts.py:29(octile_transform)
+       42    0.000    0.000    0.000    0.000 macro_guidance.py:71(h)
+       86    0.000    0.000    0.000    0.000 cuts.py:73(vector)
+        1    0.000    0.000    0.000    0.000 cuts.py:117(__init__)
+        4    0.000    0.000    0.000    0.000 geometric_advice.py:81(offer)
+        2    0.000    0.000    0.000    0.000 cuts.py:43(__init__)
+        2    0.000    0.000    0.000    0.000 geometric_advice.py:57(assess)
+        8    0.000    0.000    0.000    0.000 geometry.py:11(get)
+       16    0.000    0.000    0.000    0.000 cuts.py:16(_past_min)
+        1    0.000    0.000    0.000    0.000 geometric_advice.py:37(first_conflict)

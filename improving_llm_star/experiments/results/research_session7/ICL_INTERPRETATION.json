@@ -1,0 +1,32 @@
+{
+  "scope": "Observational interpretation, not a causal proof of in-context learning. Teachers have confidence1; all1600ICLoutputs repeat confidence1. Numeric residual accuracy worsens despite lower observed search work, so stronger inflation or response-format imitation is an alternative hypothesis.",
+  "representations": {
+    "image": {
+      "samples": 1600,
+      "confidence_one_fraction": 0.009375,
+      "mean_confidence": 0.4515625,
+      "mean_confidence_weighted_delta": 18.301607851723393,
+      "raw_remaining_cost_mae": 95.98142744580426,
+      "correlation_delta_vs_true_extra": -0.07056758698158079,
+      "correlation_delta_vs_already_supplied_lower_bound": 0.596510677359342
+    },
+    "text": {
+      "samples": 1600,
+      "confidence_one_fraction": 0.00875,
+      "mean_confidence": 0.49924375,
+      "mean_confidence_weighted_delta": 13.477611659130478,
+      "raw_remaining_cost_mae": 92.90391927535666,
+      "correlation_delta_vs_true_extra": -0.04597418368239982,
+      "correlation_delta_vs_already_supplied_lower_bound": 0.4364927213287282
+    },
+    "icl": {
+      "samples": 1600,
+      "confidence_one_fraction": 1,
+      "mean_confidence": 1.0,
+      "mean_confidence_weighted_delta": 51.535157193944165,
+      "raw_remaining_cost_mae": 130.7803927477231,
+      "correlation_delta_vs_true_extra": -0.06466508154425225,
+      "correlation_delta_vs_already_supplied_lower_bound": 0.6996308345098571
+    }
+  }
+}

@@ -1,0 +1,28 @@
+         1346600 function calls (1346536 primitive calls) in 0.364 seconds
+
+   Ordered by: cumulative time
+   List reduced from 112 to 22 due to restriction <22>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.365    0.365 native_benchmark.py:87(execute)
+        1    0.002    0.002    0.365    0.365 spatial_planner.py:32(search)
+        1    0.020    0.020    0.363    0.363 spatial_guidance.py:69(search)
+    12169    0.064    0.000    0.200    0.000 geometry.py:11(get)
+    93198    0.024    0.000    0.121    0.000 spatial_guidance.py:106(offer)
+   109163    0.085    0.000    0.105    0.000 geometry.py:59(blocked)
+    18444    0.004    0.000    0.084    0.000 spatial_guidance.py:101(entry)
+    18444    0.015    0.000    0.080    0.000 spatial_guidance.py:95(score)
+    55331    0.009    0.000    0.033    0.000 spatial_guidance.py:78(h)
+    18443    0.006    0.000    0.028    0.000 spatial_guidance.py:84(advice)
+    12621    0.004    0.000    0.022    0.000 cuts.py:143(value)
+    12620    0.002    0.000    0.020    0.000 spatial_planner.py:14(value)
+    12170    0.007    0.000    0.019    0.000 spatial_guidance.py:117(get_label)
+    12620    0.004    0.000    0.018    0.000 spatial_guidance.py:55(value)
+   189901    0.018    0.000    0.018    0.000 {method 'get' of 'dict' objects}
+    25242    0.006    0.000    0.017    0.000 cuts.py:88(value)
+    12620    0.008    0.000    0.013    0.000 spatial_guidance.py:41(identifier)
+    25242    0.002    0.000    0.011    0.000 cuts.py:73(vector)
+   110155    0.010    0.000    0.010    0.000 search.py:53(inside)
+    18444    0.008    0.000    0.008    0.000 <string>:2(__init__)
+    93198    0.008    0.000    0.008    0.000 {built-in method math.hypot}
+      245    0.003    0.000    0.008    0.000 cuts.py:29(octile_transform)

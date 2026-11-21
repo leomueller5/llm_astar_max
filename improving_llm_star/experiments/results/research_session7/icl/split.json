@@ -1,0 +1,27 @@
+{
+  "training_maps": [
+    "s7_13110000",
+    "s7_13130000",
+    "s7_13150000",
+    "s7_13170000"
+  ],
+  "evaluation_maps": [
+    "s7_13110001",
+    "s7_13120000",
+    "s7_13120001",
+    "s7_13130001",
+    "s7_13140000",
+    "s7_13140001",
+    "s7_13150001",
+    "s7_13160000",
+    "s7_13160001",
+    "s7_13170001",
+    "s7_13180000",
+    "s7_13180001",
+    "s7_13190000",
+    "s7_13190001",
+    "s7_13200000",
+    "s7_13200001"
+  ],
+  "policy": "No training geometry in ICL pilot evaluation; held-out examples frozen from these development maps only."
+}

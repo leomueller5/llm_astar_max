@@ -177,3 +177,104 @@ def test_feedback_local_damping_retains_global_calibration_and_revises_only_touc
         if region['sample'] is None:continue
         point=tuple(region['sample']);d,_,c=initial.value(point)
         assert fixed.value(point)[0]==pytest.approx(d*c*(.5 if region['id']==rid else 1.))
+
+
+def test_matched_uniform_control_has_exact_same_search_work_as_optimized_weight():
+    from llmastar.research.spatial_planner import SpatialResidualAStar
+    q=query();a=SpatialResidualAStar(source='none',bound=1.05,base_weight=1.05).search(q)
+    b=SpatialSearch(mode='weighted',bound=1.05,base_weight=1.05).search(q)
+    assert (a['length'],a['heap_pops'],a['heap_pushes'])==(b['length'],b['heap_pops'],b['heap_pushes'])
+
+
+def test_heap_audit_matches_actual_counts_and_distinguishes_stale_label_pops():
+    from native_benchmark import heap_audit,classify_labels
+    from llmastar.research.spatial_planner import SpatialResidualAStar
+    q=query();f=random_field(q)
+    values={'predictions':[dict(region_id=k,detour=v[0],priority=v[1],confidence=v[2]) for k,v in f.values.items()]}
+    with heap_audit(True) as (counts,labels):r=SpatialResidualAStar(bound=1.05,alpha=.2).search(q,values,record_trace=True)
+    assert counts['pop']==r['heap_pops'] and counts['push']==r['heap_pushes']
+    classified=classify_labels(labels,r['trace'])
+    assert classified['trace_fully_matched']
+    assert classified['stale_label_pops']==r['stale']
+    assert classified['already_closed_label_pops']<=classified['stale_label_pops']
+
+
+def test_literal_vm_provider_errors_do_not_replay_compatible_advice():
+    from native_benchmark import LiteralVMCachedProvider
+    row={'meta':{'strict_provider_error':'enum_schema_provider_limit'},'response':{'choices':[{'message':{'content':'{"routes":[]}'}}]}}
+    with pytest.raises(RuntimeError):LiteralVMCachedProvider(row).propose(query(),{})
+
+
+def test_bounded_spatial_search_against_independent_shapely_dijkstra():
+    from independent_reference import check
+    for seed in range(8):
+        rows,states=check(seed)
+        assert len(rows)==3
+
+
+@pytest.mark.parametrize('bound',[1.,1.05,2.])
+def test_discrepancy_focal_keeps_independent_reference_bound(bound):
+    from independent_reference import independent_distances,case
+    from llmastar.research.discrepancy_guidance import DiscrepancyGuidedSearch
+    from native_benchmark import heap_audit
+    for seed in range(6):
+        q=case(seed);reference=independent_distances(q);field=random_field(q,seed)
+        with heap_audit(True) as (counts,labels):r=DiscrepancyGuidedSearch(bound).search(q,field)
+        assert r['valid']==(tuple(q['start']) in reference)
+        if r['valid']:assert r['length']<=bound*reference[tuple(q['start'])]+1e-7
+        assert (counts['push'],counts['pop'])==(r['heap_pushes'],r['heap_pops'])
+
+
+@pytest.mark.parametrize('bound',[1.,1.05,2.])
+def test_bounded_pathmax_matches_independent_reference_guarantee(bound):
+    from independent_reference import independent_distances,case
+    from llmastar.research.pathmax_guidance import PathmaxResidualSearch
+    for seed in range(6):
+        q=case(seed);reference=independent_distances(q);r=PathmaxResidualSearch(bound).search(q,random_field(q,seed))
+        assert r['valid']==(tuple(q['start']) in reference)
+        if r['valid']:assert r['length']<=bound*reference[tuple(q['start'])]+1e-7
+
+
+def test_pathmax_disabled_has_exact_frozen_engine_search_parity():
+    from llmastar.research.pathmax_guidance import PathmaxResidualSearch
+    from cost_controls import Scaled
+    for seed in range(5):
+        q=query(seed);field=random_field(q,seed);r=PathmaxResidualSearch(pathmax=False).search(q,field)
+        frozen=SpatialSearch(mode='heuristic_envelope',bound=1.05,base_weight=1.).search(q,Scaled(field,.22640953779865894))
+        assert r['length']==pytest.approx(frozen['length'],abs=1e-10)
+        assert (r['heap_pops'],r['heap_pushes'])==(frozen['heap_pops'],frozen['heap_pushes'])
+
+
+def test_pathmax_arithmetic_parity_on_unsaturated_guidance_and_no_phantom_updates():
+    from llmastar.research.pathmax_guidance import PathmaxResidualSearch
+    from cost_controls import Scaled
+    for seed in range(25):
+        q=query(seed);rng=random.Random(seed);f=RegionField(q,4)
+        f.update([dict(region_id=r['id'],detour=rng.random()*5,priority=.5,confidence=.1+.8*rng.random()) for r in f.regions])
+        off=PathmaxResidualSearch(pathmax=False).search(q,f)
+        ref=SpatialSearch(mode='heuristic_envelope',bound=1.05,base_weight=1.).search(q,Scaled(f,.22640953779865894))
+        assert (off['heap_pops'],off['heap_pushes'])==(ref['heap_pops'],ref['heap_pushes'])
+        on=PathmaxResidualSearch(pathmax=True).search(q,f)
+        if on['pathmax_raises']==0:
+            assert (on['heap_pops'],on['heap_pushes'])==(off['heap_pops'],off['heap_pushes'])
+
+
+def test_vm_shuffle_preserves_consensus_cardinality_without_using_model_spatial_choices(monkeypatch):
+    from native_benchmark import ShuffledVMCachedProvider,legacy
+    from llmastar.research.hybrid_guidance import select_targets
+    a,b,c=(3,4),(4,6),(6,4);original={'routes':[[a,b],[a,c],[b,a]]}
+    monkeypatch.setattr(legacy.CachedProvider,'propose',lambda self,q,points:original)
+    q=query();result=ShuffledVMCachedProvider({},'fixed').propose(q,{'points':{'a':a,'b':b,'c':c}})
+    assert [len(r) for r in result['routes']]==[len(r) for r in original['routes']]
+    assert len(select_targets(result['routes']))==len(select_targets(original['routes']))
+    assert result['routes'][0][0]==result['routes'][1][0]==result['routes'][2][1]
+    assert all(p in [a,b,c] for r in result['routes'] for p in r)
+
+
+def test_paper_astar_orientation_adapter_preserves_cost_and_operations():
+    from correct_paper_orientation import normalize
+    q={'start':[1,1],'goal':[3,1]};raw={'path':[(3,1),(2,1),(1,1)],'valid':False,'length':2.,'operation':3,'storage':7}
+    fixed=normalize(raw,q)
+    assert fixed['path']==[(1,1),(2,1),(3,1)] and fixed['valid']
+    assert raw['path'][0]==(3,1) and not raw['valid']
+    assert (fixed['length'],fixed['operation'],fixed['storage'])==(2.,3,7)

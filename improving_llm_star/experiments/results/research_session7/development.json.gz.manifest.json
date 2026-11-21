@@ -1,0 +1,23 @@
+{
+  "split": "development",
+  "base": 13110000,
+  "sizes": [
+    72,
+    104
+  ],
+  "families": [
+    "open",
+    "random_walls",
+    "rooms",
+    "braided_maze",
+    "tree_maze",
+    "serpentine",
+    "u_traps",
+    "nested",
+    "competing_corridors",
+    "bottlenecks"
+  ],
+  "maps": 2,
+  "queries": 1,
+  "sha256": "6eb65e511ba2f5dda118ca0b10a76cd85b5f805902b41fc3c18f6a37eab74efb"
+}

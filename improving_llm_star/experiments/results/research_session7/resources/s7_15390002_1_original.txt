@@ -1,0 +1,28 @@
+         1422185 function calls (1422153 primitive calls) in 13.818 seconds
+
+   Ordered by: cumulative time
+   List reduced from 92 to 22 due to restriction <22>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   13.819   13.819 native_benchmark.py:87(execute)
+        1    0.001    0.001   13.819   13.819 final_benchmark.py:85(legacy)
+        1   13.584   13.584   13.818   13.818 llm_a_star.py:106(searching)
+    74460    0.042    0.000    0.202    0.000 geometry.py:87(cost)
+    74460    0.065    0.000    0.141    0.000 geometry.py:77(collision)
+   145678    0.024    0.000    0.047    0.000 geometry.py:59(blocked)
+   170903    0.015    0.000    0.015    0.000 {method 'get' of 'dict' objects}
+   147299    0.014    0.000    0.014    0.000 {built-in method builtins.max}
+    23508    0.004    0.000    0.013    0.000 llm_a_star.py:190(f_value)
+   148920    0.013    0.000    0.013    0.000 search.py:53(inside)
+   294598    0.012    0.000    0.012    0.000 {built-in method builtins.abs}
+    23508    0.005    0.000    0.009    0.000 llm_a_star.py:201(heuristic)
+    23252    0.007    0.000    0.007    0.000 llm_a_star.py:174(get_neighbor)
+    25220    0.005    0.000    0.007    0.000 {built-in method builtins.any}
+    23253    0.006    0.000    0.006    0.000 {built-in method _heapq.heappop}
+    67620    0.005    0.000    0.005    0.000 {built-in method math.dist}
+    47016    0.004    0.000    0.004    0.000 {built-in method math.hypot}
+    67620    0.003    0.000    0.003    0.000 geometry.py:67(degenerate_collision)
+    23508    0.003    0.000    0.003    0.000 {built-in method _heapq.heappush}
+    23608    0.002    0.000    0.002    0.000 {method 'append' of 'list' objects}
+    14727    0.001    0.000    0.001    0.000 geometry.py:63(<genexpr>)
+        1    0.000    0.000    0.000    0.000 llm_a_star.py:44(_initialize_parameters)

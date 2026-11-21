@@ -1,0 +1,28 @@
+         133100 function calls (130950 primitive calls) in 0.050 seconds
+
+   Ordered by: cumulative time
+   List reduced from 92 to 22 due to restriction <22>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.050    0.050 native_benchmark.py:87(execute)
+        1    0.000    0.000    0.050    0.050 final_benchmark.py:85(legacy)
+        1    0.029    0.029    0.046    0.046 llm_a_star.py:106(searching)
+     4649    0.002    0.000    0.013    0.000 geometry.py:87(cost)
+     4649    0.004    0.000    0.010    0.000 geometry.py:77(collision)
+     9298    0.002    0.000    0.004    0.000 geometry.py:59(blocked)
+        1    0.000    0.000    0.003    0.003 geometry.py:105(__init__)
+        1    0.000    0.000    0.003    0.003 geometry.py:35(__init__)
+   2151/1    0.001    0.000    0.003    0.003 {built-in method builtins.all}
+        1    0.000    0.000    0.002    0.002 llm_a_star.py:44(_initialize_parameters)
+        1    0.000    0.000    0.002    0.002 env.py:2(__init__)
+        1    0.001    0.001    0.002    0.002 env.py:14(obs_map)
+     8600    0.001    0.000    0.002    0.000 geometry.py:38(<genexpr>)
+     2477    0.001    0.000    0.001    0.000 {built-in method builtins.any}
+     1588    0.000    0.000    0.001    0.000 llm_a_star.py:190(f_value)
+    11780    0.001    0.000    0.001    0.000 {method 'get' of 'dict' objects}
+     9298    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+     9298    0.001    0.000    0.001    0.000 search.py:53(inside)
+    18596    0.001    0.000    0.001    0.000 {built-in method builtins.abs}
+    10329    0.001    0.000    0.001    0.000 {method 'add' of 'set' objects}
+     1588    0.000    0.000    0.001    0.000 llm_a_star.py:201(heuristic)
+     6032    0.000    0.000    0.000    0.000 geometry.py:63(<genexpr>)

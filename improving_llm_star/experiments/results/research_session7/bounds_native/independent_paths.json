@@ -1,0 +1,15 @@
+{
+  "checked_paths": 97,
+  "checked_edges": 37717,
+  "by_method": {
+    "matched_uniform105": 20,
+    "robust_original": 20,
+    "rh_image105": 20,
+    "vm_geo105": 20,
+    "original": 8,
+    "original_bounds": 9
+  },
+  "declared_invalid": [],
+  "all_returned_valid_paths_independently_pass": true,
+  "checker": "Shapely closed-segment STRtree; integer grid, strict bounds, endpoints, unit neighbours, recomputed Euclidean cost and declared search bound."
+}

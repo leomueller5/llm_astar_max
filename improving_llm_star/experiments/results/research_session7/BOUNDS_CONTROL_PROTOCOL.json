@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-20T10:06:58.708184+00:00",
+  "scope": "Auxiliary prompt-only control on the largest primary and largest stress map in each family, selected by dimensions before native results inspection, not performance. Frozen original scoring/engine with only true bounds prepended. Does not alter primary candidate or selection.",
+  "case_ids": [
+    "s7_15400003_0",
+    "s7_16500001_0",
+    "s7_15340003_0",
+    "s7_16440001_0",
+    "s7_15390003_0",
+    "s7_16490001_0",
+    "s7_15380003_0",
+    "s7_16480001_0",
+    "s7_15310003_0",
+    "s7_16410001_0",
+    "s7_15320003_0",
+    "s7_16420001_0",
+    "s7_15330003_0",
+    "s7_16430001_0",
+    "s7_15360003_0",
+    "s7_16460001_0",
+    "s7_15350003_0",
+    "s7_16450001_0",
+    "s7_15370003_0",
+    "s7_16470001_0"
+  ],
+  "families": 10,
+  "cases": 20
+}

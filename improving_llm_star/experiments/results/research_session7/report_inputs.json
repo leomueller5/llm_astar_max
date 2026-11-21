@@ -1,0 +1,6 @@
+{
+  "scope": "Final narrative populated from completed artifacts. No missing or invented result cells. Full details remain in machine-readable sources.",
+  "primary": "final_analysis_corrected/analysis.json",
+  "corrected_pathmax": "pathmax_v2_development.json.gz and pathmax_v2_validation.json.gz",
+  "budget": "BUDGET_REPORT.json"
+}

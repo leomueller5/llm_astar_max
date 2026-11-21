@@ -1,0 +1,5 @@
+{
+  "reason": "Frozen PaperAStar.extract_path returns goal->start. The shared original-LLMA evaluator expected start->goal and incorrectly labelled all completed paper paths invalid. Only reverse saved paths and normalize validity/cost ratio; algorithm, scores, times, operations and storage unchanged. Original raw artifacts preserved.",
+  "completed_normalized": 69,
+  "capped": 31
+}

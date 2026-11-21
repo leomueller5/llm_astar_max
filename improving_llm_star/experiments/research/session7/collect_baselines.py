@@ -1,5 +1,5 @@
 """Fresh frozen-original and Session6 advice, same Session7 model conditions."""
-import argparse,json,time
+import argparse,json,time,copy
 from pathlib import Path
 from time import perf_counter
 from common import Session7Client,read_cases,dump,RequestUnavailable,RESULTS
@@ -30,9 +30,12 @@ def main():
         for kind in a.types:
             if (c['id'],kind) in done:continue
             began=perf_counter();api_calls=0;cached=False;rid=None;proposal=None
-            if kind=='original':
+            if kind in ['original','bounds']:
                 message,lookup,prep=original_messages(q,'original')
-                try:response,rid,cached=textclient.chat(message,{'phase':'heldout_original','case_id':c['id'],'prompt_version':'frozen_original_standard_s7seed'})
+                if kind=='bounds':
+                    bounds='Actual map bounds: '+json.dumps({'range_x':q['range_x'],'range_y':q['range_y']})+'. Valid integer cells lie strictly between the lower bound and upper bound minus one in each axis. Closed wall endpoints are blocked.\n'
+                    message=[dict(message[0],content=bounds+message[0]['content'])]
+                try:response,rid,cached=textclient.chat(message,{'phase':'heldout_original','case_id':c['id'],'prompt_version':'frozen_original_standard_s7seed'+('_actual_bounds' if kind=='bounds' else '')})
                 except RequestUnavailable:dump(out/'availability.json',{'case':c['id'],'kind':kind,'budget':client.ledger.summary()});return
                 points,meta=original_decode(response,q,'original');api_calls=1
             elif kind=='vm':
@@ -44,9 +47,14 @@ def main():
                     response={'choices':[{'message':{'content':'{}'},'finish_reason':'geometry_gate'}]};points=proposal['geometry_best'];meta={'parsed':True,'api_skipped':True}
                 else:
                     message,fmt=strict_messages(q,proposal,'multi_strict')
-                    try:response,rid,cached=client.chat(message,{'phase':'heldout_frozen_vm','case_id':c['id'],'prompt_version':'s6_multi_strict_v1_common_s7seed'},max_tokens=384,response_format=fmt)
+                    enum=fmt['json_schema']['schema']['properties']['routes']['items']['items']['enum']
+                    incompatible=len(enum)>1000 or (len(enum)>250 and sum(len(v) for v in enum)>15000)
+                    if incompatible:
+                        fmt=copy.deepcopy(fmt);fmt['json_schema']['schema']['properties']['routes']['items']['items'].pop('enum')
+                    try:response,rid,cached=client.chat(message,{'phase':'heldout_frozen_vm','case_id':c['id'],'prompt_version':'s6_multi_strict_v1_common_s7seed'+('_schema_compat' if incompatible else '')},max_tokens=384,response_format=fmt)
                     except RequestUnavailable:dump(out/'availability.json',{'case':c['id'],'kind':kind,'budget':client.ledger.summary()});return
                     points,meta=decode_strict(response['choices'][0]['message'].get('content') or '',proposal,'multi_strict');api_calls=1
+                    meta.update(schema_compatibility_adapter=incompatible,strict_provider_error='enum_schema_provider_limit' if incompatible else None,original_enum_count=len(enum))
             else:raise ValueError('Unknown baseline')
             rows.append(dict(case_id=c['id'],map_id=c['map_id'],family=c['family'],baseline=kind,response=response,points=points,meta=meta,proposal=proposal,request_id=rid,api_calls=api_calls,cached=cached,collection_seconds=perf_counter()-began,seed=20261119));done.add((c['id'],kind));dump(archive,{'scope':'Frozen original and frozen Session6 algorithm/prompt. Fresh responses use the common Session7 snapshot/temperature/seed; original1000 and VM384 output caps retain their respective baseline formats.','runs':rows,'budget':client.ledger.summary()});print(c['id'],kind,'calls',api_calls,flush=True)
 if __name__=='__main__':main()

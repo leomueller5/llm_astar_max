@@ -1,0 +1,170 @@
+{
+  "image/combined/envelope/geometry": {
+    "cases": 20,
+    "mean_pops": 1092.15,
+    "mean_unique": 497.65,
+    "mean_ms": 7.744793756864965,
+    "gm_cost_ratio": 1.0110736804544125
+  },
+  "image/combined/envelope/geometry_consensus": {
+    "cases": 20,
+    "mean_pops": 951.65,
+    "mean_unique": 467.75,
+    "mean_ms": 7.42945420788601,
+    "gm_cost_ratio": 1.007068106584237
+  },
+  "image/combined/envelope/none": {
+    "cases": 20,
+    "mean_pops": 839.5,
+    "mean_unique": 359.05,
+    "mean_ms": 6.146547989919782,
+    "gm_cost_ratio": 1.002299545067943
+  },
+  "image/combined/envelope/oracle": {
+    "cases": 20,
+    "mean_pops": 1224.3,
+    "mean_unique": 556.3,
+    "mean_ms": 8.63603336038068,
+    "gm_cost_ratio": 1.0050725586026776
+  },
+  "image/combined/envelope/real": {
+    "cases": 20,
+    "mean_pops": 725.75,
+    "mean_unique": 394.45,
+    "mean_ms": 7.3195021715946496,
+    "gm_cost_ratio": 1.0025759755274657
+  },
+  "image/combined/envelope/shuffled": {
+    "cases": 20,
+    "mean_pops": 1412.7,
+    "mean_unique": 553.9,
+    "mean_ms": 9.80887496843934,
+    "gm_cost_ratio": 1.0056929894791664
+  },
+  "image/detour/envelope/geometry": {
+    "cases": 20,
+    "mean_pops": 774.15,
+    "mean_unique": 643.6,
+    "mean_ms": 8.020147902425379,
+    "gm_cost_ratio": 1.0
+  },
+  "image/detour/envelope/geometry_consensus": {
+    "cases": 20,
+    "mean_pops": 774.15,
+    "mean_unique": 643.6,
+    "mean_ms": 8.369758422486484,
+    "gm_cost_ratio": 1.0
+  },
+  "image/detour/envelope/none": {
+    "cases": 20,
+    "mean_pops": 774.15,
+    "mean_unique": 643.6,
+    "mean_ms": 8.972720825113356,
+    "gm_cost_ratio": 1.0
+  },
+  "image/detour/envelope/oracle": {
+    "cases": 20,
+    "mean_pops": 1320.15,
+    "mean_unique": 848.15,
+    "mean_ms": 11.504612665157765,
+    "gm_cost_ratio": 1.0006962586494152
+  },
+  "image/detour/envelope/real": {
+    "cases": 20,
+    "mean_pops": 650.75,
+    "mean_unique": 495.05,
+    "mean_ms": 6.487483391538262,
+    "gm_cost_ratio": 1.0014980772362405
+  },
+  "image/detour/envelope/shuffled": {
+    "cases": 20,
+    "mean_pops": 1150.05,
+    "mean_unique": 683.7,
+    "mean_ms": 8.824114582967013,
+    "gm_cost_ratio": 1.0031374095474566
+  },
+  "structured/combined/envelope/geometry": {
+    "cases": 20,
+    "mean_pops": 1092.15,
+    "mean_unique": 497.65,
+    "mean_ms": 7.512249890714884,
+    "gm_cost_ratio": 1.0110736804544125
+  },
+  "structured/combined/envelope/geometry_consensus": {
+    "cases": 20,
+    "mean_pops": 951.65,
+    "mean_unique": 467.75,
+    "mean_ms": 7.483177038375288,
+    "gm_cost_ratio": 1.007068106584237
+  },
+  "structured/combined/envelope/none": {
+    "cases": 20,
+    "mean_pops": 839.5,
+    "mean_unique": 359.05,
+    "mean_ms": 7.046572933904827,
+    "gm_cost_ratio": 1.002299545067943
+  },
+  "structured/combined/envelope/oracle": {
+    "cases": 20,
+    "mean_pops": 1224.3,
+    "mean_unique": 556.3,
+    "mean_ms": 9.585145849268883,
+    "gm_cost_ratio": 1.0050725586026776
+  },
+  "structured/combined/envelope/real": {
+    "cases": 20,
+    "mean_pops": 911.9,
+    "mean_unique": 448.45,
+    "mean_ms": 6.884687475394458,
+    "gm_cost_ratio": 1.0041196481448729
+  },
+  "structured/combined/envelope/shuffled": {
+    "cases": 20,
+    "mean_pops": 1433.05,
+    "mean_unique": 579.55,
+    "mean_ms": 9.822229167912155,
+    "gm_cost_ratio": 1.0061538468623648
+  },
+  "structured/detour/envelope/geometry": {
+    "cases": 20,
+    "mean_pops": 774.15,
+    "mean_unique": 643.6,
+    "mean_ms": 8.66208120714873,
+    "gm_cost_ratio": 1.0
+  },
+  "structured/detour/envelope/geometry_consensus": {
+    "cases": 20,
+    "mean_pops": 774.15,
+    "mean_unique": 643.6,
+    "mean_ms": 8.47699991427362,
+    "gm_cost_ratio": 1.0
+  },
+  "structured/detour/envelope/none": {
+    "cases": 20,
+    "mean_pops": 774.15,
+    "mean_unique": 643.6,
+    "mean_ms": 8.499075181316584,
+    "gm_cost_ratio": 1.0
+  },
+  "structured/detour/envelope/oracle": {
+    "cases": 20,
+    "mean_pops": 1320.15,
+    "mean_unique": 848.15,
+    "mean_ms": 11.807820678222924,
+    "gm_cost_ratio": 1.0006962586494152
+  },
+  "structured/detour/envelope/real": {
+    "cases": 20,
+    "mean_pops": 732.9,
+    "mean_unique": 551.5,
+    "mean_ms": 7.871774991508573,
+    "gm_cost_ratio": 1.0024997194918657
+  },
+  "structured/detour/envelope/shuffled": {
+    "cases": 20,
+    "mean_pops": 1123.3,
+    "mean_unique": 696.25,
+    "mean_ms": 9.296679263934493,
+    "gm_cost_ratio": 1.0019018043530794
+  }
+}

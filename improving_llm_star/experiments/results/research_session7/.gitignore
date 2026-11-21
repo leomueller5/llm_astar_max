@@ -1,0 +1,5 @@
+# Transient duplicates of completed results; persistent human checkpoint is tracked.
+*/checkpoint.json.gz
+
+# Locally retained export drafts; final report/PDF and all experiment raw data tracked.
+drafts/

@@ -1,0 +1,14 @@
+{
+  "cases": "/Users/leomuller/llm_astar_max/improving_llm_star/experiments/results/research_session7/heldout_all.json.gz",
+  "methods": [
+    "original_goal_only",
+    "robust_goal_only"
+  ],
+  "repeats": 0,
+  "timeout": 5.0,
+  "shuffle_seeds": 5,
+  "scope": "Offline cached-guidance computational planning, fresh preprocessing every trial; separate first-use prompt/image and API-inclusive measurements required. Five shuffle seeds are averaged within query, not independent map samples.",
+  "fixture_smoke": false,
+  "skip_warmup": true,
+  "manifest_sha256": "9de658a8ddc5ca81334b4a3452c3d4a6ea20484a4dd1f84eb0198f062b7d8126"
+}

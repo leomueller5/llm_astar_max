@@ -1,0 +1,73 @@
+{
+  "heldout_baselines": {
+    "original": {
+      "records": 100,
+      "finish_reasons": {
+        "stop": 71,
+        "length": 29
+      },
+      "api_skipped": 0,
+      "schema_compatibility": 0,
+      "collector_parser_valid": 71,
+      "parser_status_available": 100
+    },
+    "vm": {
+      "records": 100,
+      "finish_reasons": {
+        "geometry_gate": 44,
+        "stop": 56
+      },
+      "api_skipped": 44,
+      "schema_compatibility": 8,
+      "collector_parser_valid": 92,
+      "parser_status_available": 100
+    }
+  },
+  "heldout_cost": {
+    "image": {
+      "records": 100,
+      "finish_reasons": {
+        "stop": 100
+      },
+      "api_skipped": 0,
+      "schema_compatibility": 0,
+      "collector_parser_valid": 99,
+      "parser_status_available": 100
+    },
+    "structured": {
+      "records": 100,
+      "finish_reasons": {
+        "stop": 100
+      },
+      "api_skipped": 0,
+      "schema_compatibility": 0,
+      "collector_parser_valid": 99,
+      "parser_status_available": 100
+    }
+  },
+  "heldout_icl": {
+    "image": {
+      "records": 100,
+      "finish_reasons": {
+        "stop": 100
+      },
+      "api_skipped": 0,
+      "schema_compatibility": 0,
+      "collector_parser_valid": 100,
+      "parser_status_available": 100
+    }
+  },
+  "heldout_bounds": {
+    "bounds": {
+      "records": 20,
+      "finish_reasons": {
+        "stop": 15,
+        "length": 5
+      },
+      "api_skipped": 0,
+      "schema_compatibility": 0,
+      "collector_parser_valid": 15,
+      "parser_status_available": 20
+    }
+  }
+}

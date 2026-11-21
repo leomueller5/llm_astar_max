@@ -1173,3 +1173,109 @@ bewiesen; die unabhängige begrenzte Suchpriorität sichert die Pfadqualität ab
 Alle negativen Versuche, insbesondere eine bereits amOracle scheiternde persistente
 Wandseiten-Heuristik, bleiben im Log erhalten. Stand und Befehle:
 `improving_llm_star/experiments/research/session7/CHECKPOINT.md` und `EXPERIMENT_LOG.md`.
+
+### Session 7: eingefrorene neue Heuristik und faire Endauswertung
+
+Der neue Kandidat **LLM-RH*** ersetzt kurzlebige Wegpunktanziehung durch ein
+persistentes 4x4-Feld geschätzter zusätzlicher Restkosten. GPT-4o mini sieht
+Kartenfakten, Regionskennungen und geometrische Untergrenzen; keine gelösten
+Testpfade. Die Priorität lautet `g+h+min((w-1)*h, a*confidence*delta)`.
+Das Modell ist unverändert; ein einziger Koeffizient wird ausschließlich auf
+Entwicklungskarten kalibriert. Die begrenzte Zusatzheuristik und Wiederöffnung
+verbesserter Zustände sichern bei zulässiger Ankerheuristik eine w-Schranke.
+Das ist eine sichere Integration geschätzter Kosten, keine Behauptung, dass die
+Modellschätzung selbst zulässig oder konsistent wäre.
+
+Primärprofil `w=1.05,a=0.22640953779865894` wurde am20.November09:41UTC vor der
+Erzeugung neuer Testkarten eingefroren. Endauswertung:80Aufgaben/40Karten plus
+20größere Aufgaben/20Karten, zehn Kartenfamilien, keine erkannte geometrische
+Überschneidung mit bisherigen Daten. Gewichtet werden sowohl Pops als auch
+Pushes, echte Expansionen, Pfadqualität, Laufzeit und Speicher. Die Validierung
+zeigt ausdrücklich **noch keinen allgemeinen LLM-Vorteil gegenüber festem
+Weighted A*1.05**. Finale Messungen laufen; die Konfiguration wird nicht anhand
+geöffneter Testergebnisse nachjustiert.
+
+Eine praktische Grenze des eingefrorenen Session6-API-Schemas tritt bei mehr als
+1000Kandidatenkennungen auf. Die wörtliche Baseline bleibt mit Fehler-Fallback
+reproduzierbar; eine getrennt benannte kompatible Kontrolle entfernt ausschließlich
+die unzulässige Enum-Beschränkung und validiert die Antwort weiterhin gegen die
+unveränderten Kandidaten. Baselinefehler werden nicht als Algorithmusgewinn
+verkauft. Details: Session7/BASELINE_COMPATIBILITY.md.
+
+### Session 7 abgeschlossen: Ergebnis und wissenschaftliche Einordnung
+
+Die neue **LLM-RH***-Suche verwendet persistente regionale Restkostenschätzungen
+mit `g+h+min((w-1)*h,a*confidence*delta)`. Die Primärkonfiguration wurde vor der
+Erzeugung der neuen Testkarten eingefroren. Geprüft wurden 100 Aufgaben auf 60
+neuen Kartengeometrien, einschließlich größerer Labyrinthe und Engstellen.
+
+**Ein zusätzlicher Nutzen gegenüber starken klassischen Kontrollen ist nicht
+belastbar nachgewiesen.** Auf den 80 Hauptaufgaben benötigt die regionale
+Bildvariante durchschnittlich 34,53 ms gegenüber 27,18 ms bei identischer Suche
+mit konstantem Gewicht 1,05. Die gesamte Queue-Arbeit beträgt 8.161,9 gegenüber
+7.274,8 Pushes+Pops. Auf 20 größeren Aufgaben sind es 191,42 gegenüber 124,68 ms.
+Die Konfidenzintervalle über unabhängige Kartengeometrien sind breit; daraus folgt
+kein universeller Beweis der Unterlegenheit, aber auch kein gesicherter Gewinn.
+Alle neuen Varianten lösen sämtliche Aufgaben; der eingefrorene Originalcode
+überschreitet bei 26/100 Aufgaben die einheitliche Fünf-Sekunden-Grenze.
+
+Few-shot-Beispiele senken die beobachtete Sucharbeit gegenüber dem neuen
+Zero-shot-Ansatz, schlagen die starke klassische Kontrolle jedoch nicht.
+Insbesondere werden alle 1.600 Few-shot-Konfidenzwerte zu 1, während der numerische
+Restkostenfehler steigt. Bessere Suchzahlen beweisen hier keine verbesserte
+Karteninterpretation; stärkere Heuristikgewichtung beziehungsweise Nachahmung des
+Antwortformats sind alternative Erklärungen. Vorhergesagte Zusatzkosten korrelieren
+kaum mit tatsächlichen Zusatzkosten und eher mit bereits gegebenen Distanzgrenzen.
+
+Der Oracle-Vergleich zeigt zugleich eine Integrationsgrenze: Die enge punktweise
+Schranke unterdrückt selbst perfekte feingranulare Information teilweise. Gröbere
+Regionswerte verlieren wichtige Unterschiede innerhalb eines Gebiets. Focal- und
+Discrepancy-Varianten senken teilweise eindeutige Expansionen, benötigen aber mehr
+Queue-Arbeit. Korrigiertes Pathmax liefert keinen überzeugenden allgemeinen oder
+LLM-spezifischen Vorteil; scheinbare Gewinne einer ersten Kopie durch veränderte
+Fließkomma-Tie-Breaks wurden erkannt, archiviert und ausgeschlossen.
+
+Die ergänzende VM-Kontrolle erhält bei zufälliger räumlicher Vertauschung Anzahl,
+Überlappung und Mehrheitsauswahl der Modellziele. Ihre Ergebnisse sind praktisch
+vergleichbar mit echten Modellzielen. Auch geometrische Mehrheitsauswahl und
+vollständige Modellabstinenz sind starke Kontrollen. Der kleine Zeitunterschied
+gegenüber sämtlichen Endpunkten ist somit kein überzeugender Nachweis besserer
+LLM-Entscheidungen. Auf 44/100 Aufgaben wird der Modellaufruf geometrisch vermieden;
+weitere 13 von 56 Antworten hinterlassen keine Mehrheitsziele.
+
+Eine zusätzliche mathematische Herleitung ordnet die Originalformel als
+gewichtete Suche ein: Nach Abzug einer zielabhängigen Konstanten ist die durch
+`1+alpha` geteilte Distanzheuristik konsistent. Unter den dokumentierten
+Voraussetzungen ergibt sich für konstantes alpha eine bedingte Schranke
+`1+alpha`, also 2 beim Original und 1,5 bei konstantem alpha=0,5. Das ist keine
+Optimalitätsgarantie und keine Behauptung eines neuen Weighted-A*-Theorems.
+Beliebige ortsabhängige Modellkosten besitzen diese Eigenschaft nicht automatisch;
+die neue regionale Suche verwendet deshalb eine separate Schranke und Wiederöffnung.
+Details und 756 synthetische Prüfungen: `session7/WAYPOINT_BOUND.md`.
+
+Der Auswertungsadapter für das klassische Original-A* erwartete zunächst die
+falsche Pfadrichtung. Die Rohdaten bleiben erhalten; nach bloßer Umkehr der
+Ziel-zu-Start-Ausgabe sind 69 klassische Pfade gültig, 31 Läufe bleiben zensiert.
+Zeit, Operationen und Speicherzahlen wurden nicht verändert. Für Paper-OR/SR
+sind die korrigierten Nenner mit ausgewiesener Abdeckung zu verwenden.
+
+Die Abschlussprüfung umfasst **209 bestandene Tests**, 4.217 unabhängig geprüfte
+gespeicherte Konfigurationspfade sowie zusätzliche Zufalls-/Dijkstra-Prüfungen.
+Die Zahl gespeicherter Pfade ist ausdrücklich nicht die Zahl unabhängiger Karten.
+Alle 52 historischen beziehungsweise eingefrorenen Produktionsabhängigkeiten
+stimmen mit ihren vorab gesicherten Versionen überein; zwei neue, getrennte
+Prototypmodule sind ausdrücklich außerhalb dieser eingefrorenen Auswahl markiert; main bleibt unverändert.
+
+Kumulatives API-Budget: geschätzt 1,47216705 USD abgerechnet plus 0,1977456 USD
+vorsorglich reserviert, zusammen 1,66991265 USD unter der Grenze von 3 USD.
+Keine offenen Anfragen; keine weiteren bezahlten Aufrufe für die Abschlusskontrollen.
+Alle 905 erfolgreichen Session-7-Antworten verwenden exakt
+`gpt-4o-mini-2024-07-18`; gemeldete Reasoning-Tokens: 0.
+
+Empfehlung: **LLM-A-VM*** als reproduzierbaren praktischen Kandidaten behalten und
+den starken geometrischen Anteil offenlegen. LLM-RH* eignet sich als klar
+formulierte Erweiterung mit Pfadkostenschranke und ehrlicher negativer Evaluation.
+Die verbleibende Zeit sollte in Bericht, Reproduzierbarkeit und Präsentation
+fließen. Vollständiger Bericht/PDF und Team-Kurzfassung liegen in
+`experiments/results/research_session7/`; exakte Befehle in
+`experiments/research/session7/README.md`.

@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-20T09:57:31.433719+00:00",
+  "methods": [
+    "original",
+    "robust_original",
+    "astar_octile",
+    "astar_cut",
+    "wa_octile2",
+    "matched_zero",
+    "matched_uniform105",
+    "optimized_uniform105",
+    "cut105",
+    "cut2",
+    "witness",
+    "vm_geo2",
+    "vm_geo105",
+    "vm_hybrid2",
+    "rh_image105",
+    "rh_image2",
+    "rh_text105",
+    "rh_text_raw105",
+    "rh_raw105",
+    "rh_icl105",
+    "rh_shuffled105",
+    "rh_scalar105",
+    "rh_geometry105",
+    "rh_macro105"
+  ],
+  "scope": "Analysis controls clarified before any held-out performance inspection: rawtextalpha1isolatesrepresentation; matchedzerofield andsame-codeuniform1.05 separateadvice fromtheengine; optimizeduniform1.05dropsunusedfieldpreparation. No selectedsource/prompt/model/calibrationchange.",
+  "benchmark_total_methods": 24
+}

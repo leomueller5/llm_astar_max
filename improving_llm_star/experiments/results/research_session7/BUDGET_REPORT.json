@@ -1,0 +1,213 @@
+{
+  "scope": "Estimated token-price exposure, not provider invoice. Authoritative cumulative ledger never reset. Ambiguous failures and schema rejection reservations retained conservatively. Reasoning is included in output, never charged twice. Image input billed in reported prompt tokens; API does not separately itemize image token count.",
+  "pricing": {
+    "model": "gpt-4o-mini-2024-07-18",
+    "input_usd_per_million": 0.15,
+    "cached_input_usd_per_million": 0.075,
+    "output_usd_per_million": 0.6,
+    "context_tokens": 128000,
+    "verified_utc": "2026-11-18",
+    "source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+    "reasoning_billing": "Reasoning tokens, if reported, are a subset of completion tokens; never double charged."
+  },
+  "cumulative": {
+    "cap_usd": 3.0,
+    "accounted_usd": 1.47216705,
+    "held_worst_case_usd": 0.1977456,
+    "remaining_authorized_usd": 1.33008735,
+    "attempts": 1687,
+    "successes": 1677,
+    "prompt_tokens": 8360067,
+    "completion_tokens": 504043,
+    "reasoning_tokens": 0,
+    "cached_input_tokens": 1123584
+  },
+  "session7": {
+    "attempts": 906,
+    "statuses": {
+      "success": 905,
+      "failed_conservative_hold": 1
+    },
+    "successful_estimated_usd": 1.20418425,
+    "usage": {
+      "input": 7442139,
+      "output": 281031,
+      "cached_input": 1076736,
+      "reasoning": 0
+    },
+    "http_mean_seconds": 5.970609060307265,
+    "http_median_seconds": 5.82856212486513,
+    "image_successful_requests": 394,
+    "image_prompt_tokens_including_text": 4698741,
+    "all_successful_snapshots_exact": true
+  },
+  "by_phase": {
+    "controller": {
+      "attempts": 40,
+      "statuses": {
+        "success": 40
+      },
+      "successful_estimated_usd": 0.0308208,
+      "usage": {
+        "input": 202752,
+        "output": 680,
+        "cached_input": 0,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 2.518136469746241,
+      "http_median_seconds": 2.5065883125644177,
+      "image_successful_requests": 20,
+      "image_prompt_tokens_including_text": 186376,
+      "all_successful_snapshots_exact": true
+    },
+    "heldout_frozen_vm": {
+      "attempts": 57,
+      "statuses": {
+        "success": 56,
+        "failed_conservative_hold": 1
+      },
+      "successful_estimated_usd": 0.05979735,
+      "usage": {
+        "input": 396181,
+        "output": 6185,
+        "cached_input": 44544,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 3.252815774550462,
+      "http_median_seconds": 3.1576839585322887,
+      "image_successful_requests": 0,
+      "image_prompt_tokens_including_text": 0,
+      "all_successful_snapshots_exact": true
+    },
+    "heldout_original": {
+      "attempts": 120,
+      "statuses": {
+        "success": 120
+      },
+      "successful_estimated_usd": 0.1028679,
+      "usage": {
+        "input": 413202,
+        "output": 68146,
+        "cached_input": 0,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 7.8911515125267515,
+      "http_median_seconds": 6.592623250558972,
+      "image_successful_requests": 0,
+      "image_prompt_tokens_including_text": 0,
+      "all_successful_snapshots_exact": true
+    },
+    "reserved_live_latency": {
+      "attempts": 12,
+      "statuses": {
+        "success": 12
+      },
+      "successful_estimated_usd": 0.01397145,
+      "usage": {
+        "input": 70055,
+        "output": 5772,
+        "cached_input": 0,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 8.585816079828268,
+      "http_median_seconds": 7.284318979480304,
+      "image_successful_requests": 6,
+      "image_prompt_tokens_including_text": 59615,
+      "all_successful_snapshots_exact": true
+    },
+    "search_feedback": {
+      "attempts": 6,
+      "statuses": {
+        "success": 6
+      },
+      "successful_estimated_usd": 0.0110997,
+      "usage": {
+        "input": 67250,
+        "output": 2359,
+        "cached_input": 5376,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 7.881103805731982,
+      "http_median_seconds": 8.071142417029478,
+      "image_successful_requests": 6,
+      "image_prompt_tokens_including_text": 67250,
+      "all_successful_snapshots_exact": true
+    },
+    "seed_sensitivity": {
+      "attempts": 20,
+      "statuses": {
+        "success": 20
+      },
+      "successful_estimated_usd": 0.0293133,
+      "usage": {
+        "input": 198710,
+        "output": 7370,
+        "cached_input": 65536,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 6.659503625053913,
+      "http_median_seconds": 6.5895058126188815,
+      "image_successful_requests": 20,
+      "image_prompt_tokens_including_text": 198710,
+      "all_successful_snapshots_exact": true
+    },
+    "semantic_sanity": {
+      "attempts": 2,
+      "statuses": {
+        "success": 2
+      },
+      "successful_estimated_usd": 5.2650000000000006e-05,
+      "usage": {
+        "input": 223,
+        "output": 32,
+        "cached_input": 0,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 2.250595062505454,
+      "http_median_seconds": 2.250595062505454,
+      "image_successful_requests": 0,
+      "image_prompt_tokens_including_text": 0,
+      "all_successful_snapshots_exact": true
+    },
+    "session7_connectivity": {
+      "attempts": 1,
+      "statuses": {
+        "success": 1
+      },
+      "successful_estimated_usd": 8.85e-06,
+      "usage": {
+        "input": 39,
+        "output": 5,
+        "cached_input": 0,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 2.668804833898321,
+      "http_median_seconds": 2.668804833898321,
+      "image_successful_requests": 0,
+      "image_prompt_tokens_including_text": 0,
+      "all_successful_snapshots_exact": true
+    },
+    "spatial_collection": {
+      "attempts": 648,
+      "statuses": {
+        "success": 648
+      },
+      "successful_estimated_usd": 0.95625225,
+      "usage": {
+        "input": 6093727,
+        "output": 190482,
+        "cached_input": 961280,
+        "reasoning": 0
+      },
+      "http_mean_seconds": 5.992134865212763,
+      "http_median_seconds": 6.021864374517463,
+      "image_successful_requests": 342,
+      "image_prompt_tokens_including_text": 4186790,
+      "all_successful_snapshots_exact": true
+    }
+  },
+  "open_requests": [],
+  "held_request_statuses": {
+    "failed_conservative_hold": 10
+  }
+}

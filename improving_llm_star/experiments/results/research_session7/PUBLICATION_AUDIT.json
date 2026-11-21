@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-20T10:55:19.084251+00:00",
+  "remote": "https://github.com/leomueller5/llm_astar_max.git",
+  "authenticated_login": "leomueller5",
+  "configured_git_author": "Leo",
+  "configured_git_email": "leonard.mueller2005@gmail.com",
+  "read_only_email_endpoint_available": true,
+  "matching_verified_commit_email_found": false,
+  "github_app_profile_login_matches_git_credential_login": true,
+  "publication": "WITHHELD under user condition; no push attempted. Existing identity/authentication unchanged. Local work/commits preserved.",
+  "manual_push_command": "git push -u origin research/waypoint-guidance",
+  "final_rechecked_utc": "2026-11-21T02:50:40.432170+00:00",
+  "remote_main_after_final_fetch": "dd6a2d9bd518fb7d113b530297779ab3a3d8d323",
+  "safe_readme_merge": "cb111ef7dc1098b59a45b42d4ad5936e37199bd9"
+}
