@@ -1,0 +1,52 @@
+{
+  "utc": "2026-11-21T02:59:34.431945+00:00",
+  "code_data_checkpoint": "84f66bc5d118b418dc2cf5e3bd86d5fbf6f70834",
+  "new_first_parent_commits": [
+    {
+      "hash": "84f66bc5d118b418dc2cf5e3bd86d5fbf6f70834",
+      "author": "Leo",
+      "author_email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "committer_email": "leonard.mueller2005@gmail.com",
+      "message": "Evaluate bounded spatial LLM heuristics with matched guidance controls"
+    },
+    {
+      "hash": "cb111ef7dc1098b59a45b42d4ad5936e37199bd9",
+      "author": "Leo",
+      "author_email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "committer_email": "leonard.mueller2005@gmail.com",
+      "message": "Merge latest team README update into research branch"
+    },
+    {
+      "hash": "1343a2eebaf8852d61e232f0f58f334c4b1c3fb3",
+      "author": "Leo",
+      "author_email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "committer_email": "leonard.mueller2005@gmail.com",
+      "message": "Freeze calibrated spatial residual A-star and fresh held-out protocol"
+    },
+    {
+      "hash": "7ca6ae187a39fdcaae2ab3ed79e268b5fde172dc",
+      "author": "Leo",
+      "author_email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "committer_email": "leonard.mueller2005@gmail.com",
+      "message": "Merge team documentation and WW model adapter with prior versions archived"
+    },
+    {
+      "hash": "9bdcd402868fa9ac7588f591dfd49e15264860fe",
+      "author": "Leo",
+      "author_email": "leonard.mueller2005@gmail.com",
+      "committer": "Leo",
+      "committer_email": "leonard.mueller2005@gmail.com",
+      "message": "Research bounded spatial heuristics with oracle controls and verified residual trust"
+    }
+  ],
+  "existing_identity_preserved": true,
+  "ai_authorship_or_coauthorship": false,
+  "historical_commits_rewritten": false,
+  "main_unchanged": "66baa31d2fc2b658b501dcd4b34e09d31af66cb4",
+  "publication": "No push: configured commit email has no verified association on authenticated account. Latest team README merged safely.",
+  "manual_push": "git push -u origin research/waypoint-guidance"
+}

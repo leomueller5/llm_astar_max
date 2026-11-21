@@ -1,6 +1,6 @@
 {
   "actual_key_value_never_printed_or_persisted": true,
-  "files_scanned": 653,
+  "files_scanned": 655,
   "findings": [],
   "diff_check_passed": true,
   "author_identity_existing": true,
@@ -21,9 +21,9 @@
     },
     {
       "path": "improving_llm_star/experiments/research/session7/CHECKPOINT.md",
-      "bytes": 15758,
-      "uncompressed_bytes": 15758,
-      "sha256": "7cf539b4a9ed7e3e2957b1d999511b679595075e04ae5e74922943ba388d0e2f"
+      "bytes": 15835,
+      "uncompressed_bytes": 15835,
+      "sha256": "e869c7bca4267078ad5bc27626caff90a9a465260329cd3155a0111fdab717e1"
     },
     {
       "path": "improving_llm_star/experiments/research/session7/EXPERIMENT_LOG.md",
@@ -33,9 +33,9 @@
     },
     {
       "path": "improving_llm_star/experiments/research/session7/README.md",
-      "bytes": 12818,
-      "uncompressed_bytes": 12818,
-      "sha256": "e08f2cfb675313545ca9948a317e44eab18c6c1db00fe0ae9c1ef9310f300e4f"
+      "bytes": 12999,
+      "uncompressed_bytes": 12999,
+      "sha256": "e2f7305e86177dc086a2475a4487675333fc0198e15893c1bec5f3bac8c172f9"
     },
     {
       "path": "improving_llm_star/experiments/research/session7/THEORY.md",
@@ -452,6 +452,12 @@
       "sha256": "10e0b0564ecce28ebed85a9d8ec8dc33fc287e3b13a18531ed5361e648a875d8"
     },
     {
+      "path": "improving_llm_star/experiments/results/research_session7/COMMIT_AUDIT.json",
+      "bytes": 2161,
+      "uncompressed_bytes": 2161,
+      "sha256": "688cc7d5ff2cfa96e97a577356aadcb86bb3ee8aa48c8e0c6e177b2b39e34c9a"
+    },
+    {
       "path": "improving_llm_star/experiments/results/research_session7/CONTROL_ADDENDUM.json",
       "bytes": 679,
       "uncompressed_bytes": 679,
@@ -480,6 +486,12 @@
       "bytes": 14675,
       "uncompressed_bytes": 14675,
       "sha256": "620bb93c281d6506f995ff747fb7e6b6db188f9b84673b6f5256f9207f434ef4"
+    },
+    {
+      "path": "improving_llm_star/experiments/results/research_session7/LEDGER_RECONCILIATION.json",
+      "bytes": 388,
+      "uncompressed_bytes": 388,
+      "sha256": "cd02061f945305528b41fdf3470e12cef4057238fccf9847d50ba9bb4bcdf6df"
     },
     {
       "path": "improving_llm_star/experiments/results/research_session7/PUBLICATION_AUDIT.json",

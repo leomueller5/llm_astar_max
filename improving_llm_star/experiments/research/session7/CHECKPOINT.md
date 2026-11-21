@@ -29,8 +29,9 @@ pending instructions.
 - Verified active research before final packaging is~200minutes over three dated
   intervals inEXECUTION_TIME.json; both overnight gaps excluded.
 
-A final local code/data checkpoint and documentation checkpoint follow. Inspect
-Git log for the completed HEAD; historical commit metadata is not rewritten.
+Final code/data/report checkpoint: 84f66bc5d118b418dc2cf5e3bd86d5fbf6f70834.
+The final documentation/verification commit follows this checkpoint. Inspect
+Git log for HEAD; no historical metadata is rewritten and no push is attempted.
 
 ---
 

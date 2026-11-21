@@ -21,6 +21,10 @@ result = planner.searching(query, predictions=cached_json_response)
 # coverage, regional trust, heap work, and optional trace.
 ```
 
+Standalone imports need `improving_llm_star` on the module path
+(`PYTHONPATH=improving_llm_star`). The provided experimental command-line scripts
+set their module path themselves.
+
 The query is the original structured dictionary or its JSON representation.
 No API call occurs unless an explicit provider object is supplied. A provider
 implements `predict(query, region_descriptions)` and returns the prediction object

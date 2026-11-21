@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-21T03:00:41.971675+00:00",
+  "source": "Existing authoritative SQLite opened READ ONLY; payload/credentials not selected, no reservation released or ledger reset.",
+  "matches_portable_export": true,
+  "attempts": 1687,
+  "successful_estimated_usd": 1.47216705,
+  "conservative_holds_usd": 0.1977456,
+  "total_exposure_usd": 1.6699126499999999,
+  "open_requests": 0
+}
