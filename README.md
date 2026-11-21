@@ -26,6 +26,7 @@ improving_llm_star/
     results/                   result files of the notebook
     figures/                   report figures (created by the notebook)
 requirements.txt
+README.md
 ```
 
 ## Installation
