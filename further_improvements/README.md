@@ -82,7 +82,9 @@ Individual coursework/contribution reports stay in the ignored root
 
 The duplicate bibliography on page 6 was removed on 22 November 2026. The complete
 bibliography after the AI Usage Statement remains. All other pages, including the
-existing AI Usage Statement, are unchanged.
+existing AI Usage Statement, were unchanged by that correction. Appendix B now
+points to the new Appendix I, which lists the code, notebooks, results, caches,
+and tests by directory.
 
 The AI Usage Statement already discloses assistance in shortening the report and
 currently names Claude. Sections 6.3 and Appendix G also include experiments

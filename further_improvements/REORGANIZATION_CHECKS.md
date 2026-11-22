@@ -35,3 +35,12 @@ python improving_llm_star/experiments/compare_adaptive_alpha.py --output-dir /tm
 
 Historical evidence stays in the original session reports. This document records
 only validation of the repository reorganization.
+
+## Report directory guide
+
+A subsequent documentation addition inserts a short pointer in Appendix B and
+adds Appendix I (Code and Artifact Locations). The report now has 11 pages. All
+pre-existing text is preserved; the other nine original pages render identically.
+All listed code, notebook, result, cache, and test paths were verified against the
+repository, and the added page was visually reviewed. The AI Usage Statement and
+experimental results are unchanged. One complete bibliography remains.
