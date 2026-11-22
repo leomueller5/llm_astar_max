@@ -80,12 +80,14 @@ Individual coursework/contribution reports stay in the ignored root
 
 ## Editorial notes for the team report
 
-The uploaded PDF is preserved unchanged. Before final submission, consider:
+The duplicate bibliography on page 6 was removed on 22 November 2026. The complete
+bibliography after the AI Usage Statement remains. All other pages, including the
+existing AI Usage Statement, are unchanged.
 
-1. The AI Usage Statement already discloses assistance in shortening the report.
-   It currently names Claude only. Sections 6.3 and Appendix G also include
-   experiments developed with **OpenAI Codex** assistance; include that tool and
-   distinguish coding/analysis assistance from the GPT-4o mini model evaluated.
-2. The bibliography appears twice, before and after the AI Usage Statement.
+The AI Usage Statement already discloses assistance in shortening the report and
+currently names Claude. Sections 6.3 and Appendix G also include experiments
+developed with OpenAI Codex assistance; the team can clarify that tool attribution
+in its editable report source if desired. This is distinct from the GPT-4o mini
+model evaluated in the experiments.
 
-These are editorial observations, not changes to the team's experimental claims.
+These are editorial observations, not changes to experimental claims.

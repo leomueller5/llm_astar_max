@@ -15,7 +15,11 @@ search mechanism, benchmark claims, or API requests.
 - Staged research files scanned for credential patterns and the configured API
   key without printing or persisting the key; no findings. Local SQLite ledgers,
   private reports, and environment files remain excluded.
-- The team report PDF is preserved unchanged. Primary WW implementation, notebook,
+- At the initial layout checkpoint the team report PDF was preserved unchanged.
+  A subsequent editorial correction removed only the duplicate bibliography from
+  page 6; all other 9 pages have identical text and pixel renderings, and the
+  report still has 10 pages with one complete bibliography.
+  Primary WW implementation, notebook,
   result tables, figures, original implementation, and shared datasets are unchanged.
 
 Reproduce the checks from the repository root:
