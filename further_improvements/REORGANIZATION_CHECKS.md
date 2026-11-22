@@ -44,3 +44,11 @@ pre-existing text is preserved; the other nine original pages render identically
 All listed code, notebook, result, cache, and test paths were verified against the
 repository, and the added page was visually reviewed. The AI Usage Statement and
 experimental results are unchanged. One complete bibliography remains.
+
+## Separate report submission
+
+The final local team PDF includes the clickable project repository URL in Appendix B
+(https://github.com/leomueller5/llm_astar_max). All other ten pages and the remainder
+of Appendix B were verified unchanged. The PDF is now ignored and removed from
+the current Git tree, while retained locally as `Team22_Report.pdf` for the ZIP
+submission. Documentation no longer links to a report file absent from the repo.

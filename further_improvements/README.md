@@ -2,7 +2,7 @@
 
 This folder contains Leonard Mueller's AI-assisted exploratory research beyond
 the team's Table 1 reproduction and **LLM-A*-WW** implementation. The primary
-submission is [Team22_Report.pdf](../Team22_Report.pdf); Section 6.3 and Appendix G
+report is submitted separately and is not tracked in this repository; Section 6.3 and Appendix G
 discuss the adaptive-alpha and hybrid-search attempts collected here. Later
 experiments are supplementary and are not additional results of the WW notebook.
 
@@ -79,6 +79,9 @@ Individual coursework/contribution reports stay in the ignored root
 `personal_reports/` directory and are not part of this public team material.
 
 ## Editorial notes for the team report
+
+The local team PDF contains a clickable project repository link in Appendix B and
+is kept outside Git for the separate ZIP submission.
 
 The duplicate bibliography on page 6 was removed on 22 November 2026. The complete
 bibliography after the AI Usage Statement remains. All other pages, including the

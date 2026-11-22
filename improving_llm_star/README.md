@@ -8,7 +8,7 @@ This directory contains the team's primary improvement and its notebook evaluati
 - `dataset/` and `docs/`: shared upstream assets.
 
 See the [repository README](../README.md) for installation, execution, and results,
-and the [team report](../Team22_Report.pdf) for the method and evaluation.
+and the separately submitted team report for the method and evaluation.
 
 The separate adaptive-alpha and hybrid-search research, tests, and additional
 benchmarks are collected in [further_improvements](../further_improvements/README.md).

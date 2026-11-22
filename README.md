@@ -27,7 +27,6 @@ improving_llm_star/
     results/                   result files of the notebook
     figures/                   report figures (created by the notebook)
 further_improvements/          supplementary research (separate from the WW evaluation)
-Team22_Report.pdf              team project report
 requirements.txt
 README.md
 ```
@@ -134,7 +133,7 @@ Static weighted A\* (w = 2) reaches 34.32. All methods find a valid path in 100 
 
 ## Part 3: Experimental search improvements
 
-The supplementary work is collected in [`further_improvements/`](further_improvements/README.md), corresponding to the further attempted optimizations in Section 6.3 and Appendix G of the [team report](Team22_Report.pdf). The separate research implementation investigates adaptive waypoint weighting, **LLM-A-VM\*** (verified macro-edges), and **LLM-RH\*** (bounded regional cost guidance). Original baselines remain available, and cached `gpt-4o-mini-2024-07-18` responses support offline comparisons.
+The supplementary work is collected in [`further_improvements/`](further_improvements/README.md), corresponding to the further attempted optimizations in Section 6.3 and Appendix G of the separately submitted team report. The separate research implementation investigates adaptive waypoint weighting, **LLM-A-VM\*** (verified macro-edges), and **LLM-RH\*** (bounded regional cost guidance). Original baselines remain available, and cached `gpt-4o-mini-2024-07-18` responses support offline comparisons.
 
 The latest evaluation covers **100 tasks on 60 fresh map geometries**, with 209 passing tests and 4,217 independently checked configuration paths. The research improves search robustness and efficiency over the original implementation, but **does not establish a reliable additional LLM benefit over strong matched geometric controls**. These experiments use a different dataset from Parts 1 and 2.
 

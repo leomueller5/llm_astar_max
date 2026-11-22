@@ -25,3 +25,6 @@ personal_reports/
 *.sqlite3
 *.sqlite3-*
 .DS_Store
+
+# Team report is submitted separately; keep the local PDF for the ZIP hand-in.
+/Team22_Report.pdf
