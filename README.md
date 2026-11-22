@@ -2,8 +2,9 @@
 
 This repository contains
 
-1. the reproduction of **Table 1** of *LLM-A\*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning* (Meng et al., 2024, [arXiv:2407.02511](https://arxiv.org/abs/2407.02511)) with GPT-4o mini, and
-2. our improved algorithm **LLM-A\*-WW** (LLM-A\* with weighted waypoints).
+1. the reproduction of **Table 1** of *LLM-A\*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning* (Meng et al., 2024, [arXiv:2407.02511](https://arxiv.org/abs/2407.02511)) with GPT-4o mini,
+2. our improved algorithm **LLM-A\*-WW** (LLM-A\* with weighted waypoints), and
+3. additional experimental research on adaptive guidance, verified macro-edges, and LLM-generated spatial heuristics.
 
 The original LLM-A\* code ([SilinMeng0510/llm-astar](https://github.com/SilinMeng0510/llm-astar)) is included unchanged in `llm-astar/`.
 
@@ -126,3 +127,15 @@ Results are written to `improving_llm_star/results/`, the report figures (exampl
 | RePE | 50.13 | 35.08 |
 
 Static weighted A\* (w = 2) reaches 34.32. All methods find a valid path in 100 % of the samples. Full tables with confidence intervals: `improving_llm_star/results/ww_with_ci.csv`.
+
+---
+
+## Part 3: Experimental search improvements
+
+The separate research implementation investigates adaptive waypoint weighting, **LLM-A-VM\*** (verified macro-edges), and **LLM-RH\*** (bounded regional cost guidance). Original baselines remain available, and cached `gpt-4o-mini-2024-07-18` responses support offline comparisons.
+
+The latest evaluation covers **100 tasks on 60 fresh map geometries**, with 209 passing tests and 4,217 independently checked configuration paths. The research improves search robustness and efficiency over the original implementation, but **does not establish a reliable additional LLM benefit over strong matched geometric controls**. These experiments use a different dataset from Parts 1 and 2.
+
+- [Research implementation](improving_llm_star/llmastar/research/)
+- [Full research report (PDF)](improving_llm_star/experiments/results/research_session7/REPORT.pdf)
+- [Methods and reproduction commands](improving_llm_star/experiments/research/session7/README.md)
