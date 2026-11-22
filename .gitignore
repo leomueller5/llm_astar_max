@@ -4,17 +4,24 @@ __pycache__/
 .pytest_cache/
 
 # Lossless .json.gz research archives are committed; expanded working copies are not.
-improving_llm_star/experiments/results/research/**/results.json
-improving_llm_star/experiments/results/research/**/runs.jsonl
+further_improvements/improving_llm_star/experiments/results/research/**/results.json
+further_improvements/improving_llm_star/experiments/results/research/**/runs.jsonl
 
 # Session 2 checkpoints; canonical records are the compressed archives.
-improving_llm_star/experiments/results/research_session2/**/runs.jsonl
+further_improvements/improving_llm_star/experiments/results/research_session2/**/runs.jsonl
 
 # Session 3 canonical trial records are compressed; journals remain resumable locally.
-improving_llm_star/experiments/results/research_session3/**/runs.jsonl
+further_improvements/improving_llm_star/experiments/results/research_session3/**/runs.jsonl
 
 # Session5 local live ledger; portable cached response/cost export is committed.
-improving_llm_star/experiments/results/research_session5/*.sqlite3*
+further_improvements/improving_llm_star/experiments/results/research_session5/*.sqlite3*
 
 # Individual coursework reports must not be published with team materials.
 personal_reports/
+
+# Private configuration and local experiment state.
+.env
+.env.*
+*.sqlite3
+*.sqlite3-*
+.DS_Store

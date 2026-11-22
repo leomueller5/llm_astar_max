@@ -1279,3 +1279,8 @@ Die verbleibende Zeit sollte in Bericht, Reproduzierbarkeit und Präsentation
 fließen. Vollständiger Bericht/PDF und Team-Kurzfassung liegen in
 `experiments/results/research_session7/`; exakte Befehle in
 `experiments/research/session7/README.md`.
+
+
+## Repository-Struktur für die Abgabe (22. November 2026)
+
+Die ergänzenden Forschungsarbeiten liegen jetzt gesammelt in `further_improvements/`. Die Team-Reproduktion sowie LLM-A*-WW bleiben unter ihren im Teamreport genannten Pfaden. Historische Befehle und interne relative Pfade gelten ab dem Arbeitsverzeichnis `further_improvements/`; die gemeinsame Originalimplementierung und Antwort-Caches werden über relative symbolische Links eingebunden. Ergebnisdateien, eingefrorene Algorithmusquellen und Modellantworten wurden inhaltlich nicht verändert. Der aktuelle Integritätsprüfer prüft weiterhin die eingefrorenen Quellen, setzt aber nicht mehr den früheren Forschungsbranch beziehungsweise einen veralteten main-Commit voraus. Der Teamreport wurde unverändert übernommen. Redaktionelle Hinweise zur AI-Nutzung und doppelten Bibliografie stehen in der ergänzenden README. Persönliche Berichte bleiben lokal und aus Git ausgeschlossen.
